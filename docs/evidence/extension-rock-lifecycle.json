@@ -1,0 +1,258 @@
+{
+  "executeMs": 4242,
+  "result": {
+    "passed": true,
+    "checks": [
+      "highland repeated placement identical",
+      "direct water removal refused with dependent rocks; receipt unchanged",
+      "custom river dependencies refused before bundled rock or water mutation",
+      "highland remove/reapply preserved deterministic poses"
+    ],
+    "highland": {
+      "state": "applied",
+      "batchId": "rocks",
+      "existing": 130,
+      "receipt": {
+        "schemaVersion": 1,
+        "state": "applied",
+        "batchId": "rocks",
+        "sourceHash": "55146e314478788d48ec351dc73f466d0436076cd6a1f62c6afdb1f62b47da2a",
+        "scene": "Assets/Scenes/WorldAuthoringTools.unity",
+        "rootName": "BFjord Rocks [owned:bwork_rocks:v1:rocks]",
+        "recipe": {
+          "schemaVersion": 1,
+          "seed": 641,
+          "maximumCount": 130,
+          "clusterCount": 10,
+          "id": "highland-rocks",
+          "materialProfile": "granite",
+          "orientation": "strata",
+          "sizeDistribution": "small-biased",
+          "area": {
+            "x": 25,
+            "z": 25,
+            "width": 462,
+            "depth": 462
+          },
+          "species": [
+            {
+              "id": "granite_boulder",
+              "weight": 5,
+              "minimumScale": 0.55,
+              "maximumScale": 1.5
+            },
+            {
+              "id": "stratified_outcrop",
+              "weight": 2,
+              "minimumScale": 0.6,
+              "maximumScale": 1.2
+            },
+            {
+              "id": "cliff_slab",
+              "weight": 1,
+              "minimumScale": 0.5,
+              "maximumScale": 1
+            },
+            {
+              "id": "scree_cluster",
+              "weight": 2,
+              "minimumScale": 0.7,
+              "maximumScale": 1.3
+            },
+            {
+              "id": "upright_crag",
+              "weight": 1,
+              "minimumScale": 0.6,
+              "maximumScale": 1
+            }
+          ],
+          "densityPerHectare": 8,
+          "minimumSpacing": 1.2,
+          "minimumHeight": -100,
+          "maximumHeight": 1000,
+          "minimumSlopeDegrees": 0,
+          "maximumSlopeDegrees": 55,
+          "clusterRadius": 30,
+          "alignment": 0.7,
+          "strataYawDegrees": 35,
+          "yawVariationDegrees": 35,
+          "burialFraction": 0.12,
+          "maximumGroundRelief": 8,
+          "exclusionPadding": 1.5,
+          "waterMode": "none",
+          "maximumWaterDistance": 10,
+          "minimumWaterDepth": 0.05,
+          "maximumWaterDepth": 1.2,
+          "maximumBankHeight": 3,
+          "colliders": false,
+          "exclusions": []
+        },
+        "placed": 130,
+        "considered": 5807,
+        "target": 130,
+        "rejectedGround": 104,
+        "rejectedHeight": 0,
+        "rejectedSlope": 76,
+        "rejectedExclusion": 3503,
+        "rejectedSpacing": 1994,
+        "lodGroups": 130,
+        "colliders": 0
+      }
+    },
+    "river": {
+      "water": {
+        "installed": true,
+        "recipeHash": "5a37e6f47ce1b5e6da5c0446b639e869323399df27aab96e46c57c7c850eb7fd",
+        "changedCells": 9079,
+        "removed": false,
+        "cleanupPending": 0
+      },
+      "bankRocks": {
+        "state": "applied",
+        "batchId": "river-bank",
+        "existing": 150,
+        "receipt": {
+          "schemaVersion": 1,
+          "state": "applied",
+          "batchId": "river-bank",
+          "sourceHash": "55146e314478788d48ec351dc73f466d0436076cd6a1f62c6afdb1f62b47da2a",
+          "scene": "Assets/Scenes/WorldAuthoringTools.unity",
+          "rootName": "BFjord Rocks [owned:bwork_rocks:v1:river-bank]",
+          "recipe": {
+            "schemaVersion": 1,
+            "seed": 1201,
+            "maximumCount": 150,
+            "clusterCount": 0,
+            "id": "river-bank-rocks",
+            "materialProfile": "mossy",
+            "orientation": "flow",
+            "sizeDistribution": "small-biased",
+            "area": {
+              "x": 25,
+              "z": 25,
+              "width": 462,
+              "depth": 462
+            },
+            "species": [
+              {
+                "id": "granite_boulder",
+                "weight": 2,
+                "minimumScale": 0.45,
+                "maximumScale": 1.1
+              },
+              {
+                "id": "river_stone",
+                "weight": 5,
+                "minimumScale": 0.4,
+                "maximumScale": 1.2
+              },
+              {
+                "id": "scree_cluster",
+                "weight": 1,
+                "minimumScale": 0.45,
+                "maximumScale": 0.8
+              }
+            ],
+            "densityPerHectare": 20,
+            "minimumSpacing": 0.5,
+            "minimumHeight": -100,
+            "maximumHeight": 1000,
+            "minimumSlopeDegrees": 0,
+            "maximumSlopeDegrees": 65,
+            "clusterRadius": 30,
+            "alignment": 0.7,
+            "strataYawDegrees": 35,
+            "yawVariationDegrees": 45,
+            "burialFraction": 0.16,
+            "maximumGroundRelief": 6,
+            "exclusionPadding": 1.5,
+            "waterMode": "bank",
+            "maximumWaterDistance": 14,
+            "minimumWaterDepth": 0.05,
+            "maximumWaterDepth": 1.2,
+            "maximumBankHeight": 5,
+            "colliders": false,
+            "exclusions": []
+          },
+          "placed": 150,
+          "considered": 4501,
+          "target": 150,
+          "rejectedGround": 0,
+          "rejectedHeight": 0,
+          "rejectedSlope": 0,
+          "rejectedExclusion": 4290,
+          "rejectedSpacing": 61,
+          "lodGroups": 150,
+          "colliders": 0
+        }
+      },
+      "shallowRocks": {
+        "state": "applied",
+        "batchId": "river-shallow",
+        "existing": 91,
+        "receipt": {
+          "schemaVersion": 1,
+          "state": "applied",
+          "batchId": "river-shallow",
+          "sourceHash": "55146e314478788d48ec351dc73f466d0436076cd6a1f62c6afdb1f62b47da2a",
+          "scene": "Assets/Scenes/WorldAuthoringTools.unity",
+          "rootName": "BFjord Rocks [owned:bwork_rocks:v1:river-shallow]",
+          "recipe": {
+            "schemaVersion": 1,
+            "seed": 1202,
+            "maximumCount": 220,
+            "clusterCount": 0,
+            "id": "river-shallow-rocks",
+            "materialProfile": "wet",
+            "orientation": "flow",
+            "sizeDistribution": "small-biased",
+            "area": {
+              "x": 25,
+              "z": 25,
+              "width": 462,
+              "depth": 462
+            },
+            "species": [
+              {
+                "id": "river_stone",
+                "weight": 1,
+                "minimumScale": 0.3,
+                "maximumScale": 1.1
+              }
+            ],
+            "densityPerHectare": 35,
+            "minimumSpacing": 0.5,
+            "minimumHeight": -100,
+            "maximumHeight": 1000,
+            "minimumSlopeDegrees": 0,
+            "maximumSlopeDegrees": 65,
+            "clusterRadius": 30,
+            "alignment": 0.65,
+            "strataYawDegrees": 35,
+            "yawVariationDegrees": 20,
+            "burialFraction": 0.08,
+            "maximumGroundRelief": 4,
+            "exclusionPadding": 0.8,
+            "waterMode": "shallow",
+            "maximumWaterDistance": 14,
+            "minimumWaterDepth": 0.04,
+            "maximumWaterDepth": 0.7,
+            "maximumBankHeight": 5,
+            "colliders": false,
+            "exclusions": []
+          },
+          "placed": 91,
+          "considered": 14080,
+          "target": 220,
+          "rejectedGround": 0,
+          "rejectedHeight": 0,
+          "rejectedSlope": 1,
+          "rejectedExclusion": 13965,
+          "rejectedSpacing": 23,
+          "lodGroups": 91,
+          "colliders": 0
+        }
+      }
+    }
+  }
+}

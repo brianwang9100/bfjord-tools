@@ -18,6 +18,11 @@ Shader "Bwork/Sandbox/Connected Wave Water"
         [NoScaleOffset] _RippleNormal("Original linear RGB ripple normal", 2D) = "bump" {}
         [NoScaleOffset] _DetailNormal("Original linear RGB detail normal", 2D) = "bump" {}
         [NoScaleOffset] _FoamMap("Original foam R / variation G", 2D) = "gray" {}
+        [NoScaleOffset] _RiverMotionMap("Original flowing river threads", 2D) = "black" {}
+        [NoScaleOffset] _OceanMotionMap("Original broken ocean crests", 2D) = "black" {}
+        _RiverCurrentStrength("River current foam", Range(0,1)) = .11
+        _OceanSurfaceStrength("Broad ocean foam", Range(0,1)) = .10
+        [HideInInspector] _AnimationTime("Capture time; negative uses live time", Float) = -1
         _RippleTileSize("Ripple tile metres", Float) = 5
         _DetailTileSize("Detail tile metres", Float) = 1.6
         _DetailStrength("Detail normal weight", Range(0,1)) = .4
@@ -63,6 +68,8 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             TEXTURE2D(_RippleNormal); SAMPLER(sampler_RippleNormal);
             TEXTURE2D(_DetailNormal); SAMPLER(sampler_DetailNormal);
             TEXTURE2D(_FoamMap); SAMPLER(sampler_FoamMap);
+            TEXTURE2D(_RiverMotionMap); SAMPLER(sampler_RiverMotionMap);
+            TEXTURE2D(_OceanMotionMap); SAMPLER(sampler_OceanMotionMap);
             CBUFFER_START(UnityPerMaterial)
             half4 _BaseColor, _ShallowColor, _OceanBaseColor, _OceanShallowColor;
             float _WaveHeight,_WaveLength,_WaveSpeed,_LakeWaveHeight,_LakeWaveLength,_LakeWaveSpeed;
@@ -70,7 +77,9 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             float _FlowSpeed,_NormalStrength,_FoamStrength,_Smoothness,_UseDepth;
             float _RippleTileSize,_DetailTileSize,_DetailStrength,_FoamWidth,_FoamTileSize,_FoamCutoff,_CrestFoamStrength;
             float _OceanSmoothness,_DepthColorDistance,_ShallowOpacity,_DeepOpacity,_ShoreFadeDepth;
+            float _RiverCurrentStrength,_OceanSurfaceStrength,_AnimationTime;
             CBUFFER_END
+            float WaterTime(){return _AnimationTime>=0?_AnimationTime:_Time.y;}
             struct Attributes
             {
                 float4 positionOS:POSITION; float2 uv:TEXCOORD0; float2 flow:TEXCOORD1;
@@ -85,7 +94,7 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             // Value and exact x/z derivatives share phase, direction, weights and amplitude.
             float3 Wave(float2 p,float height,float length,float speed)
             {
-                float k=6.283185307/max(length,4),time=_Time.y*speed;
+                float k=6.283185307/max(length,4),time=WaterTime()*speed;
                 float2 d0=float2(.8,.6),d1=normalize(float2(-.42,.9075)),d2=float2(.96,-.28);
                 float3 phase=float3(dot(p,d0)*k-time,dot(p,d1)*k*1.71-time*1.31,dot(p,d2)*k*2.63-time*1.62);
                 float3 s=sin(phase),c=cos(phase);
@@ -140,14 +149,27 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float2 slope=i.gradients.xy+wave.yz*saturate(i.color.r)+wave.x*i.gradients.zw;
                 float2 direction=i.flow*min(1,4*rsqrt(max(dot(i.flow,i.flow),.0001)));
                 // Dual phase advection resets without a visible snap; distance is in world metres.
-                float phase0=frac(_Time.y*_FlowSpeed*.125),phase1=frac(phase0+.5),weight=1-abs(phase0*2-1);
-                float2 drift=float2(.035,.021)*_Time.y*_FlowSpeed;
+                float phase0=frac(WaterTime()*_FlowSpeed*.125),phase1=frac(phase0+.5),weight=1-abs(phase0*2-1);
+                float2 drift=float2(.035,.021)*WaterTime()*_FlowSpeed;
                 float2 p0=i.uv-direction*(8*phase0)-drift,p1=i.uv-direction*(8*phase1)-drift;
                 // Mips and slope attenuation suppress distant grazing-angle sparkle.
                 float distanceToCamera=distance(GetCameraPositionWS(),i.positionWS);
                 float detailFade=1-smoothstep(12,75,distanceToCamera);
-                float2 ripple=lerp(Ripple(p1,detailFade),Ripple(p0,detailFade),weight);
+                // Sea ripples cover a larger area than the river, with a coherent wind drift.
+                float ocean=saturate(i.color.b),river=(1-ocean)*(1-saturate(i.color.a));
+                float2 oceanDrift=float2(.23,.11)*WaterTime()*_OceanWaveSpeed;
+                float2 q0=lerp(p0,(i.uv-oceanDrift)*.42,ocean);
+                float2 q1=lerp(p1,(i.uv-oceanDrift-float2(1.7,2.3))*.42,ocean);
+                float2 ripple=lerp(Ripple(q1,detailFade),Ripple(q0,detailFade),weight);
                 slope+=ripple*_NormalStrength*lerp(.18,1,detailFade)*lerp(.18,1,saturate(i.color.r));
+                float flowLength=length(direction);
+                float2 along=direction/max(flowLength,.001),across=float2(along.y,-along.x);
+                float2 current0=float2(dot(p0,across)/8,dot(p0,along)/15);
+                float2 current1=float2(dot(p1,across)/8,dot(p1,along)/15);
+                half3 current=lerp(SAMPLE_TEXTURE2D(_RiverMotionMap,sampler_RiverMotionMap,current1).rgb,
+                    SAMPLE_TEXTURE2D(_RiverMotionMap,sampler_RiverMotionMap,current0).rgb,weight);
+                float currentMask=river*saturate(flowLength)*saturate(i.color.r);
+                slope+=across*(current.b-.5)*.045*currentMask*lerp(.2,1,detailFade);
                 float3 n=normalize(float3(-slope.x,1,-slope.y));
                 float3 view=GetWorldSpaceNormalizeViewDir(i.positionWS);
                 float depth=_DepthColorDistance,shoreDepth=_DepthColorDistance;
@@ -171,7 +193,12 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float shore=_UseDepth>.5?1-smoothstep(0,shoreWidth,shoreDepth):0;
                 float breakup=smoothstep(_FoamCutoff-.08,_FoamCutoff+.18,grain.r)*smoothstep(.22,.68,grain.g);
                 float crest=smoothstep(.55,.9,wave.x/max(_OceanWaveHeight,.001))*i.color.b*_CrestFoamStrength;
-                float foam=saturate((shore+i.color.g)*_FoamStrength+crest)*breakup;
+                half3 seaPattern=SAMPLE_TEXTURE2D(_OceanMotionMap,sampler_OceanMotionMap,
+                    (i.uv-oceanDrift)/19).rgb;
+                float seaCrest=smoothstep(.15,.8,wave.x/max(_OceanWaveHeight,.001));
+                float seaFoam=seaPattern.r*seaCrest*_OceanSurfaceStrength*ocean;
+                float currentFoam=smoothstep(.12,.72,current.r)*lerp(.5,1,current.g)*currentMask*_RiverCurrentStrength;
+                float foam=saturate(saturate((shore+i.color.g)*_FoamStrength+crest)*breakup+currentFoam+seaFoam);
                 float absorption=1-exp2(-depth/max(_DepthColorDistance,.2)*1.8);
                 SurfaceData surface=(SurfaceData)0;
                 half3 shallow=lerp(_ShallowColor.rgb,_OceanShallowColor.rgb,i.color.b);

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "river-shallow-rocks",
+  "seed": 1202,
+  "area": {
+    "x": 25,
+    "z": 25,
+    "width": 462,
+    "depth": 462
+  },
+  "maximumCount": 220,
+  "densityPerHectare": 35,
+  "minimumSpacing": 0.5,
+  "minimumHeight": -100,
+  "maximumHeight": 1000,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 65,
+  "clusterCount": 0,
+  "clusterRadius": 30,
+  "alignment": 0.65,
+  "burialFraction": 0.08,
+  "maximumGroundRelief": 4,
+  "exclusionPadding": 0.8,
+  "orientation": "flow",
+  "strataYawDegrees": 35,
+  "yawVariationDegrees": 20,
+  "sizeDistribution": "small-biased",
+  "materialProfile": "wet",
+  "colliders": false,
+  "species": [
+    {
+      "id": "river_stone",
+      "weight": 1,
+      "minimumScale": 0.3,
+      "maximumScale": 1.1
+    }
+  ],
+  "waterMode": "shallow",
+  "maximumWaterDistance": 14,
+  "maximumBankHeight": 5,
+  "minimumWaterDepth": 0.04,
+  "maximumWaterDepth": 0.7
+}

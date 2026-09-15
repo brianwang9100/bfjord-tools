@@ -29,6 +29,8 @@ namespace Bwork.Authoring.Editor
             if(action=="status")return new{installed=ToolSandbox.Root.Find(GroupName)!=null,recipeHash=prior?.recipeHash,changedCells=prior?.patch.Count??0,removed=prior?.removed??false,
                 cleanupPending=prior==null?0:(prior.removed?prior.assets.Concat(prior.cleanupAssets):prior.cleanupAssets)
                     .Count(p=>File.Exists(p)||File.Exists(p+".meta"))};
+            if((action=="apply"||action=="remove")&&Rocks.RockCommand.HasRiverRocks())
+                throw new InvalidOperationException("River rocks depend on this water. Use bwork_river_scene for the bundled river batches; remove custom water-aware bwork_rocks batches before changing their water.");
             if(action=="remove")return Remove(terrain,prior);
             if(action=="refresh-appearance")return RefreshAppearance(prior,recipePath);
             if(action!="prepare"&&action!="apply")throw new ArgumentException("Unknown connected-water action.");
@@ -129,7 +131,7 @@ namespace Bwork.Authoring.Editor
         static Texture2D[] RequireMaps(Shader shader)
         {
             string root=Path.GetDirectoryName(Path.GetDirectoryName(AssetDatabase.GetAssetPath(shader))).Replace('\\','/');
-            return new[]{"water-ripple-normal.png","water-detail-normal.png","water-foam.png"}.Select(name=>
+            return new[]{"water-ripple-normal.png","water-detail-normal.png","water-foam.png","river-motion.png","ocean-motion.png"}.Select(name=>
             {
                 string path=root+"/Textures/Water/"+name;
                 var texture=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
@@ -194,6 +196,7 @@ namespace Bwork.Authoring.Editor
             var maps=RequireMaps(shader);
             var material=new Material(shader){name="Connected river lake and ocean"};
             material.SetTexture("_RippleNormal",maps[0]);material.SetTexture("_DetailNormal",maps[1]);material.SetTexture("_FoamMap",maps[2]);
+            material.SetTexture("_RiverMotionMap",maps[3]);material.SetTexture("_OceanMotionMap",maps[4]);
             material.SetColor("_BaseColor",r.deepColor);material.SetColor("_ShallowColor",r.shallowColor);
             material.SetColor("_OceanBaseColor",r.oceanDeepColor);material.SetColor("_OceanShallowColor",r.oceanShallowColor);
             material.SetFloat("_LakeWaveHeight",r.lakeWaveHeight);material.SetFloat("_LakeWaveLength",r.lakeWaveLength);material.SetFloat("_LakeWaveSpeed",r.lakeWaveSpeed);

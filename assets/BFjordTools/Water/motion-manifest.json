@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "author": "BFjord Tools contributors",
+  "license": "CC0-1.0",
+  "generatorLicense": "MIT",
+  "source": "Original periodic mathematical fields, no image inputs",
+  "files": {
+    "river-motion.png": {
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "e296393c85339baa9bc27ef4995d7022a948422cd57ffc26ca64388756361139",
+      "bytes": 627950,
+      "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
+    },
+    "ocean-motion.png": {
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "6a373537581cbc2eb39b6a513bc607fea7c91d8b5407b5b9149d1312cbebdd4e",
+      "bytes": 556626,
+      "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
+    },
+    "waterfall-motion.png": {
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "3453f0d4d8dc989f44b4d3164d437503d7db026654075cb276336a695352f347",
+      "bytes": 726201,
+      "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
+    }
+  }
+}

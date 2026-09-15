@@ -1,0 +1,165 @@
+{
+  "files": [
+    {
+      "bytes": 7048,
+      "path": "LICENSE.md",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "bytes": 16412,
+      "path": "Models/cliff_slab_COL.fbx",
+      "sha256": "bb1bb4d59bdc8005ace941e1cf594b76f0860c9c05482cd4eb636987f1e3b915"
+    },
+    {
+      "bytes": 219377,
+      "path": "Models/cliff_slab_LOD0.fbx",
+      "sha256": "cfaf70f101ef6fd22ad6c3e683d4d146942f0ce72c9afcba9c32fe288de5bd72"
+    },
+    {
+      "bytes": 84561,
+      "path": "Models/cliff_slab_LOD1.fbx",
+      "sha256": "b4b1338a7ca112a020995a50a1145979f1ba2eb36cdc3d4efa6c9428d7f865d9"
+    },
+    {
+      "bytes": 39825,
+      "path": "Models/cliff_slab_LOD2.fbx",
+      "sha256": "e2bc177a12224e767a7b2b382a58fa59a0efa2f3cddc6cda7536f274fdf01d3b"
+    },
+    {
+      "bytes": 16428,
+      "path": "Models/granite_boulder_COL.fbx",
+      "sha256": "e00e4452c6188c1c4f61b2a616119e14c0e8dd14855af1e8a72488248b15c5b8"
+    },
+    {
+      "bytes": 211537,
+      "path": "Models/granite_boulder_LOD0.fbx",
+      "sha256": "203e6dabaab0d0764f8d7695236a6d59b06847cc0a8d4bb555e3139f67fc8b51"
+    },
+    {
+      "bytes": 83441,
+      "path": "Models/granite_boulder_LOD1.fbx",
+      "sha256": "3c40da5c6c2f33cae202d52f65556d585b1809cf31402141c73aa9817acc4668"
+    },
+    {
+      "bytes": 39473,
+      "path": "Models/granite_boulder_LOD2.fbx",
+      "sha256": "235a04b6b1741291641041c0360899b5cc0b16fe10253aa15bf3da7c67d69c39"
+    },
+    {
+      "bytes": 16412,
+      "path": "Models/river_stone_COL.fbx",
+      "sha256": "cdc9dc2dd50032b92ccfa09d70e57fb79afce939d9fe302f1eb5dcc100e3b0b1"
+    },
+    {
+      "bytes": 163329,
+      "path": "Models/river_stone_LOD0.fbx",
+      "sha256": "c82bcdc7f3412dcb0903b770ff1b573c7e19aade618fe77a435cc74fd33e5aa2"
+    },
+    {
+      "bytes": 102273,
+      "path": "Models/river_stone_LOD1.fbx",
+      "sha256": "5a397a0eaa037a6e0038c09d4933e9eb1647ae29f513a0b59d5438f64f9c41d4"
+    },
+    {
+      "bytes": 46673,
+      "path": "Models/river_stone_LOD2.fbx",
+      "sha256": "a678188ff168a9e86fb8258b878e0e40ab5348a342a55b7e72457f62baff9baa"
+    },
+    {
+      "bytes": 16380,
+      "path": "Models/scree_cluster_COL.fbx",
+      "sha256": "ce95da997795760912d0df45913e13abae2c6baeccc7c7fec4fb67991cc7fa6f"
+    },
+    {
+      "bytes": 225073,
+      "path": "Models/scree_cluster_LOD0.fbx",
+      "sha256": "e15b5f8fefd62eaec0807d82fc9a631fe24fe4f9ace005064b2e12e7618b2c6e"
+    },
+    {
+      "bytes": 94465,
+      "path": "Models/scree_cluster_LOD1.fbx",
+      "sha256": "917c51f5f6379df241001b405ef186aebc549f09b6c0ab62080cb87b3cc59d94"
+    },
+    {
+      "bytes": 44913,
+      "path": "Models/scree_cluster_LOD2.fbx",
+      "sha256": "6046dd8811ac523b219ac3a7f8248c41b08e66fd459f0abd905042847a35aae6"
+    },
+    {
+      "bytes": 16380,
+      "path": "Models/stratified_outcrop_COL.fbx",
+      "sha256": "bc07fa291ba66793c9b06aa8e24f821bc92ffb211a6397a75ac8b275ce9ca92f"
+    },
+    {
+      "bytes": 225825,
+      "path": "Models/stratified_outcrop_LOD0.fbx",
+      "sha256": "85bcad53839504ec467b340801d8f8fe55d80928151f67e2dc817268c4573530"
+    },
+    {
+      "bytes": 90769,
+      "path": "Models/stratified_outcrop_LOD1.fbx",
+      "sha256": "72b98c46d796413bdbd3023fa4ee7cc5bb0806b357de75c9ad9f3daeff102831"
+    },
+    {
+      "bytes": 41249,
+      "path": "Models/stratified_outcrop_LOD2.fbx",
+      "sha256": "b75646d529db08f7a73cb35c97e8bc7477d24c4c43d9cb683a13dc82a8f2d099"
+    },
+    {
+      "bytes": 16412,
+      "path": "Models/upright_crag_COL.fbx",
+      "sha256": "dafa3fb1d16ace226c47bd000eafec652407ba5e30e9be84bf86f7b7128e4ddb"
+    },
+    {
+      "bytes": 228433,
+      "path": "Models/upright_crag_LOD0.fbx",
+      "sha256": "08c8d530705f60e39dbe74fa0ba5e98c96c44405de56f9cc6156d0ab2bdfea7d"
+    },
+    {
+      "bytes": 90433,
+      "path": "Models/upright_crag_LOD1.fbx",
+      "sha256": "d93361a4caa714505ea4c4b437daf09dede5de95651351a449ebe81891480e75"
+    },
+    {
+      "bytes": 41697,
+      "path": "Models/upright_crag_LOD2.fbx",
+      "sha256": "862d50f7b17dda46cae26698faf2c1581bd1fbd1a5875752fa7de71b4e155412"
+    },
+    {
+      "bytes": 2102,
+      "path": "README.md",
+      "sha256": "2cc03fa0ef391662b159ab6e8df73c5da58da8de5739bfd342d052eac0c6126f"
+    },
+    {
+      "bytes": 623368,
+      "path": "Textures/Rock_BaseColor.jpg",
+      "sha256": "d22dc3b97496cc60b2ac47e12638eeea7511064ea3291feca8f29cc83d4c877c"
+    },
+    {
+      "bytes": 21259,
+      "path": "Textures/Rock_MetallicSmoothness.png",
+      "sha256": "c164f5e2e199ccbafb5a5a747935c3395f02bad0733673a15f7b74dd6503f257"
+    },
+    {
+      "bytes": 937304,
+      "path": "Textures/Rock_NormalGL.jpg",
+      "sha256": "c4b58f36f6cc7d7823756c9ee93a544843f0c6bc6b41a6bc3f2cec6633ec1c77"
+    },
+    {
+      "bytes": 20954,
+      "path": "Textures/Rock_Roughness.png",
+      "sha256": "df047237a5a969492fb2e053d7728396173b324d64242f880b877986d13df769"
+    },
+    {
+      "bytes": 6805,
+      "path": "manifest.json",
+      "sha256": "46b9a793a3bb13d626db261d106494b3fe94ec12a6e744cb9612afda10c1e951"
+    },
+    {
+      "bytes": 3221,
+      "path": "provenance.json",
+      "sha256": "17dc49af48e2508800d938e14a36a90e3c8941ea75059a5c06e3e54d4503eada"
+    }
+  ],
+  "schemaVersion": 1
+}

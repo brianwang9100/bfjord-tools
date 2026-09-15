@@ -1,6 +1,6 @@
 # Reproducible quick start
 
-This walkthrough exercises the public wrapper and the bounded sample without regenerating bridge art. Run every command from the repository root.
+This walkthrough exercises the public wrapper and the bounded sample without regenerating bridge or rock art. Run every command from the repository root.
 
 ## 1. Check the checkout
 
@@ -8,7 +8,7 @@ Requirements:
 
 - Python 3 with no third-party Python packages for the wrapper.
 - Unity 6000.6.0f1. The sample manifest pins URP 17.6.0 and Unity Pipeline 0.7.0-exp.1.
-- Blender 5.2.x only if you intend to regenerate the bridge FBXs.
+- Blender 5.2.x only if you intend to regenerate the bridge or rock FBXs.
 
 Inspect the CLI and public inventory:
 
@@ -62,14 +62,27 @@ The included requests are intentionally small and reviewable:
 # Validation only: computes the terrain change without publishing it.
 python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/terrain.json
 
-# Mutating examples: shape the ridge, then fit roads and water to it.
+# Mutating examples: shape the ridge, fit roads, then compose water and river rocks.
 python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/terrain-apply.json
 python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/roads.json
-python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/water.json
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/river-scene.json
+
+# Optional independent highland-rock batch.
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/rocks-library.json
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/rocks.json
+
+# Bounded waterfall fixture; uses the rock library built above.
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/waterfall.json
 
 # Opens the separately configured four-bridge collection scene.
 python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/bridge-collection.json
 ```
+
+`river-scene.json` is the recommended water example. One request validates and prepares the original rock source, builds or reuses its immutable Unity library, applies the connected water, and places separate bank and shallow-water batches. The stages commit independently; on failure, inspect `bwork_river_scene` status before retrying. `rocks-library.json` is an explicit standalone library build and is redundant when the river-scene request has already prepared that exact source generation.
+
+`water.json` remains the lower-level `bwork_water_connected` surface example for projects that do not want river rocks. Remove the composed river scene before replacing its water directly so dependent bank or shallow batches cannot outlive their water field.
+
+`waterfall.json` applies a finite falling sheet and plunge foam with the bundled original-rock backdrop. Its source, recipe and motion-map provenance are included in 0.3.0, but this command is pending the assembled Unity verification recorded for the release. Run `rocks-library.json` first. See [`assets/BFjordTools/Water/MOTION.md`](../assets/BFjordTools/Water/MOTION.md) for controls, ownership and the verification still required.
 
 The bridge collection is a separate scene from the 512 m terrain/road/water sandbox. Do not interpret those commands as one composed-scene sequence.
 

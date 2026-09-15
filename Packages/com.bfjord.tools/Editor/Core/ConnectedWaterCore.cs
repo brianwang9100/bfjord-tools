@@ -208,6 +208,16 @@ namespace Bwork.Authoring.WaterSandbox
             return sample.Distance<=maximumDistance?sample:new WaterFieldSample(float.PositiveInfinity,0,0,Vector2.zero,0);
         }
 
+        /// <summary>Canonical lake/ocean footprints plus a conservative shore band; independent of shading blend weights.</summary>
+        public bool IsNearLakeOrOcean(Vector2 point,float clearance)
+        {
+            Range(clearance,0,200,"lake/ocean clearance");
+            if(!float.IsFinite(point.x)||!float.IsFinite(point.y))throw new ArgumentException("Finite shore query point required.");
+            foreach(var node in recipe.nodes)
+                if((node.kind=="lake"||node.kind=="ocean")&&BodyDistance(node,point)<=clearance)return true;
+            return false;
+        }
+
         WaterFieldSample SampleIndexed(Vector2 point,float searchRadius)
         {
             float distance=float.PositiveInfinity,height=0,depth=2,ocean=0,lake=0,foam=0;Vector2 flow=Vector2.zero;

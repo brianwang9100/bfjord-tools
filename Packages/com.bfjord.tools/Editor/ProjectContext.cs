@@ -24,6 +24,7 @@ namespace Bwork.Authoring.Editor
         public string matureFirRoot = "Assets/Bwork/ThirdParty/PolyHavenMatureFir";
         public string sandboxSkyMaterial = "";
         public string bridgeSourceRoot;
+        public string rockSourceRoot = "";
         public string captureRoot;
         public string[] additionalAllowedScenes = Array.Empty<string>();
     }
@@ -107,11 +108,15 @@ namespace Bwork.Authoring.Editor
                     Require(!Overlaps(output, input), "Generated roots must not overlap source asset roots.");
             if (!string.IsNullOrEmpty(c.sandboxSkyMaterial)) ValidateAssetPath(c.sandboxSkyMaterial, false);
             c.bridgeSourceRoot = ResolveExternal(projectRoot, c.bridgeSourceRoot);
+            if (!string.IsNullOrWhiteSpace(c.rockSourceRoot))
+                c.rockSourceRoot = ResolveExternal(projectRoot, c.rockSourceRoot);
             c.captureRoot = ResolveExternal(projectRoot, c.captureRoot);
             Require(c.captureRoot != projectRoot && c.captureRoot != Path.GetPathRoot(c.captureRoot), "Capture output requires its own directory.");
             foreach (string protectedRoot in new[] { "Assets", "Packages", "ProjectSettings", "Library", "UserSettings", ".git" })
                 Require(!Overlaps(c.captureRoot, Path.Combine(projectRoot, protectedRoot)), "Capture output must not overlap Unity project source or settings.");
             Require(!Overlaps(c.captureRoot, c.bridgeSourceRoot), "Capture output must not overlap the bridge source bundle.");
+            if (!string.IsNullOrEmpty(c.rockSourceRoot))
+                Require(!Overlaps(c.captureRoot, c.rockSourceRoot), "Capture output must not overlap the rock source bundle.");
             foreach (var path in new[] { c.sandboxScene, c.bridgeDemoScene }.Concat(c.additionalAllowedScenes))
                 RejectLinks(Path.Combine(projectRoot, path));
             return c;
@@ -157,6 +162,16 @@ namespace Bwork.Authoring.Editor
         }
 
         public static string Material(string name) => Current.materialRoot + "/Materials/" + name + ".mat";
+
+        public static string RockSource(string relative)
+        {
+            ValidateRelative(relative);
+            var root = Current.rockSourceRoot;
+            Require(!string.IsNullOrEmpty(root), "Configure rockSourceRoot before authoring original rock assets.");
+            var path = Path.Combine(root, relative);
+            RejectLinks(path);
+            return path;
+        }
 
         public static string RemapLegacyAssetPath(string path)
         {

@@ -1,0 +1,84 @@
+{
+  "asset": "Rock030",
+  "author": "ambientCG / Lennart Demes",
+  "source": "https://ambientcg.com/view?id=Rock030",
+  "download": "https://ambientcg.com/get?file=Rock030_2K-JPG.zip",
+  "license": "CC0-1.0",
+  "licenseURL": "https://docs.ambientcg.com/license/",
+  "technique": "Procedural",
+  "retrieved": "2026-09-15",
+  "files": [
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG.blend",
+      "sha256": "e9318a3d76425720bde59f2fc0baa2ec9845acb8d7f0bafe7ef49a48b03a608c"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG.mtlx",
+      "sha256": "d27eff5f41d2365ff737f6407b84cfa93a78ee9de8661bd3eca3054ea7e34c43"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_NormalGL.jpg",
+      "sha256": "bf4b029b98fc771887e80807e28f97488c3a8936369152bd1020b2535415a5af"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG.tres",
+      "sha256": "a127dd98fe8b2cd7124be96a768281e244bd113ac2eef5ca7d51f291aef98744"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030.png",
+      "sha256": "2165d5fe3e6eb4b75439196b99fb9f4478eb9332bada7b5e0ecd236204613c2d"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG.usdc",
+      "sha256": "9f583c0a65f36d64c31c786937d3c508a7c6d97f7bfa858929fd64562b1d8d2c"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_Color.jpg",
+      "sha256": "c7169827afa47148833a3d778bd2827f12b124852efcabf3364910b1cb6d4beb"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_Roughness.jpg",
+      "sha256": "a057169aa693438170a969249eb7e1113078f04c38b3fc2766fdccf21d5a918f"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_Displacement.jpg",
+      "sha256": "f78b29522ae74863c11435038efbe4795e36276cacc4823d91d754a3d04b3509"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_AmbientOcclusion.jpg",
+      "sha256": "f430913d66ff94e55c384d006e0365808b304dee513db4c27eeab49385c1c265"
+    },
+    {
+      "file": "Rock030_2K-JPG/Rock030_2K-JPG_NormalDX.jpg",
+      "sha256": "c825dedeb63d47b7f235341543f3f9fe8d10727993e5e5efac6dd9cd13869c04"
+    }
+  ],
+  "redistributedFiles": [
+    {
+      "path": "Textures/Rock_BaseColor.jpg",
+      "sha256": "d22dc3b97496cc60b2ac47e12638eeea7511064ea3291feca8f29cc83d4c877c"
+    },
+    {
+      "path": "Textures/Rock_MetallicSmoothness.png",
+      "sha256": "c164f5e2e199ccbafb5a5a747935c3395f02bad0733673a15f7b74dd6503f257"
+    },
+    {
+      "path": "Textures/Rock_NormalGL.jpg",
+      "sha256": "c4b58f36f6cc7d7823756c9ee93a544843f0c6bc6b41a6bc3f2cec6633ec1c77"
+    },
+    {
+      "path": "Textures/Rock_Roughness.png",
+      "sha256": "df047237a5a969492fb2e053d7728396173b324d64242f880b877986d13df769"
+    }
+  ],
+  "derivedChannels": {
+    "Rock_Roughness.png": "Original periodic scalar approximation centered at 0.84; not measured roughness",
+    "Rock_MetallicSmoothness.png": "RGB zero; alpha 1 minus original roughness"
+  },
+  "geometry": {
+    "author": "Brian Wang / BFjordTools",
+    "license": "CC0-1.0",
+    "method": "Original deterministic irregular wedge/fracture and weathering geometry; no third-party mesh derivatives"
+  },
+  "preparation": "Color and normal resized from 2048 to 1024 pixels and re-encoded JPEG quality 90 using macOS sips. Blender/Unity normalize tangent normals when shading."
+}

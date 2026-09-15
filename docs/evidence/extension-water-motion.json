@@ -1,0 +1,36 @@
+{
+  "executeMs": 32651,
+  "result": {
+    "passed": true,
+    "checks": [
+      "connected water appearance refreshed without rebuilding geometry",
+      "waterfall prepared and replaced",
+      "foreign child blocks destructive waterfall replacement/removal",
+      "waterfall owned removal and reapply passed",
+      "waterfall leaves all terrain height samples unchanged"
+    ],
+    "prepare": {
+      "applied": false,
+      "vertices": 986,
+      "triangles": 1792,
+      "terrainChanged": false,
+      "lip": [
+        90,
+        18,
+        410
+      ],
+      "toe": [
+        90,
+        0.83,
+        418
+      ]
+    },
+    "views": 3,
+    "framesPerView": 24,
+    "fps": 12,
+    "secondsPerView": 2,
+    "width": 1440,
+    "height": 960,
+    "shaderErrors": 0
+  }
+}

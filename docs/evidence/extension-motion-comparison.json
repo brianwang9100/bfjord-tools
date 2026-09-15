@@ -1,0 +1,65 @@
+{
+  "river": {
+    "waterRegion": [
+      450,
+      480,
+      1000,
+      920
+    ],
+    "timePairSeconds": [
+      0,
+      1.5
+    ],
+    "changedPixelFractionAbove3of255": 0.729331,
+    "meanAbsoluteRGBDifference": [
+      6.3135785123966945,
+      7.033504132231405,
+      7.533760330578512
+    ],
+    "videoFrames": 24,
+    "playbackFPS": 12,
+    "note": "Offline fixed-time capture; not a device performance measurement."
+  },
+  "ocean": {
+    "waterRegion": [
+      200,
+      520,
+      1240,
+      900
+    ],
+    "timePairSeconds": [
+      0,
+      1.5
+    ],
+    "changedPixelFractionAbove3of255": 0.861144,
+    "meanAbsoluteRGBDifference": [
+      12.336143724696356,
+      13.34071862348178,
+      13.177386133603239
+    ],
+    "videoFrames": 24,
+    "playbackFPS": 12,
+    "note": "Offline fixed-time capture; not a device performance measurement."
+  },
+  "waterfall": {
+    "waterRegion": [
+      650,
+      250,
+      790,
+      650
+    ],
+    "timePairSeconds": [
+      0,
+      1.5
+    ],
+    "changedPixelFractionAbove3of255": 0.66925,
+    "meanAbsoluteRGBDifference": [
+      8.289857142857143,
+      8.458839285714285,
+      7.981017857142857
+    ],
+    "videoFrames": 24,
+    "playbackFPS": 12,
+    "note": "Offline fixed-time capture; not a device performance measurement."
+  }
+}

@@ -8,7 +8,7 @@ namespace Bwork.Authoring.Editor
     {
         [CliCommand("bwork_view", "Show or capture a repeatable authoring-sample camera bookmark.", MainThreadRequired = true)]
         public static object Run(
-            [CliArg("view", "overview, terrain, terrain-ground, junction, road, bridge, tunnel, forest, water, map")] string view = "overview",
+            [CliArg("view", "overview, terrain, terrain-ground, junction, road, bridge, tunnel, forest, water, lake, river, ocean, map")] string view = "overview",
             [CliArg("capture", "Optional screenshot basename; empty only moves the camera")] string capture = "")
         {
             var terrain = ToolSandbox.RequireTerrain();
@@ -30,6 +30,7 @@ namespace Bwork.Authoring.Editor
                 case "water": position = new Vector3(139, 23, 282); target = new Vector3(167, 2, 380); break;
                 case "lake": position = new Vector3(110, 9, 250); target = new Vector3(145, 4, 224); break;
                 case "river": position = new Vector3(171, 9, 193); target = new Vector3(153, 5.5f, 208); break;
+                case "ocean": position = new Vector3(173, 5, 426); target = new Vector3(197, .8f, 474); break;
                 case "map": position = new Vector3(256, 650, 270); target = new Vector3(256, 0, 270); break;
                 default: throw new ArgumentException("Unknown sandbox bookmark.");
             }

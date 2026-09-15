@@ -1,0 +1,454 @@
+{
+  "status": "completed",
+  "duration": 19.94,
+  "summary": {
+    "total": 63,
+    "passed": 63,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "BridgeAssetContractTests.BatchIdentityCannotBecomeAnAssetPath(\"../other\")",
+      "Status": "Passed",
+      "Duration": 0.0060983,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.BatchIdentityCannotBecomeAnAssetPath(\"Bridge One\")",
+      "Status": "Passed",
+      "Duration": 4.01e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.BatchIdentityCannotBecomeAnAssetPath(\"\")",
+      "Status": "Passed",
+      "Duration": 2.69e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.CarriagewayMustFitInsideStructuralDeck(7.0f,True)",
+      "Status": "Passed",
+      "Duration": 0.0239247,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.CarriagewayMustFitInsideStructuralDeck(8.0f,True)",
+      "Status": "Passed",
+      "Duration": 0.0020376,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.CarriagewayMustFitInsideStructuralDeck(0.0f,False)",
+      "Status": "Passed",
+      "Duration": 0.0012152,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.CarriagewayMustFitInsideStructuralDeck(-1.0f,False)",
+      "Status": "Passed",
+      "Duration": 0.0052001,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.CarriagewayMustFitInsideStructuralDeck(9.0f,False)",
+      "Status": "Passed",
+      "Duration": 0.001177,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.PlacementRejectsScalingAndNonfiniteCoordinates",
+      "Status": "Passed",
+      "Duration": 0.0015749,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.SourceFingerprintChangesWhenAssetBytesChange",
+      "Status": "Passed",
+      "Duration": 0.0017526,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.SourcePathsCannotLeaveManifestDirectory(\"../outside.fbx\")",
+      "Status": "Passed",
+      "Duration": 0.000186,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.SourcePathsCannotLeaveManifestDirectory(\"textures/../../outside.png\")",
+      "Status": "Passed",
+      "Duration": 2.57e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.SourcePathsCannotLeaveManifestDirectory(\"/tmp/outside.fbx\")",
+      "Status": "Passed",
+      "Duration": 1.94e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeAssetContractTests.SourcePathsCannotLeaveManifestDirectory(\"textures\\\\outside.png\")",
+      "Status": "Passed",
+      "Duration": 1.93e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.MissingTextureFailsBeforeMutation",
+      "Status": "Passed",
+      "Duration": 0.0082125,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.ProfileRejectsUnsupportedPhysicalSlot",
+      "Status": "Passed",
+      "Duration": 0.0008736,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.SurfaceChangesRequireNoGeometrySources",
+      "Status": "Passed",
+      "Duration": 0.0010147,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.TextureCannotEscapeSourceDirectory",
+      "Status": "Passed",
+      "Duration": 0.0006158,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.TextureCannotServeColorAndNormalRoles",
+      "Status": "Passed",
+      "Duration": 0.0012838,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "BridgeSurfaceContractTests.TintAndTextureBytesBothAffectFingerprint",
+      "Status": "Passed",
+      "Duration": 0.0028725,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ConnectedWaterBankQueryTests.DeclaredRangeIsInclusiveAndOutsideHasNoBank",
+      "Status": "Passed",
+      "Duration": 0.0195241,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ConnectedWaterBankQueryTests.WideBankQueryFindsReachBeyondItsIndexedCorridor(30,30)",
+      "Status": "Passed",
+      "Duration": 0.0082278,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ConnectedWaterBankQueryTests.WideBankQueryFindsReachBeyondItsIndexedCorridor(-30,30)",
+      "Status": "Passed",
+      "Duration": 0.0079884,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ConnectedWaterBankQueryTests.WideBankQueryFindsReachBeyondItsIndexedCorridor(170,200)",
+      "Status": "Passed",
+      "Duration": 0.0019973,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ConnectedWaterBankQueryTests.WideBankQueryFindsReachBeyondItsIndexedCorridor(-170,200)",
+      "Status": "Passed",
+      "Duration": 0.0021,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.FoliagePlannerTests.ClusteredPlanningIsDeterministicAndKeepsFootprintsApart",
+      "Status": "Passed",
+      "Duration": 0.0109245,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.FoliagePlannerTests.InvalidClusterOrNeighborDataFailsBeforePlanning",
+      "Status": "Passed",
+      "Duration": 0.000231,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.FoliagePlannerTests.NeighborFootprintsExcludeNewInstancesAcrossBatches",
+      "Status": "Passed",
+      "Duration": 0.0014638,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.FoliagePlannerTests.TerrainAndOwnedExclusionsRemainAuthoritativeForClusters",
+      "Status": "Passed",
+      "Duration": 0.0003434,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.CaptureOutputCannotOverwriteProjectConfiguration",
+      "Status": "Passed",
+      "Duration": 0.0041382,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.ConfigurationRequiresExplicitOptIn",
+      "Status": "Passed",
+      "Duration": 0.0013595,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.ConfigurationResolvesAtAnUnrelatedProjectLocation",
+      "Status": "Passed",
+      "Duration": 0.0008969,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.DispatcherAcceptsTypedPublicCommandRequest",
+      "Status": "Passed",
+      "Duration": 0.0018588,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.DispatcherRejectsUnknownMethodsAndArgumentsBeforeExecution",
+      "Status": "Passed",
+      "Duration": 0.0004585,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.GeneratedRootCannotEscapeAssets(\"../Elsewhere/Generated\")",
+      "Status": "Passed",
+      "Duration": 0.0020573,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.GeneratedRootCannotEscapeAssets(\"Assets/../ProjectSettings\")",
+      "Status": "Passed",
+      "Duration": 0.0007789,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.GeneratedRootCannotEscapeAssets(\"Assets\")",
+      "Status": "Passed",
+      "Duration": 0.0008622,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.GeneratedRootsCannotOverlap",
+      "Status": "Passed",
+      "Duration": 0.0020569,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.OptionalRockSourcesResolveIndependentlyAndCannotContainCaptures",
+      "Status": "Passed",
+      "Duration": 0.0031429,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.ProjectContextTests.UnknownConfigurationFieldsRejectTypos",
+      "Status": "Passed",
+      "Duration": 0.0006074,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.InvalidWaterAndFootprintParametersAreRejected",
+      "Status": "Passed",
+      "Duration": 0.006056,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.MaterialProfileCannotChangePlacementStructure",
+      "Status": "Passed",
+      "Duration": 0.0030288,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.PlannerRespectsFullTiltEnvelopeAndExclusionFootprints",
+      "Status": "Passed",
+      "Duration": 0.0009059,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.RiverRocksRejectLakeAndOceanShoreBandsEvenWhereShadingWeightsAreZero",
+      "Status": "Passed",
+      "Duration": 0.0040343,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.SizeBiasChangesWeightsWithoutEscapingSpeciesScaleRange",
+      "Status": "Passed",
+      "Duration": 0.0012823,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.RockContractTests.TraversalDuplicateJsonAndInvalidLodsFailAdmission",
+      "Status": "Passed",
+      "Duration": 0.0009758,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.BankPaintAddsDepositedMaterialAndRejectsInvalidProfiles",
+      "Status": "Passed",
+      "Duration": 0.002277,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.BuiltInStampsKeepProtectedRoadAndWaterCells(\"ridge\")",
+      "Status": "Passed",
+      "Duration": 0.0144778,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.BuiltInStampsKeepProtectedRoadAndWaterCells(\"basin\")",
+      "Status": "Passed",
+      "Duration": 0.0044031,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.BuiltInStampsKeepProtectedRoadAndWaterCells(\"mesa\")",
+      "Status": "Passed",
+      "Duration": 0.0081057,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.DerivedPaintIsNormalizedAndSteepLandFavorsRock",
+      "Status": "Passed",
+      "Duration": 0.0028819,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.HillJunctionKeepsExactPathsWithoutSteepPavementFans(False,1.0f)",
+      "Status": "Passed",
+      "Duration": 5.8425093,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.HillJunctionKeepsExactPathsWithoutSteepPavementFans(False,4.0f)",
+      "Status": "Passed",
+      "Duration": 0.4940422,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.HillJunctionKeepsExactPathsWithoutSteepPavementFans(True,1.0f)",
+      "Status": "Passed",
+      "Duration": 10.1203702,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.HillJunctionKeepsExactPathsWithoutSteepPavementFans(True,4.0f)",
+      "Status": "Passed",
+      "Duration": 0.8808436,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.PaintRollbackRestoresPersistentLayerPropertiesAndAlphamaps",
+      "Status": "Passed",
+      "Duration": 0.1559015,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.PavementAdmissionRejectsSteepOrFoldedFaces(1.0f,False)",
+      "Status": "Passed",
+      "Duration": 0.0004314,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Editor.Tests.TerrainRoadPresentationTests.PavementAdmissionRejectsSteepOrFoldedFaces(0.0f,True)",
+      "Status": "Passed",
+      "Duration": 3.01e-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.BothMeshesReserveTheEntireReceivingWaveEnvelope",
+      "Status": "Passed",
+      "Duration": 0.0176037,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.FirstPublicationRollbackRemovesAnOrphanReceiptMeta",
+      "Status": "Passed",
+      "Duration": 0.1197811,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.InvalidMotionAndGeometryAreRejectedBeforeBuilding",
+      "Status": "Passed",
+      "Duration": 0.0003274,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.OwnershipSealDetectsInjectedObjectsAndEditedTransforms",
+      "Status": "Passed",
+      "Duration": 0.0035174,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.WaterFlowsFromLevelFeederToAuthoredLanding",
+      "Status": "Passed",
+      "Duration": 0.0004576,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

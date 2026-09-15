@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "lip": {
+    "x": 90,
+    "y": 18,
+    "z": 410
+  },
+  "toe": {
+    "x": 90,
+    "y": 0.83,
+    "z": 418
+  },
+  "width": 7,
+  "plungeWidth": 16,
+  "plungeLength": 23,
+  "fallSpeed": 7,
+  "opacity": 0.86,
+  "acrossSegments": 16,
+  "fallSegments": 40,
+  "rockBackdrop": true,
+  "plungeWaveHeight": 0.45,
+  "plungeWaveLength": 28,
+  "plungeWaveSpeed": 0.65
+}

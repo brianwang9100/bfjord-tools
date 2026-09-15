@@ -2,7 +2,17 @@
 
 This ledger records the Unity evidence available for the September 15, 2026 source checkpoint. It includes the final functional checks and an independent Unity replay from a clean copy under an unrelated parent. All paths below are relative to the public repository; no author-machine paths are required to inspect or reproduce the source.
 
-## Tested configuration and scope
+## 0.3.0 rock and animated-water extension
+
+The public standalone project compiled the extension without C# errors. The full suite passed **63/63** tests in 19.94 seconds; after the final feeder/material art changes the affected waterfall suite passed **5/5** in 0.75 seconds. The original rock library imported six variants with three LODs and colliders each, plus five shared material profiles. River composition placed **150 bank rocks and 91 shallow stones**, respecting constraints rather than forcing the 220-stone cap.
+
+A 4.242-second scene check verified deterministic highland replacement and remove/reapply, direct water-removal rejection with dependent rocks, and rejection of custom river batches before mutating the existing water or bundled rocks. A 32.651-second combined water check verified appearance refresh, waterfall prepare/replace/remove/reapply, refusal to destroy foreign child objects, unchanged Terrain height samples, and zero shader errors after rendering.
+
+Three fixed cameras each rendered 24 frames at 12 samples/second, plus time 0/0.75/1.5 stills. Water-only image regions changed between times 0 and 1.5 seconds: river 72.9%, ocean 86.1%, waterfall 66.9% above a 3/255 channel threshold. These are animation evidence, not performance measurements. Curated screenshots and the clips were reviewed; no native island or device build was run. The earlier relocated clean-copy replay below belongs to 0.2.0, not this extension.
+
+Machine-readable records: [contract tests](evidence/extension-tests.json), [final waterfall tests](evidence/extension-waterfall-tests.json), [rock lifecycle](evidence/extension-rock-lifecycle.json), [water lifecycle/captures](evidence/extension-water-motion.json), [motion comparison](evidence/extension-motion-comparison.json).
+
+## 0.2.0 tested configuration and scope
 
 - Unity Editor 6000.6.0f1 (`f7f8ed4d1e24`)
 - Universal Render Pipeline 17.6.0
@@ -11,7 +21,7 @@ This ledger records the Unity evidence available for the September 15, 2026 sour
 - One finite 512 m authoring sandbox plus four isolated bridge presentation sites
 - 1440 × 960 Unity Editor captures
 
-The pinned versions are declared in `Examples~/SandboxProject/ProjectSettings/ProjectVersion.txt`, `Examples~/SandboxProject/Packages/manifest.json` and `Packages/com.bfjord.tools/package.json`. `Examples~/SandboxProject/ProjectSettings/BfjordTools.json` is the explicit project opt-in and owns the allowed scenes, generated roots, source roots and capture root.
+The Unity, URP and Pipeline pins are declared in `Examples~/SandboxProject/ProjectSettings/ProjectVersion.txt` and `Examples~/SandboxProject/Packages/manifest.json`. Package 0.2.0 above identifies this measured source checkpoint; a newer package version does not extend these results. `Examples~/SandboxProject/ProjectSettings/BfjordTools.json` is the explicit project opt-in and owns the allowed scenes, generated roots, source roots and capture root.
 
 This evidence covers experimental Editor import, authoring commands, ordinary Unity assets and rendered fixture inspection. It does not establish a complete island, runtime integration, iPad compatibility, sustained frame rate, GPU memory use, physical simulation, structural-engineering fitness or NatureManufacture visual parity.
 

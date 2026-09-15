@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "river-bank-rocks",
+  "seed": 1201,
+  "area": {
+    "x": 25,
+    "z": 25,
+    "width": 462,
+    "depth": 462
+  },
+  "maximumCount": 150,
+  "densityPerHectare": 20,
+  "minimumSpacing": 0.5,
+  "minimumHeight": -100,
+  "maximumHeight": 1000,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 65,
+  "clusterCount": 0,
+  "clusterRadius": 30,
+  "alignment": 0.7,
+  "burialFraction": 0.16,
+  "maximumGroundRelief": 6,
+  "exclusionPadding": 1.5,
+  "orientation": "flow",
+  "strataYawDegrees": 35,
+  "yawVariationDegrees": 45,
+  "sizeDistribution": "small-biased",
+  "materialProfile": "mossy",
+  "colliders": false,
+  "species": [
+    {
+      "id": "granite_boulder",
+      "weight": 2,
+      "minimumScale": 0.45,
+      "maximumScale": 1.1
+    },
+    {
+      "id": "river_stone",
+      "weight": 5,
+      "minimumScale": 0.4,
+      "maximumScale": 1.2
+    },
+    {
+      "id": "scree_cluster",
+      "weight": 1,
+      "minimumScale": 0.45,
+      "maximumScale": 0.8
+    }
+  ],
+  "waterMode": "bank",
+  "maximumWaterDistance": 14,
+  "maximumBankHeight": 5
+}

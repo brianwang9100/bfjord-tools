@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "duration": 0.75,
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.BothMeshesReserveTheEntireReceivingWaveEnvelope",
+      "Status": "Passed",
+      "Duration": 0.007969,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.FirstPublicationRollbackRemovesAnOrphanReceiptMeta",
+      "Status": "Passed",
+      "Duration": 0.1373379,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.InvalidMotionAndGeometryAreRejectedBeforeBuilding",
+      "Status": "Passed",
+      "Duration": 0.0010022,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.OwnershipSealDetectsInjectedObjectsAndEditedTransforms",
+      "Status": "Passed",
+      "Duration": 0.0026423,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Bwork.Authoring.Tests.WaterfallContractTests.WaterFlowsFromLevelFeederToAuthoredLanding",
+      "Status": "Passed",
+      "Duration": 0.0009365,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

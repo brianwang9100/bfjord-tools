@@ -33,6 +33,15 @@ namespace Bwork.Authoring.Editor.Tests
             Assert.Throws<InvalidDataException>(() => ProjectContext.Parse(config.ToString(), directory));
         }
 
+        [Test] public void OptionalRockSourcesResolveIndependentlyAndCannotContainCaptures()
+        {
+            var config = Config(); config["rockSourceRoot"] = "OriginalRocks";
+            Assert.That(ProjectContext.Parse(config.ToString(), directory).rockSourceRoot,
+                Is.EqualTo(Path.Combine(directory, "OriginalRocks")));
+            config["captureRoot"] = "OriginalRocks/Review";
+            Assert.Throws<InvalidDataException>(() => ProjectContext.Parse(config.ToString(), directory));
+        }
+
         [TestCase("../Elsewhere/Generated")]
         [TestCase("Assets/../ProjectSettings")]
         [TestCase("Assets")]

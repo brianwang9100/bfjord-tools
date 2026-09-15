@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "highland-rocks",
+  "seed": 641,
+  "area": {
+    "x": 25,
+    "z": 25,
+    "width": 462,
+    "depth": 462
+  },
+  "maximumCount": 130,
+  "densityPerHectare": 8,
+  "minimumSpacing": 1.2,
+  "minimumHeight": -100,
+  "maximumHeight": 1000,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 55,
+  "clusterCount": 10,
+  "clusterRadius": 30,
+  "alignment": 0.7,
+  "burialFraction": 0.12,
+  "maximumGroundRelief": 8,
+  "exclusionPadding": 1.5,
+  "orientation": "strata",
+  "strataYawDegrees": 35,
+  "yawVariationDegrees": 35,
+  "sizeDistribution": "small-biased",
+  "materialProfile": "granite",
+  "colliders": false,
+  "species": [
+    {
+      "id": "granite_boulder",
+      "weight": 5,
+      "minimumScale": 0.55,
+      "maximumScale": 1.5
+    },
+    {
+      "id": "stratified_outcrop",
+      "weight": 2,
+      "minimumScale": 0.6,
+      "maximumScale": 1.2
+    },
+    {
+      "id": "cliff_slab",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 1
+    },
+    {
+      "id": "scree_cluster",
+      "weight": 2,
+      "minimumScale": 0.7,
+      "maximumScale": 1.3
+    },
+    {
+      "id": "upright_crag",
+      "weight": 1,
+      "minimumScale": 0.6,
+      "maximumScale": 1
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # bfjord-tools
 
-Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, and connected river/lake/delta/ocean geometry.
+Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, six original rock families, connected river/lake/delta/ocean geometry, and a bounded waterfall fixture.
 
 ![Coastal arch bridge in the Unity demonstration scene](docs/images/bridge-arch.png)
 
-This is an early public source release. The images on this page are actual Unity Editor captures from the standalone authoring fixtures. They do not establish runtime portability, production integration, or iPad performance.
+This is an early public source release. Scene images on this page are actual Unity Editor captures from the standalone authoring fixtures; the two rock LOD sheets are labeled Blender review renders. They do not establish runtime portability, production integration, or iPad performance.
 
 ## What is included
 
@@ -15,7 +15,10 @@ This is an early public source release. The images on this page are actual Unity
 | Bridges | Coastal arch, stone viaduct, steel through truss, and timber trestle geometry generated at explicit dimensions | `bwork_bridge_asset`, `bwork_bridge_collection` |
 | Bridge surfaces | Material profiles applied without rebuilding bridge meshes, colliders, placement, or LODs | `bwork_bridge_surface` |
 | Foliage | Seeded species batches with slope, spacing, road, water, and structure exclusions | `bwork_foliage` |
-| Water | One connected tributary/lake/delta/ocean mesh, Terrain carving, bank fade, and shader motion | `bwork_water_connected` |
+| Rocks | Six original rock families, shared PBR maps, three LODs, and an optional collider per family | `bwork_rocks` |
+| River scene | Connected water composed with deterministic bank boulders and shallow stream stones | `bwork_river_scene` |
+| Water | Lower-level connected tributary/lake/delta/ocean mesh, Terrain carving, bank fade, and shader motion | `bwork_water_connected` |
+| Waterfall | Finite falling sheet and plunge foam with an optional original-rock backdrop | `bwork_waterfall` |
 
 Outputs use ordinary Unity Terrain, meshes, materials, prefabs, and LODGroups. The normal lifecycle is `prepare → apply → status → remove`: prepare computes and validates without publishing; apply owns a bounded replacement; remove restores only still-owned edits. Bridge surface profiles use `reset` instead of `remove`.
 
@@ -23,7 +26,7 @@ The package retains `bwork_structures` as a utility fixture for curved structure
 
 ## Quick start
 
-The pinned development baseline is Unity **6000.6.0f1**, URP **17.6.0**, Unity Pipeline **0.7.0-exp.1**, and Python 3. The sample project declares its Unity dependencies. Blender **5.2.x** is needed only when regenerating bridge FBXs; prepared bridge assets are included.
+The pinned development baseline is Unity **6000.6.0f1**, URP **17.6.0**, Unity Pipeline **0.7.0-exp.1**, and Python 3. The sample project declares its Unity dependencies. Blender **5.2.x** is needed only when regenerating bridge or rock FBXs; prepared assets are included.
 
 From a clean clone:
 
@@ -72,7 +75,13 @@ The bridge surface command binds semantic material slots from a separate profile
 
 Generator source, recipes, and the [licensed asset snapshot](assets/CoastalBridgeTool) are included. Historical binary `.blend` files are omitted pending a separately audited regeneration; the Python generator and JSON recipes remain the editable source.
 
-## Foliage and connected water
+## Original rocks, foliage and connected water
+
+The original rock library contains granite boulder, rounded river stone, stratified outcrop, fractured cliff slab, scree cluster and upright crag families. Each distributed model has three LODs and a separate simplified collider. The editable Blender files stay outside the public snapshot; the MIT generator, CC0 renderer assets and exact public-output hashes are included.
+
+| Blender 5.2 clay LOD review | Blender 5.2 PBR LOD review |
+|---|---|
+| ![Blender review render of six original rock families at three LODs](docs/images/rock-lods-blender-clay.png) | ![Blender PBR review render of six original rock families at three LODs](docs/images/rock-lods-blender-pbr.png) |
 
 ![Forest and undergrowth authoring fixture](docs/images/foliage.png)
 
@@ -80,11 +89,21 @@ Generator source, recipes, and the [licensed asset snapshot](assets/CoastalBridg
 
 [View the connected river, lake, delta, and finite ocean layout](docs/images/water-network.png).
 
-Foliage placement is deterministic for a fixed recipe and source catalog. Connected water is authored geometry plus visual shader displacement. It does not simulate fluid volume, hydraulic erosion, buoyancy, or physical currents.
+Foliage and rock placement are deterministic for fixed recipes and source catalogs. `bwork_river_scene` is the composed water example: it prepares the rock library, applies connected water, then places independently owned bank and shallow-water rock batches. Each stage commits separately and retains its own recovery state. Connected water is authored geometry plus visual shader displacement. It does not simulate fluid volume, hydraulic erosion, buoyancy, or physical currents.
+
+The 0.3.0 source also includes original periodic river-current, ocean-crest and waterfall maps, their standard-library generator, and a bounded coastal waterfall recipe. The waterfall creates an animated sheet and plunge foam and can place an original cliff-and-stone backdrop from the rock library. The assembled 0.3.0 run verified shader compilation, fixed-camera motion, replacement/removal, foreign-child protection and unchanged terrain. The art remains an experimental sample: the waterfall backdrop is a finite rock composition, without spray particles or fluid coupling. See the [motion-map and waterfall notes](assets/BFjordTools/Water/MOTION.md).
+
+### Animated water and original river rocks
+
+![Original river rocks and animated current in Unity](docs/images/river-rocks.png)
+
+![Original rock-backed waterfall in Unity](docs/images/waterfall.png)
+
+Short fixed-camera Unity captures: [river](docs/clips/river-motion.mp4), [ocean](docs/clips/ocean-motion.mp4), [waterfall](docs/clips/waterfall-motion.mp4). Each clip contains 24 rendered frames over two seconds. The 12 fps playback is an offline capture setting, not a device-performance result.
 
 ## Evidence and limits
 
-The standalone fixture passed **51 of 51 Unity Editor tests** with no skipped tests. Its final combined reset/prepare/apply/reapply/selective-remove/restore validation passed in **55.73509 seconds**, including the corrected road junction's bounded pavement grade. The public wrapper also passed **8 Python CLI tests**. A clean copy under an unrelated parent then restored and exactly reused all 162 catalog files, imported the 512 m sample in Unity, and completed seven representative request replays with successful exit status. See the [validation ledger](docs/VALIDATION.md) for the measured results.
+The validation ledger currently records the 0.2.0 public baseline: **51 of 51 Unity Editor tests** with no skipped tests, a **55.73509-second** combined lifecycle validation, **8 Python CLI tests**, exact restoration/reuse of 162 catalog files, and seven representative request replays. For 0.3.0, **63/63 Editor tests passed**, followed by **5/5 affected waterfall tests** after its final visual changes. Rock lifecycle/dependency checks and a 32.651-second combined water lifecycle/capture run also passed. These timings describe authoring checks, not rendering frame rates. See the [validation ledger](docs/VALIDATION.md) for the measured results.
 
 The current scope is one finite 512 m authoring sandbox and isolated bridge sites. Terrain stitching, whole-world streaming, arbitrary bridge curvature/grade, infinite oceans, fluid simulation, runtime island integration, and mobile performance acceptance are outside this release. The bridges are visual game assets, not structural-engineering designs. The water shader supplies an opaque-depth fallback and the URP transparent-surface declaration used by the fixture; it still does not simulate fluid behavior. Unity Pipeline 0.7.0-exp.1 is an experimental pinned command transport whose availability and API may change. The [art-direction record](docs/ART_DIRECTION.md) describes the current visual limitations and next refinement work; the gallery does not claim NatureManufacture visual parity.
 
@@ -92,10 +111,10 @@ The current scope is one finite 512 m authoring sandbox and isolated bridge site
 
 | Files | License |
 |---|---|
-| Original Unity C# and shaders, public CLI, documentation, and export tooling | [MIT](LICENSE) |
+| Original Unity C# and shaders, public CLI, documentation, export tooling, and rock Blender generator | [MIT](LICENSE) |
 | Blender bridge generator and its supporting Python modules | [GPL-3.0-or-later](LICENSES/GPL-3.0-or-later.txt) |
-| Original bridge geometry/art, design recipes, and supplied scene screenshots | [CC0-1.0](LICENSES/CC0-1.0.txt) |
-| Included ambientCG and Poly Haven art and documented prepared derivatives | CC0-1.0 with retained source credits |
+| Original bridge and rock geometry/art, design recipes, generated rock map channels, and supplied review images | [CC0-1.0](LICENSES/CC0-1.0.txt) |
+| Included ambientCG and Poly Haven art and documented prepared derivatives | CC0-1.0 with retained source credits; ambientCG Rock030 is procedural, not scanned |
 | Unity Editor, URP, Newtonsoft JSON, and Unity Pipeline | Their own licenses; installed separately |
 
-The GPL generator license does not change the CC0 grant for its distributed artwork output. See [NOTICE.md](NOTICE.md) for exact scopes, [asset credits](docs/ASSET_LICENSE.md), [source provenance](docs/SOURCE_PROVENANCE.md), and [export provenance](docs/EXPORT_PROVENANCE.json). No NatureManufacture source, model, shader, or screenshot is included.
+The bridge generator's GPL license and the rock generator's MIT license do not change the CC0 grant for their distributed artwork output. See [NOTICE.md](NOTICE.md) for exact scopes, [asset credits](docs/ASSET_LICENSE.md), [source provenance](docs/SOURCE_PROVENANCE.md), and [export provenance](docs/EXPORT_PROVENANCE.json). No NatureManufacture source, model, shader, or screenshot is included.

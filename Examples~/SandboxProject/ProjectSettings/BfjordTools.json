@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "enabled": true,
   "bridgeSourceRoot": "../../assets/CoastalBridgeTool",
+  "rockSourceRoot": "../../assets/BFjordTools/Rocks",
   "captureRoot": "../../captures",
   "additionalAllowedScenes": [
     "Assets/Scenes/BridgeCollection.unity"

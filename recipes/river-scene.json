@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "command": "bwork_river_scene",
+  "arguments": {
+    "action": "apply"
+  },
+  "targetScene": "Assets/Scenes/WorldAuthoringTools.unity"
+}
