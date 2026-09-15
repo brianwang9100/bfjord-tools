@@ -1,0 +1,6 @@
+Original BFjord Tools road dressing assets — CC0 1.0 Universal
+
+To the extent possible under law, the authors have waived all copyright and related or neighboring rights to the original geometry, texture images and review renders in this directory under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The generators in Scripts/world_assets/road_detail are separately licensed MIT under the repository's MIT license. No third-party photograph, vendor mesh or promotional image is embedded in these assets.

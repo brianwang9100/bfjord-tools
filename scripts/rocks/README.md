@@ -28,3 +28,16 @@ Keep `.blend` private: it contains absolute source texture paths. Audit FBX meta
 before public distribution. Export art is CC0-1.0; do not change the independent
 MIT generator to GPL merely because it runs inside Blender. No third-party Blender
 generator source is incorporated.
+
+## Fidelity additions
+
+`build_fidelity.py` appends/replaces three original families while preserving the six legacy FBXs. Run it after `build_rocks.py` when rebuilding the entire nine-family library. CPU Cycles uses four threads and 1024px bakes by default:
+
+```sh
+blender --background --threads 4 --python scripts/rocks/build_fidelity.py
+blender --background --threads 4 --python scripts/rocks/verify_rocks.py
+blender --background --threads 4 --python scripts/rocks/verify_ledge_contact.py
+blender --background --threads 4 --python scripts/rocks/render_fidelity.py
+```
+
+Use `-- --only river_ledge` to regenerate one addition or `-- --resolution 512` for a draft. The default 1024 bake is the checked release art. `Sources/*.blend` retain editable high and low meshes with relative texture paths. `render_fidelity.py` reviews actual exported LODs, not the high meshes. Models/textures are CC0; generator and verification scripts are MIT.

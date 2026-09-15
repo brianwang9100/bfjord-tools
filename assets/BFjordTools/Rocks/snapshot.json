@@ -26,6 +26,46 @@
       "sha256": "e2bc177a12224e767a7b2b382a58fa59a0efa2f3cddc6cda7536f274fdf01d3b"
     },
     {
+      "bytes": 16380,
+      "path": "Models/coastal_outcrop_COL.fbx",
+      "sha256": "efbf70e7548b277b6b347c206d74f450b6383f14a2302ca235de7f597cfcc8c0"
+    },
+    {
+      "bytes": 503002,
+      "path": "Models/coastal_outcrop_LOD0.fbx",
+      "sha256": "d1adb148ddb47102b8bae55bb8ea9d56db93ff0559f15aafa1db77263b06643d"
+    },
+    {
+      "bytes": 205882,
+      "path": "Models/coastal_outcrop_LOD1.fbx",
+      "sha256": "477557767dff99516736f9cb3821395594fb81830f008c1556093bc07521599b"
+    },
+    {
+      "bytes": 83210,
+      "path": "Models/coastal_outcrop_LOD2.fbx",
+      "sha256": "fa14f1f2f0923d6ee0344634e65a524b025919681fb654aefe4d3f8479009066"
+    },
+    {
+      "bytes": 16390,
+      "path": "Models/fractured_boulder_cluster_COL.fbx",
+      "sha256": "ab3252f54cf6da3e255e7098666370f59212a6034258df6b260b4559e5c1e0c4"
+    },
+    {
+      "bytes": 488372,
+      "path": "Models/fractured_boulder_cluster_LOD0.fbx",
+      "sha256": "ce6c388f7530189b03d71b095806062774ac14d139f20cba63f992511897a49c"
+    },
+    {
+      "bytes": 195844,
+      "path": "Models/fractured_boulder_cluster_LOD1.fbx",
+      "sha256": "ed650f05cc8e67907a05618271dae71906121a2aec9a3345a894c011cee61e19"
+    },
+    {
+      "bytes": 80708,
+      "path": "Models/fractured_boulder_cluster_LOD2.fbx",
+      "sha256": "21331c74e56b07d046bd180c7a7fb7eb31a8685594add4bc1e30d362cf9e805c"
+    },
+    {
       "bytes": 16428,
       "path": "Models/granite_boulder_COL.fbx",
       "sha256": "e00e4452c6188c1c4f61b2a616119e14c0e8dd14855af1e8a72488248b15c5b8"
@@ -44,6 +84,26 @@
       "bytes": 39473,
       "path": "Models/granite_boulder_LOD2.fbx",
       "sha256": "235a04b6b1741291641041c0360899b5cc0b16fe10253aa15bf3da7c67d69c39"
+    },
+    {
+      "bytes": 16422,
+      "path": "Models/river_ledge_COL.fbx",
+      "sha256": "dda9b2660c2e28de6d633ec7184910b4a60b2a005452aaefc414e47a57082b28"
+    },
+    {
+      "bytes": 495396,
+      "path": "Models/river_ledge_LOD0.fbx",
+      "sha256": "a07440d5eac1dbc250fb34b3e86cc31c3a69a7a8097f508f9c686972fed38d51"
+    },
+    {
+      "bytes": 197204,
+      "path": "Models/river_ledge_LOD1.fbx",
+      "sha256": "73ef11ff0b8dcc50cf56609c65584a02988a12594241df8d86159a156ec60e0b"
+    },
+    {
+      "bytes": 79812,
+      "path": "Models/river_ledge_LOD2.fbx",
+      "sha256": "353f7bba79a845f338ef5aaec6a81de6fef2348a64848cb2c9444c87a664db70"
     },
     {
       "bytes": 16412,
@@ -126,9 +186,29 @@
       "sha256": "862d50f7b17dda46cae26698faf2c1581bd1fbd1a5875752fa7de71b4e155412"
     },
     {
-      "bytes": 2102,
+      "bytes": 2715,
       "path": "README.md",
-      "sha256": "2cc03fa0ef391662b159ab6e8df73c5da58da8de5739bfd342d052eac0c6126f"
+      "sha256": "60ea45b81c0b880b5650d2aa77e62cab5888f93297ae5cd3fc3b9edc6e9af452"
+    },
+    {
+      "bytes": 1773495,
+      "path": "Review/fidelity-lods-clay.png",
+      "sha256": "7d3de39703eefc8d1cf45f13d539c7f7d0717a64927a86fc7f86acb6c74c6f39"
+    },
+    {
+      "bytes": 1875511,
+      "path": "Review/fidelity-lods-pbr.png",
+      "sha256": "0e8520ea2fc822fa7cd3111a0fbc817060a81f9c2f413332dc7ccb1a777d51b0"
+    },
+    {
+      "bytes": 20202,
+      "path": "Review/river-ledge-contact.json",
+      "sha256": "fa0125d0addcf8a2b720ad1000fec97ded5b8fe7bc3200ef5f074a6f745edd48"
+    },
+    {
+      "bytes": 10044,
+      "path": "Review/verification.json",
+      "sha256": "d1254739925e4d12e19d7eccbd2d6bb83d120c5e571e54cb16653696affc9fcb"
     },
     {
       "bytes": 623368,
@@ -136,9 +216,9 @@
       "sha256": "d22dc3b97496cc60b2ac47e12638eeea7511064ea3291feca8f29cc83d4c877c"
     },
     {
-      "bytes": 21259,
+      "bytes": 21193,
       "path": "Textures/Rock_MetallicSmoothness.png",
-      "sha256": "c164f5e2e199ccbafb5a5a747935c3395f02bad0733673a15f7b74dd6503f257"
+      "sha256": "99d976bed3eb5074184f7d9882ce5b82e6eb5e84016be5fe33562c46c4c2aec8"
     },
     {
       "bytes": 937304,
@@ -146,19 +226,49 @@
       "sha256": "c4b58f36f6cc7d7823756c9ee93a544843f0c6bc6b41a6bc3f2cec6633ec1c77"
     },
     {
-      "bytes": 20954,
+      "bytes": 20888,
       "path": "Textures/Rock_Roughness.png",
-      "sha256": "df047237a5a969492fb2e053d7728396173b324d64242f880b877986d13df769"
+      "sha256": "a049dd6ee528ad25f9d67ceaa7fed02a9148a653ab29dabe60a354fbd4c762f1"
     },
     {
-      "bytes": 6805,
+      "bytes": 729822,
+      "path": "Textures/coastal_outcrop_BaseColor.png",
+      "sha256": "28844de0571253eb840864475dccc2365d07affd75683746ef79534cd4a7659e"
+    },
+    {
+      "bytes": 764424,
+      "path": "Textures/coastal_outcrop_NormalGL.png",
+      "sha256": "b0f84ec6df2b8d71f3845f95325bc4667db68d8f13e9730b5cc23a345fe0bdb0"
+    },
+    {
+      "bytes": 782183,
+      "path": "Textures/fractured_boulder_cluster_BaseColor.png",
+      "sha256": "c1067bc27b0091812898de92a9e27eb370a1f66f25838dfd74a0e772bc151ce9"
+    },
+    {
+      "bytes": 819324,
+      "path": "Textures/fractured_boulder_cluster_NormalGL.png",
+      "sha256": "f2ce514085690aeb471073641ff6276da473c2620d437f2cfab275e6de5526df"
+    },
+    {
+      "bytes": 765362,
+      "path": "Textures/river_ledge_BaseColor.png",
+      "sha256": "a0b902c7abe523ce9ab7044abb8c844795017420ede87c82af33733e01818ff0"
+    },
+    {
+      "bytes": 814654,
+      "path": "Textures/river_ledge_NormalGL.png",
+      "sha256": "974c7c61ebca84e2a1b47a2308f92769445276e073b307b6ab20d4d73203017d"
+    },
+    {
+      "bytes": 11130,
       "path": "manifest.json",
-      "sha256": "46b9a793a3bb13d626db261d106494b3fe94ec12a6e744cb9612afda10c1e951"
+      "sha256": "2dba1c97bcdc43871836b3638d62f8f11f88bebb1f5ea94c6150d2bec72489a3"
     },
     {
-      "bytes": 3221,
+      "bytes": 7409,
       "path": "provenance.json",
-      "sha256": "17dc49af48e2508800d938e14a36a90e3c8941ea75059a5c06e3e54d4503eada"
+      "sha256": "e15e9ad41bc98225641ecaef5fd6789a6ad8852148e33c0ad4dd94b74a85677f"
     }
   ],
   "schemaVersion": 1

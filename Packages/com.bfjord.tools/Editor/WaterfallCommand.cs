@@ -10,6 +10,7 @@ using Bwork.Authoring.Editor.Rocks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using Object=UnityEngine.Object;
 
 namespace Bwork.Authoring.Editor
@@ -29,7 +30,8 @@ namespace Bwork.Authoring.Editor
     public static class WaterfallCommand
     {
         const string GroupName="Waterfall Sample";
-        static readonly string[] BackdropIds={"granite_boulder","granite_boulder","upright_crag","granite_boulder","river_stone","upright_crag","granite_boulder","river_stone"};
+        static readonly string[] BackdropIds={"coastal_outcrop","river_ledge","upright_crag","fractured_boulder_cluster","river_stone","upright_crag","fractured_boulder_cluster","river_stone"};
+        static readonly string[] RoundedBackdropIds={"granite_boulder","granite_boulder","upright_crag","granite_boulder","river_stone","upright_crag","granite_boulder","river_stone"};
         static readonly string[] LegacyBackdropIds={"cliff_slab","stratified_outcrop","stratified_outcrop","granite_boulder","river_stone","stratified_outcrop","granite_boulder","river_stone"};
         static string ReceiptPath=>ToolSandbox.Generated+"/waterfall-edit.json";
         [Serializable] sealed class Receipt
@@ -132,11 +134,23 @@ namespace Bwork.Authoring.Editor
                 for(int x=0;x<stride;x++)
                 {
                     int i=y*stride+x;float u=x/(float)r.acrossSegments;
-                    float lateral=(u-.5f)*r.width*(1+.08f*v);
-                    positions[i]=centre+right*lateral;uv[i]=new Vector2(u,v);metres[i]=new Vector2(lateral,length);
+                    // Irregular banks and separate shallow channels give the sheet a physical silhouette.
+                    // Keep the feeder and exact toe anchored; motion still belongs entirely to the shader.
+                    float envelope=Mathf.Sin(fall*Mathf.PI);
+                    float bank=1+envelope*(.065f*Mathf.Sin(fall*11+.6f)+.035f*Mathf.Sin(fall*23));
+                    float lateral=(u-.5f)*r.width*(1+.08f*v)*bank;
+                    float channel=Mathf.Sin(u*15.7f+.4f)*Mathf.Sin((u-.5f)*Mathf.PI);
+                    positions[i]=centre+right*lateral+forward*(channel*envelope*.48f);
+                    positions[i].y+=ChannelRelief(u,fall);uv[i]=new Vector2(u,v);metres[i]=new Vector2(lateral,length);
                 }
             }
             return Expand(Grid("Original waterfall sheet",positions,uv,metres,r.acrossSegments,r.fallSegments),r.plungeWaveHeight);
+        }
+        static float ChannelRelief(float u,float fall)
+        {
+            // Fixed, sub-metre relief tapers at the lip and toe and leaves the centreline exact.
+            return Mathf.Sin(fall*Mathf.PI)*Mathf.Sin((u-.5f)*Mathf.PI)*
+                (.24f*Mathf.Sin(u*17+fall*5)+.12f*Mathf.Sin(u*31-fall*8));
         }
         public static Mesh BuildPlunge(WaterfallRecipe r)
         {
@@ -181,7 +195,7 @@ namespace Bwork.Authoring.Editor
         }
         static string Hash(string json,Shader shader,Texture2D[] maps)
         {
-            using var sha=SHA256.Create();var text=new StringBuilder(json).Append(File.ReadAllText(Physical(shader)));
+            using var sha=SHA256.Create();var text=new StringBuilder("waterfall-geometry-2:").Append(json).Append(File.ReadAllText(Physical(shader)));
             foreach(var map in maps)text.Append(Convert.ToBase64String(sha.ComputeHash(File.ReadAllBytes(Physical(map)))));
             return BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(text.ToString()))).Replace("-","").ToLowerInvariant();
         }
@@ -190,7 +204,15 @@ namespace Bwork.Authoring.Editor
             var m=new Material(shader){name=plunge?"Original plunge whitewater":"Original falling water"};
             m.SetTexture("_WaterfallMap",maps[0]);m.SetTexture("_FoamMap",maps[1]);m.SetFloat("_FallSpeed",r.fallSpeed);
             m.SetFloat("_PlungeWaveHeight",r.plungeWaveHeight);m.SetFloat("_PlungeWaveLength",r.plungeWaveLength);m.SetFloat("_PlungeWaveSpeed",r.plungeWaveSpeed);
-            m.SetFloat("_Opacity",r.opacity);m.SetFloat("_Plunge",plunge?1:0);return m;
+            m.SetFloat("_Opacity",r.opacity);m.SetFloat("_Plunge",plunge?1:0);
+            var forward=Forward(r);var right=Vector3.Cross(Vector3.up,forward);
+            m.SetVector("_WaterAxes",new Vector4(right.x,right.z,forward.x,forward.z));
+            m.SetVector("_PlungeDimensions",new Vector4(r.plungeWidth,r.plungeLength,0,0));
+            var pipeline=GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+            var cameras=ToolSandbox.Root.GetComponentsInChildren<Camera>(true);
+            bool depth=pipeline!=null&&pipeline.supportsCameraDepthTexture&&cameras.Length>0&&
+                cameras.All(c=>c.GetUniversalAdditionalCameraData().requiresDepthTexture);
+            m.SetFloat("_UseDepth",depth?1:0);return m;
         }
         static void AddSurface(GameObject parent,string name,Mesh mesh,Material material)
         {
@@ -212,22 +234,22 @@ namespace Bwork.Authoring.Editor
                 var instance=(GameObject)PrefabUtility.InstantiatePrefab(prefab,root.transform);
                 instance.transform.localPosition=centre;instance.transform.localRotation=rotation*Quaternion.Euler(0,yaw,0);
                 instance.transform.localScale=new Vector3(size.x/variant.Size.x,size.y/variant.Size.y,size.z/variant.Size.z);
-                var material=AssetDatabase.LoadAssetAtPath<Material>(RockLibrary.MaterialPath(source,profile));
+                var material=RockLibrary.MaterialForVariant(source,id,profile);
                 foreach(var renderer in instance.GetComponentsInChildren<MeshRenderer>(true))
                     renderer.sharedMaterials=Enumerable.Repeat(material,renderer.sharedMaterials.Length).ToArray();
                 foreach(var collider in instance.GetComponentsInChildren<Collider>(true))collider.enabled=false;
                 return instance;
             }
             var cliff=r.lip-forward*4.7f;cliff.y=baseHeight;
-            Place("granite_boulder",cliff,new Vector3(r.width*2.25f,drop+2.8f,10),-7,"granite");
+            Place("coastal_outcrop",cliff,new Vector3(r.width*2.25f,drop+2.8f,10),-7,"granite");
             var ledge=r.lip-forward*1.45f;ledge.y=r.lip.y-3.5f;
-            var cap=Place("granite_boulder",ledge,new Vector3(r.width*1.6f,3.45f,5.8f),0,"wet");
+            var cap=Place("river_ledge",ledge,new Vector3(r.width*1.85f,3.45f,6.8f),0,"wet");
             for(int side=-1;side<=1;side+=2)
             {
                 var shoulder=r.lip+right*(side*r.width*.92f)-forward*2;shoulder.y=baseHeight-.3f;
                 Place("upright_crag",shoulder,new Vector3(r.width*.9f,drop*(side<0?.74f:.62f)+3,7),side*19,"granite");
                 var foot=r.toe+right*(side*r.width*.64f)-forward*1.5f;foot.y=r.toe.y-1.7f;
-                Place("granite_boulder",foot,new Vector3(4.8f,3.2f,4.1f),side*21,"wet");
+                Place("fractured_boulder_cluster",foot,new Vector3(4.8f,3.2f,4.1f),side*21,"wet");
                 var pebble=r.toe+right*(side*r.width*.96f)+forward*2.6f;pebble.y=r.toe.y-.9f;
                 Place("river_stone",pebble,new Vector3(3.5f,1.55f,2.7f),side*34,"wet");
             }
@@ -270,7 +292,11 @@ namespace Bwork.Authoring.Editor
                 {
                     int i=row*stride+column;float v=uv[i].y;
                     if(v<=.15f)positions[i].y=Top(positions[i]);
-                    else positions[i].y=Mathf.Lerp(lip,recipe.toe.y,Mathf.Pow((v-.15f)/.85f,1.65f));
+                    else
+                    {
+                        float fall=(v-.15f)/.85f;
+                        positions[i].y=Mathf.Lerp(lip,recipe.toe.y,Mathf.Pow(fall,1.65f))+ChannelRelief(u,fall);
+                    }
                     if(row>0)distance+=Vector3.Distance(positions[i],positions[i-stride]);
                     metres[i].y=distance;
                 }
@@ -349,7 +375,7 @@ namespace Bwork.Authoring.Editor
             if(!r.assets.SequenceEqual(Paths(r.generation))||r.assets.Intersect(r.cleanupAssets).Any())throw new InvalidDataException("Waterfall receipt asset identity differs.");
             var recipe=Parse(r.recipeJson);
             if(r.backdropPrefabIds==null)r.backdropPrefabIds=recipe.rockBackdrop?(string[])LegacyBackdropIds.Clone():Array.Empty<string>();
-            if(recipe.rockBackdrop&&!(r.backdropPrefabIds.SequenceEqual(BackdropIds)||r.backdropPrefabIds.SequenceEqual(LegacyBackdropIds))||!recipe.rockBackdrop&&r.backdropPrefabIds.Length!=0)
+            if(recipe.rockBackdrop&&!(r.backdropPrefabIds.SequenceEqual(BackdropIds)||r.backdropPrefabIds.SequenceEqual(RoundedBackdropIds)||r.backdropPrefabIds.SequenceEqual(LegacyBackdropIds))||!recipe.rockBackdrop&&r.backdropPrefabIds.Length!=0)
                 throw new InvalidDataException("Unexpected recorded backdrop composition.");
             if(!Digest(r.hierarchyHash)||recipe.rockBackdrop&&!Digest(r.rockSourceHash)||!recipe.rockBackdrop&&!string.IsNullOrEmpty(r.rockSourceHash))
                 throw new InvalidDataException("Waterfall ownership seal is missing or invalid; preserve this generation for recovery.");

@@ -4,7 +4,7 @@
 
 ## Commands
 
-Open the authoring sandbox alone in Edit Mode and apply roads first to establish full-detail Terrain. The command accepts `action=prepare|apply|remove|status` and optional `recipePath` pointing to local JSON up to 1MiB. Omitting the recipe uses the current coastal bridge and ridge-crossing tunnel demonstration.
+Open the authoring sandbox alone in Edit Mode and apply roads first to establish full-detail Terrain. The command accepts `action=prepare|apply|remove|status` and optional `recipePath` pointing to local JSON up to 1MiB. `recipePath=masonry-example` builds only the current-terrain hill tunnel with the original masonry detail catalog installed. Omitting the recipe uses the current coastal bridge and ridge-crossing tunnel demonstration.
 
 `prepare` computes geometry, grades and Terrain changes without mutation. `apply` saves one owned `Structures` group, meshes, materials and `structure-edit.json`. Reapply replaces that group. `remove` restores only owned height/hole cells and deletes owned generated assets. It preserves sibling road/water/foliage groups, unrelated Terrain edits and pre-existing holes. Changed owned cells or Terrain identity/grid/transform reject the operation. Remove structures before removing roads; structures require the road tool's full-detail Terrain setting and do not take ownership of it.
 
@@ -23,6 +23,8 @@ JSON has a `structures` array with one to eight items. Each item requires `id`, 
 | `minimumCover` | .5m | Ground/arch overlap threshold for hole treatment |
 | `approachLength` | 40m | Ground tie distance; 12–100m supported |
 
+`portalStyle="masonry"` opts a tunnel into the original beveled masonry facade, darker metric-UV lining and low service curbs. It requires exactly `width=8` and `clearance=5.5`; other dimensions reject rather than stretch the asset. Install the `Assets/BFjord/TunnelDetail` catalog payload first. Three facade LODs share generation-owned meshes at both ends. Textures and meshes are copied into the owned generation, so later source removal does not block structure removal. New receipts also reject edited transforms, references, LOD membership and foreign children before replacement/removal.
+
 `hasWaterLevel=true` with `waterLevel` adds an explicit horizontal water reference for bridge fitting. Water meshes are not inferred. The recipe-level `concreteMaterialPath` defaults to the original `Assets/Generated/FjordReview/Tunnel Concrete.mat`; another existing material may be selected. A missing default uses plain original URP concrete, while an explicitly configured missing material rejects the operation.
 
 ## Geometry and Terrain behavior
@@ -31,9 +33,9 @@ Bridges have curved slabs, parapets, piers and end abutments. Tunnels have decks
 
 Centerline fitting targets **24% grade**, below the **25% maximum**. Approach grades also must remain at or below 25%; rejected approaches require relocation or a longer recipe length. Bridge underside clearance is checked at fitted stations and five lateral positions. That is a discrete check against ground/explicit water level, not continuous swept collision or water-triangle conformance.
 
-Approach Terrain uses the same triangle/cell conformance as roads, targeting 3cm clearance and validating stored heights after apply. It requires the 257² full-detail setting (`heightmapMinimumLODSimplification=4`, `heightmapMaximumLOD=0`, `ignoreQualitySettings=true`). Tunnel holes use Unity's `[y,x]`, true-surface/false-hole grid. Existing ground above the arch remains; portal/lining intersections are opened. The outer lining and receding portal returns enclose the cut-cell envelope. The portal, lining, bridge supports, and materials remain simple sample artwork rather than final NatureManufacture-level fidelity.
+Approach Terrain uses the same triangle/cell conformance as roads, targeting 3cm clearance and validating stored heights after apply. It requires the 257² full-detail setting (`heightmapMinimumLODSimplification=4`, `heightmapMaximumLOD=0`, `ignoreQualitySettings=true`). Tunnel holes use Unity's `[y,x]`, true-surface/false-hole grid. Existing ground above the arch remains; portal/lining intersections are opened. The outer lining and receding portal returns enclose the cut-cell envelope. Legacy portal and bridge samples retain their utility artwork. The optional masonry tunnel adds original Blender detail; final scene contact and material response still require a Unity review.
 
-Sparse receipts own changed heights and hole cells. Geometry is bounded to 150,000 vertices per structure and 8,192 changed hole cells per command. There is no runtime generation or structure LOD hierarchy. The saved tool checkpoint is the recovery boundary; scene/asset saving is not a crash-atomic transaction. These samples establish neither native route admission nor physical-device performance.
+Sparse receipts own changed heights and hole cells. Geometry is bounded to 150,000 vertices per structure and 8,192 changed hole cells per command. There is no runtime generation. Optional masonry facades use three LODs (11,556 / 4,708 / 1,284 triangles per portal); the continuous lining remains one authored mesh. The saved tool checkpoint is the recovery boundary; scene/asset saving is not a crash-atomic transaction. These samples establish neither native route admission nor physical-device performance.
 
 ## Confirmed evidence
 

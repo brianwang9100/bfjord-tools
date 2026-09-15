@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 02d4c2394932535699a7af987e83a2f6
+TextureImporter:
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 1
+    sRGBTexture: 0
+  textureType: 1
+  textureShape: 1
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: 2
+    aniso: 4
+    wrapU: 0
+    wrapV: 0
+  userData: Original CC0 metric tunnel texture

@@ -45,6 +45,18 @@
       "weight": 1,
       "minimumScale": 0.45,
       "maximumScale": 0.8
+    },
+    {
+      "id": "river_ledge",
+      "weight": 2,
+      "minimumScale": 0.5,
+      "maximumScale": 1
+    },
+    {
+      "id": "fractured_boulder_cluster",
+      "weight": 1,
+      "minimumScale": 0.4,
+      "maximumScale": 0.75
     }
   ],
   "waterMode": "bank",

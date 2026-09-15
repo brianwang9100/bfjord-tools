@@ -80,5 +80,107 @@
     "license": "CC0-1.0",
     "method": "Original deterministic irregular wedge/fracture and weathering geometry; no third-party mesh derivatives"
   },
-  "preparation": "Color and normal resized from 2048 to 1024 pixels and re-encoded JPEG quality 90 using macOS sips. Blender/Unity normalize tangent normals when shading."
+  "preparation": "Color and normal resized from 2048 to 1024 pixels and re-encoded JPEG quality 90 using macOS sips. Blender/Unity normalize tangent normals when shading.",
+  "fidelityAdditions": {
+    "author": "Brian Wang / BFjord Tools",
+    "license": "CC0-1.0",
+    "generatorLicense": "MIT",
+    "generator": "build_fidelity.py",
+    "blender": "5.2.1 LTS",
+    "method": "Original obliquely clipped superellipsoid masses with broad/mid/fine erosion and nonuniform inclined/vertical joints. High meshes baked to decimated unique-UV meshes in CPU Cycles. No third-party geometry.",
+    "maps": "Base color is a derivative of ambientCG Rock030 with original mineral variation and box mapping at a 2m repeat. Tangent OpenGL normals baked from original high mesh and original procedural grain bump. Existing original packed roughness is shared. No measured scan or displacement claims.",
+    "bake": {
+      "resolution": 1024,
+      "samples": 8,
+      "marginPixels": 12,
+      "cageExtrusionMeters": 0.2,
+      "maxRayDistanceMeters": 0.4
+    },
+    "files": [
+      {
+        "path": "Models/coastal_outcrop_COL.fbx",
+        "sha256": "efbf70e7548b277b6b347c206d74f450b6383f14a2302ca235de7f597cfcc8c0"
+      },
+      {
+        "path": "Models/coastal_outcrop_LOD0.fbx",
+        "sha256": "3b668b6ce76338b94cd3c9cbcc243a5f95aff5a1ec77283d1d0353b8f08bf00a"
+      },
+      {
+        "path": "Models/coastal_outcrop_LOD1.fbx",
+        "sha256": "322372f7b7eac728714e9cc5dacf4110a1287655599edb11333e43f0d347f60d"
+      },
+      {
+        "path": "Models/coastal_outcrop_LOD2.fbx",
+        "sha256": "f4e091ddb10773f865467d597a6be577f6565453ffd7a5792b11e8991da9181b"
+      },
+      {
+        "path": "Models/fractured_boulder_cluster_COL.fbx",
+        "sha256": "33825b032a68d6b92629305664a5e5c216128b319c13260b0dd695d003375bee"
+      },
+      {
+        "path": "Models/fractured_boulder_cluster_LOD0.fbx",
+        "sha256": "94e3010ae621a555ce6e82fd0bf78cc4a022bf38faad11fe2675d46763a02b63"
+      },
+      {
+        "path": "Models/fractured_boulder_cluster_LOD1.fbx",
+        "sha256": "399089ed3bb09c372708f83a46a449d9cbd11ddba8d6ea97a9da0bd1d55295fe"
+      },
+      {
+        "path": "Models/fractured_boulder_cluster_LOD2.fbx",
+        "sha256": "ef5c498d8c13d674f88bbc6524b459973534471f6398c218117a3d048aa366f2"
+      },
+      {
+        "path": "Models/river_ledge_COL.fbx",
+        "sha256": "c97180b14ef76920a34374ce0aae718e77d3f9d09aecc3db0b9c6875d4e8ea4c"
+      },
+      {
+        "path": "Models/river_ledge_LOD0.fbx",
+        "sha256": "9051e23c291a62ead0603b94cff445bfb99252e658dab6a227f3386d12c9af0b"
+      },
+      {
+        "path": "Models/river_ledge_LOD1.fbx",
+        "sha256": "8f7f6c92d0438c96ee71ec8f5ac22964a32da4f101cf60cb498bd3c076e364ef"
+      },
+      {
+        "path": "Models/river_ledge_LOD2.fbx",
+        "sha256": "850b2a15383b22cf1a6c1afc0c7e4c318f2495a1348ed25980bc08e519b08945"
+      },
+      {
+        "path": "Sources/coastal_outcrop.blend",
+        "sha256": "499f04a2aadece204c59a99f22358275dff61223b749e7b6adc71b7f694d0dda"
+      },
+      {
+        "path": "Sources/fractured_boulder_cluster.blend",
+        "sha256": "e3d9b385a3de7f46e39bb2a28d36e903db6fba9509332db4cd08ca64ec43dde7"
+      },
+      {
+        "path": "Sources/river_ledge.blend",
+        "sha256": "f7d2f7022ea4887613ecb93b18389c24fd1d022d56cb1f7b1e7b6521335a8e21"
+      },
+      {
+        "path": "Textures/coastal_outcrop_BaseColor.png",
+        "sha256": "4f6eb9b83f98cbe074e2afb9ea6c8d5a2ff842e3a5bfd8c65d5f309514b342a0"
+      },
+      {
+        "path": "Textures/coastal_outcrop_NormalGL.png",
+        "sha256": "4ea9c680f9b4d59d1406e831bd7e57ef1e91ccded3e14e078315451e3891a915"
+      },
+      {
+        "path": "Textures/fractured_boulder_cluster_BaseColor.png",
+        "sha256": "bb8ccba76c00bb2a4c8eb962f803c49362d44e1476e93e152e4c20e9d930eb8c"
+      },
+      {
+        "path": "Textures/fractured_boulder_cluster_NormalGL.png",
+        "sha256": "b81eaac4cced511010c37d4a2e7887f01fc1a4c0afb07139042338536694dc41"
+      },
+      {
+        "path": "Textures/river_ledge_BaseColor.png",
+        "sha256": "6057ded1d401acb05827efd7fe141ff03f76ca68daf28b19d6d21498dc4ba6b7"
+      },
+      {
+        "path": "Textures/river_ledge_NormalGL.png",
+        "sha256": "c9b708704be323bee6b91d7089eab311893a15e5a34f78e10a0802473cd55659"
+      }
+    ]
+  }
 }

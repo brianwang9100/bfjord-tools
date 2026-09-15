@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "bytes": 602420,
+      "path": "Assets/BFjord/TerrainDetail/Meadow_TerrainMask.png",
+      "sha256": "d2936e9b40ddbc374d4627bfa2086fa597b241299627497ea77e25626269f448",
+      "sourceSha256": "d2936e9b40ddbc374d4627bfa2086fa597b241299627497ea77e25626269f448"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Meadow_TerrainMask.png.meta",
+      "sha256": "04b9751a52153f3d757601968b62d77daa14041e47c7a5994e32783bc37f81a1",
+      "sourceSha256": "04b9751a52153f3d757601968b62d77daa14041e47c7a5994e32783bc37f81a1"
+    },
+    {
+      "bytes": 619255,
+      "path": "Assets/BFjord/TerrainDetail/Soil_TerrainMask.png",
+      "sha256": "2930a17b13475659e2369d74f0dfe0a95c19c36f9c40739d62b3b21dad075936",
+      "sourceSha256": "2930a17b13475659e2369d74f0dfe0a95c19c36f9c40739d62b3b21dad075936"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Soil_TerrainMask.png.meta",
+      "sha256": "1e068e933de8fee5c1e901bfce13b59a4b4534bb2bbd44d744fc3a0dc50e1e3c",
+      "sourceSha256": "1e068e933de8fee5c1e901bfce13b59a4b4534bb2bbd44d744fc3a0dc50e1e3c"
+    },
+    {
+      "bytes": 664883,
+      "path": "Assets/BFjord/TerrainDetail/Talus_TerrainMask.png",
+      "sha256": "66b9d2f40133c53287e1c55430564bfdf7d5b232583704ac96ecdf176ed3550d",
+      "sourceSha256": "66b9d2f40133c53287e1c55430564bfdf7d5b232583704ac96ecdf176ed3550d"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Talus_TerrainMask.png.meta",
+      "sha256": "5f0f44ec20b941d34d7d9679e867beb6246527543ec8c03dd821818126f328a0",
+      "sourceSha256": "5f0f44ec20b941d34d7d9679e867beb6246527543ec8c03dd821818126f328a0"
+    },
+    {
+      "bytes": 435115,
+      "path": "Assets/BFjord/TerrainDetail/Outcrop_TerrainMask.png",
+      "sha256": "0d28fa2db0585aec201a7347dafb36b82f91bbb3e42055e26a4713297c0db060",
+      "sourceSha256": "0d28fa2db0585aec201a7347dafb36b82f91bbb3e42055e26a4713297c0db060"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Outcrop_TerrainMask.png.meta",
+      "sha256": "32576eeb94e7b09f95b8bb26d0df09d2a1d41b5b7c856a42de041e6d1646ab22",
+      "sourceSha256": "32576eeb94e7b09f95b8bb26d0df09d2a1d41b5b7c856a42de041e6d1646ab22"
+    }
+  ],
+  "schemaVersion": 1
+}

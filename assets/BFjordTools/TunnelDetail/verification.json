@@ -1,0 +1,1 @@
+{"result": "TUNNEL_PAYLOAD_PASS", "lodTriangles": [11556, 4708, 1284], "checks": ["catalog bytes/hash", "metric bounds/contact", "finite channels", "normal/winding", "positive triangle/UV areas", "strictly reducing LODs"]}

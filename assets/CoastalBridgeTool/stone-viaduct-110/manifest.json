@@ -3,7 +3,7 @@
   "archSpan": 70,
   "boundsMax": {
     "x": 3.9000000953674316,
-    "y": 1.25,
+    "y": 1.309999942779541,
     "z": 55.0
   },
   "boundsMin": {
@@ -17,20 +17,20 @@
   "deckDatum": 0,
   "deckWidth": 7,
   "designType": "stoneViaduct",
-  "generatorVersion": "bridge-families-2",
+  "generatorVersion": "bridge-families-3",
   "id": "stone-viaduct-110",
   "lods": [
     {
       "fbxRelativePath": "bridge-lod0.fbx",
       "level": 0,
       "screenRelativeHeight": 0.35,
-      "triangles": 23032
+      "triangles": 43696
     },
     {
       "fbxRelativePath": "bridge-lod1.fbx",
       "level": 1,
       "screenRelativeHeight": 0.12,
-      "triangles": 4680
+      "triangles": 7872
     },
     {
       "fbxRelativePath": "bridge-lod2.fbx",
@@ -106,14 +106,17 @@
     },
     {
       "baseColor": [
-        0.055,
-        0.061,
-        0.063,
+        1,
+        1,
+        1,
         1
       ],
+      "baseColorPath": "textures/metal-basecolor.png",
       "key": "metal",
-      "metallic": 0.7,
-      "smoothness": 0.38,
+      "maskPath": "textures/metal-mask.png",
+      "metallic": 0.62,
+      "normalPath": "textures/metal-normal.png",
+      "smoothness": 0.31,
       "tilingMeters": 1
     },
     {
@@ -186,7 +189,7 @@
       "tilingMeters": 2
     }
   ],
-  "recipeHash": "aae9337190b50f8b1a1f34d497be3c9b13bb80ab59c491c53bd6d36d089ed3ee",
+  "recipeHash": "b958477ca9b3aa62ad6c1d4db3c8e392bb0a44be356d2c96376939e957f17490",
   "schemaVersion": 2,
   "sources": [
     {
@@ -207,6 +210,11 @@
     {
       "license": "CC0-1.0",
       "name": "Original Bwork coursed stone and sawn timber material maps",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork weathered coated-steel material",
       "url": "https://github.com/brianwang9100/bfjord-tools"
     }
   ],

@@ -5,7 +5,7 @@ import json
 import math
 import re
 
-VERSION = 'bridge-families-2'
+VERSION = 'bridge-families-3'
 DESIGN_TYPES = ('coastalArch', 'stoneViaduct', 'steelThroughTruss', 'timberTrestle')
 DIMENSIONS = ('totalLength', 'archSpan', 'archRise', 'deckWidth', 'deckThickness',
               'archRibWidth', 'archRibDepth', 'spandrelSpacing', 'parapetHeight', 'abutmentLength')

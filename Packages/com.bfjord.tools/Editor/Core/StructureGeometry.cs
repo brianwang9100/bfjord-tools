@@ -9,7 +9,7 @@ namespace Bwork.Authoring.Editor
 {
     public sealed class StructureSpec
     {
-        public string Id,Kind,Style="concrete",SourceId;
+        public string Id,Kind,Style="concrete",SourceId,PortalStyle="none";
         public V3[] Controls;
         public float Width=8,Clearance=5,Thickness=.5f,ParapetHeight=1.1f,SupportSpacing=20,PortalDepth=2,MinimumCover=.5f,ApproachLength=40;
         public float HoleCellMargin;
@@ -53,6 +53,7 @@ namespace Bwork.Authoring.Editor
         {
             Need(spec!=null&&(spec.Kind=="bridge"||spec.Kind=="tunnel")&&!string.IsNullOrEmpty(spec.Id)&&!string.IsNullOrEmpty(spec.SourceId),"Explicit bridge/tunnel identity and source required.");
             Need((spec.Style=="concrete"||spec.Style=="stone")&&spec.Width>=3&&spec.Width<=12&&spec.Clearance>=2&&spec.Clearance<=15&&spec.Thickness>=.25f&&spec.Thickness<=2&&spec.ParapetHeight>=.6f&&spec.ParapetHeight<=2&&spec.SupportSpacing>=8&&spec.SupportSpacing<=50&&spec.PortalDepth>=1&&spec.PortalDepth<=6&&spec.MinimumCover>=0&&spec.MinimumCover<=10&&spec.ApproachLength>=12&&spec.ApproachLength<=100&&spec.HoleCellMargin>=0&&spec.HoleCellMargin<=4,"Bounded structure dimensions/style required.");
+            Need(spec.PortalStyle=="none"||spec.PortalStyle=="masonry"&&spec.Kind=="tunnel"&&Math.Abs(spec.Width-8)<.001f&&Math.Abs(spec.Clearance-5.5f)<.001f,"Masonry portals require an 8m bore and 5.5m clearance; assets are never stretched.");
             var road=new SandboxRoad{Id=spec.Id,SourceId=spec.SourceId,StartNode=spec.Id+"-start",EndNode=spec.Id+"-end",Width=spec.Width,Controls=spec.Controls,UseControlHeights=true};
             var sampled=SandboxRoadAuthoring.Build(new SandboxRoadRecipe{MinX=minX,MinZ=minZ,Size=size,Roads=new[]{road}},ground).Paths[0];
             var points=sampled.Points;
@@ -90,7 +91,7 @@ namespace Bwork.Authoring.Editor
             else
             {
                 float seamThickness=spec.Thickness+2*spec.HoleCellMargin+.5f;
-                parts.Add(Sweep(spec.Id+" arched lining",spec.Style,points,ArchRing(spec.Width/2,spec.Clearance,seamThickness)));
+                parts.Add(Sweep(spec.Id+" arched lining",spec.PortalStyle=="masonry"?"tunnel-lining":spec.Style,points,ArchRing(spec.Width/2,spec.Clearance,seamThickness)));
                 foreach(bool entrance in new[]{true,false})
                 {
                     float reach=spec.Width/2+seamThickness+.5f;
@@ -107,9 +108,11 @@ namespace Bwork.Authoring.Editor
                     var front=ArchRing(spec.Width/2,spec.Clearance,rim);var back=ArchRing(spec.Width/2,spec.Clearance,seamThickness+1);
                     var portal=entrance?new[]{outside,lipEnd,endpoint,inside}:new[]{inside,endpoint,lipEnd,outside};
                     var sections=entrance?new[]{front,front,back,back}:new[]{back,back,front,front};
-                    parts.Add(SweepSections(spec.Id+(entrance?" entry portal return":" exit portal return"),spec.Style,portal,sections));
+                    parts.Add(SweepSections(spec.Id+(entrance?" entry portal return":" exit portal return"),spec.PortalStyle=="masonry"?"tunnel-stone":spec.Style,portal,sections));
                 }
             }
+            if(spec.Kind=="tunnel"&&spec.PortalStyle=="masonry")
+                foreach(int side in new[]{-1,1})parts.Add(Sweep(spec.Id+" raised service curb "+side,"tunnel-lining",points,Rect(side<0?-spec.Width/2:spec.Width/2-.28f,side<0?-spec.Width/2+.28f:spec.Width/2,0,.18f)));
             foreach(bool entrance in new[]{true,false})AddApproach(output,parts,entrance,ground,minX,minZ,size);
             Need(parts.Sum(p=>p.Vertices.Length)<=150000,"Structure vertex budget exceeded.");output.Parts=parts.ToArray();return output;
         }
@@ -149,9 +152,9 @@ namespace Bwork.Authoring.Editor
         static V2[] ArchRing(float radius,float clearance,float thickness)
         {
             float spring=Math.Max(.8f,clearance-radius),rise=clearance-spring;var p=new List<V2>{new V2(-radius,0),new V2(-radius,spring)};
-            for(int i=1;i<=16;i++){double a=Math.PI-i*Math.PI/16;p.Add(new V2((float)Math.Cos(a)*radius,spring+(float)Math.Sin(a)*rise));}
+            for(int i=1;i<=32;i++){double a=Math.PI-i*Math.PI/32;p.Add(new V2((float)Math.Cos(a)*radius,spring+(float)Math.Sin(a)*rise));}
             p.Add(new V2(radius,0));p.Add(new V2(radius+thickness,0));p.Add(new V2(radius+thickness,spring));
-            for(int i=1;i<=16;i++){double a=i*Math.PI/16;p.Add(new V2((float)Math.Cos(a)*(radius+thickness),spring+(float)Math.Sin(a)*(rise+thickness)));}
+            for(int i=1;i<=32;i++){double a=i*Math.PI/32;p.Add(new V2((float)Math.Cos(a)*(radius+thickness),spring+(float)Math.Sin(a)*(rise+thickness)));}
             p.Add(new V2(-radius-thickness,0));return p.ToArray();
         }
         static StructurePart Sweep(string name,string material,V3[] path,V2[] section)
@@ -160,15 +163,22 @@ namespace Bwork.Authoring.Editor
         {
             var mesh=new Builder(name,material);int n=sections[0].Length;
             Need(sections.Length==path.Length&&sections.All(s=>s.Length==n),"Corresponding bounded swept cross sections required.");
-            for(int i=1;i<path.Length;i++)for(int j=0;j<n;j++)
+            float station=0;
+            for(int i=1;i<path.Length;i++)
+            {
+                float next=station+Flat(path[i-1],path[i]),cross=0;
+                for(int j=0;j<n;j++)
             {
                 var r0=Right(path,i-1);var r1=Right(path,i);var a=Position(path[i-1],r0,sections[i-1][j]);var b=Position(path[i],r1,sections[i][j]);
                 var c=Position(path[i],r1,sections[i][(j+1)%n]);var d=Position(path[i-1],r0,sections[i-1][(j+1)%n]);
-                mesh.Quad(a,d,c,b);
+                float edge=(float)Math.Sqrt(Math.Pow(sections[i-1][(j+1)%n].X-sections[i-1][j].X,2)+Math.Pow(sections[i-1][(j+1)%n].Y-sections[i-1][j].Y,2));
+                mesh.QuadUV(a,d,c,b,new V2(station*.5f,cross*.5f),new V2(station*.5f,(cross+edge)*.5f),new V2(next*.5f,(cross+edge)*.5f),new V2(next*.5f,cross*.5f));cross+=edge;
+                }
+                station=next;
             }
             // Caps use ear clipping of the actual simple ring; no fan fills a tunnel opening.
             foreach(int end in new[]{0,path.Length-1})foreach(var face in Triangulate(sections[end]))
-            {var a=Position(path[end],Right(path,end),sections[end][face[0]]);var b=Position(path[end],Right(path,end),sections[end][face[1]]);var c=Position(path[end],Right(path,end),sections[end][face[2]]);if(end==0)mesh.Triangle(c,b,a);else mesh.Triangle(a,b,c);}
+            {var a=Position(path[end],Right(path,end),sections[end][face[0]]);var b=Position(path[end],Right(path,end),sections[end][face[1]]);var c=Position(path[end],Right(path,end),sections[end][face[2]]);var ua=new V2(sections[end][face[0]].X*.5f,sections[end][face[0]].Y*.5f);var ub=new V2(sections[end][face[1]].X*.5f,sections[end][face[1]].Y*.5f);var uc=new V2(sections[end][face[2]].X*.5f,sections[end][face[2]].Y*.5f);if(end==0)mesh.TriangleUV(c,b,a,uc,ub,ua);else mesh.TriangleUV(a,b,c,ua,ub,uc);}
             return mesh.Finish();
         }
         static List<int[]> Triangulate(V2[] section)
@@ -203,6 +213,10 @@ namespace Bwork.Authoring.Editor
             readonly string name,material;readonly List<V3> vertices=new List<V3>();readonly List<V2> uv=new List<V2>();readonly List<int> triangles=new List<int>();
             public Builder(string name,string material){this.name=name;this.material=material;}
             public void Quad(V3 a,V3 b,V3 c,V3 d){Triangle(a,b,c);Triangle(a,c,d);}
+            public void QuadUV(V3 a,V3 b,V3 c,V3 d,V2 ua,V2 ub,V2 uc,V2 ud)
+            {int start=uv.Count;Quad(a,b,c,d);var mapped=new[]{ua,ub,uc,ua,uc,ud};for(int i=0;i<6;i++)uv[start+i]=mapped[i];}
+            public void TriangleUV(V3 a,V3 b,V3 c,V2 ua,V2 ub,V2 uc)
+            {int start=uv.Count;Triangle(a,b,c);uv[start]=ua;uv[start+1]=ub;uv[start+2]=uc;}
             public void Triangle(V3 a,V3 b,V3 c)
             {
                 double x=(b.Y-a.Y)*(c.Z-a.Z)-(b.Z-a.Z)*(c.Y-a.Y),y=(b.Z-a.Z)*(c.X-a.X)-(b.X-a.X)*(c.Z-a.Z),z=(b.X-a.X)*(c.Y-a.Y)-(b.Y-a.Y)*(c.X-a.X);

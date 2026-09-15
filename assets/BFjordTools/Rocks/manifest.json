@@ -11,6 +11,27 @@
       "normalPath": "Textures/Rock_NormalGL.jpg",
       "roughnessPath": "Textures/Rock_Roughness.png",
       "metallicSmoothnessPath": "Textures/Rock_MetallicSmoothness.png"
+    },
+    {
+      "id": "coastal_outcrop",
+      "baseColorPath": "Textures/coastal_outcrop_BaseColor.png",
+      "normalPath": "Textures/coastal_outcrop_NormalGL.png",
+      "metallicSmoothnessPath": "Textures/Rock_MetallicSmoothness.png",
+      "roughnessPath": "Textures/Rock_Roughness.png"
+    },
+    {
+      "id": "river_ledge",
+      "baseColorPath": "Textures/river_ledge_BaseColor.png",
+      "normalPath": "Textures/river_ledge_NormalGL.png",
+      "metallicSmoothnessPath": "Textures/Rock_MetallicSmoothness.png",
+      "roughnessPath": "Textures/Rock_Roughness.png"
+    },
+    {
+      "id": "fractured_boulder_cluster",
+      "baseColorPath": "Textures/fractured_boulder_cluster_BaseColor.png",
+      "normalPath": "Textures/fractured_boulder_cluster_NormalGL.png",
+      "metallicSmoothnessPath": "Textures/Rock_MetallicSmoothness.png",
+      "roughnessPath": "Textures/Rock_Roughness.png"
     }
   ],
   "variants": [
@@ -307,6 +328,156 @@
       "colliderTriangles": 160,
       "materialId": "rock",
       "uvMetersPerRepeat": 2
+    },
+    {
+      "id": "coastal_outcrop",
+      "displayName": "Eroded coastal outcrop",
+      "designType": "coastal_outcrop",
+      "seed": 1401,
+      "dimensionsMeters": [
+        8,
+        4,
+        5
+      ],
+      "boundsSize": [
+        8,
+        4,
+        5
+      ],
+      "bounds": {
+        "min": [
+          -4.0,
+          0,
+          -2.5
+        ],
+        "max": [
+          4.0,
+          4,
+          2.5
+        ]
+      },
+      "lods": [
+        {
+          "path": "Models/coastal_outcrop_LOD0.fbx",
+          "triangles": 6200,
+          "screenRelativeHeight": 0.5
+        },
+        {
+          "path": "Models/coastal_outcrop_LOD1.fbx",
+          "triangles": 2100,
+          "screenRelativeHeight": 0.2
+        },
+        {
+          "path": "Models/coastal_outcrop_LOD2.fbx",
+          "triangles": 650,
+          "screenRelativeHeight": 0.06
+        }
+      ],
+      "colliderPath": "Models/coastal_outcrop_COL.fbx",
+      "colliderTriangles": 160,
+      "materialId": "coastal_outcrop",
+      "uvLayout": "unique1024 baked atlas; 12pixel gutters",
+      "highSourceTriangles": 102400
+    },
+    {
+      "id": "river_ledge",
+      "displayName": "Weathered river ledge",
+      "designType": "river_ledge",
+      "seed": 1423,
+      "dimensionsMeters": [
+        6,
+        1.8,
+        4
+      ],
+      "boundsSize": [
+        6,
+        1.8,
+        4
+      ],
+      "bounds": {
+        "min": [
+          -3.0,
+          0,
+          -2.0
+        ],
+        "max": [
+          3.0,
+          1.8,
+          2.0
+        ]
+      },
+      "lods": [
+        {
+          "path": "Models/river_ledge_LOD0.fbx",
+          "triangles": 6200,
+          "screenRelativeHeight": 0.5
+        },
+        {
+          "path": "Models/river_ledge_LOD1.fbx",
+          "triangles": 2100,
+          "screenRelativeHeight": 0.2
+        },
+        {
+          "path": "Models/river_ledge_LOD2.fbx",
+          "triangles": 650,
+          "screenRelativeHeight": 0.06
+        }
+      ],
+      "colliderPath": "Models/river_ledge_COL.fbx",
+      "colliderTriangles": 160,
+      "materialId": "river_ledge",
+      "uvLayout": "unique1024 baked atlas; 12pixel gutters",
+      "highSourceTriangles": 61440
+    },
+    {
+      "id": "fractured_boulder_cluster",
+      "displayName": "Fractured boulder cluster",
+      "designType": "fractured_boulder_cluster",
+      "seed": 1451,
+      "dimensionsMeters": [
+        4.8,
+        3.2,
+        4
+      ],
+      "boundsSize": [
+        4.8,
+        3.2,
+        4
+      ],
+      "bounds": {
+        "min": [
+          -2.4,
+          0,
+          -2.0
+        ],
+        "max": [
+          2.4,
+          3.2,
+          2.0
+        ]
+      },
+      "lods": [
+        {
+          "path": "Models/fractured_boulder_cluster_LOD0.fbx",
+          "triangles": 6200,
+          "screenRelativeHeight": 0.5
+        },
+        {
+          "path": "Models/fractured_boulder_cluster_LOD1.fbx",
+          "triangles": 2100,
+          "screenRelativeHeight": 0.2
+        },
+        {
+          "path": "Models/fractured_boulder_cluster_LOD2.fbx",
+          "triangles": 650,
+          "screenRelativeHeight": 0.06
+        }
+      ],
+      "colliderPath": "Models/fractured_boulder_cluster_COL.fbx",
+      "colliderTriangles": 160,
+      "materialId": "fractured_boulder_cluster",
+      "uvLayout": "unique1024 baked atlas; 12pixel gutters",
+      "highSourceTriangles": 102400
     }
   ]
 }

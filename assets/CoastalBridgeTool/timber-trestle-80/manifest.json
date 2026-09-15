@@ -17,7 +17,7 @@
   "deckDatum": 0,
   "deckWidth": 7,
   "designType": "timberTrestle",
-  "generatorVersion": "bridge-families-2",
+  "generatorVersion": "bridge-families-3",
   "id": "timber-trestle-80",
   "lods": [
     {
@@ -106,14 +106,17 @@
     },
     {
       "baseColor": [
-        0.055,
-        0.061,
-        0.063,
+        1,
+        1,
+        1,
         1
       ],
+      "baseColorPath": "textures/metal-basecolor.png",
       "key": "metal",
-      "metallic": 0.7,
-      "smoothness": 0.38,
+      "maskPath": "textures/metal-mask.png",
+      "metallic": 0.62,
+      "normalPath": "textures/metal-normal.png",
+      "smoothness": 0.31,
       "tilingMeters": 1
     },
     {
@@ -186,7 +189,7 @@
       "tilingMeters": 2
     }
   ],
-  "recipeHash": "5b676c0d4bcdc71a2c8711df2d0499cf069535628bed5aa8aedca65aa692f4e6",
+  "recipeHash": "304c499910d86623d967e2a19f986ed1aebb68a50e26362d30826fce9134160f",
   "schemaVersion": 2,
   "sources": [
     {
@@ -207,6 +210,11 @@
     {
       "license": "CC0-1.0",
       "name": "Original Bwork coursed stone and sawn timber material maps",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork weathered coated-steel material",
       "url": "https://github.com/brianwang9100/bfjord-tools"
     }
   ],

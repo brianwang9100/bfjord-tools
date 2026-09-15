@@ -13,7 +13,10 @@ namespace Bwork.Authoring.Editor
     /// <summary>Builds ordinary shared LOD prefabs from the retained CC0 model library.</summary>
     public static class FoliagePresentation
     {
-        const string Revision = "foliage-presentation-1";
+        const string Revision = "foliage-presentation-2";
+        const string LegacyRevision = "foliage-presentation-1";
+        const string OriginalRoot = "Assets/BFjord/OriginalFoliage";
+        static readonly string[] OriginalNames = { "RoseThicket_A", "MeadowDaisy_A", "WoodSorrel_A", "CoastalGrass_A" };
         static string Root => ToolSandbox.Generated + "/FoliageLibrary";
         static string ReceiptPath => Root + "/catalog.json";
         [Serializable] public sealed class Catalog { public string revision, fingerprint, directory; public Entry[] entries; }
@@ -26,7 +29,7 @@ namespace Bwork.Authoring.Editor
         public static string[] Names => new[] { "MatureFir_A", "pine_sapling_small_b" }
             .Concat(new[] { "a", "b", "c", "d" }.Select(s => "fern_02_" + s))
             .Concat(new[] { "a", "b", "c", "d" }.Select(s => "shrub_03_" + s))
-            .Concat(Enumerable.Range(1, 6).Select(n => "rock_moss_set_01_rock" + n.ToString("00"))).ToArray();
+            .Concat(Enumerable.Range(1, 6).Select(n => "rock_moss_set_01_rock" + n.ToString("00"))).Concat(OriginalNames).ToArray();
 
         public static object Status()
         {
@@ -91,15 +94,17 @@ namespace Bwork.Authoring.Editor
         {
             if (!File.Exists(ReceiptPath)) return null;
             var catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(ReceiptPath));
-            if (catalog == null || catalog.revision != Revision || catalog.entries == null || catalog.entries.Length != Names.Length ||
+            if (catalog == null || (catalog.revision != Revision && catalog.revision != LegacyRevision) || catalog.entries == null ||
+                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : Names.Length - OriginalNames.Length) ||
+                catalog.entries.Select(e => e?.id).Distinct(StringComparer.Ordinal).Count() != catalog.entries.Length ||
                 string.IsNullOrEmpty(catalog.directory) || !catalog.directory.StartsWith(Root + "/", StringComparison.Ordinal) ||
-                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || string.IsNullOrEmpty(e.prefabPath) ||
+                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
                     !e.prefabPath.StartsWith(catalog.directory + "/", StringComparison.Ordinal) || e.prefabPath.Contains("..")))
                 throw new InvalidDataException("Foliage catalog receipt is invalid; preserve the library for recovery.");
             return catalog;
         }
 
-        static string Source(string id) => (id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
+        static string Source(string id) => (OriginalNames.Contains(id) ? OriginalRoot : id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
 
         static Entry BuildPrefab(string id, string directory, Shader shader)
         {
@@ -119,11 +124,11 @@ namespace Bwork.Authoring.Editor
                 if (!hasBounds) { bounds = partBounds; hasBounds = true; }
                 else bounds.Encapsulate(partBounds);
             }
-            float amplitude = rigid ? 0 : id == "MatureFir_A" ? .22f : id.StartsWith("pine_", StringComparison.Ordinal) ? .055f : .035f;
+            float amplitude = rigid ? 0 : id == "WoodSorrel_A" ? .009f : id == "CoastalGrass_A" ? .045f : id == "MatureFir_A" ? .22f : id.StartsWith("pine_", StringComparison.Ordinal) ? .055f : .035f;
             // Maximum horizontal shader displacement is amplitude*sqrt(1+.18^2). Scale may be as low as .5.
             float padding = amplitude * 2.04f;
             var materials = new Dictionary<string, Material>(StringComparer.Ordinal);
-            var materialBindings = MaterialBindings(id);
+            var materialBindings = OriginalNames.Contains(id) ? null : MaterialBindings(id);
             var renderers = new List<Renderer>[] { new List<Renderer>(), new List<Renderer>(), new List<Renderer>() };
             var triangles = new int[3];
             try
@@ -147,7 +152,9 @@ namespace Bwork.Authoring.Editor
                     child.AddComponent<MeshFilter>().sharedMesh = mesh;
                     var renderer = child.AddComponent<MeshRenderer>();
                     if (filter.GetComponent<MeshRenderer>() == null) throw new InvalidDataException("Mesh renderer is missing: " + filter.name);
-                    if (!materialBindings.TryGetValue(RendererKey(filter.name), out var sourceMaterials))
+                    Material[] sourceMaterials;
+                    if (OriginalNames.Contains(id)) sourceMaterials = new Material[] { null };
+                    else if (!materialBindings.TryGetValue(RendererKey(filter.name), out sourceMaterials))
                         throw new InvalidDataException("The reviewed prefab has no material binding for " + id + "/" + filter.name);
                     if (sourceMaterials.Length != mesh.subMeshCount)
                         throw new InvalidDataException("Prepared material slots do not match the model submeshes: " + id + "/" + filter.name);
@@ -242,10 +249,27 @@ namespace Bwork.Authoring.Editor
 
         static Material MaterialFor(Material source, string id, bool rigid, Bounds bounds, float amplitude, string directory, Shader shader, Dictionary<string, Material> cache)
         {
-            if (source == null) throw new InvalidDataException("The reviewed prefab has an unbound material: " + id);
-            string name = source.name.Replace(" (Instance)", "");
+            bool original = OriginalNames.Contains(id);
+            if (source == null && !original) throw new InvalidDataException("The reviewed prefab has an unbound material: " + id);
+            string name = original ? "OriginalFoliage" : source.name.Replace(" (Instance)", "");
             if (cache.TryGetValue(name, out var value)) return value;
-            value = new Material(source) { name = id + "-" + name, enableInstancing = true };
+            value = original ? new Material(shader) : new Material(source);
+            value.name = id + "-" + name; value.enableInstancing = true;
+            if (original)
+            {
+                var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/FoliageAtlas.png");
+                if (atlas == null) throw new FileNotFoundException("Restore the original foliage atlas before building foliage.");
+                var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/FoliageNormal.png");
+                if (normal == null) throw new FileNotFoundException("Restore the original foliage normal map before building foliage.");
+                value.SetTexture("_BaseMap", atlas);
+                value.SetTexture("_BumpMap", normal);
+                value.SetFloat("_BumpScale", .55f);
+                value.SetColor("_BaseColor", Color.white);
+                value.SetFloat("_Smoothness", .21f);
+                value.SetFloat("_Metallic", 0);
+                // The atlas is opaque; retaining the cutout path also enables the shared thin-leaf transmission.
+                value.SetFloat("_AlphaClip", 1);
+            }
             if (!rigid)
             {
                 value.shader = shader;
@@ -266,6 +290,12 @@ namespace Bwork.Authoring.Editor
 
         static IEnumerable<string> MaterialDependencyPaths(string id)
         {
+            if (OriginalNames.Contains(id))
+            {
+                yield return OriginalRoot + "/Textures/FoliageAtlas.png";
+                yield return OriginalRoot + "/Textures/FoliageNormal.png";
+                yield break;
+            }
             string prefabPath = MaterialTemplate(id);
             yield return prefabPath;
             foreach (var material in MaterialBindings(id).Values.SelectMany(value => value).Distinct())

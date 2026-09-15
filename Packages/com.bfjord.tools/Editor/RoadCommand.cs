@@ -17,14 +17,17 @@ namespace Bwork.Authoring.Editor
         const string Group = "Roads", ReceiptFile = "road-edit.json";
         [CliCommand("bwork_roads", "Prepare, apply, remove or inspect bounded sandbox roads with owned terrain rollback.", MainThreadRequired = true)]
         public static object Run(
-            [CliArg("action", "prepare, apply, remove, status")] string action = "status",
+            [CliArg("action", "prepare, apply, remove, status, view-dressing")] string action = "status",
             [CliArg("recipePath", "Optional JSON recipe path; omitted uses the original hill junction example")] string recipePath = "",
-            [CliArg("fourArms", "Use four arms in the built-in example")] bool fourArms = false)
+            [CliArg("fourArms", "Use four arms in the built-in example")] bool fourArms = false,
+            [CliArg("dressing", "Add original stone verge fragments and posts; explicit opt-in on each apply")] bool dressing = false)
         {
             var terrain=ToolSandbox.RequireTerrain();var prior=ReadReceipt();var old=ToolSandbox.Root.Find(Group);
-            if(action=="status")return new{applied=prior!=null,objects=old==null?0:old.childCount,roads=prior?.roadCount??0,changedHeightCells=prior?.change.Count??0,gradePercent=prior?.gradePercent??0};
+            if(action=="view-dressing")return RoadDetailPresentation.View(terrain);
+            if(action=="status")return new{applied=prior!=null,objects=old==null?0:old.childCount,roads=prior?.roadCount??0,changedHeightCells=prior?.change.Count??0,gradePercent=prior?.gradePercent??0,dressing=prior?.dressing??false,dressingInstances=prior?.dressingInstances??0};
             if(prior!=null&&prior.ownsTerrainLOD&&(terrain.heightmapMinimumLODSimplification!=prior.fittedMinimumLOD||terrain.heightmapMaximumLOD!=0||!terrain.ignoreQualitySettings))
                 throw new InvalidOperationException("Road-owned Terrain LOD settings changed; restore the road checkpoint before replacement or removal.");
+            if(prior!=null&&old!=null&&(action=="apply"||action=="remove"))RoadHierarchyOwnership.Validate(old,prior.hierarchyHash,prior.meshAssets);
             if(action=="remove")return Remove(terrain,prior,old);
             if(action!="prepare"&&action!="apply")throw new ArgumentException("Unknown road action.");
             if((prior==null)!=(old==null))throw new InvalidOperationException("Road root/receipt disagree; restore their saved checkpoint before replacement.");
@@ -50,7 +53,17 @@ namespace Bwork.Authoring.Editor
             int previousMinimum=terrain.heightmapMinimumLODSimplification,previousMaximum=terrain.heightmapMaximumLOD;
             bool previousIgnoreQuality=terrain.ignoreQualitySettings;
             var owned=TerrainPatchChange.Create(terrain,baseline,after);
-            if(action=="prepare")return Report(result,owned.Count,false,fit,fullDetail);
+            float FittedGround(float x,float z)
+            {
+                float u=(x-origin.x)/size.x,v=(z-origin.z)/size.z;
+                if(u<0||v<0||u>1||v>1)return float.NaN;
+                if(data.IsHole(Math.Min(data.holesResolution-1,(int)(u*data.holesResolution)),Math.Min(data.holesResolution-1,(int)(v*data.holesResolution))))return float.NaN;
+                float fx=u*(resolution-1),fz=v*(resolution-1);int x0=(int)fx,z0=(int)fz,x1=Math.Min(x0+1,resolution-1),z1=Math.Min(z0+1,resolution-1);
+                return origin.y+size.y*Mathf.Lerp(Mathf.Lerp(after[z0,x0],after[z0,x1],fx-x0),Mathf.Lerp(after[z1,x0],after[z1,x1],fx-x0),fz-z0);
+            }
+            if(dressing)RoadDetailPresentation.RequireSources();
+            var detailPlan=dressing?RoadDetailPresentation.Plan(result,FittedGround,RoadDetailPresentation.ExistingExclusions(ToolSandbox.Root)):Array.Empty<RoadDetailPresentation.Placement>();
+            if(action=="prepare")return Report(result,owned.Count,false,fit,fullDetail,detailPlan.Length);
             // All geometry and cell work is complete before assets or live heights change.
             var materialSet=RoadPresentation.Materials();var normals=RoadPresentation.FittedNormals(result.Meshes);
             var paintSnapshot=new TerrainPresentation.Snapshot(terrain);var createdAssets=new List<string>();GameObject pending=null;
@@ -70,6 +83,7 @@ namespace Bwork.Authoring.Editor
                     renderer.shadowCastingMode=ShadowCastingMode.On;renderer.receiveShadows=true;
                     go.AddComponent<MeshCollider>().sharedMesh=saved;
                 }
+                RoadDetailPresentation.Build(pending.transform,detailPlan,generation,createdAssets);
                 terrain.heightmapMaximumLOD=0;terrain.heightmapMinimumLODSimplification=fullDetail;terrain.ignoreQualitySettings=true;
                 if(terrain.heightmapMinimumLODSimplification!=fullDetail||terrain.heightmapMaximumLOD!=0)throw new InvalidOperationException("Full-detail sandbox Terrain setting was not retained.");
                 EditorUtility.SetDirty(terrain);
@@ -77,7 +91,7 @@ namespace Bwork.Authoring.Editor
                 fit.MinimumClearance=SandboxTerrainConformance.Validate(result.Earthwork,data.GetHeights(0,0,resolution,resolution),origin.x,origin.y,origin.z,size.x,size.y,size.z);
                 // Store actual post-write values, including Terrain's height quantization.
                 owned=TerrainPatchChange.Create(terrain,baseline,data.GetHeights(0,0,resolution,resolution));
-                var receipt=new Receipt{ownsTerrainLOD=true,
+                var receipt=new Receipt{ownsTerrainLOD=true,dressing=dressing,dressingInstances=detailPlan.Length,hierarchyHash=RoadHierarchyOwnership.Fingerprint(pending.transform),
                     originalMinimumLOD=prior!=null&&prior.ownsTerrainLOD?prior.originalMinimumLOD:previousMinimum,
                     originalMaximumLOD=prior!=null&&prior.ownsTerrainLOD?prior.originalMaximumLOD:previousMaximum,
                     originalIgnoreQuality=prior!=null&&prior.ownsTerrainLOD?prior.originalIgnoreQuality:previousIgnoreQuality,
@@ -100,7 +114,7 @@ namespace Bwork.Authoring.Editor
             }
             if(old!=null)Object.DestroyImmediate(old.gameObject);
             if(prior!=null)foreach(string asset in prior.meshAssets)DeleteOwnedMesh(asset);
-            ToolSandbox.Save();return Report(result,owned.Count,true,fit,fullDetail);
+            ToolSandbox.Save();return Report(result,owned.Count,true,fit,fullDetail,detailPlan.Length);
         }
         static object Remove(Terrain terrain,Receipt receipt,Transform root)
         {
@@ -115,8 +129,8 @@ namespace Bwork.Authoring.Editor
             foreach(string asset in receipt.meshAssets)DeleteOwnedMesh(asset);
             AssetDatabase.DeleteAsset(ToolSandbox.Generated+"/"+ReceiptFile);ToolSandbox.Save();return new{removed=true,restoredHeightCells=receipt.change.Count};
         }
-        static object Report(SandboxRoadResult result,int changed,bool applied,SandboxTerrainFit fit,int fullDetail)=>new
-        {applied,roads=result.Paths.Length,junctions=result.Meshes.Length-result.Paths.Length,vertices=result.Meshes.Sum(m=>m.Vertices.Length),
+        static object Report(SandboxRoadResult result,int changed,bool applied,SandboxTerrainFit fit,int fullDetail,int dressingInstances=0)=>new
+        {applied,dressingInstances,roads=result.Paths.Length,junctions=result.Meshes.Length-result.Paths.Length,vertices=result.Meshes.Sum(m=>m.Vertices.Length),
             triangles=result.Meshes.Sum(m=>m.Triangles.Take(3).Sum(t=>t.Length/3)),gradePercent=result.MaximumGradePercent,surfaceGradePercent=result.MaximumSurfaceGradePercent,changedHeightCells=changed,
             minimumTerrainClearanceMeters=fit.MinimumClearance,priorMinimumTerrainClearanceMeters=fit.BeforeMinimumClearance,
             maximumAdditionalCutMeters=fit.MaximumAdditionalCut,terrainConstraintVertices=fit.ConstraintVertices,terrainFullDetailSimplification=fullDetail,
@@ -149,7 +163,8 @@ namespace Bwork.Authoring.Editor
             var data=JsonUtility.FromJson<RecipeData>(File.ReadAllText(path));if(data==null||data.roads==null)throw new ArgumentException("Road recipe requires roads.");return data.ToRecipe();
         }
         [Serializable] sealed class Receipt
-        {public TerrainPatchChange change;public string[] meshAssets,sources;public string recipeJson;public int roadCount;public double gradePercent;
+        {public TerrainPatchChange change;public string[] meshAssets,sources;public string recipeJson,hierarchyHash;public int roadCount;public double gradePercent;
+            public bool dressing;public int dressingInstances;
             public bool ownsTerrainLOD,originalIgnoreQuality;public int originalMinimumLOD,originalMaximumLOD,fittedMinimumLOD;}
         [Serializable] sealed class RecipeData
         {

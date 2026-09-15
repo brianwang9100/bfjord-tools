@@ -16,20 +16,21 @@
   "coordinateSystem": "unity-y-up-z-forward",
   "deckDatum": 0,
   "deckWidth": 8,
-  "generatorVersion": "coastal-bridge-1",
+  "designType": "coastalArch",
+  "generatorVersion": "bridge-families-3",
   "id": "coastal-arch-180",
   "lods": [
     {
       "fbxRelativePath": "bridge-lod0.fbx",
       "level": 0,
       "screenRelativeHeight": 0.35,
-      "triangles": 41940
+      "triangles": 57276
     },
     {
       "fbxRelativePath": "bridge-lod1.fbx",
       "level": 1,
       "screenRelativeHeight": 0.12,
-      "triangles": 5756
+      "triangles": 7460
     },
     {
       "fbxRelativePath": "bridge-lod2.fbx",
@@ -97,14 +98,17 @@
     },
     {
       "baseColor": [
-        0.055,
-        0.061,
-        0.063,
+        1,
+        1,
+        1,
         1
       ],
+      "baseColorPath": "textures/metal-basecolor.png",
       "key": "metal",
-      "metallic": 0.7,
-      "smoothness": 0.38,
+      "maskPath": "textures/metal-mask.png",
+      "metallic": 0.62,
+      "normalPath": "textures/metal-normal.png",
+      "smoothness": 0.31,
       "tilingMeters": 1
     },
     {
@@ -147,12 +151,12 @@
       "tilingMeters": 1
     }
   ],
-  "recipeHash": "217c1cdce26006b549e429425502e2def171f17f680fa82d2d59287bb2ad7571",
-  "schemaVersion": 1,
+  "recipeHash": "e0a47f10f1377ecc78d0090fc606c0d5163891afee4db9515b432b6fd45d30d5",
+  "schemaVersion": 2,
   "sources": [
     {
       "license": "CC0-1.0",
-      "name": "Original Bwork open-spandrel bridge geometry",
+      "name": "Original Bwork bridge-family geometry",
       "url": "https://github.com/brianwang9100/bfjord-tools"
     },
     {
@@ -164,6 +168,11 @@
       "license": "CC0-1.0",
       "name": "Poly Haven clean_asphalt, reused reviewed RoadQuality maps",
       "url": "https://polyhaven.com/a/clean_asphalt"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork weathered coated-steel material",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
     }
   ],
   "totalLength": 180,

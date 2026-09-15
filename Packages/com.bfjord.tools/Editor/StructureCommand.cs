@@ -17,11 +17,16 @@ namespace Bwork.Authoring.Editor
         const string Group="Structures",ReceiptFile="structure-edit.json";
         [CliCommand("bwork_structures","Prepare, apply, remove or inspect original bridges and tunnels with owned Terrain holes.",MainThreadRequired=true)]
         public static object Run([CliArg("action","prepare, apply, remove, status")]string action="status",
-            [CliArg("recipePath","Optional bounded JSON recipe; omitted uses two original sample structures")]string recipePath="")
+            [CliArg("recipePath","Bounded JSON recipe, masonry-example for current-terrain tunnel, or omitted for legacy samples")]string recipePath="")
         {
             var terrain=ToolSandbox.RequireTerrain();var previous=Read();var old=ToolSandbox.Root.Find(Group);
             if(action=="status")return new{applied=previous!=null,structures=previous?.count??0,changedHoleCells=previous?.holes.Count??0,changedHeightCells=previous?.heights?.Count??0,parts=old==null?0:old.childCount};
             if((previous==null)!=(old==null))throw new InvalidOperationException("Structure root/receipt disagree; restore their saved checkpoint.");
+            if(previous!=null)
+            {
+                if(string.IsNullOrEmpty(previous.hierarchyHash))TunnelDetail.ValidateLegacy(old,previous.assets);
+                else if(TunnelDetail.Fingerprint(old)!=previous.hierarchyHash)throw new InvalidOperationException("Structure hierarchy was edited; preserve foreign children or changed references before replacement/removal.");
+            }
             if(action=="remove")
             {
                 if(previous==null)return new{removed=false};previous.holes.RestoredCopy(terrain);previous.heights?.RestoredCopy(terrain);
@@ -39,11 +44,12 @@ namespace Bwork.Authoring.Editor
                 float u=Mathf.Clamp((x-origin.x)/size.x*(n-1),0,n-1),v=Mathf.Clamp((z-origin.z)/size.z*(n-1),0,n-1);int x0=(int)u,z0=(int)v,x1=Math.Min(x0+1,n-1),z1=Math.Min(z0+1,n-1);
                 return origin.y+size.y*Mathf.Lerp(Mathf.Lerp(heights[z0,x0],heights[z0,x1],u-x0),Mathf.Lerp(heights[z1,x0],heights[z1,x1],u-x0),v-z0);
             }
-            var recipe=string.IsNullOrEmpty(recipePath)?Example(Ground):LoadRecipe(recipePath);
+            var recipe=recipePath=="masonry-example"?MasonryExample(Ground):string.IsNullOrEmpty(recipePath)?Example(Ground):LoadRecipe(recipePath);
             if(recipe.structures==null||recipe.structures.Length<1||recipe.structures.Length>8||recipe.structures.Select(s=>s?.id).Distinct().Count()!=recipe.structures.Length)throw new ArgumentException("One to eight uniquely identified structures required.");
             if(size.x!=size.z||size.x>2048)throw new ArgumentException("A bounded square sandbox Terrain is required.");
             float cellMargin=(float)Math.Sqrt(Math.Pow(size.x/data.holesResolution,2)+Math.Pow(size.z/data.holesResolution,2))*.5f;
             var placed=recipe.structures.Select(s=>{var spec=s.ToSpec();spec.HoleCellMargin=cellMargin;return StructureGeometry.Build(spec,Ground,origin.x,origin.z,size.x);}).ToArray();
+            var portalModel=placed.Any(p=>p.Spec.PortalStyle=="masonry")?TunnelDetail.Read():null;
             int h=data.holesResolution;var current=data.GetHoles(0,0,h,h);var baseline=previous==null?(bool[,])current.Clone():previous.holes.RestoredCopy(terrain);var after=(bool[,])baseline.Clone();
             float margin=(float)Math.Sqrt(Math.Pow(size.x/h,2)+Math.Pow(size.z/h,2))*.5f;
             foreach(var item in placed.Where(p=>p.Spec.Kind=="tunnel"))
@@ -66,7 +72,7 @@ namespace Bwork.Authoring.Editor
                 pending=new GameObject("Structures preparing");pending.SetActive(false);pending.transform.SetParent(ToolSandbox.Root,false);
                 foreach(var style in placed.SelectMany(p=>p.Parts.Select(m=>m.Material)).Distinct())
                 {
-                    var material=StructureMaterial(style,recipe.concreteMaterialPath);
+                    var material=style.StartsWith("tunnel-",StringComparison.Ordinal)?TunnelDetail.Material(style,generation,assets):StructureMaterial(style,recipe.concreteMaterialPath);
                     string filename=generation+"-"+style+".mat";materials.Add(style,ToolSandbox.Persist(material,filename));assets.Add(ToolSandbox.Generated+"/"+filename);
                 }
                 int index=0;
@@ -78,10 +84,12 @@ namespace Bwork.Authoring.Editor
                     var go=new GameObject(part.Name);go.transform.SetParent(pending.transform,false);go.AddComponent<MeshFilter>().sharedMesh=mesh;
                     go.AddComponent<MeshRenderer>().sharedMaterial=materials[part.Material];go.AddComponent<MeshCollider>().sharedMesh=mesh;
                 }
+                if(portalModel!=null)foreach(var item in placed.Where(p=>p.Spec.PortalStyle=="masonry"))TunnelDetail.Add(portalModel,item,pending.transform,materials["tunnel-stone"],generation,assets);
                 heightTransition.Apply(terrain);heightApplied=true;transition.Apply(terrain);applied=true;
                 terrainFit.MinimumClearance=SandboxTerrainConformance.Validate(approachPatch,data.GetHeights(0,0,n,n),origin.x,origin.y,origin.z,size.x,size.y,size.z);
                 ownedHeights=TerrainPatchChange.Create(terrain,heights,data.GetHeights(0,0,n,n));
-                wrote=true;Write(new Receipt{holes=holes,heights=ownedHeights,assets=assets.ToArray(),count=placed.Length,recipe=JsonUtility.ToJson(recipe)});
+                pending.name=Group;pending.SetActive(true);
+                wrote=true;Write(new Receipt{hierarchyHash=TunnelDetail.Fingerprint(pending.transform),holes=holes,heights=ownedHeights,assets=assets.ToArray(),count=placed.Length,recipe=JsonUtility.ToJson(recipe)});
                 if(old!=null){old.name="Structures previous";old.gameObject.SetActive(false);}pending.name=Group;pending.SetActive(true);ToolSandbox.Save();
             }
             catch
@@ -119,17 +127,19 @@ namespace Bwork.Authoring.Editor
             var receipt=JsonUtility.FromJson<Receipt>(asset.text);if(receipt==null||receipt.holes==null||receipt.assets==null)throw new InvalidDataException("Invalid structure receipt.");return receipt;
         }
         static void Write(Receipt receipt)=>ToolSandbox.Persist(new TextAsset(JsonUtility.ToJson(receipt,true)),ReceiptFile);
-        static void Delete(string path){if(!path.StartsWith(ToolSandbox.Generated+"/structures-",StringComparison.Ordinal)||!(path.EndsWith(".asset",StringComparison.Ordinal)||path.EndsWith(".mat",StringComparison.Ordinal)))throw new InvalidDataException("Unowned structure asset in receipt.");AssetDatabase.DeleteAsset(path);}
+        static void Delete(string path){if(!path.StartsWith(ToolSandbox.Generated+"/structures-",StringComparison.Ordinal)||!(path.EndsWith(".asset",StringComparison.Ordinal)||path.EndsWith(".mat",StringComparison.Ordinal)||path.EndsWith(".png",StringComparison.Ordinal)))throw new InvalidDataException("Unowned structure asset in receipt.");AssetDatabase.DeleteAsset(path);}
         static Recipe LoadRecipe(string path){var file=new FileInfo(path);if(!file.Exists||file.Length>1024*1024)throw new ArgumentException("Existing recipe up to 1MiB required.");return JsonUtility.FromJson<Recipe>(File.ReadAllText(path))??throw new ArgumentException("Invalid structure recipe.");}
+        static Recipe MasonryExample(Func<float,float,float> ground)
+        {var specs=StructureGeometry.Example(ground).Where(s=>s.Kind=="tunnel").ToArray();foreach(var spec in specs)spec.PortalStyle="masonry";return new Recipe{structures=specs.Select(Item.From).ToArray()};}
         static Recipe Example(Func<float,float,float> ground)=>new Recipe{structures=StructureGeometry.Example(ground).Select(Item.From).ToArray()};
-        [Serializable] sealed class Receipt {public TerrainHoleChange holes;public TerrainPatchChange heights;public string[] assets;public int count;public string recipe;}
+        [Serializable] sealed class Receipt {public TerrainHoleChange holes;public TerrainPatchChange heights;public string[] assets;public int count;public string recipe,hierarchyHash;}
         [Serializable] sealed class Recipe {public Item[] structures;public string concreteMaterialPath="Assets/Generated/FjordReview/Tunnel Concrete.mat";}
         [Serializable] sealed class Item
         {
-            public string id,sourceId,kind,style="concrete";public Vector3[] controls;public float width=8,clearance=5,thickness=.5f,parapetHeight=1.1f,supportSpacing=20,portalDepth=2,minimumCover=.5f,approachLength=40;
+            public string id,sourceId,kind,style="concrete",portalStyle="none";public Vector3[] controls;public float width=8,clearance=5,thickness=.5f,parapetHeight=1.1f,supportSpacing=20,portalDepth=2,minimumCover=.5f,approachLength=40;
             public bool hasWaterLevel=false;public float waterLevel=0;
-            public static Item From(StructureSpec s)=>new Item{id=s.Id,sourceId=s.SourceId,kind=s.Kind,style=s.Style,controls=s.Controls.Select(p=>new Vector3(p.X,p.Y,p.Z)).ToArray(),width=s.Width,clearance=s.Clearance,thickness=s.Thickness,parapetHeight=s.ParapetHeight,supportSpacing=s.SupportSpacing,portalDepth=s.PortalDepth,minimumCover=s.MinimumCover,approachLength=s.ApproachLength,hasWaterLevel=s.WaterLevel.HasValue,waterLevel=s.WaterLevel??0};
-            public StructureSpec ToSpec()=>new StructureSpec{Id=id,SourceId=sourceId,Kind=kind,Style=style,Controls=controls?.Select(p=>new V3(p.x,p.y,p.z)).ToArray(),Width=width,Clearance=clearance,Thickness=thickness,ParapetHeight=parapetHeight,SupportSpacing=supportSpacing,PortalDepth=portalDepth,MinimumCover=minimumCover,ApproachLength=approachLength,WaterLevel=hasWaterLevel?(float?)waterLevel:null};
+            public static Item From(StructureSpec s)=>new Item{id=s.Id,sourceId=s.SourceId,kind=s.Kind,style=s.Style,portalStyle=s.PortalStyle,controls=s.Controls.Select(p=>new Vector3(p.X,p.Y,p.Z)).ToArray(),width=s.Width,clearance=s.Clearance,thickness=s.Thickness,parapetHeight=s.ParapetHeight,supportSpacing=s.SupportSpacing,portalDepth=s.PortalDepth,minimumCover=s.MinimumCover,approachLength=s.ApproachLength,hasWaterLevel=s.WaterLevel.HasValue,waterLevel=s.WaterLevel??0};
+            public StructureSpec ToSpec()=>new StructureSpec{Id=id,SourceId=sourceId,Kind=kind,Style=style,PortalStyle=portalStyle,Controls=controls?.Select(p=>new V3(p.x,p.y,p.z)).ToArray(),Width=width,Clearance=clearance,Thickness=thickness,ParapetHeight=parapetHeight,SupportSpacing=supportSpacing,PortalDepth=portalDepth,MinimumCover=minimumCover,ApproachLength=approachLength,WaterLevel=hasWaterLevel?(float?)waterLevel:null};
         }
     }
 }

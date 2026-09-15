@@ -68,3 +68,11 @@ The pure tests cover recipe bounds, unsupported structural choices, non-finite s
 The byte-identical final packages and required source inputs are retained in `assets/CoastalBridgeTool/`. Their current recipe hashes include the portable input-path revision and the final explicit corner-normal export correction. Future generator or texture changes receive a new recipe hash. The snapshot normal-correction.json records the original shading bug and corrected per-LOD angle measurements. See the snapshot README and LICENSE.md for ownership, precise CC0 attribution and preservation details.
 
 The finished Unity command, scene and visual review are documented in `docs/BRIDGE_AUTHORING_TOOL.md`. Terrain excavation, curved/graded spans, collision against every parapet/arch surface, engineering certification, device profiling and island installation are outside this tool's current scope.
+
+## Fidelity revision 3
+
+`bridge-families-3` retains all four designs and the same metric deck/collider contract. Near and middle LOD masonry and coastal parapets use separate cap units with 10 mm bedding joints. Stone piers have alternating corner quoins instead of proud horizontal stripes. No foundation footprint changes are required.
+
+Timber side UVs follow each physical member, including diagonal braces and horizontal rails. The original timber finish has restrained silver weathering and longitudinal checking; the separately replaceable metal slot now has original 1 m coated-steel PBR maps with sparse oxidation. Existing concrete and asphalt map scale remains 1.1 m and 2.1 m. Coating roughness and metallic response are read from the packed map in both Blender and Unity.
+
+Use `review_fidelity.py --package PACKAGE --output REVIEW_DIRECTORY` through Blender to capture source silhouette, construction detail and riding views. Run Blender with `--threads 4`. The review script never saves over the source package. See `docs/fidelity/BRIDGES.md` for the comparison and final measured outputs. New original art is covered by the owner's public CC0 grant and `assets/CoastalBridgeTool/FIDELITY-LICENSE.md`.

@@ -1,0 +1,42 @@
+{
+  "id": "rose-thickets-001",
+  "area": {
+    "x": 196,
+    "y": 174,
+    "width": 26,
+    "height": 23
+  },
+  "seed": 41837,
+  "maximumCount": 60,
+  "densityPerHectare": 900,
+  "minimumSpacing": 1.4,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 30,
+  "clusterCount": 12,
+  "clusterRadius": 4.5,
+  "spacingGroup": "shrubs",
+  "species": [
+    {
+      "id": "RoseThicket_A",
+      "prefabKey": "bfjord:RoseThicket_A",
+      "weight": 1,
+      "radius": 0.91,
+      "minimumScale": 0.82,
+      "maximumScale": 1.16,
+      "groundOffsetMeters": -0.008
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "version": "0.4.0",
+  "editor": "6000.6.0f1",
+  "platform": "macOS Editor",
+  "deviceAcceptance": false,
+  "initialFullSuite": {
+    "summary": {
+      "total": 81,
+      "passed": 81,
+      "failed": 0,
+      "skipped": 0,
+      "inconclusive": 0
+    },
+    "durationSeconds": 21.43
+  },
+  "postFixRoadTests": {
+    "summary": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "inconclusive": 0
+    },
+    "durationSeconds": 0.73
+  },
+  "worldAssembly": {
+    "executeMilliseconds": 19092,
+    "heightSamplesUnchanged": 66049,
+    "placements": {
+      "highlandRocks": 130,
+      "riverRocks-bank": 150,
+      "riverRocks-shallow": 87,
+      "foliage-meadow-detail": 177,
+      "foliage-rose-thickets": 54,
+      "foliage-wood-sorrel": 247
+    }
+  },
+  "waterLifecycle": {
+    "executeMilliseconds": 38463,
+    "checks": [
+      "connected water appearance refreshed without rebuilding geometry",
+      "waterfall prepared and replaced",
+      "foreign child blocks destructive waterfall replacement/removal",
+      "waterfall owned removal and reapply passed",
+      "waterfall leaves all terrain height samples unchanged"
+    ],
+    "views": 3,
+    "framesPerView": 24,
+    "fps": 12,
+    "secondsPerView": 2,
+    "width": 1440,
+    "height": 960,
+    "shaderErrors": 0
+  },
+  "roadLifecycle": {
+    "executeMilliseconds": 8260,
+    "checks": [
+      "Roads: prepare preserves height/hole/LOD grids and receipt",
+      "Roads: repeat has identical geometry/poses/heights/holes and cleans old generation",
+      "Roads: foreign-child apply/remove and edited-transform removal refused before mutation",
+      "Roads: source-free remove restores exact baseline heights/holes/LOD and removes owned assets",
+      "Roads: final dressed generation reapplied; unrelated subtrees retained"
+    ],
+    "status": {
+      "applied": true,
+      "objects": 5,
+      "roads": 3,
+      "changedHeightCells": 5830,
+      "gradePercent": 23.99999946355828,
+      "dressing": true,
+      "dressingInstances": 47
+    }
+  },
+  "tunnelLifecycle": {
+    "executeMilliseconds": 10048,
+    "checks": [
+      "Structures: masonry prepare preserves height/hole/LOD grids and receipt",
+      "Structures: repeat preserves geometry/poses/heights/holes and removes old generation",
+      "Structures: foreign-child apply/remove and edited-transform removal refused before mutation",
+      "Structures: source-free remove restores exact baseline heights/holes and removes owned assets",
+      "Structures: final masonry tunnel reapplied; unrelated subtrees retained"
+    ],
+    "status": {
+      "applied": true,
+      "structures": 1,
+      "changedHoleCells": 297,
+      "changedHeightCells": 673,
+      "parts": 12
+    }
+  },
+  "bridges": {
+    "executeMilliseconds": 144859,
+    "designs": [
+      "coastal-arch-180",
+      "stone-viaduct-110",
+      "steel-through-truss-88",
+      "timber-trestle-80"
+    ],
+    "captures": 10,
+    "independentMaterial": "warm-concrete",
+    "restoredDefaultSurface": true
+  },
+  "scope": "Roads and tunnels verified in a separate finite fixture; no island migration or iPad performance acceptance."
+}

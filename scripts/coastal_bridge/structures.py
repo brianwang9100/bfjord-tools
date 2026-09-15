@@ -7,6 +7,18 @@ import math
 from mathutils import Vector
 
 
+def coping(geometry, x, width, bottom, top, length, lod, mat, module=1.2):
+    """Individually bedded cap units; 10 mm joints preserve the far silhouette."""
+    count = math.ceil(length / module) if lod < 2 else 1
+    step = length / count
+    for i in range(count):
+        z0 = -length / 2 + i * step
+        z1 = z0 + step
+        gap = .005 if count > 1 else 0
+        geometry.box(x - width / 2, x + width / 2, bottom, top,
+                     z0 + (gap if i else 0), z1 - (gap if i < count - 1 else 0), mat, dressed=mat == 'BridgeStone')
+
+
 def framed_beam(geometry, a, b, width, depth, flange=.055, mat='BridgeMetal', detailed=True):
     """Fabricated I-section; retain its overall section at distant LOD."""
     if not detailed:
@@ -28,7 +40,7 @@ def arch_sector(geometry, center, x0, x1, radius0, radius1, a0, a1, mat):
         for angle, radius in ((a0, radius0), (a1, radius0), (a1, radius1), (a0, radius1)):
             points.append((x, center[0] + math.sin(angle) * radius, center[1] + math.cos(angle) * radius))
     geometry.polyhedron(points, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4),
-                                 (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat)
+                                 (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat, dressed=True)
 
 
 def stone_viaduct(r, lod, parts):
@@ -70,17 +82,20 @@ def stone_viaduct(r, lod, parts):
             # Banded pier courses and projecting impost stones articulate each support.
             detail.box(-width / 2 - .17, width / 2 + .17, spring - .2, spring + .15,
                        z - pier / 2 - .14, z + pier / 2 + .14, 'BridgeStone')
-            for y in range(math.ceil(base + 1), math.floor(spring)):
+            for course, y in enumerate(range(math.ceil(base + 1), math.floor(spring))):
                 for sign in (-1, 1):
                     x = sign * (width / 2 + .018)
-                    detail.box(x - .024, x + .024, y, y + .82, z - pier / 2 + .018, z + pier / 2 - .018, 'BridgeStone')
+                    # Alternating corner quoins catch light without a grid of proud full-width stripes.
+                    for end_sign in (-1, 1):
+                        zz = z + end_sign * (pier / 2 - .31)
+                        reach = .78 if course % 2 else .58
+                        detail.box(x - .065, x + .065, y, y + .97, zz - reach / 2, zz + reach / 2, 'BridgeStone', dressed=True)
     for sign in (-1, 1):
         end, inner = sign * length / 2, sign * (length / 2 - r['abutmentLength'])
         body.box(-width / 2, width / 2, base, -r['deckThickness'], min(end, inner), max(end, inner), 'BridgeStone')
         x = sign * (width / 2 - .17)
         parts['Parapets'].box(x - .2, x + .2, .12, r['parapetHeight'], -length / 2, length / 2, 'BridgeStone')
-        parts['Parapets'].box(x - .27, x + .27, r['parapetHeight'], r['parapetHeight'] + .10,
-                              -length / 2, length / 2, 'BridgeStone')
+        coping(parts['Parapets'], x, .56, r['parapetHeight'], r['parapetHeight'] + .16, length, lod, 'BridgeStone')
         detail.box(sign * width / 2 - .13, sign * width / 2 + .13, -.4, -.15,
                    -length / 2, length / 2, 'BridgeStone')
 

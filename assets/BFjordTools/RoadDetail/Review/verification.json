@@ -1,0 +1,8 @@
+{
+  "reimportedModels": 6,
+  "finiteGeometry": true,
+  "nondegenerateTriangles": true,
+  "decreasingLODs": true,
+  "reviewUsesReimportedFBX": true,
+  "blenderVersion": "5.2.1 LTS"
+}

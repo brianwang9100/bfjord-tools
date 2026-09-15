@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "license": "CC0-1.0",
+  "generatorLicense": "MIT",
+  "blender": "5.2.1 LTS",
+  "threads": 4,
+  "basis": "+X right/+Y up/+Z into tunnel",
+  "width": 8,
+  "clearance": 5.5,
+  "contactY": -0.35,
+  "lodTriangles": [
+    11556,
+    4708,
+    1284
+  ],
+  "lodVertices": [
+    34668,
+    14124,
+    3852
+  ],
+  "checks": [
+    "finite positions and normals",
+    "positive triangle area",
+    "face/winding normal agreement",
+    "metric UVs",
+    "clear bore",
+    "planted footings"
+  ],
+  "collision": "Existing closed procedural tunnel shell; no decorative colliders",
+  "textureSize": 512
+}

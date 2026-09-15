@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "license": "CC0-1.0",
+  "generator": "Scripts/world_assets/terrain_detail/build_masks.py",
+  "generatorLicense": "MIT",
+  "outputBytes": 2324413,
+  "textures": [
+    {
+      "layer": "Meadow",
+      "tileMeters": 2,
+      "size": [
+        512,
+        512
+      ],
+      "channels": [
+        "metallic",
+        "occlusion",
+        "height",
+        "smoothness"
+      ],
+      "channelExtrema": [
+        [
+          0,
+          0
+        ],
+        [
+          91,
+          252
+        ],
+        [
+          19,
+          236
+        ],
+        [
+          64,
+          99
+        ]
+      ],
+      "sha256": "d2936e9b40ddbc374d4627bfa2086fa597b241299627497ea77e25626269f448"
+    },
+    {
+      "layer": "Soil",
+      "tileMeters": 3,
+      "size": [
+        512,
+        512
+      ],
+      "channels": [
+        "metallic",
+        "occlusion",
+        "height",
+        "smoothness"
+      ],
+      "channelExtrema": [
+        [
+          0,
+          0
+        ],
+        [
+          43,
+          254
+        ],
+        [
+          10,
+          255
+        ],
+        [
+          20,
+          114
+        ]
+      ],
+      "sha256": "2930a17b13475659e2369d74f0dfe0a95c19c36f9c40739d62b3b21dad075936"
+    },
+    {
+      "layer": "Talus",
+      "tileMeters": 2.5,
+      "size": [
+        512,
+        512
+      ],
+      "channels": [
+        "metallic",
+        "occlusion",
+        "height",
+        "smoothness"
+      ],
+      "channelExtrema": [
+        [
+          0,
+          0
+        ],
+        [
+          67,
+          255
+        ],
+        [
+          36,
+          243
+        ],
+        [
+          0,
+          29
+        ]
+      ],
+      "sha256": "66b9d2f40133c53287e1c55430564bfdf7d5b232583704ac96ecdf176ed3550d"
+    },
+    {
+      "layer": "Outcrop",
+      "tileMeters": 90,
+      "size": [
+        512,
+        512
+      ],
+      "channels": [
+        "metallic",
+        "occlusion",
+        "height",
+        "smoothness"
+      ],
+      "channelExtrema": [
+        [
+          0,
+          0
+        ],
+        [
+          75,
+          254
+        ],
+        [
+          24,
+          251
+        ],
+        [
+          0,
+          45
+        ]
+      ],
+      "sha256": "0d28fa2db0585aec201a7347dafb36b82f91bbb3e42055e26a4713297c0db060"
+    }
+  ]
+}

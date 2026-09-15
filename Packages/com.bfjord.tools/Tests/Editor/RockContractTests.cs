@@ -20,6 +20,22 @@ namespace Bwork.Authoring.Editor.Tests
         static RockRecipe Recipe() => new RockRecipe { id = "test-rocks", area = new RockArea { x = 0, z = 0, width = 100, depth = 100 },
             species = new[] { new RockSpecies { id = "stone", weight = 1, minimumScale = .5f, maximumScale = 1.5f } }, densityPerHectare = 60, maximumCount = 60 };
 
+        [Test] public void BakedMaterialSourcesRemainExplicitAndLegacyDefaultsRemainValid()
+        {
+            var legacy = Manifest();
+            Assert.That(legacy.variants[0].materialId, Is.EqualTo("rock"));
+            Assert.DoesNotThrow(() => RockContract.ValidateManifest(legacy));
+            var baked = new RockMaterialSource { id = "coastal_outcrop", baseColorPath = "Textures/coast.png", normalPath = "Textures/coast-normal.png", metallicSmoothnessPath = "Textures/mask.png" };
+            legacy.materials = legacy.materials.Append(baked).ToArray();
+            legacy.variants[0].materialId = baked.id;
+            Assert.DoesNotThrow(() => RockContract.ValidateManifest(legacy));
+            legacy.variants[0].materialId = "missing";
+            Assert.Throws<InvalidDataException>(() => RockContract.ValidateManifest(legacy));
+            legacy.variants[0].materialId = baked.id;
+            legacy.materials = legacy.materials.Append(baked).ToArray();
+            Assert.Throws<InvalidDataException>(() => RockContract.ValidateManifest(legacy));
+        }
+
         [Test] public void MaterialProfileCannotChangePlacementStructure()
         {
             var r = Recipe(); var m = Manifest();

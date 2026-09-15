@@ -1,0 +1,72 @@
+{
+  "blenderVersion": "5.2.1 LTS",
+  "verifiedFBXs": 6,
+  "checks": [
+    {
+      "asset": "Models/VergeWall_A_LOD0.fbx",
+      "triangles": 3564,
+      "materials": [
+        "VergeStone"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    },
+    {
+      "asset": "Models/VergeWall_A_LOD1.fbx",
+      "triangles": 1452,
+      "materials": [
+        "VergeStone"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    },
+    {
+      "asset": "Models/VergeWall_A_LOD2.fbx",
+      "triangles": 252,
+      "materials": [
+        "VergeStone"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    },
+    {
+      "asset": "Models/Delineator_A_LOD0.fbx",
+      "triangles": 540,
+      "materials": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    },
+    {
+      "asset": "Models/Delineator_A_LOD1.fbx",
+      "triangles": 156,
+      "materials": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    },
+    {
+      "asset": "Models/Delineator_A_LOD2.fbx",
+      "triangles": 60,
+      "materials": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "boundsMatch": true,
+      "validNormals": true,
+      "validUVs": true
+    }
+  ]
+}

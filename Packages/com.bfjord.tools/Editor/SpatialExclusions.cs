@@ -37,14 +37,18 @@ namespace Bwork.Authoring.Editor
         public int PrimitiveCount => primitives.Length;
         public int GroupCount { get; }
 
-        SpatialExclusions(Transform root, Primitive[] primitives, bool includeWater)
+        SpatialExclusions(Transform root, Primitive[] primitives, bool includeWater, string[] excludedGroups)
         {
             if (root == null) throw new ArgumentNullException(nameof(root));
             this.primitives = Validate(primitives ?? Array.Empty<Primitive>());
+            excludedGroups = excludedGroups ?? Array.Empty<string>();
+            if (excludedGroups.Any(name => !OwnedGroups.Contains(name)))
+                throw new ArgumentException("Excluded group names must be recognized tool-owned groups.", nameof(excludedGroups));
             var children = root.Cast<Transform>().ToArray();
             var groups = new List<Transform>();
             foreach (string name in OwnedGroups)
             {
+                if (excludedGroups.Contains(name)) continue;
                 if (!includeWater && (name == "Water Sample" || name == "Connected Water Sample")) continue;
                 var matches = children.Where(child => child.name == name).ToArray();
                 if (matches.Length > 1) throw new InvalidOperationException("Duplicate tool-owned exclusion root: " + name);
@@ -55,8 +59,8 @@ namespace Bwork.Authoring.Editor
                 Add(filter);
         }
 
-        public static SpatialExclusions Create(Transform root, Primitive[] primitives = null, bool includeWater = true) =>
-            new SpatialExclusions(root, primitives, includeWater);
+        public static SpatialExclusions Create(Transform root, Primitive[] primitives = null, bool includeWater = true, string[] excludedGroups = null) =>
+            new SpatialExclusions(root, primitives, includeWater, excludedGroups);
 
         public bool Intersects(Vector3 point, float footprintRadius)
         {

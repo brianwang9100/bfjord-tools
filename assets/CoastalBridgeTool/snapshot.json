@@ -21,34 +21,39 @@
       "sha256": "bf4b029b98fc771887e80807e28f97488c3a8936369152bd1020b2535415a5af"
     },
     {
-      "bytes": 3270,
+      "bytes": 789,
+      "path": "FIDELITY-LICENSE.md",
+      "sha256": "1e91c51256d9daa772690301e0caac993d13031c1a54cebdc3d2d6312c8b26b6"
+    },
+    {
+      "bytes": 3342,
       "path": "LICENSE.md",
-      "sha256": "902ab83563f6c5f4621b4600c91f93aabf8d3097aa34f19b40150159dc5c5904"
+      "sha256": "828d6dac998295f2da3c58021af5a8616d8acf849ec5844d096858506dd2747e"
     },
     {
-      "bytes": 18358,
+      "bytes": 18368,
       "path": "coastal-arch-104/bridge-collider.fbx",
-      "sha256": "ee690ba98be0099a668c4cdbe156c6f4bddd0078a62046cafd29fc886701749e"
+      "sha256": "95387bd1d3b6682553c4be7bc6599be87041f3d00df3647dc90a2167d8c82537"
     },
     {
-      "bytes": 761454,
+      "bytes": 970628,
       "path": "coastal-arch-104/bridge-lod0.fbx",
-      "sha256": "887d25bded519fcab7635f84a1e09419fac62e247f086c00ec6f85edb290382a"
+      "sha256": "a9596c94a5b9ddd7254e863258e60f131cea8dc32b12a91a4d109e694a5df7bc"
     },
     {
-      "bytes": 119248,
+      "bytes": 135784,
       "path": "coastal-arch-104/bridge-lod1.fbx",
-      "sha256": "e1ca4eb583fe087d029ffe2fa4e41794492db0f9537e467b387d328cab92e9f5"
+      "sha256": "c5cf22fc08ec355ed6c0f19b3ee51217009616cf288bc63710e01734de530be2"
     },
     {
-      "bytes": 85168,
+      "bytes": 85092,
       "path": "coastal-arch-104/bridge-lod2.fbx",
-      "sha256": "ac21ce3258efaa377ef577674b3ad9e1542e8bd2d5891e796c98cd609834f410"
+      "sha256": "9127ddf0e7c88db6d19c0d106f31d7293d000f9bb922b8a307a4ebfbabeae503"
     },
     {
-      "bytes": 3836,
+      "bytes": 4165,
       "path": "coastal-arch-104/manifest.json",
-      "sha256": "0c1778d8acc10b9caaa223aa43df0cac363ba82f9cce8ad70838e5e24c501283"
+      "sha256": "d674f4cad7cf9969622f673032b2a73404d956919bb0139d40f7f3235cba7097"
     },
     {
       "bytes": 1299022,
@@ -81,29 +86,44 @@
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
     },
     {
-      "bytes": 18374,
+      "bytes": 653607,
+      "path": "coastal-arch-104/textures/metal-basecolor.png",
+      "sha256": "c996526245ba63b9a2a255b2919ad55805d1fd033e43f395abdcda65be09dc00"
+    },
+    {
+      "bytes": 533016,
+      "path": "coastal-arch-104/textures/metal-mask.png",
+      "sha256": "2663b5b7299334f82f1c7dc8f7da4688a8c3bdcf2d1758adc759c037131ae640"
+    },
+    {
+      "bytes": 1204164,
+      "path": "coastal-arch-104/textures/metal-normal.png",
+      "sha256": "66733d6360639960e9092b5a79a0d9af2d3906118df6b578adb8309093d26159"
+    },
+    {
+      "bytes": 18368,
       "path": "coastal-arch-180/bridge-collider.fbx",
-      "sha256": "25ff9b8128483606b8c31984f3fec2a8b03960b1582de8fd16118d99d512c183"
+      "sha256": "b49f6ddda38afb1ba665530f8bebacbc87938b3f35c45359d893075addbd7121"
     },
     {
-      "bytes": 980766,
+      "bytes": 1272532,
       "path": "coastal-arch-180/bridge-lod0.fbx",
-      "sha256": "9ec00cb2f482d4eac05e2f55ac24593ef429e6dbdc578dc9dfa3366268dc3037"
+      "sha256": "f07cbc345c672b9c5bc1f617a7c5f12cc4089fe114d6df5de152e5aa739063ca"
     },
     {
-      "bytes": 146336,
+      "bytes": 176008,
       "path": "coastal-arch-180/bridge-lod1.fbx",
-      "sha256": "9284be64c6bd22efe4f5abd2dce67cedfe031ff80577b8b6fa2579077d55c240"
+      "sha256": "98c1a102bb8cbcd38ca7173e5311dba68be2d3cae1f76136b6af914728d44672"
     },
     {
-      "bytes": 101584,
+      "bytes": 101476,
       "path": "coastal-arch-180/bridge-lod2.fbx",
-      "sha256": "1afab6a3fb4c262be7f48d6f0e642e903f8bac409cd04bc1483fcdec591a9b61"
+      "sha256": "22c7e5e973aeb8e99ab197be49b700d4107c5f941a4614f0901ef5695c549807"
     },
     {
-      "bytes": 3825,
+      "bytes": 4154,
       "path": "coastal-arch-180/manifest.json",
-      "sha256": "c07d5e0d7861f4d8b3d3b9f42c2a528caa94d03a5a69a5f750251b255bb7d5cb"
+      "sha256": "b85806fad6e863520693b50342fa20d916ac95e7ac335b473b68ceef893505c9"
     },
     {
       "bytes": 1299022,
@@ -134,6 +154,21 @@
       "bytes": 2386686,
       "path": "coastal-arch-180/textures/concrete-normal.png",
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 653607,
+      "path": "coastal-arch-180/textures/metal-basecolor.png",
+      "sha256": "c996526245ba63b9a2a255b2919ad55805d1fd033e43f395abdcda65be09dc00"
+    },
+    {
+      "bytes": 533016,
+      "path": "coastal-arch-180/textures/metal-mask.png",
+      "sha256": "2663b5b7299334f82f1c7dc8f7da4688a8c3bdcf2d1758adc759c037131ae640"
+    },
+    {
+      "bytes": 1204164,
+      "path": "coastal-arch-180/textures/metal-normal.png",
+      "sha256": "66733d6360639960e9092b5a79a0d9af2d3906118df6b578adb8309093d26159"
     },
     {
       "bytes": 4155,
@@ -471,29 +506,29 @@
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
     },
     {
-      "bytes": 18371,
+      "bytes": 18366,
       "path": "steel-through-truss-88/bridge-collider.fbx",
-      "sha256": "68445409a17f01c3bbafb379556513a809be8ba8e54df8600c7f2c218f4c7240"
+      "sha256": "da89a12972b51a31fb13ca5343215d9b86d516de93f2d098b4b1a6652540a2f4"
     },
     {
-      "bytes": 947658,
+      "bytes": 939010,
       "path": "steel-through-truss-88/bridge-lod0.fbx",
-      "sha256": "566833e349056f08000f14b0299632b4425a8aacd8e232df55ceba574218859a"
+      "sha256": "ebe4cacde5a2bc5c2559ad2a68d06e01d6fcebc261c164eeba77fa0a8ee05225"
     },
     {
-      "bytes": 125770,
+      "bytes": 127506,
       "path": "steel-through-truss-88/bridge-lod1.fbx",
-      "sha256": "152e9c51efadd534b5f94042a0d437bc1e9edfb99b5d1ee73d8614f5bf7c9e6a"
+      "sha256": "d3fbe8f2cb91d9a9e04dffb9662a800154044633a0a97d5d0af8922c0f1df772"
     },
     {
-      "bytes": 70794,
+      "bytes": 71810,
       "path": "steel-through-truss-88/bridge-lod2.fbx",
-      "sha256": "dc5f92297d1a0682a90db2d7a39f2b00e19dd5f5cf39d2c365f59a98d866955a"
+      "sha256": "4bd042839b7cb184e7fb3e27f00da41218db860e043c46e2ee7d083ae412318a"
     },
     {
-      "bytes": 4831,
+      "bytes": 5135,
       "path": "steel-through-truss-88/manifest.json",
-      "sha256": "1d347ecde90ef3c9111dd3be1e0ecbd5dff9109266999c3b5c46403652a15b09"
+      "sha256": "7cbe8e191483c5a8ee7e616857bcf640b40d10dd578dc64c451e3a032bc2de30"
     },
     {
       "bytes": 1299022,
@@ -526,6 +561,21 @@
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
     },
     {
+      "bytes": 653607,
+      "path": "steel-through-truss-88/textures/metal-basecolor.png",
+      "sha256": "c996526245ba63b9a2a255b2919ad55805d1fd033e43f395abdcda65be09dc00"
+    },
+    {
+      "bytes": 533016,
+      "path": "steel-through-truss-88/textures/metal-mask.png",
+      "sha256": "2663b5b7299334f82f1c7dc8f7da4688a8c3bdcf2d1758adc759c037131ae640"
+    },
+    {
+      "bytes": 1204164,
+      "path": "steel-through-truss-88/textures/metal-normal.png",
+      "sha256": "66733d6360639960e9092b5a79a0d9af2d3906118df6b578adb8309093d26159"
+    },
+    {
       "bytes": 1118482,
       "path": "steel-through-truss-88/textures/stone-basecolor.png",
       "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
@@ -541,9 +591,9 @@
       "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
     },
     {
-      "bytes": 980012,
+      "bytes": 1342562,
       "path": "steel-through-truss-88/textures/timber-basecolor.png",
-      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+      "sha256": "92e7f1b9a99060371ed4694fbb50d35d117f6e0e769320d6cc1b6d8af6879eb5"
     },
     {
       "bytes": 5699,
@@ -551,34 +601,34 @@
       "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
     },
     {
-      "bytes": 1992302,
+      "bytes": 1792714,
       "path": "steel-through-truss-88/textures/timber-normal.png",
-      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+      "sha256": "48cb6f8e6f90bca65f82dc8e6f5c3eb6a9538b708e1e83c6d07f97e2e50962ff"
     },
     {
-      "bytes": 18354,
+      "bytes": 18365,
       "path": "stone-viaduct-110/bridge-collider.fbx",
-      "sha256": "15c844b58e5b1ebecfc1f1cb775c5771eeda1d63c114f506f04beb41d85e1d71"
+      "sha256": "1f7a3cfbe181269f890400935c9daec7aef634f087ea7b737d2ebceb25ce4e89"
     },
     {
-      "bytes": 640942,
+      "bytes": 1099616,
       "path": "stone-viaduct-110/bridge-lod0.fbx",
-      "sha256": "6f24ebcf247f9b758f2a4d3cb6ffc5908da8d8da4967695a8a24fd60c47a99aa"
+      "sha256": "d4587b0b94af12d74c5ce5d2c3556ae2bc3dea289d790e50aa8d92b523411d9d"
     },
     {
-      "bytes": 140990,
+      "bytes": 189824,
       "path": "stone-viaduct-110/bridge-lod1.fbx",
-      "sha256": "36738d54e292b1bebd71a06566d886d107507e46cfa7e1da613214988adf221a"
+      "sha256": "2f5193981c43d579b3a526431d220bd5449a02302813fe40bd63d193d9a3f621"
     },
     {
-      "bytes": 57198,
+      "bytes": 57247,
       "path": "stone-viaduct-110/bridge-lod2.fbx",
-      "sha256": "5d33bddea967f40ae878f59d41626d227ff2030652e5ad45ded92958676bf1a9"
+      "sha256": "15ba3304e9db523f81e09f51f8efe902fdc3469661328bfca8766c12fee75d18"
     },
     {
-      "bytes": 4799,
+      "bytes": 5116,
       "path": "stone-viaduct-110/manifest.json",
-      "sha256": "72f4858dba3ea33a2cc50e6b948bf984bfbbc312ed04165a32c8b5b83acb7895"
+      "sha256": "548cf3495c9871ff831fb92c9299853da04aceadd3225b558c12796ee22ea3d1"
     },
     {
       "bytes": 1299022,
@@ -611,6 +661,21 @@
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
     },
     {
+      "bytes": 653607,
+      "path": "stone-viaduct-110/textures/metal-basecolor.png",
+      "sha256": "c996526245ba63b9a2a255b2919ad55805d1fd033e43f395abdcda65be09dc00"
+    },
+    {
+      "bytes": 533016,
+      "path": "stone-viaduct-110/textures/metal-mask.png",
+      "sha256": "2663b5b7299334f82f1c7dc8f7da4688a8c3bdcf2d1758adc759c037131ae640"
+    },
+    {
+      "bytes": 1204164,
+      "path": "stone-viaduct-110/textures/metal-normal.png",
+      "sha256": "66733d6360639960e9092b5a79a0d9af2d3906118df6b578adb8309093d26159"
+    },
+    {
       "bytes": 1118482,
       "path": "stone-viaduct-110/textures/stone-basecolor.png",
       "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
@@ -626,9 +691,9 @@
       "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
     },
     {
-      "bytes": 980012,
+      "bytes": 1342562,
       "path": "stone-viaduct-110/textures/timber-basecolor.png",
-      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+      "sha256": "92e7f1b9a99060371ed4694fbb50d35d117f6e0e769320d6cc1b6d8af6879eb5"
     },
     {
       "bytes": 5699,
@@ -636,34 +701,34 @@
       "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
     },
     {
-      "bytes": 1992302,
+      "bytes": 1792714,
       "path": "stone-viaduct-110/textures/timber-normal.png",
-      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+      "sha256": "48cb6f8e6f90bca65f82dc8e6f5c3eb6a9538b708e1e83c6d07f97e2e50962ff"
     },
     {
-      "bytes": 18354,
+      "bytes": 18349,
       "path": "timber-trestle-80/bridge-collider.fbx",
-      "sha256": "4726cf1c4622736cf30bf91afc90b6cfce5f6a07426cc6fdf46c056ca80bd975"
+      "sha256": "05fc533c22bebc88fe30cb48c6ed6a5ef634f8ee7ced2590ae8f262322bdeb53"
     },
     {
-      "bytes": 1286542,
+      "bytes": 1288432,
       "path": "timber-trestle-80/bridge-lod0.fbx",
-      "sha256": "855a51e6922b97f0f7829b7c64c1bcbb7ac5b6ae1e3ae721e62676ecad560e47"
+      "sha256": "0a538cf13de307cbea151340edf3d827925bd2e6ce56bc6c762fa05d3d9baaaa"
     },
     {
-      "bytes": 149294,
+      "bytes": 151632,
       "path": "timber-trestle-80/bridge-lod1.fbx",
-      "sha256": "4c79c9ea0a497b398bd5e81457880c3698b6099aeab8e877a4df754c5ba7a148"
+      "sha256": "ddc5ee03442ad29cea83cef62b2f5dae8ecc17e8cf8ff2f7903fa31e8e9d4f85"
     },
     {
-      "bytes": 112030,
+      "bytes": 111935,
       "path": "timber-trestle-80/bridge-lod2.fbx",
-      "sha256": "11a347768f9c17b707d94ee4c606b74e46cfcbd1823f28a3192cbbe3b6a24960"
+      "sha256": "b94b3b671e028a19f50e8a1365ef0f92e0c2439f339e672985d7086c3a802261"
     },
     {
-      "bytes": 4824,
+      "bytes": 5128,
       "path": "timber-trestle-80/manifest.json",
-      "sha256": "05f4305b988c3c9e11cb150886e4d1944108ea88ad58334e5fa2cbc42759414b"
+      "sha256": "e1273d90b18a94dcaadf3bba2d00e231fee82070f7cb4b19eac19c3a98fd3924"
     },
     {
       "bytes": 1299022,
@@ -696,6 +761,21 @@
       "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
     },
     {
+      "bytes": 653607,
+      "path": "timber-trestle-80/textures/metal-basecolor.png",
+      "sha256": "c996526245ba63b9a2a255b2919ad55805d1fd033e43f395abdcda65be09dc00"
+    },
+    {
+      "bytes": 533016,
+      "path": "timber-trestle-80/textures/metal-mask.png",
+      "sha256": "2663b5b7299334f82f1c7dc8f7da4688a8c3bdcf2d1758adc759c037131ae640"
+    },
+    {
+      "bytes": 1204164,
+      "path": "timber-trestle-80/textures/metal-normal.png",
+      "sha256": "66733d6360639960e9092b5a79a0d9af2d3906118df6b578adb8309093d26159"
+    },
+    {
       "bytes": 1118482,
       "path": "timber-trestle-80/textures/stone-basecolor.png",
       "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
@@ -711,9 +791,9 @@
       "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
     },
     {
-      "bytes": 980012,
+      "bytes": 1342562,
       "path": "timber-trestle-80/textures/timber-basecolor.png",
-      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+      "sha256": "92e7f1b9a99060371ed4694fbb50d35d117f6e0e769320d6cc1b6d8af6879eb5"
     },
     {
       "bytes": 5699,
@@ -721,9 +801,9 @@
       "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
     },
     {
-      "bytes": 1992302,
+      "bytes": 1792714,
       "path": "timber-trestle-80/textures/timber-normal.png",
-      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+      "sha256": "48cb6f8e6f90bca65f82dc8e6f5c3eb6a9538b708e1e83c6d07f97e2e50962ff"
     }
   ],
   "schemaVersion": 1

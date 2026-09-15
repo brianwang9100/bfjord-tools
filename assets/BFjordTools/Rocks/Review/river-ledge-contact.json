@@ -1,0 +1,951 @@
+{
+  "result": "passed",
+  "scope": "Representative feeder-cap rectangle at width12.95m depth6.8m. Actual Unity projection remains integration evidence.",
+  "samples": [
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7371234893798828
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7400579452514648
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7362937927246094
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7448225021362305
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7120294570922852
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.6977434158325195
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.6453886032104492
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.4977331161499023
+    },
+    {
+      "fixtureX": -3.55,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.0024843215942383
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7445716857910156
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7405576705932617
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7345809936523438
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7491474151611328
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7179021835327148
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.6988554000854492
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.6691093444824219
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.5151548385620117
+    },
+    {
+      "fixtureX": -3.195,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.1051139831542969
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7500438690185547
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7495126724243164
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7404203414916992
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.738520622253418
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7125129699707031
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.6947784423828125
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.676309585571289
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.5818510055541992
+    },
+    {
+      "fixtureX": -2.84,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.2204780578613281
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7507991790771484
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.750096321105957
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7461023330688477
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.724226951599121
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7023296356201172
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7018957138061523
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.6653766632080078
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6139144897460938
+    },
+    {
+      "fixtureX": -2.485,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.4035234451293945
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.737823486328125
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.746337890625
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7432947158813477
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7157526016235352
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7027006149291992
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7029352188110352
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.6841821670532227
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6386032104492188
+    },
+    {
+      "fixtureX": -2.13,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.520817756652832
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7213716506958008
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7339096069335938
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7404870986938477
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.734619140625
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7060661315917969
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7009449005126953
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.6968870162963867
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6501121520996094
+    },
+    {
+      "fixtureX": -1.775,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.5793371200561523
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7149724960327148
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7256555557250977
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7376775741577148
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7358245849609375
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7094306945800781
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7022933959960938
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.701136589050293
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6650962829589844
+    },
+    {
+      "fixtureX": -1.42,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6127948760986328
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7178850173950195
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7174034118652344
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7299394607543945
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.731241226196289
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.710479736328125
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.706568717956543
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7021551132202148
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6866912841796875
+    },
+    {
+      "fixtureX": -1.065,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.625779151916504
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.721482276916504
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7129154205322266
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7216873168945312
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7277917861938477
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.726933479309082
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7099342346191406
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7014875411987305
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.6988964080810547
+    },
+    {
+      "fixtureX": -0.71,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6466045379638672
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7250795364379883
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7131271362304688
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7144994735717773
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7249813079833984
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.727426528930664
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.712296485900879
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7041759490966797
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.699915885925293
+    },
+    {
+      "fixtureX": -0.355,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.637624740600586
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7286758422851562
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7167243957519531
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7108573913574219
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.717717170715332
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7228403091430664
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7126550674438477
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7104377746582031
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7009353637695312
+    },
+    {
+      "fixtureX": 0.0,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6740055084228516
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.732274055480957
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.720320701599121
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7083683013916016
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7124414443969727
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7182550430297852
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.719247817993164
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7138032913208008
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7019538879394531
+    },
+    {
+      "fixtureX": 0.355,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6773386001586914
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.735870361328125
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7239179611206055
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.711965560913086
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7087984085083008
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7155427932739258
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7190265655517578
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.714472770690918
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7060575485229492
+    },
+    {
+      "fixtureX": 0.71,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6805572509765625
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7394676208496094
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7275152206420898
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7196044921875
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7142820358276367
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7200431823730469
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7152595520019531
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7148303985595703
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.713064193725586
+    },
+    {
+      "fixtureX": 1.065,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.680556297302246
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7454805374145508
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.740157127380371
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7348337173461914
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7295112609863281
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7241878509521484
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7218751907348633
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7157669067382812
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7165937423706055
+    },
+    {
+      "fixtureX": 1.42,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.6934595108032227
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7601251602172852
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7530384063720703
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7459535598754883
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7388687133789062
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7322044372558594
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7305173873901367
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7274589538574219
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7262630462646484
+    },
+    {
+      "fixtureX": 1.775,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.7146892547607422
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7601089477539062
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7530231475830078
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7463741302490234
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7399492263793945
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.733525276184082
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7333860397338867
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.734572410583496
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7353811264038086
+    },
+    {
+      "fixtureX": 2.13,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.7330312728881836
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.760544776916504
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7541208267211914
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.747696876525879
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7412738800048828
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.735036849975586
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7361602783203125
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7376384735107422
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7429065704345703
+    },
+    {
+      "fixtureX": 2.485,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.742100715637207
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.748178482055664
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7401418685913086
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7338619232177734
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7282991409301758
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7320442199707031
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7388038635253906
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7423715591430664
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7492027282714844
+    },
+    {
+      "fixtureX": 2.84,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.7498807907104492
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7252388000488281
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.7196769714355469
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.714116096496582
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.7161149978637695
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7246675491333008
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7332210540771484
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.7429237365722656
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.7468299865722656
+    },
+    {
+      "fixtureX": 3.195,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.7355165481567383
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": -0.15,
+      "sourceHeight": 1.7054195404052734
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 0.05000000000000002,
+      "sourceHeight": 1.699904441833496
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 0.25,
+      "sourceHeight": 1.7001876831054688
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 0.45,
+      "sourceHeight": 1.708745002746582
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 0.65,
+      "sourceHeight": 1.7173023223876953
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 0.8500000000000001,
+      "sourceHeight": 1.7258596420288086
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 1.05,
+      "sourceHeight": 1.728276252746582
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 1.25,
+      "sourceHeight": 1.725255012512207
+    },
+    {
+      "fixtureX": 3.55,
+      "fixtureZ": 1.45,
+      "sourceHeight": 1.717789649963379
+    }
+  ]
+}

@@ -19,8 +19,8 @@
         512,
         512
       ],
-      "sha256": "6a373537581cbc2eb39b6a513bc607fea7c91d8b5407b5b9149d1312cbebdd4e",
-      "bytes": 556626,
+      "sha256": "2c73d43545815f5c87169388f7447cd262e5fb7cefd6a0aefa3e5667ec113309",
+      "bytes": 583610,
       "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
     },
     "waterfall-motion.png": {
@@ -28,8 +28,8 @@
         512,
         512
       ],
-      "sha256": "3453f0d4d8dc989f44b4d3164d437503d7db026654075cb276336a695352f347",
-      "bytes": 726201,
+      "sha256": "c6c938f17ab71611c309460fd99a11b8c44d7f3531b26cdcd50d9e3ea90a96d4",
+      "bytes": 722654,
       "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
     }
   }

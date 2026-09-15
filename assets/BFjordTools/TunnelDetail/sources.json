@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "license": "CC0-1.0",
+  "generatorLicense": "MIT",
+  "provider": "Original BFjord Tools artwork",
+  "inputs": [],
+  "geometry": "Original beveled ashlar jambs, voussoirs, arch hood, coping and planted footings authored procedurally in Blender 5.2.1",
+  "textures": "Original deterministic periodic multiscale mineral noise, surface normals, roughness and concrete construction lines",
+  "research": [
+    {"url": "https://polyhaven.com/license", "decision": "CC0 reuse considered; no external model or texture needed for this bounded fixed-size facade"},
+    {"url": "https://docs.unity3d.com/6000.0/Documentation/ScriptReference/TerrainData.SetHoles.html", "decision": "Preserve ordinary Unity Terrain holes and existing sparse cell restoration"},
+    {"url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/shader-terrain-lit.html", "decision": "Require URP Terrain Holes support; no custom runtime terrain package"}
+  ]
+}

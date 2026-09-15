@@ -1,6 +1,6 @@
 # Public artwork grant and source credits
 
-Brian Wang dedicates the original bridge and rock geometry, design recipes, original generated materials/details, mathematical water data maps and supplied scene/review images distributed in bfjord-tools to the public under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). This grant applies to the public snapshot and supersedes the private snapshot's prior reservation of rights. The bridge Blender generator's GPL-3.0-or-later license and the independently authored rock and water-map generators' MIT licenses are separate from this artwork grant.
+Brian Wang dedicates the original bridge, rock, foliage and road/tunnel detail geometry, design recipes, original generated materials/details, mathematical water data maps and supplied scene/review images distributed in bfjord-tools to the public under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). This grant applies to the public snapshot and supersedes the private snapshot's prior reservation of rights. The bridge Blender generator's GPL-3.0-or-later license and the independently authored rock, foliage, terrain-mask, road/tunnel-detail and water-map generators' MIT licenses are separate from this artwork grant.
 
 Third-party artwork and the documented prepared derivatives retain their existing CC0 licenses:
 

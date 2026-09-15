@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "bytes": 237997,
+      "path": "Assets/BFjord/TunnelDetail/Lining_BaseColor.png",
+      "sha256": "019ac8242d60b2885b3143f7a0446264427fb38a983a8ae17d02946ff7a0895c",
+      "sourceSha256": "019ac8242d60b2885b3143f7a0446264427fb38a983a8ae17d02946ff7a0895c"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Lining_BaseColor.png.meta",
+      "sha256": "b9520b863331eaf747f56c4a96cd17d7817dddd72283c876dd51c07d105689e5",
+      "sourceSha256": "b9520b863331eaf747f56c4a96cd17d7817dddd72283c876dd51c07d105689e5"
+    },
+    {
+      "bytes": 5664744,
+      "path": "Assets/BFjord/TunnelDetail/MasonryPortal.json",
+      "sha256": "810044706b5f2f102a1859b0eec96092195f18a6fd9b95678213cb5684c70304",
+      "sourceSha256": "810044706b5f2f102a1859b0eec96092195f18a6fd9b95678213cb5684c70304"
+    },
+    {
+      "bytes": 139,
+      "path": "Assets/BFjord/TunnelDetail/MasonryPortal.json.meta",
+      "sha256": "2825584c18b8db964deadcb536529655154ebf42b35522469ffb12a77e14284b",
+      "sourceSha256": "2825584c18b8db964deadcb536529655154ebf42b35522469ffb12a77e14284b"
+    },
+    {
+      "bytes": 305957,
+      "path": "Assets/BFjord/TunnelDetail/Stone_BaseColor.png",
+      "sha256": "dddb9638541360c95c75ad71d2ade8a4f8cc1d558869318b0e8ea54549bab485",
+      "sourceSha256": "dddb9638541360c95c75ad71d2ade8a4f8cc1d558869318b0e8ea54549bab485"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_BaseColor.png.meta",
+      "sha256": "a9ab60124015ccb99c1a30e7484cb46b9eabcfba4afdf0f5c5d8d39ff2f97eb9",
+      "sourceSha256": "a9ab60124015ccb99c1a30e7484cb46b9eabcfba4afdf0f5c5d8d39ff2f97eb9"
+    },
+    {
+      "bytes": 131294,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Mask.png",
+      "sha256": "eca2dc2681cb31a1f1c1b77138e957b0e62dace09fbb38cd91ba0854205bbc99",
+      "sourceSha256": "eca2dc2681cb31a1f1c1b77138e957b0e62dace09fbb38cd91ba0854205bbc99"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Mask.png.meta",
+      "sha256": "ca00c1dd2908a265185953b626caedf75f07e948fc15aad18e8a993b47f0bbe5",
+      "sourceSha256": "ca00c1dd2908a265185953b626caedf75f07e948fc15aad18e8a993b47f0bbe5"
+    },
+    {
+      "bytes": 535803,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Normal.png",
+      "sha256": "898f69aec90c60e4114f4387935343f61db23e1f130e1373b5872f000fb48f21",
+      "sourceSha256": "898f69aec90c60e4114f4387935343f61db23e1f130e1373b5872f000fb48f21"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Normal.png.meta",
+      "sha256": "6c32e625a6087baf8063260ac2d846135d414605fdeba8a82e0cfda0785c91a1",
+      "sourceSha256": "6c32e625a6087baf8063260ac2d846135d414605fdeba8a82e0cfda0785c91a1"
+    }
+  ],
+  "schemaVersion": 1
+}

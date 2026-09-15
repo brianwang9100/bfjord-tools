@@ -1,0 +1,39 @@
+{
+  "structures": [
+    {
+      "id": "masonry-hill-tunnel",
+      "sourceId": "original-masonry-tunnel-2026-09",
+      "kind": "tunnel",
+      "style": "concrete",
+      "portalStyle": "masonry",
+      "width": 8,
+      "clearance": 5.5,
+      "thickness": 0.5,
+      "portalDepth": 2,
+      "minimumCover": 0.5,
+      "approachLength": 55,
+      "controls": [
+        {
+          "x": 290,
+          "y": 34.64002,
+          "z": 165
+        },
+        {
+          "x": 332,
+          "y": 33.93713,
+          "z": 157
+        },
+        {
+          "x": 383,
+          "y": 33.07023,
+          "z": 165
+        },
+        {
+          "x": 429,
+          "y": 32.29704,
+          "z": 169
+        }
+      ]
+    }
+  ]
+}

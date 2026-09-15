@@ -32,3 +32,5 @@ does not model walkable gaps between individual stones.
 The editable `original.blend` is a private authoring file; release packaging
 must exclude it and review FBX metadata. The reusable generator is in
 `scripts/rocks/build_rocks.py` and uses the MIT license.
+
+Three fidelity families add eroded coastal outcrop, weathered river ledge and fractured boulder cluster: each has 6200/2100/650 triangle LODs, a 160-triangle collider and 1024px baked color/normal maps. The generator writes editable sources into `Sources/`; binary authoring files are not part of the public snapshot, which supplies the generator, FBXs and maps. `provenance.json` records generated file hashes and ambientCG derivatives. `Review/fidelity-lods-pbr.png` and `Review/fidelity-lods-clay.png` show actual exported meshes at all LODs. These are Blender review renders, not Unity or device acceptance.

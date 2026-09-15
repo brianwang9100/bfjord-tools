@@ -1,0 +1,51 @@
+{
+  "id": "meadow-detail-001",
+  "area": {
+    "x": 196,
+    "y": 174,
+    "width": 26,
+    "height": 23
+  },
+  "seed": 41837,
+  "maximumCount": 460,
+  "densityPerHectare": 9000,
+  "minimumSpacing": 0.48,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 30,
+  "clusterCount": 12,
+  "clusterRadius": 4.5,
+  "spacingGroup": "meadow-detail",
+  "species": [
+    {
+      "id": "MeadowDaisy_A",
+      "prefabKey": "bfjord:MeadowDaisy_A",
+      "weight": 1,
+      "radius": 0.47,
+      "minimumScale": 0.82,
+      "maximumScale": 1.16,
+      "groundOffsetMeters": -0.008
+    },
+    {
+      "id": "CoastalGrass_A",
+      "prefabKey": "bfjord:CoastalGrass_A",
+      "weight": 2,
+      "radius": 0.82,
+      "minimumScale": 0.82,
+      "maximumScale": 1.16,
+      "groundOffsetMeters": -0.008
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ]
+}

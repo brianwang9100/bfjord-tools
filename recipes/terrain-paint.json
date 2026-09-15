@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "command": "bwork_terrain",
+  "arguments": {
+    "action": "paint",
+    "recipePath": "Packages/com.bfjord.tools/Samples/terrain-paint-woodland-bank.json"
+  },
+  "targetScene": "Assets/Scenes/WorldAuthoringTools.unity"
+}

@@ -1,0 +1,185 @@
+{
+  "assets": [
+    {
+      "boundsBlender": [
+        [
+          -0.3746882677078247,
+          0.37481558322906494
+        ],
+        [
+          -1.2089579105377197,
+          1.204579472541809
+        ],
+        [
+          0.0019998110365122557,
+          0.9439696073532104
+        ]
+      ],
+      "file": "Models/VergeWall_A_LOD0.fbx",
+      "id": "VergeWall_A",
+      "lod": 0,
+      "materialSlots": [
+        "VergeStone"
+      ],
+      "reimported": true,
+      "sha256": "f527bc253ee0e20d83ece0b15e6124ee5ff2360851b9e8e965c6c969da02b7ec",
+      "sourceSha256": "3ee084d24d25567461afb6f4955c4284639a740bef54df43e9c7168e2fe341d7",
+      "triangles": 3564,
+      "uvChannels": 1,
+      "vertices": 1848
+    },
+    {
+      "boundsBlender": [
+        [
+          -0.3746882677078247,
+          0.37481558322906494
+        ],
+        [
+          -1.2089579105377197,
+          1.204579472541809
+        ],
+        [
+          0.0019998110365122557,
+          0.9439696073532104
+        ]
+      ],
+      "file": "Models/VergeWall_A_LOD1.fbx",
+      "id": "VergeWall_A",
+      "lod": 1,
+      "materialSlots": [
+        "VergeStone"
+      ],
+      "reimported": true,
+      "sha256": "8ba58a1004039d0cb1a682025983ae0f142290747a5f4d3257f3912897468433",
+      "sourceSha256": "f1ebb5b275f3072a618f76e2899a2011e6f44dfb6cc673f999bc82d9064932be",
+      "triangles": 1452,
+      "uvChannels": 1,
+      "vertices": 792
+    },
+    {
+      "boundsBlender": [
+        [
+          -0.3719950020313263,
+          0.365622878074646
+        ],
+        [
+          -1.2107435464859009,
+          1.2140562534332275
+        ],
+        [
+          0.001999806147068739,
+          0.936443030834198
+        ]
+      ],
+      "file": "Models/VergeWall_A_LOD2.fbx",
+      "id": "VergeWall_A",
+      "lod": 2,
+      "materialSlots": [
+        "VergeStone"
+      ],
+      "reimported": true,
+      "sha256": "327d4c307aee62940125fe59ce21d2a55a92256e2df310df538e905d04b6f0a2",
+      "sourceSha256": "db60a6a918467085df5ce992bab9f659710050fd3c451702770b48c72bad8ce3",
+      "triangles": 252,
+      "uvChannels": 1,
+      "vertices": 168
+    },
+    {
+      "boundsBlender": [
+        [
+          -0.06499999761581421,
+          0.06499999761581421
+        ],
+        [
+          -0.0969998762011528,
+          0.09700014442205429
+        ],
+        [
+          -9.612320717167222e-09,
+          1.059999942779541
+        ]
+      ],
+      "file": "Models/Delineator_A_LOD0.fbx",
+      "id": "Delineator_A",
+      "lod": 0,
+      "materialSlots": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "reimported": true,
+      "sha256": "62a8ee059844a497213bffaa8e500996b529417f4298833a1fc18c73ebaf46db",
+      "sourceSha256": "62a8ee059844a497213bffaa8e500996b529417f4298833a1fc18c73ebaf46db",
+      "triangles": 540,
+      "uvChannels": 1,
+      "vertices": 280
+    },
+    {
+      "boundsBlender": [
+        [
+          -0.06499999761581421,
+          0.06499999761581421
+        ],
+        [
+          -0.0969998762011528,
+          0.09700014442205429
+        ],
+        [
+          -9.612320717167222e-09,
+          1.059999942779541
+        ]
+      ],
+      "file": "Models/Delineator_A_LOD1.fbx",
+      "id": "Delineator_A",
+      "lod": 1,
+      "materialSlots": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "reimported": true,
+      "sha256": "0f3a3fe4bce77e58a1f6964ec061e7d2545a0f59e57625d4a3c6c847b60e3113",
+      "sourceSha256": "0f3a3fe4bce77e58a1f6964ec061e7d2545a0f59e57625d4a3c6c847b60e3113",
+      "triangles": 156,
+      "uvChannels": 1,
+      "vertices": 88
+    },
+    {
+      "boundsBlender": [
+        [
+          -0.06499999761581421,
+          0.06499999761581421
+        ],
+        [
+          -0.0969998762011528,
+          0.09700014442205429
+        ],
+        [
+          -1.2219051548356674e-08,
+          1.059999942779541
+        ]
+      ],
+      "file": "Models/Delineator_A_LOD2.fbx",
+      "id": "Delineator_A",
+      "lod": 2,
+      "materialSlots": [
+        "DelineatorIvory",
+        "DelineatorBlack",
+        "DelineatorAmber"
+      ],
+      "reimported": true,
+      "sha256": "53b9d23336e89b792f2e04f50759e68bcb1cbbbf4edaaeac06817fbf9c8584f8",
+      "sourceSha256": "53b9d23336e89b792f2e04f50759e68bcb1cbbbf4edaaeac06817fbf9c8584f8",
+      "triangles": 60,
+      "uvChannels": 1,
+      "vertices": 40
+    }
+  ],
+  "collision": "None; decoration never owns ride collision.",
+  "generatorLicense": "MIT",
+  "license": "CC0-1.0",
+  "pivot": "base centre",
+  "schemaVersion": 1,
+  "units": "metres",
+  "unityUp": "Y"
+}

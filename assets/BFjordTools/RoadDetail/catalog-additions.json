@@ -1,0 +1,126 @@
+{
+  "destinationRoot": "Assets/BFjord/RoadDetail",
+  "files": [
+    {
+      "bytes": 29804,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD0.fbx",
+      "sha256": "62a8ee059844a497213bffaa8e500996b529417f4298833a1fc18c73ebaf46db",
+      "sourceSha256": "62a8ee059844a497213bffaa8e500996b529417f4298833a1fc18c73ebaf46db"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD0.fbx.meta",
+      "sha256": "a53c838b29e35330db00021b99b2a1e123153b569f1c28bd6c0c2186f5e4b3db",
+      "sourceSha256": "a53c838b29e35330db00021b99b2a1e123153b569f1c28bd6c0c2186f5e4b3db"
+    },
+    {
+      "bytes": 20796,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD1.fbx",
+      "sha256": "0f3a3fe4bce77e58a1f6964ec061e7d2545a0f59e57625d4a3c6c847b60e3113",
+      "sourceSha256": "0f3a3fe4bce77e58a1f6964ec061e7d2545a0f59e57625d4a3c6c847b60e3113"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD1.fbx.meta",
+      "sha256": "3892aeed535e49cf71d594e8c567e52def7db8542e2ccaedd5c7c253e5875fd0",
+      "sourceSha256": "3892aeed535e49cf71d594e8c567e52def7db8542e2ccaedd5c7c253e5875fd0"
+    },
+    {
+      "bytes": 18364,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD2.fbx",
+      "sha256": "53b9d23336e89b792f2e04f50759e68bcb1cbbbf4edaaeac06817fbf9c8584f8",
+      "sourceSha256": "53b9d23336e89b792f2e04f50759e68bcb1cbbbf4edaaeac06817fbf9c8584f8"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD2.fbx.meta",
+      "sha256": "7bb65c10564e0f056f2a1633af85af75b673335ddab5ba683731de696af65db5",
+      "sourceSha256": "7bb65c10564e0f056f2a1633af85af75b673335ddab5ba683731de696af65db5"
+    },
+    {
+      "bytes": 164348,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD0.fbx",
+      "sha256": "f527bc253ee0e20d83ece0b15e6124ee5ff2360851b9e8e965c6c969da02b7ec",
+      "sourceSha256": "3ee084d24d25567461afb6f4955c4284639a740bef54df43e9c7168e2fe341d7"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD0.fbx.meta",
+      "sha256": "a4fcb0eaf182c8b1220effacb8160ec4dc6d445c5f418622e7b11bcf36952d76",
+      "sourceSha256": "a4fcb0eaf182c8b1220effacb8160ec4dc6d445c5f418622e7b11bcf36952d76"
+    },
+    {
+      "bytes": 80796,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD1.fbx",
+      "sha256": "8ba58a1004039d0cb1a682025983ae0f142290747a5f4d3257f3912897468433",
+      "sourceSha256": "f1ebb5b275f3072a618f76e2899a2011e6f44dfb6cc673f999bc82d9064932be"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD1.fbx.meta",
+      "sha256": "0ce76b6c1fe7aeeb1f8c64a7326b5d888c69859c54caeae8fd94b49577bbcbaa",
+      "sourceSha256": "0ce76b6c1fe7aeeb1f8c64a7326b5d888c69859c54caeae8fd94b49577bbcbaa"
+    },
+    {
+      "bytes": 30908,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD2.fbx",
+      "sha256": "327d4c307aee62940125fe59ce21d2a55a92256e2df310df538e905d04b6f0a2",
+      "sourceSha256": "db60a6a918467085df5ce992bab9f659710050fd3c451702770b48c72bad8ce3"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD2.fbx.meta",
+      "sha256": "6150ae658f4926e62e6673f0d3af5cf9e72d5375fb16fcc55080a5f133e6b6e8",
+      "sourceSha256": "6150ae658f4926e62e6673f0d3af5cf9e72d5375fb16fcc55080a5f133e6b6e8"
+    },
+    {
+      "bytes": 273966,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_BaseColor.png",
+      "sha256": "a1bb75bbb1e8da04920b59081561bb4cf8f833d51fb0a3a42bb9cc687d86c436",
+      "sourceSha256": "f8a340b1c138397ead629f47e6c6eaf1184c197565008f62083e9ffd78ccdce9"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_BaseColor.png.meta",
+      "sha256": "0b7fd744c475f911540380750e896b45280299c22d246984fc6069fc7bca5430",
+      "sourceSha256": "0b7fd744c475f911540380750e896b45280299c22d246984fc6069fc7bca5430"
+    },
+    {
+      "bytes": 206366,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png",
+      "sha256": "a6762b0c04959a8e743d8b4c319bb3cb7d5773c4242f52c830ae4a2e6bffe73b",
+      "sourceSha256": "833dc1d994da42012959a521058dfc85084f5e7e2ce10dbd3b6ceec8dfc52bea"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png.meta",
+      "sha256": "479acb738fe4aee644570f66e2a4cd6a2df271ace1cbc2ce8e597f38c5e6c979",
+      "sourceSha256": "479acb738fe4aee644570f66e2a4cd6a2df271ace1cbc2ce8e597f38c5e6c979"
+    },
+    {
+      "bytes": 4631,
+      "path": "Assets/BFjord/RoadDetail/manifest.json",
+      "sha256": "2a572e0a9b8a5dabda93123788001bdda824e79b19ea0b155fc637605248c36e",
+      "sourceSha256": "f9e72eab84678363351aeec1eba710e97abce4fd4d225438fb948222666c071b"
+    },
+    {
+      "bytes": 102,
+      "path": "Assets/BFjord/RoadDetail/manifest.json.meta",
+      "sha256": "6d5244356503fd223c8ef71a75694524cb84cca7205eac5792954cbe2878c25b",
+      "sourceSha256": "6d5244356503fd223c8ef71a75694524cb84cca7205eac5792954cbe2878c25b"
+    },
+    {
+      "bytes": 531,
+      "path": "Assets/BFjord/RoadDetail/LICENSE-CC0.txt",
+      "sha256": "f513d4265910b0773f397b64aeae387c319cd5388271b5781bea55b98085a749",
+      "sourceSha256": "f513d4265910b0773f397b64aeae387c319cd5388271b5781bea55b98085a749"
+    },
+    {
+      "bytes": 102,
+      "path": "Assets/BFjord/RoadDetail/LICENSE-CC0.txt.meta",
+      "sha256": "15e10fd0b532ec9f8345c790e23d9278a2aafcb14b1d747f20864938dd9bca8e",
+      "sourceSha256": "15e10fd0b532ec9f8345c790e23d9278a2aafcb14b1d747f20864938dd9bca8e"
+    }
+  ],
+  "sourceRoot": "assets/BFjordTools/RoadDetail"
+}

@@ -16,11 +16,14 @@ namespace Bwork.Authoring.Editor
         public float exposedHeightStart = 40, exposedHeightEnd = 90;
         public float patchScaleMeters = 32, soilStrength = .55f, gravelStrength = .65f;
         public float bankWidthMeters = 7, bankHeightMeters = 2.2f;
+        public bool heightBlend = true;
+        public float heightTransition = .16f, bankBreakup = .45f, patchWarpMeters = 8;
     }
 
     public static class TerrainPresentation
     {
         const string ProfileFile = "terrain-paint-profile.json";
+        const string MaskRoot = "Assets/BFjord/TerrainDetail/";
         static readonly string[] MaterialNames = { "Ground", "Dirt", "Gravel", "Rock" };
         static readonly string[] LayerNames = { "Meadow", "Soil", "Talus", "Outcrop" };
         // Keep each scan at its documented physical footprint. In particular,
@@ -33,9 +36,13 @@ namespace Bwork.Authoring.Editor
             readonly TerrainLayer[] layers;
             readonly string[] layerProperties;
             readonly float[,,] map;
+            readonly Material material;
+            readonly string materialProperties;
             public Snapshot(Terrain terrain)
             {
                 layers = terrain.terrainData.terrainLayers;
+                material = terrain.materialTemplate;
+                materialProperties = material == null ? null : EditorJsonUtility.ToJson(material);
                 // Paint updates these persistent assets in place through CopySerialized.
                 // References alone cannot roll that back. Editor serialization copies all
                 // native layer properties and texture references without leaking clone objects.
@@ -51,6 +58,12 @@ namespace Bwork.Authoring.Editor
                     EditorUtility.SetDirty(layers[i]);
                 }
                 terrain.terrainData.terrainLayers = layers;
+                if (material != null && materialProperties != null)
+                {
+                    EditorJsonUtility.FromJsonOverwrite(materialProperties, material);
+                    EditorUtility.SetDirty(material);
+                }
+                terrain.materialTemplate = material;
                 if (map != null) terrain.terrainData.SetAlphamaps(0, 0, map);
                 terrain.Flush();
                 EditorUtility.SetDirty(terrain.terrainData);
@@ -63,7 +76,8 @@ namespace Bwork.Authoring.Editor
                 !Range(profile.rockSlopeStart, 0, 80) || !Range(profile.rockSlopeEnd, profile.rockSlopeStart + 1, 89) ||
                 !Range(profile.exposedHeightStart, -1000, 5000) || !Range(profile.exposedHeightEnd, profile.exposedHeightStart + 1, 6000) ||
                 !Range(profile.patchScaleMeters, 4, 256) || !Range(profile.soilStrength, 0, 1) || !Range(profile.gravelStrength, 0, 1) ||
-                !Range(profile.bankWidthMeters, .5f, 30) || !Range(profile.bankHeightMeters, .1f, 10))
+                !Range(profile.bankWidthMeters, .5f, 30) || !Range(profile.bankHeightMeters, .1f, 10) ||
+                !Range(profile.heightTransition, .01f, 1) || !Range(profile.bankBreakup, 0, .8f) || !Range(profile.patchWarpMeters, 0, 32))
                 throw new ArgumentException("Terrain paint requires a version-1 profile with finite, ordered slope/height bounds and bounded patch/bank scales.");
         }
 
@@ -102,6 +116,13 @@ namespace Bwork.Authoring.Editor
             bool owned = oldLayers.Length == 0 || oldLayers.Length == 2 && oldLayers[0].name == "Loam" && oldLayers[1].name == "Stone" ||
                 oldLayers.Length == 4 && oldLayers.Select(l => l == null ? "" : l.name).SequenceEqual(LayerNames);
             if (!owned) throw new InvalidOperationException("Terrain palette is externally authored; restore the toolkit palette before automatic painting.");
+            var material = terrain.materialTemplate;
+            string materialPath = material == null ? "" : AssetDatabase.GetAssetPath(material);
+            if (material == null || material.shader.name != "Universal Render Pipeline/Terrain/Lit" ||
+                materialPath != ToolSandbox.Generated + "/Terrain.mat")
+                throw new InvalidOperationException("Terrain material is externally authored; restore the toolkit Terrain.mat before automatic painting.");
+            var masks = LayerNames.Select(name => AssetDatabase.LoadAssetAtPath<Texture2D>(MaskRoot + name + "_TerrainMask.png") ??
+                throw new InvalidOperationException("Missing CC0 Terrain mask: " + name + ". Install the current sample asset catalog.")).ToArray();
             int width = data.alphamapWidth, height = data.alphamapHeight;
             var map = new float[height, width, 4];
             float stepX = 4 / data.size.x, stepZ = 4 / data.size.z;
@@ -112,26 +133,31 @@ namespace Bwork.Authoring.Editor
                 float wx = terrain.transform.position.x + u * data.size.x, wz = terrain.transform.position.z + v * data.size.z;
                 float near = (data.GetInterpolatedHeight(Mathf.Clamp01(u-stepX),v) + data.GetInterpolatedHeight(Mathf.Clamp01(u+stepX),v) +
                     data.GetInterpolatedHeight(u,Mathf.Clamp01(v-stepZ)) + data.GetInterpolatedHeight(u,Mathf.Clamp01(v+stepZ))) * .25f + terrain.transform.position.y;
-                float noise = Mathf.PerlinNoise(wx/profile.patchScaleMeters + profile.seed*.0131f, wz/profile.patchScaleMeters + profile.seed*.0073f);
-                float detail = Mathf.PerlinNoise(wx/7.1f + 37, wz/7.1f + 61);
+                float warpX = (Mathf.PerlinNoise(wx/53 + 93, wz/53 + profile.seed*.001f)-.5f)*profile.patchWarpMeters;
+                float warpZ = (Mathf.PerlinNoise(wx/47 + profile.seed*.002f, wz/47 + 17)-.5f)*profile.patchWarpMeters;
+                float noise = Mathf.PerlinNoise((wx+warpX)/profile.patchScaleMeters + profile.seed*.0131f, (wz+warpZ)/profile.patchScaleMeters + profile.seed*.0073f);
+                float detail = Mathf.PerlinNoise(wx/3.7f + 37, wz/3.7f + 61);
                 float bank = 0;
                 if (water != null)
                 {
                     var sample = water.SampleForBank(new Vector2(wx, wz), profile.bankWidthMeters);
                     // Both gates matter: a road or hillside above the water must not become a wet bank.
-                    bank = (1 - Smooth(0, profile.bankWidthMeters, Mathf.Max(0, sample.Distance))) *
+                    float bankWidth = profile.bankWidthMeters * (1-profile.bankBreakup + profile.bankBreakup*detail);
+                    bank = (1 - Smooth(0, bankWidth, Mathf.Max(0, sample.Distance))) *
                         (1 - Smooth(.2f, profile.bankHeightMeters, Mathf.Max(0, y - sample.Height)));
                 }
                 Vector4 weights = Weights(data.GetSteepness(u, v), y, near-y, noise, detail, bank, profile);
                 for (int layer = 0; layer < 4; layer++) map[z, x, layer] = weights[layer];
             }
-            // Reuse stable shared TerrainLayer assets. Terrain mask maps are deliberately not fed
-            // the road metallic/smoothness packing (their channel contracts are different).
+            // Terrain masks carry the scan's AO/height/roughness at exactly the same UVs as
+            // its albedo/normal. Do not substitute road metallic/smoothness maps here.
             var layers = new TerrainLayer[4];
             for (int i = 0; i < layers.Length; i++)
             {
                 layers[i] = ToolSandbox.Persist(new TerrainLayer { name = LayerNames[i],
                     diffuseTexture = (Texture2D)materials[i].GetTexture("_BaseMap"), normalMapTexture = (Texture2D)materials[i].GetTexture("_BumpMap"),
+                    maskMapTexture = masks[i], maskMapRemapMin = Vector4.zero,
+                    maskMapRemapMax = new Vector4(0, 1, 1, .45f),
                     tileSize = Vector2.one * TileMeters[i],
                     normalScale = materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = i == 3 ? .08f : .04f,
                     // The default DiffuseAlphaChannel source treats opaque JPG alpha as
@@ -141,6 +167,11 @@ namespace Bwork.Authoring.Editor
             }
             data.terrainLayers = layers;
             data.SetAlphamaps(0, 0, map);
+            material.SetFloat("_EnableHeightBlend", profile.heightBlend ? 1 : 0);
+            material.SetFloat("_HeightTransition", profile.heightTransition);
+            if (profile.heightBlend) material.EnableKeyword("_TERRAIN_BLEND_HEIGHT");
+            else material.DisableKeyword("_TERRAIN_BLEND_HEIGHT");
+            EditorUtility.SetDirty(material);
             terrain.Flush(); EditorUtility.SetDirty(data);
         }
 
@@ -150,8 +181,11 @@ namespace Bwork.Authoring.Editor
             float rock = Smooth(profile.rockSlopeStart, profile.rockSlopeEnd, slope + (noise-.5f)*12) * (.78f + .22f*exposure);
             float talus = Smooth(14, 35, slope) * (1-rock) * (.25f + .75f*Smooth(-.15f,.6f,concavity)) * profile.gravelStrength;
             float soil = Smooth(.42f,.72f,noise + (detail-.5f)*.18f) * profile.soilStrength * (1-rock);
-            talus = Mathf.Max(talus, bank*.72f*(1-rock));
-            soil = Mathf.Max(soil, bank*.28f*(1-rock));
+            // Deposits alternate between small stone and soil patches along the bank;
+            // the shore is not a uniform band of one material.
+            float bankStone = Mathf.Lerp(.35f, .85f, Smooth(.25f,.75f,detail));
+            talus = Mathf.Max(talus, bank*bankStone*(1-rock));
+            soil = Mathf.Max(soil, bank*(1-bankStone)*(1-rock));
             float grass = Mathf.Max(.015f, 1-rock-talus-soil);
             var weights = new Vector4(grass, soil, talus, rock);
             return weights / (weights.x+weights.y+weights.z+weights.w);

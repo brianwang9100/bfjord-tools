@@ -5,6 +5,266 @@
   ],
   "files": [
     {
+      "bytes": 452950,
+      "path": "Assets/BFjord/OriginalFoliage/Models/CoastalGrass_A.fbx",
+      "sha256": "c8009a93e4d9f5bd473305d21d8fc15acea3e0e29cca6539c948431048965456"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/CoastalGrass_A.fbx.meta",
+      "sha256": "f71bb645bc4bcfcd6cd1f514d92325f7581e7e9f6a6ef6a70afe6ba42b50eb2a"
+    },
+    {
+      "bytes": 522278,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MeadowDaisy_A.fbx",
+      "sha256": "1b76883f1e75d8e7f43a9ea5c79effa79b1b788ad03fb588c017edd4fa05e2f1"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MeadowDaisy_A.fbx.meta",
+      "sha256": "7aed481075ec88d4a9b00c6bab5bb5a88046095c9407fdd20f8db13c001c5b4e"
+    },
+    {
+      "bytes": 1183830,
+      "path": "Assets/BFjord/OriginalFoliage/Models/RoseThicket_A.fbx",
+      "sha256": "1214f3ca25910691604902b17e343023c2a9ae184fda7aabf4a95d78530ef188"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/RoseThicket_A.fbx.meta",
+      "sha256": "93d0685967ce9ca65ebb8f2de96c1c67f006fe50ad05544036c774e826a4d18b"
+    },
+    {
+      "bytes": 300742,
+      "path": "Assets/BFjord/OriginalFoliage/Models/WoodSorrel_A.fbx",
+      "sha256": "c9a8809a059ee9171992ea537fb61569a65a0253174b06c7b90232ae81852253"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/WoodSorrel_A.fbx.meta",
+      "sha256": "916f84eaaa374da04e5e0b4a2385e946a46299141faf47ec0aa7eef1cfa99f18"
+    },
+    {
+      "bytes": 222365,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/FoliageAtlas.png",
+      "sha256": "7223e8f77ab34bf9900681939068326e4bc194823a8b03c2f327b1c7570dfc62"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/FoliageAtlas.png.meta",
+      "sha256": "d956cfe15db37d7c905de4e1c6704745c723b3ff081e147a81699e25844de3ca"
+    },
+    {
+      "bytes": 95668,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png",
+      "sha256": "b8fd8725a45757eb9c14d5bdcb083f1f1386d9afc936e8acd70c7e82d76997b9"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png.meta",
+      "sha256": "7343c80e346f38763d1aa299c47d31e5e75d5b1f6c16685b4bce1f3b996a1552"
+    },
+    {
+      "bytes": 4843,
+      "path": "Assets/BFjord/OriginalFoliage/manifest.json",
+      "sha256": "e95e0d0aba6b395575c5de9eb9d8785e76f95ca72be917981d8371850510a2e7"
+    },
+    {
+      "bytes": 158,
+      "path": "Assets/BFjord/OriginalFoliage/manifest.json.meta",
+      "sha256": "d355a1c99e59e877a9eae33bede21c0807c3e5e0f0c478e48a77f36f8327da5b"
+    },
+    {
+      "bytes": 531,
+      "path": "Assets/BFjord/RoadDetail/LICENSE-CC0.txt",
+      "sha256": "f513d4265910b0773f397b64aeae387c319cd5388271b5781bea55b98085a749"
+    },
+    {
+      "bytes": 102,
+      "path": "Assets/BFjord/RoadDetail/LICENSE-CC0.txt.meta",
+      "sha256": "15e10fd0b532ec9f8345c790e23d9278a2aafcb14b1d747f20864938dd9bca8e"
+    },
+    {
+      "bytes": 29804,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD0.fbx",
+      "sha256": "62a8ee059844a497213bffaa8e500996b529417f4298833a1fc18c73ebaf46db"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD0.fbx.meta",
+      "sha256": "a53c838b29e35330db00021b99b2a1e123153b569f1c28bd6c0c2186f5e4b3db"
+    },
+    {
+      "bytes": 20796,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD1.fbx",
+      "sha256": "0f3a3fe4bce77e58a1f6964ec061e7d2545a0f59e57625d4a3c6c847b60e3113"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD1.fbx.meta",
+      "sha256": "3892aeed535e49cf71d594e8c567e52def7db8542e2ccaedd5c7c253e5875fd0"
+    },
+    {
+      "bytes": 18364,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD2.fbx",
+      "sha256": "53b9d23336e89b792f2e04f50759e68bcb1cbbbf4edaaeac06817fbf9c8584f8"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/Delineator_A_LOD2.fbx.meta",
+      "sha256": "7bb65c10564e0f056f2a1633af85af75b673335ddab5ba683731de696af65db5"
+    },
+    {
+      "bytes": 164348,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD0.fbx",
+      "sha256": "f527bc253ee0e20d83ece0b15e6124ee5ff2360851b9e8e965c6c969da02b7ec"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD0.fbx.meta",
+      "sha256": "a4fcb0eaf182c8b1220effacb8160ec4dc6d445c5f418622e7b11bcf36952d76"
+    },
+    {
+      "bytes": 80796,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD1.fbx",
+      "sha256": "8ba58a1004039d0cb1a682025983ae0f142290747a5f4d3257f3912897468433"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD1.fbx.meta",
+      "sha256": "0ce76b6c1fe7aeeb1f8c64a7326b5d888c69859c54caeae8fd94b49577bbcbaa"
+    },
+    {
+      "bytes": 30908,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD2.fbx",
+      "sha256": "327d4c307aee62940125fe59ce21d2a55a92256e2df310df538e905d04b6f0a2"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD2.fbx.meta",
+      "sha256": "6150ae658f4926e62e6673f0d3af5cf9e72d5375fb16fcc55080a5f133e6b6e8"
+    },
+    {
+      "bytes": 273966,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_BaseColor.png",
+      "sha256": "a1bb75bbb1e8da04920b59081561bb4cf8f833d51fb0a3a42bb9cc687d86c436"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_BaseColor.png.meta",
+      "sha256": "0b7fd744c475f911540380750e896b45280299c22d246984fc6069fc7bca5430"
+    },
+    {
+      "bytes": 206366,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png",
+      "sha256": "a6762b0c04959a8e743d8b4c319bb3cb7d5773c4242f52c830ae4a2e6bffe73b"
+    },
+    {
+      "bytes": 3419,
+      "path": "Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png.meta",
+      "sha256": "479acb738fe4aee644570f66e2a4cd6a2df271ace1cbc2ce8e597f38c5e6c979"
+    },
+    {
+      "bytes": 4631,
+      "path": "Assets/BFjord/RoadDetail/manifest.json",
+      "sha256": "2a572e0a9b8a5dabda93123788001bdda824e79b19ea0b155fc637605248c36e"
+    },
+    {
+      "bytes": 102,
+      "path": "Assets/BFjord/RoadDetail/manifest.json.meta",
+      "sha256": "6d5244356503fd223c8ef71a75694524cb84cca7205eac5792954cbe2878c25b"
+    },
+    {
+      "bytes": 602420,
+      "path": "Assets/BFjord/TerrainDetail/Meadow_TerrainMask.png",
+      "sha256": "d2936e9b40ddbc374d4627bfa2086fa597b241299627497ea77e25626269f448"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Meadow_TerrainMask.png.meta",
+      "sha256": "04b9751a52153f3d757601968b62d77daa14041e47c7a5994e32783bc37f81a1"
+    },
+    {
+      "bytes": 435115,
+      "path": "Assets/BFjord/TerrainDetail/Outcrop_TerrainMask.png",
+      "sha256": "0d28fa2db0585aec201a7347dafb36b82f91bbb3e42055e26a4713297c0db060"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Outcrop_TerrainMask.png.meta",
+      "sha256": "32576eeb94e7b09f95b8bb26d0df09d2a1d41b5b7c856a42de041e6d1646ab22"
+    },
+    {
+      "bytes": 619255,
+      "path": "Assets/BFjord/TerrainDetail/Soil_TerrainMask.png",
+      "sha256": "2930a17b13475659e2369d74f0dfe0a95c19c36f9c40739d62b3b21dad075936"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Soil_TerrainMask.png.meta",
+      "sha256": "1e068e933de8fee5c1e901bfce13b59a4b4534bb2bbd44d744fc3a0dc50e1e3c"
+    },
+    {
+      "bytes": 664883,
+      "path": "Assets/BFjord/TerrainDetail/Talus_TerrainMask.png",
+      "sha256": "66b9d2f40133c53287e1c55430564bfdf7d5b232583704ac96ecdf176ed3550d"
+    },
+    {
+      "bytes": 685,
+      "path": "Assets/BFjord/TerrainDetail/Talus_TerrainMask.png.meta",
+      "sha256": "5f0f44ec20b941d34d7d9679e867beb6246527543ec8c03dd821818126f328a0"
+    },
+    {
+      "bytes": 237997,
+      "path": "Assets/BFjord/TunnelDetail/Lining_BaseColor.png",
+      "sha256": "019ac8242d60b2885b3143f7a0446264427fb38a983a8ae17d02946ff7a0895c"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Lining_BaseColor.png.meta",
+      "sha256": "b9520b863331eaf747f56c4a96cd17d7817dddd72283c876dd51c07d105689e5"
+    },
+    {
+      "bytes": 5664744,
+      "path": "Assets/BFjord/TunnelDetail/MasonryPortal.json",
+      "sha256": "810044706b5f2f102a1859b0eec96092195f18a6fd9b95678213cb5684c70304"
+    },
+    {
+      "bytes": 139,
+      "path": "Assets/BFjord/TunnelDetail/MasonryPortal.json.meta",
+      "sha256": "2825584c18b8db964deadcb536529655154ebf42b35522469ffb12a77e14284b"
+    },
+    {
+      "bytes": 305957,
+      "path": "Assets/BFjord/TunnelDetail/Stone_BaseColor.png",
+      "sha256": "dddb9638541360c95c75ad71d2ade8a4f8cc1d558869318b0e8ea54549bab485"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_BaseColor.png.meta",
+      "sha256": "a9ab60124015ccb99c1a30e7484cb46b9eabcfba4afdf0f5c5d8d39ff2f97eb9"
+    },
+    {
+      "bytes": 131294,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Mask.png",
+      "sha256": "eca2dc2681cb31a1f1c1b77138e957b0e62dace09fbb38cd91ba0854205bbc99"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Mask.png.meta",
+      "sha256": "ca00c1dd2908a265185953b626caedf75f07e948fc15aad18e8a993b47f0bbe5"
+    },
+    {
+      "bytes": 535803,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Normal.png",
+      "sha256": "898f69aec90c60e4114f4387935343f61db23e1f130e1373b5872f000fb48f21"
+    },
+    {
+      "bytes": 331,
+      "path": "Assets/BFjord/TunnelDetail/Stone_Normal.png.meta",
+      "sha256": "6c32e625a6087baf8063260ac2d846135d414605fdeba8a82e0cfda0785c91a1"
+    },
+    {
       "bytes": 4176,
       "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/fern_02.mat",
       "sha256": "f641e695a2b49326031b3e4801ed7d3e4e671354e6c690020bc7ca5f6cfeb5f9"

@@ -175,10 +175,14 @@ def prepare_textures():
                 color = np.stack((.43 + shade, .405 + shade, .35 + shade), axis=-1)
                 height = medium * .0006 + fine * .0002 - mortar * .009
             else:
-                grain = np.sin(xx * math.pi * 115 + np.sin(yy * 11) * 1.5 + medium * .14)
-                shade = broad * .022 + grain * .025 + fine * .007
-                color = np.stack((.265 + shade, .19 + shade * .78, .12 + shade * .55), axis=-1)
-                height = grain * .0006 + fine * .00015
+                warp = np.sin(yy * math.tau * 2) * 1.5 + np.sin(yy * math.tau) * .8
+                grain = np.sin(xx * math.tau * 58 + warp + medium * .08)
+                silver = np.clip(broad * .22 + .35, 0, .8)
+                shade = broad * .018 + grain * .014 + fine * .006
+                checks = np.maximum(0, np.sin(xx * math.tau * 17 + warp * .15) - .975) * np.clip(medium + .5, 0, 1)
+                color = np.stack((.29 + shade + silver * .075, .225 + shade * .85 + silver * .12,
+                                  .155 + shade * .7 + silver * .17), axis=-1) - checks[:, :, None] * 1.4
+                height = grain * .0003 + fine * .00010 - checks * .06
             dx = (np.roll(height, -1, 1) - np.roll(height, 1, 1)) * n / 4
             dy = (np.roll(height, -1, 0) - np.roll(height, 1, 0)) * n / 4
             norm = np.stack((-dx, -dy, np.ones_like(dx)), axis=-1)
@@ -189,6 +193,23 @@ def prepare_textures():
             write_image(WORK / ('textures/' + key + '-normal.png'), norm * .5 + .5)
             write_image(WORK / ('textures/' + key + '-mask.png'), mask)
         SOURCES.append(dict(name='Original Bwork coursed stone and sawn timber material maps', license='original', url=''))
+    # Fine coating variation and sparse oxidation; the physical metal slot stays independently replaceable.
+    rust = np.clip((medium + broad * .4 - 2.05) * .8, 0, 1)
+    shade = broad * .008 + medium * .004 + fine * .002
+    color = np.stack((.235 + shade + rust * .07, .255 + shade - rust * .06,
+                      .25 + shade - rust * .105), axis=-1)
+    mask = np.ones((n, n, 4), dtype=np.float32)
+    mask[:, :, 0] = .62 - rust * .5; mask[:, :, 2] = 0
+    mask[:, :, 3] = np.clip(.31 + medium * .025 - rust * .19, .1, .4)
+    height = fine * .000025 + rust * .00025
+    dx = (np.roll(height, -1, 1) - np.roll(height, 1, 1)) * n / 2
+    dy = (np.roll(height, -1, 0) - np.roll(height, 1, 0)) * n / 2
+    norm = np.stack((-dx, -dy, np.ones_like(dx)), axis=-1)
+    norm /= np.linalg.norm(norm, axis=-1, keepdims=True)
+    write_image(WORK / 'textures/metal-basecolor.png', color, True)
+    write_image(WORK / 'textures/metal-normal.png', norm * .5 + .5)
+    write_image(WORK / 'textures/metal-mask.png', mask)
+    SOURCES.append(dict(name='Original Bwork weathered coated-steel material', license='original', url=''))
     return tile
 
 
@@ -222,6 +243,9 @@ def material(name, key, texture_key=None, tile=1, color=(1, 1, 1, 1), metallic=0
                 bump = nodes.new('ShaderNodeNormalMap')
                 links.new(texture.outputs['Color'], bump.inputs['Color']); links.new(bump.outputs['Normal'], bsdf.inputs['Normal'])
             else:
+                channels = nodes.new('ShaderNodeSeparateColor')
+                links.new(texture.outputs['Color'], channels.inputs['Color'])
+                links.new(channels.outputs['Red'], bsdf.inputs['Metallic'])
                 roughness = nodes.new('ShaderNodeMath'); roughness.operation = 'SUBTRACT'; roughness.inputs[0].default_value = 1
                 links.new(texture.outputs['Alpha'], roughness.inputs[1]); links.new(roughness.outputs[0], bsdf.inputs['Roughness'])
             record[role] = relative
@@ -232,21 +256,27 @@ def material(name, key, texture_key=None, tile=1, color=(1, 1, 1, 1), metallic=0
 
 class Geometry:
     def __init__(self):
-        self.vertices = []; self.faces = []; self.materials = []; self.face_materials = []
+        self.vertices = []; self.faces = []; self.materials = []; self.face_materials = []; self.grain_axes = []; self.dressed_bounds = []
 
-    def polyhedron(self, vertices, faces, mat='BridgeConcrete'):
+    def polyhedron(self, vertices, faces, mat='BridgeConcrete', grain_axis=None, dressed=False):
         offset = len(self.vertices)
         if mat not in self.materials:
             self.materials.append(mat)
+        if mat == 'BridgeTimber' and grain_axis is None:
+            extent = [max(p[i] for p in vertices) - min(p[i] for p in vertices) for i in range(3)]
+            grain_axis = Vector(tuple(1 if i == extent.index(max(extent)) else 0 for i in range(3)))
+        bounds = [(min(p[i] for p in vertices), max(p[i] for p in vertices)) for i in range(3)] if dressed else None
+        self.dressed_bounds.extend([bounds] * len(vertices))
+        self.grain_axes.extend([grain_axis] * len(vertices))
         self.vertices.extend(vertices)
         self.faces.extend(tuple(offset + i for i in face) for face in faces)
         self.face_materials.extend([self.materials.index(mat)] * len(faces))
 
-    def box(self, x0, x1, y0, y1, z0, z1, mat='BridgeConcrete'):
+    def box(self, x0, x1, y0, y1, z0, z1, mat='BridgeConcrete', dressed=False):
         if min(x1 - x0, y1 - y0, z1 - z0) <= 1e-7:
             return
         self.polyhedron([(x, y, z) for z in (z0, z1) for y in (y0, y1) for x in (x0, x1)],
-                        [(0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3)], mat)
+                        [(0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3)], mat, dressed=dressed)
 
     def tapered_column(self, x, z, bottom, top, bottom_width, top_width, bottom_depth, top_depth):
         self.polyhedron([(x + sx * w / 2, y, z + sz * d / 2)
@@ -262,7 +292,7 @@ class Geometry:
         v = tangent.cross(u).normalized() * depth / 2
         self.polyhedron([tuple(p + sx * u + sy * v) for p in (a, b)
                          for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1))],
-                        [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat)
+                        [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat, grain_axis=tangent)
 
     def object(self, name, collection, bevel=0):
         if not self.vertices:
@@ -282,9 +312,19 @@ class Geometry:
             normal = blender_to_unity(face.normal)
             # Metric UV0: V is vertical on walls; top surfaces use longitudinal distance.
             axes = (0, 2) if abs(normal[1]) > .7 else ((2, 1) if abs(normal[0]) > abs(normal[2]) else (0, 1))
+            dressed = self.dressed_bounds[face.vertices[0]]
+            grain = self.grain_axes[face.vertices[0]]
+            # Sawn grain follows the member, including diagonal braces; end faces use end-on projection.
+            projected = None if grain is None else grain - Vector(normal) * grain.dot(Vector(normal))
+            along = projected.normalized() if projected is not None and projected.length > .01 else None
+            across = along.cross(Vector(normal)).normalized() if along is not None else None
             for li in face.loop_indices:
-                point = blender_to_unity(mesh.vertices[mesh.loops[li].vertex_index].co)
-                uv.data[li].uv = (point[axes[0]], point[axes[1]])
+                point = Vector(blender_to_unity(mesh.vertices[mesh.loops[li].vertex_index].co))
+                uv.data[li].uv = (point.dot(across), point.dot(along)) if along is not None else (point[axes[0]], point[axes[1]])
+                if dressed is not None:
+                    # Sample the interior of one stone, so texture mortar never cuts a modeled voussoir/cap.
+                    uv.data[li].uv = tuple(.05 + extent * (point[axis] - dressed[axis][0]) / max(.0001, dressed[axis][1] - dressed[axis][0])
+                                          for axis, extent in zip(axes, (.56, .29)))
             face.use_smooth = True
         obj = bpy.data.objects.new(name, mesh); collection.objects.link(obj)
         if bevel:
@@ -374,7 +414,7 @@ def build_lod(lod):
         rails.box(side * width / 2 - .5 if side > 0 else -width / 2,
                   width / 2 if side > 0 else -width / 2 + .5, -.02, .18, -length / 2, length / 2)
         rails.box(x - .15, x + .15, .18, .36, -length / 2, length / 2)
-        rails.box(x - .22, x + .22, r['parapetHeight'] - .14, r['parapetHeight'], -length / 2, length / 2)
+        structures.coping(rails, x, .44, r['parapetHeight'] - .14, r['parapetHeight'], length, lod, 'BridgeConcrete', 2.5)
         bays = max(4, round(length / 2.5)); spacing = length / bays
         for i in range(bays + 1):
             z = -length / 2 + i * spacing
@@ -523,7 +563,7 @@ def main():
     tile = prepare_textures()
     material('BridgeConcrete', 'concrete', 'concrete', tile)
     material('BridgeAsphalt', 'asphalt', 'asphalt', 2.1)
-    material('BridgeMetal', 'metal', color=(.055, .061, .063, 1), metallic=.7, smoothness=.38)
+    material('BridgeMetal', 'metal', 'metal', 1, metallic=.62, smoothness=.31)
     material('BridgeConcreteWeathered', 'concreteWeathered', 'concrete', tile, color=(.78, .775, .74, 1))
     material('BridgeRoadPaintAmber', 'roadPaintAmber', color=(.9, .48, .055, 1), smoothness=.22)
     material('BridgeRoadPaintWhite', 'roadPaintWhite', color=(.72, .74, .70, 1), smoothness=.18)

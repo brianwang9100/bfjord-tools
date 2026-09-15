@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "provider": "Poly Haven",
+  "license": "CC0-1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "assets": [
+    {
+      "layer": "Meadow",
+      "id": "leafy_grass",
+      "tileMeters": 2,
+      "source": "https://polyhaven.com/a/leafy_grass",
+      "files": [
+        {
+          "role": "arm",
+          "file": "leafy_grass_arm_1k.jpg",
+          "size": 1010081,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_arm_1k.jpg",
+          "md5": "44fb4e40ef0f3425a7d1a14bc328e4d8",
+          "sha256": "95432451cb2693794459fe7ea339ea9ffdb5959c40373740f80a4aa1703f089d"
+        },
+        {
+          "role": "Displacement",
+          "file": "leafy_grass_disp_1k.jpg",
+          "size": 742755,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_disp_1k.jpg",
+          "md5": "df6cb89fb7072d00f2de804bf9e4584d",
+          "sha256": "3c78000885796046cc90cec2a61abea0f65cd8fb6585ac2a7b5987f73c5aa98e"
+        }
+      ]
+    },
+    {
+      "layer": "Soil",
+      "id": "park_dirt",
+      "tileMeters": 3,
+      "source": "https://polyhaven.com/a/park_dirt",
+      "files": [
+        {
+          "role": "arm",
+          "file": "park_dirt_arm_1k.jpg",
+          "size": 1057496,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/park_dirt/park_dirt_arm_1k.jpg",
+          "md5": "c9c4a8c4dfa99cc732da6a560465980b",
+          "sha256": "d60ee3e693aefefb5a805b30b5a262d139a4c673b47d245f16dd3405bdc20f1f"
+        },
+        {
+          "role": "Displacement",
+          "file": "park_dirt_disp_1k.jpg",
+          "size": 663056,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/park_dirt/park_dirt_disp_1k.jpg",
+          "md5": "43dedf940f2b605af685d15634d05a77",
+          "sha256": "e2f1cf4bdf09f1f37889def62f481be63d724be91dacc350bc04a377cb917c4e"
+        }
+      ]
+    },
+    {
+      "layer": "Talus",
+      "id": "gravel_floor_03",
+      "tileMeters": 2.5,
+      "source": "https://polyhaven.com/a/gravel_floor_03",
+      "files": [
+        {
+          "role": "arm",
+          "file": "gravel_floor_03_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_floor_03/gravel_floor_03_arm_1k.jpg",
+          "md5": "a44748e29ec1cf432d22b22680514830",
+          "size": 1181228,
+          "sha256": "3eb5af2ede2581bbb99093beffd2f0c77f6a0eae8615eac0447099e6d9a19c57"
+        },
+        {
+          "role": "Displacement",
+          "file": "gravel_floor_03_disp_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_floor_03/gravel_floor_03_disp_1k.jpg",
+          "md5": "8354ec75170955be2c2b3b139e59fdcc",
+          "size": 806571,
+          "sha256": "b1f74b485f76158526488802d6d326e427b2dabe9b43190415ba64c5703f6aac"
+        }
+      ]
+    },
+    {
+      "layer": "Outcrop",
+      "id": "rocky_terrain",
+      "tileMeters": 90,
+      "source": "https://polyhaven.com/a/rocky_terrain",
+      "files": [
+        {
+          "role": "arm",
+          "file": "rocky_terrain_arm_1k.jpg",
+          "size": 612370,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rocky_terrain/rocky_terrain_arm_1k.jpg",
+          "md5": "71489b39bfbcf2cad431ce563a2f4e71",
+          "sha256": "c007a3910a41202de8aeef8a089a79e3c356228687335c90bda342fdd6644ffd"
+        },
+        {
+          "role": "Displacement",
+          "file": "rocky_terrain_disp_1k.jpg",
+          "size": 281182,
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rocky_terrain/rocky_terrain_disp_1k.jpg",
+          "md5": "c1e7a5330d7ecfa18c22b9c88f698786",
+          "sha256": "df925d6e5eca6ef893f6cfe8d7c4346a42895f646ef782ded7161235bfab9d5e"
+        }
+      ]
+    }
+  ]
+}

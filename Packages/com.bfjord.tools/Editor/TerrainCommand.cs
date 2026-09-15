@@ -18,7 +18,7 @@ namespace Bwork.Authoring.Editor
         public static object Run(
             [CliArg("action", "prepare, apply, remove, status, paint")] string action = "prepare",
             [CliArg("recipePath", "Height recipe JSON (or TerrainPaintProfile for paint); omitted uses built-in profile")] string recipePath = "",
-            [CliArg("stampShape", "Built-in stamp: ridge, basin or mesa; custom recipes carry their own stamp arrays")] string stampShape = "ridge")
+            [CliArg("stampShape", "Built-in stamp: ridge, basin, mesa, eroded-ridge or coastal-bluff; custom recipes carry their own stamp arrays")] string stampShape = "ridge")
         {
             var terrain = ToolSandbox.RequireTerrain();
             if (action == "paint") return TerrainPresentation.ApplyProfile(terrain, recipePath);
@@ -89,7 +89,9 @@ namespace Bwork.Authoring.Editor
 
         public static TerrainEditRecipe Example(string shape = "ridge")
         {
-            if (shape != "ridge" && shape != "basin" && shape != "mesa") throw new ArgumentException("Stamp shape must be ridge, basin or mesa.");
+            if (shape != "ridge" && shape != "basin" && shape != "mesa" && shape != "eroded-ridge" && shape != "coastal-bluff")
+                throw new ArgumentException("Stamp shape must be ridge, basin, mesa, eroded-ridge or coastal-bluff.");
+            bool detailed = shape == "eroded-ridge" || shape == "coastal-bluff";
             const int resolution = 65;
             var stamp = new float[resolution * resolution];
             for (int z = 0; z < resolution; z++) for (int x = 0; x < resolution; x++)
@@ -103,6 +105,31 @@ namespace Bwork.Authoring.Editor
                 float value = Mathf.Clamp01(ridge*.86f + spurA*.27f + spurB*.31f - saddle);
                 if (shape == "basin") value = -Mathf.Exp(-(px*px*3+pz*pz*2)) * Mathf.Max(0,1-px*px) * Mathf.Max(0,1-pz*pz);
                 if (shape == "mesa") value = 1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(.25f,.88f,Mathf.Sqrt(px*px+pz*pz)));
+                if (shape == "eroded-ridge")
+                {
+                    // Coherent gullies run away from the crest and widen downslope.
+                    // This is authored relief, not a claim of hydraulic simulation.
+                    float flank = Mathf.Abs(spine);
+                    float channels = 0;
+                    for (int channel = -2; channel <= 2; channel++)
+                    {
+                        float center = channel*.32f + flank*(channel*.13f+.08f) + .035f*Mathf.Sin(flank*12+channel);
+                        float width = .025f + flank*.065f;
+                        channels += Mathf.Exp(-Mathf.Pow((pz-center)/width,2));
+                    }
+                    float incision = channels * Mathf.SmoothStep(0,1,Mathf.InverseLerp(.04f,.24f,flank)) * .2f;
+                    value = Mathf.Clamp01(value * (1-incision) + .045f*Mathf.Sin(pz*24+spine*6)*value*(1-value));
+                }
+                if (shape == "coastal-bluff")
+                {
+                    float edge = .12f + .12f*Mathf.Sin(pz*8) + .055f*Mathf.Sin(pz*19+1.2f);
+                    float face = 1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(edge-.1f,edge+.14f,px));
+                    float inland = Mathf.SmoothStep(0,1,Mathf.InverseLerp(-1,-.5f,px));
+                    float ends = Mathf.Max(0,1-pz*pz);
+                    float apron = .24f*Mathf.Exp(-Mathf.Pow((px-edge-.2f)/.28f,2));
+                    float crown = .79f + .075f*Mathf.Sin(pz*5+.8f) + .035f*Mathf.Sin(px*17+pz*11);
+                    value = Mathf.Clamp01((face*crown*inland+apron)*ends);
+                }
                 // The stamp contract stores normalized values and a separate zero plane.
                 stamp[z * resolution + x] = shape == "basin" ? .5f + value*.5f : value;
             }
@@ -111,13 +138,13 @@ namespace Bwork.Authoring.Editor
                 new TerrainEditOperation { Kind = TerrainEditKind.Stamp, CenterWorldX = 356, CenterWorldZ = 170,
                     SizeX = 165, SizeZ = 220, RotationDegrees = -22, FalloffMeters = 18,
                     Stamp = new TerrainHeightStamp { Width = resolution, Height = resolution, Values = stamp,
-                        ZeroValue = shape == "basin" ? .5f : 0, AmplitudeMeters = shape == "basin" ? 32 : 58 } },
+                        ZeroValue = shape == "basin" ? .5f : 0, AmplitudeMeters = shape == "basin" ? 32 : shape == "coastal-bluff" ? 42 : 58 } },
                 new TerrainEditOperation { Kind = TerrainEditKind.ThermalErosion, CenterWorldX = 356, CenterWorldZ = 170,
-                    SizeX = 195, SizeZ = 240, RotationDegrees = -22, FalloffMeters = 22, Iterations = 14,
+                    SizeX = 195, SizeZ = 240, RotationDegrees = -22, FalloffMeters = 22, Iterations = detailed ? 5 : 14,
                     ThermalTalusAngleDegrees = 34, ThermalMaxTransferMeters = 1.4f, ThermalRelaxation = .15f },
                 new TerrainEditOperation { Kind = TerrainEditKind.Smooth, CenterWorldX = 356, CenterWorldZ = 170,
                     SizeX = 190, SizeZ = 240, RotationDegrees = -22, FalloffMeters = 22,
-                    SmoothRadiusMeters = 3, Strength = .2f, Iterations = 2 },
+                    SmoothRadiusMeters = 3, Strength = detailed ? .1f : .2f, Iterations = detailed ? 1 : 2 },
                 new TerrainEditOperation { Kind = TerrainEditKind.Flatten, CenterWorldX = 90, CenterWorldZ = 95,
                     SizeX = 100, SizeZ = 75, FalloffMeters = 20, TargetWorldY = 12, Strength = .8f }
             }};

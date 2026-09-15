@@ -20,8 +20,8 @@ Shader "Bwork/Sandbox/Connected Wave Water"
         [NoScaleOffset] _FoamMap("Original foam R / variation G", 2D) = "gray" {}
         [NoScaleOffset] _RiverMotionMap("Original flowing river threads", 2D) = "black" {}
         [NoScaleOffset] _OceanMotionMap("Original broken ocean crests", 2D) = "black" {}
-        _RiverCurrentStrength("River current foam", Range(0,1)) = .11
-        _OceanSurfaceStrength("Broad ocean foam", Range(0,1)) = .10
+        _RiverCurrentStrength("River current foam", Range(0,1)) = .22
+        _OceanSurfaceStrength("Broad ocean foam", Range(0,1)) = .32
         [HideInInspector] _AnimationTime("Capture time; negative uses live time", Float) = -1
         _RippleTileSize("Ripple tile metres", Float) = 5
         _DetailTileSize("Detail tile metres", Float) = 1.6
@@ -169,7 +169,10 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 half3 current=lerp(SAMPLE_TEXTURE2D(_RiverMotionMap,sampler_RiverMotionMap,current1).rgb,
                     SAMPLE_TEXTURE2D(_RiverMotionMap,sampler_RiverMotionMap,current0).rgb,weight);
                 float currentMask=river*saturate(flowLength)*saturate(i.color.r);
-                slope+=across*(current.b-.5)*.045*currentMask*lerp(.2,1,detailFade);
+                slope+=across*(current.b-.5)*.085*currentMask*lerp(.2,1,detailFade);
+                // Wind cross-ripples retain a finer surface beneath the long swell.
+                float windRipple=sin(dot(i.uv,float2(.93,-.36))*3.9-WaterTime()*1.7);
+                slope+=float2(.93,-.36)*windRipple*.018*ocean*detailFade;
                 float3 n=normalize(float3(-slope.x,1,-slope.y));
                 float3 view=GetWorldSpaceNormalizeViewDir(i.positionWS);
                 float depth=_DepthColorDistance,shoreDepth=_DepthColorDistance;
@@ -189,21 +192,31 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 half2 grain=lerp(SAMPLE_TEXTURE2D(_FoamMap,sampler_FoamMap,p1/_FoamTileSize).rg,
                     SAMPLE_TEXTURE2D(_FoamMap,sampler_FoamMap,p0/_FoamTileSize).rg,weight);
                 // Foam occupies irregular thin patches; a uniform depth band reads as paint.
-                float shoreWidth=_FoamWidth*lerp(.3,1,grain.g);
+                float shoreWidth=max(.05,_FoamWidth)*lerp(.38,1.2,grain.g);
                 float shore=_UseDepth>.5?1-smoothstep(0,shoreWidth,shoreDepth):0;
-                float breakup=smoothstep(_FoamCutoff-.08,_FoamCutoff+.18,grain.r)*smoothstep(.22,.68,grain.g);
-                float crest=smoothstep(.55,.9,wave.x/max(_OceanWaveHeight,.001))*i.color.b*_CrestFoamStrength;
+                float breakup=smoothstep(_FoamCutoff-.13,_FoamCutoff+.14,grain.r)*smoothstep(.18,.62,grain.g);
+                float crest=smoothstep(.44,.85,wave.x/max(_OceanWaveHeight,.001))*ocean*_CrestFoamStrength;
                 half3 seaPattern=SAMPLE_TEXTURE2D(_OceanMotionMap,sampler_OceanMotionMap,
                     (i.uv-oceanDrift)/19).rgb;
-                float seaCrest=smoothstep(.15,.8,wave.x/max(_OceanWaveHeight,.001));
-                float seaFoam=seaPattern.r*seaCrest*_OceanSurfaceStrength*ocean;
-                float currentFoam=smoothstep(.12,.72,current.r)*lerp(.5,1,current.g)*currentMask*_RiverCurrentStrength;
-                float foam=saturate(saturate((shore+i.color.g)*_FoamStrength+crest)*breakup+currentFoam+seaFoam);
+                // Broken fronts occupy only high, wind-facing parts of a swell. Smaller crossing
+                // patches stop all three analytic wavelengths from drawing parallel foam bands.
+                half3 crossingSea=SAMPLE_TEXTURE2D(_OceanMotionMap,sampler_OceanMotionMap,
+                    mul(float2x2(.8,-.6,.6,.8),i.uv-oceanDrift*.63)/8.7+float2(.31,.67)).rgb;
+                float seaCrest=smoothstep(.22,.74,wave.x/max(_OceanWaveHeight,.001));
+                float windFace=smoothstep(-.10,.13,dot(wave.yz,float2(.8,.6)));
+                float seaFoam=smoothstep(.08,.60,seaPattern.r*.72+crossingSea.r*.28)*
+                    seaCrest*lerp(.35,1,windFace)*_OceanSurfaceStrength*ocean;
+                float currentFoam=smoothstep(.12,.65,current.r)*lerp(.4,1,current.g)*currentMask*_RiverCurrentStrength;
+                float shallowCurrent=_UseDepth>.5?(1-smoothstep(.25,1.8,shoreDepth))*currentMask:0;
+                float turbulence=shallowCurrent*smoothstep(.20,.70,current.r+grain.r*.24)*.23;
+                float foam=saturate(saturate((shore+i.color.g)*_FoamStrength+crest)*breakup+currentFoam+seaFoam+turbulence);
                 float absorption=1-exp2(-depth/max(_DepthColorDistance,.2)*1.8);
                 SurfaceData surface=(SurfaceData)0;
                 half3 shallow=lerp(_ShallowColor.rgb,_OceanShallowColor.rgb,i.color.b);
                 half3 deep=lerp(_BaseColor.rgb,_OceanBaseColor.rgb,i.color.b);
-                surface.albedo=lerp(lerp(shallow,deep,absorption),half3(.72,.78,.75),foam);
+                // A restrained submerged contact tint joins transparent shallows to wet bank materials.
+                half3 waterTint=lerp(shallow,deep,absorption)*lerp(1,.86,shore*(1-breakup));
+                surface.albedo=lerp(waterTint,half3(.82,.88,.85),foam);
                 float surfaceSmoothness=lerp(_Smoothness,_OceanSmoothness,i.color.b)-.045*(1-detailFade);
                 surface.smoothness=lerp(surfaceSmoothness+.025*(grain.g-.5),.38,foam);
                 // Water's normal-incidence dielectric reflectance is about two percent.

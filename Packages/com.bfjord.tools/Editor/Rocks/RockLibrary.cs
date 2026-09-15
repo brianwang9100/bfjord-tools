@@ -14,10 +14,17 @@ namespace Bwork.Authoring.Editor.Rocks
     {
         public static string DirectoryFor(RockSource source) => ToolSandbox.Generated + "/RockLibrary/" + source.hash;
         public static string PrefabPath(RockSource source, string id) => DirectoryFor(source) + "/" + id + ".prefab";
-        public static string MaterialPath(RockSource source, string profile) => DirectoryFor(source) + "/" + profile + ".mat";
+        public static string MaterialPath(RockSource source, string profile, string materialId = "rock") =>
+            DirectoryFor(source) + "/" + (materialId == "rock" ? "" : materialId + "-") + profile + ".mat";
+        public static Material MaterialForVariant(RockSource source, string variantId, string profile)
+        {
+            var variant = source.manifest.variants.SingleOrDefault(v => v.id == variantId);
+            RockContract.Require(variant != null && RockContract.Profiles.Contains(profile), "Unknown rock variant or material profile.");
+            return AssetDatabase.LoadAssetAtPath<Material>(MaterialPath(source, profile, variant.materialId));
+        }
         public static bool Ready(RockSource source) => AssetDatabase.LoadAssetAtPath<TextAsset>(DirectoryFor(source) + "/ready.json") != null &&
             source.manifest.variants.All(v => AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath(source, v.id)) != null) &&
-            RockContract.Profiles.All(p => AssetDatabase.LoadAssetAtPath<Material>(MaterialPath(source, p)) != null);
+            source.manifest.materials.All(m => RockContract.Profiles.All(p => AssetDatabase.LoadAssetAtPath<Material>(MaterialPath(source, p, m.id)) != null));
         public static object Build(RockSource source)
         {
             ProjectContext.RequireIdle();
@@ -36,31 +43,32 @@ namespace Bwork.Authoring.Editor.Rocks
                     File.Copy(RockContract.FileAt(source.root, relative), destination, false);
                     AssetDatabase.ImportAsset(destination, ImportAssetOptions.ForceSynchronousImport);
                 }
-                var materialSource = source.manifest.materials[0];
-                BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.baseColorPath, 0);
-                BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.normalPath, 1);
-                BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.metallicSmoothnessPath, 2);
-                for (int i = 0; i < RockContract.Profiles.Length; i++)
+                foreach (var materialSource in source.manifest.materials)
                 {
-                    var colors = new[] { new Color(.8f, .83f, .85f), new Color(.9f, .73f, .54f), new Color(.36f, .4f, .44f), new Color(.57f, .63f, .45f), new Color(.48f, .51f, .52f) };
-                    var material = new Material(shader) { name = "Rock " + RockContract.Profiles[i], enableInstancing = true };
-                    material.SetColor("_BaseColor", colors[i]);
-                    material.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.baseColorPath));
-                    material.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.normalPath));
-                    material.SetFloat("_BumpScale", i == 4 ? .35f : .7f); material.EnableKeyword("_NORMALMAP");
-                    material.SetTexture("_MetallicGlossMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.metallicSmoothnessPath));
-                    material.SetFloat("_Metallic", 0); material.SetFloat("_Smoothness", i == 4 ? 1f : i == 2 ? .65f : .4f); material.EnableKeyword("_METALLICSPECGLOSSMAP");
-                    if (i == 4) { material.SetTexture("_MetallicGlossMap", null); material.DisableKeyword("_METALLICSPECGLOSSMAP"); material.SetFloat("_Smoothness", .58f); }
-                    AssetDatabase.CreateAsset(material, MaterialPath(source, RockContract.Profiles[i]));
+                    BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.baseColorPath, 0);
+                    BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.normalPath, 1);
+                    BridgeAssetImporter.ConfigureTexture(directory + "/source/" + materialSource.metallicSmoothnessPath, 2);
+                    for (int i = 0; i < RockContract.Profiles.Length; i++)
+                    {
+                        var colors = new[] { new Color(.8f, .83f, .85f), new Color(.9f, .73f, .54f), new Color(.36f, .4f, .44f), new Color(.57f, .63f, .45f), new Color(.48f, .51f, .52f) };
+                        var material = new Material(shader) { name = "Rock " + RockContract.Profiles[i], enableInstancing = true };
+                        material.SetColor("_BaseColor", colors[i]);
+                        material.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.baseColorPath));
+                        material.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.normalPath));
+                        material.SetFloat("_BumpScale", i == 4 ? .35f : .7f); material.EnableKeyword("_NORMALMAP");
+                        material.SetTexture("_MetallicGlossMap", AssetDatabase.LoadAssetAtPath<Texture2D>(directory + "/source/" + materialSource.metallicSmoothnessPath));
+                        material.SetFloat("_Metallic", 0); material.SetFloat("_Smoothness", i == 4 ? 1f : i == 2 ? .65f : .4f); material.EnableKeyword("_METALLICSPECGLOSSMAP");
+                        if (i == 4) { material.SetTexture("_MetallicGlossMap", null); material.DisableKeyword("_METALLICSPECGLOSSMAP"); material.SetFloat("_Smoothness", .58f); }
+                        AssetDatabase.CreateAsset(material, MaterialPath(source, RockContract.Profiles[i], materialSource.id));
+                    }
                 }
-                var shared = AssetDatabase.LoadAssetAtPath<Material>(MaterialPath(source, "granite"));
-                foreach (var variant in source.manifest.variants) BuildPrefab(source, variant, shared);
+                foreach (var variant in source.manifest.variants) BuildPrefab(source, variant, MaterialForVariant(source, variant.id, "granite"));
                 File.WriteAllText(directory + "/manifest.json", source.json);
                 AssetDatabase.ImportAsset(directory + "/manifest.json", ImportAssetOptions.ForceSynchronousImport);
                 File.WriteAllText(directory + "/ready.json", "{\"sourceHash\":\"" + source.hash + "\"}");
                 AssetDatabase.ImportAsset(directory + "/ready.json", ImportAssetOptions.ForceSynchronousImport);
                 AssetDatabase.SaveAssets();
-                return new { state = "assets-ready", unchanged = false, sourceHash = source.hash, directory, variants = source.manifest.variants.Length, materials = RockContract.Profiles.Length };
+                return new { state = "assets-ready", unchanged = false, sourceHash = source.hash, directory, variants = source.manifest.variants.Length, materials = RockContract.Profiles.Length * source.manifest.materials.Length };
             }
             catch (Exception error)
             {

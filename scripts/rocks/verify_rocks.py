@@ -7,8 +7,9 @@ from pathlib import Path
 import bpy
 import bmesh
 
-ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / 'art/BFjordTools/Rocks'
+OUT = next(candidate for parent in Path(__file__).resolve().parents
+           for candidate in (parent / 'assets/BFjordTools/Rocks', parent / 'art/BFjordTools/Rocks')
+           if (candidate / 'manifest.json').is_file())
 manifest = json.loads((OUT / 'manifest.json').read_text())
 report = []
 for variant in manifest['variants']:
@@ -38,6 +39,8 @@ for variant in manifest['variants']:
             assert count < previous, (item['path'], 'LOD does not simplify')
             previous = count
             assert len(mesh.uv_layers) > 0, item['path']
+            assert all(math.isfinite(x) for uv in mesh.uv_layers.active.data for x in uv.uv), item['path']
+            assert all(all(math.isfinite(x) for x in v.normal) and v.normal.length > .9 for v in mesh.vertices), item['path']
             mesh.calc_tangents()
             assert all(math.isfinite(x) for loop in mesh.loops for x in loop.tangent), item['path']
         else:

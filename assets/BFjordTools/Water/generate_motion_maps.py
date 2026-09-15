@@ -39,8 +39,12 @@ def field(u, v, kind):
         f = (.39*noise(u+warp,v,7,3,917) + .30*noise(u+warp,v,19,7,293)
              + .20*noise(u+warp,v,43,17,677) + .11*noise(u+warp,v,89,37,431))
         fine = noise(u+warp,v,73,23,183)
-        coverage = clamp(.32+f*.94)
-        return clamp((f-.22)*1.85), coverage, fine
+        # Separate persistent channels from small aerated ropes. Broad coverage is deliberately
+        # incomplete: the shader can reveal wet rock between moving whitewater filaments.
+        lanes = noise(u+warp*.35,v,13,2,151)
+        ropes = clamp((f-.38)*3.5)
+        coverage = clamp(.10+lanes*.72+ropes*.22)
+        return clamp(ropes*(.40+.80*lanes)), coverage, fine
 
     if kind == 'river':
         warp = (noise(u,v,4,5,271)-.5)*.1
@@ -53,7 +57,7 @@ def field(u, v, kind):
         clouds = (.58*noise(u,v,5,6,419) + .28*noise(u,v,13,17,733) + .14*noise(u,v,37,41,953))
         breakup = noise(u,v,23,29,311)
         # Sparse patches; the shader's actual broad wave supplies crest placement.
-        foam = clamp((clouds-.56)*4.8)*clamp((breakup-.25)*2)
+        foam = clamp((clouds-.48)*5.2)*clamp((breakup-.27)*2.2)
         return foam, clouds, breakup
     raise ValueError(kind)
 

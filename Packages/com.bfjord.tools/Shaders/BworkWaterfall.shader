@@ -4,14 +4,17 @@ Shader "Bwork/Sandbox/Waterfall"
     {
         [NoScaleOffset] _WaterfallMap("Original streak / coverage / breakup", 2D) = "white" {}
         [NoScaleOffset] _FoamMap("Original foam filaments", 2D) = "gray" {}
-        _WaterColor("Aerated water", Color) = (.13,.28,.28,1)
-        _FoamColor("Whitewater", Color) = (.83,.89,.88,1)
+        _WaterColor("Clear falling water", Color) = (.065,.17,.16,1)
+        _FoamColor("Whitewater", Color) = (.86,.91,.90,1)
         _FallSpeed("Flow metres per second", Range(.1,20)) = 7
         _Opacity("Sheet opacity", Range(0,1)) = .86
         _PlungeWaveHeight("Receiving water wave height", Float) = .45
         _PlungeWaveLength("Receiving water wavelength", Float) = 28
         _PlungeWaveSpeed("Receiving water phase speed", Float) = .65
         _Plunge("Plunge foam surface", Float) = 0
+        _UseDepth("Owner guarantees current depth texture", Float) = 0
+        [HideInInspector] _WaterAxes("Across XZ / downstream XZ", Vector) = (1,0,0,1)
+        [HideInInspector] _PlungeDimensions("Receiving width / length metres", Vector) = (16,23,0,0)
         [HideInInspector] _AnimationTime("Capture time; negative uses live time", Float) = -1
     }
     SubShader
@@ -35,11 +38,13 @@ Shader "Bwork/Sandbox/Waterfall"
             #define _SURFACE_TYPE_TRANSPARENT 1
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
             TEXTURE2D(_WaterfallMap); SAMPLER(sampler_WaterfallMap);
             TEXTURE2D(_FoamMap); SAMPLER(sampler_FoamMap);
             CBUFFER_START(UnityPerMaterial)
             half4 _WaterColor,_FoamColor;
-            float _FallSpeed,_Opacity,_Plunge,_AnimationTime;
+            float _FallSpeed,_Opacity,_Plunge,_AnimationTime,_UseDepth;
+            float4 _WaterAxes,_PlungeDimensions;
             float _PlungeWaveHeight,_PlungeWaveLength,_PlungeWaveSpeed;
             CBUFFER_END
             // Same phase, directions and normalized weights as the connected ocean surface.
@@ -72,27 +77,54 @@ Shader "Bwork/Sandbox/Waterfall"
                 float2 flowUV=float2(i.metres.x/5,(i.metres.y-time*_FallSpeed)/9);
                 half3 sheet=SAMPLE_TEXTURE2D(_WaterfallMap,sampler_WaterfallMap,flowUV).rgb;
                 half3 detail=SAMPLE_TEXTURE2D(_WaterfallMap,sampler_WaterfallMap,flowUV*float2(1.71,.83)+float2(.31,-time*.11)).rgb;
-                float edgeNoise=(sheet.b-.5)*.045;
-                float side=smoothstep(edgeNoise,.11+edgeNoise,i.uv.x)*smoothstep(-edgeNoise,.11-edgeNoise,1-i.uv.x);
-                float ends=smoothstep(0,.065,i.uv.y)*(1-smoothstep(.88,1,i.uv.y));
-                float acceleration=smoothstep(.03,.38,i.uv.y);
-                float foam=saturate(.38+sheet.r*.5+detail.r*.3+acceleration*.15);
-                float alpha=saturate(lerp(.32,1,sheet.g)*lerp(.8,1,detail.g)+acceleration*.1)*side*ends*_Opacity;
+                float edgeNoise=(sheet.b-.5)*.065;
+                float side=smoothstep(edgeNoise,.10+edgeNoise,i.uv.x)*smoothstep(-edgeNoise,.10-edgeNoise,1-i.uv.x);
+                float ends=smoothstep(0,.055,i.uv.y)*(1-smoothstep(.94,1,i.uv.y));
+                float acceleration=smoothstep(.08,.65,i.uv.y);
+                // Broad clear lanes persist across the drop, with finer aeration moving through them.
+                // Layered thresholds preserve transparent gaps instead of whitening the entire sheet.
+                float lane=.5+.5*sin(i.uv.x*24+sin(i.uv.x*13+1.7)*1.8);
+                float streak=smoothstep(.22,.78,sheet.r*.68+detail.r*.32);
+                float foam=saturate(streak*lerp(.50,1,acceleration)+lane*.09);
+                float alpha=lerp(.15,.92,saturate(sheet.g*.45+streak*.75))*side*ends*_Opacity;
                 float3 normal=normalize(i.normalWS);
-                // A coherent, small lateral perturbation retains the shape of the falling sheet.
-                normal=normalize(normal+float3((sheet.b-.5)*.17,(detail.b-.5)*.06,0)*(1-_Plunge));
+                float2 perturbation=_WaterAxes.xy*(sheet.b-.5)*.20+_WaterAxes.zw*(detail.b-.5)*.05;
+                normal=normalize(normal+float3(perturbation.x,0,perturbation.y)*(1-_Plunge));
                 if(_Plunge>.5)
                 {
-                    float2 p=i.uv*2-1;float radius=length(p);
-                    float2 outward=p/max(radius,.08);
-                    float2 spread=i.metres/6-outward*time*.32;
+                    // The actual toe is 13% of the authored length upstream of the mesh centre.
+                    float2 metres=i.metres+float2(0,_PlungeDimensions.y*.13);
+                    float2 p=metres/(max(_PlungeDimensions.xy,float2(1,1))*.5);
+                    float radius=length(p);float2 outward=p/max(radius,.04);
+                    float2 spread=metres/5.5-outward*time*.28;
                     half3 spray=SAMPLE_TEXTURE2D(_WaterfallMap,sampler_WaterfallMap,spread).rgb;
-                    half2 bubbles=SAMPLE_TEXTURE2D(_FoamMap,sampler_FoamMap,i.metres/3-time*float2(.1,.13)).rg;
-                    float edge=1-smoothstep(.25+spray.b*.13,.96,radius);
-                    foam=saturate(.65+spray.r*.28+bubbles.r*.08);
-                    alpha=edge*lerp(.25,.9,spray.g)*lerp(.75,1,bubbles.g)*_Opacity;
-                    // Dense centre dissipates into broken, expanding fringes.
-                    alpha=max(alpha,(1-smoothstep(.05,.35,radius))*.8*_Opacity);
+                    half2 bubbles=SAMPLE_TEXTURE2D(_FoamMap,sampler_FoamMap,
+                        metres/2.4-outward*time*.16).rg;
+                    // A compact impact core, downstream eddies and broken radial fronts.
+                    float downstream=smoothstep(-.42,.55,p.y);
+                    float edge=1-smoothstep(.30+spray.b*.16,.88+downstream*.18,radius);
+                    float core=1-smoothstep(.10,.38,length(p*float2(1.2,1)));
+                    float rings=pow(saturate(.5+.5*sin(radius*37-time*3.5+spray.b*4)),5);
+                    float filaments=smoothstep(.28,.77,spray.r*.52+bubbles.r*.48);
+                    foam=saturate(.65+filaments*.32);
+                    alpha=edge*saturate(core*.75+filaments*.52+rings*.18*(1-core))*_Opacity;
+                    // Only normals ripple outside the impact. The surface retains the exact receiving-wave height.
+                    float2 radialSlope=outward*cos(radius*37-time*3.5)*edge*(1-core)*.055;
+                    float2 ripple=_WaterAxes.xy*radialSlope.x+_WaterAxes.zw*radialSlope.y;
+                    normal=normalize(normal+float3(ripple.x,0,ripple.y));
+                }
+                if(_UseDepth>.5)
+                {
+                    float2 screenUV=GetNormalizedScreenSpaceUV(i.positionCS);
+                    float raw=SampleSceneDepth(screenUV);
+                    #if !UNITY_REVERSED_Z
+                        raw=lerp(UNITY_NEAR_CLIP_VALUE,1,raw);
+                    #endif
+                    float3 contactWS=ComputeWorldSpacePosition(screenUV,raw,UNITY_MATRIX_I_VP);
+                    // Soft intersection with opaque ledges and wet stones; receiving transparent water
+                    // is deliberately excluded from the depth sample and retains its authored wave seam.
+                    float contact=distance(i.positionWS,contactWS);
+                    alpha*=smoothstep(.015,lerp(.10,.22,_Plunge),contact);
                 }
                 float3 view=GetWorldSpaceNormalizeViewDir(i.positionWS);
                 normal=dot(normal,view)<0?-normal:normal;

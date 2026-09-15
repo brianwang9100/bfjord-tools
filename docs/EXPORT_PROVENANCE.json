@@ -16,8 +16,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "de77f84a96bcb3ca2bcc70933d8b7963818396412c9f6eec2c55325ff17eeab9",
-      "outputSha256": "ee690ba98be0099a668c4cdbe156c6f4bddd0078a62046cafd29fc886701749e",
+      "numericPropertiesSha256": "81bf834ee0eb42d1501b902a0f8bb1c392945276d1f12d18ceff915ad055757a",
+      "outputSha256": "95387bd1d3b6682553c4be7bc6599be87041f3d00df3647dc90a2167d8c82537",
       "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-collider.fbx",
       "version": 7400
     },
@@ -33,6 +33,10 @@
         },
         {
           "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "FileName",
           "replacement": "textures/concrete-normal.png"
         },
         {
@@ -50,10 +54,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "8c903fafedf735aea6e0024548fbffd8aa0fe2a9d181975689d74095026341ff",
-      "outputSha256": "887d25bded519fcab7635f84a1e09419fac62e247f086c00ec6f85edb290382a",
+      "numericPropertiesSha256": "8831cc4e190b679c3c60a126f312da1cfb6b2bb173c6eb81072e2fbfce940724",
+      "outputSha256": "a9596c94a5b9ddd7254e863258e60f131cea8dc32b12a91a4d109e694a5df7bc",
       "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod0.fbx",
       "version": 7400
     },
@@ -68,6 +80,10 @@
           "replacement": "textures/asphalt-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -82,10 +98,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "5fd35fe593c4157c55901d6011f577a6a8169d5840cd509cf4a12b7732a631e3",
-      "outputSha256": "e1ca4eb583fe087d029ffe2fa4e41794492db0f9537e467b387d328cab92e9f5",
+      "numericPropertiesSha256": "80bc2953a4ae401781e7a7fb7038d4faa3defe2152089a13f87e36ba60f60a33",
+      "outputSha256": "c5cf22fc08ec355ed6c0f19b3ee51217009616cf288bc63710e01734de530be2",
       "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod1.fbx",
       "version": 7400
     },
@@ -116,8 +140,8 @@
           "replacement": "textures/asphalt-normal.png"
         }
       ],
-      "numericPropertiesSha256": "3cf4f5da584e7d1b6a362881a22385bf3e430aba1c7e1ee5c69ede22a3410744",
-      "outputSha256": "ac21ce3258efaa377ef577674b3ad9e1542e8bd2d5891e796c98cd609834f410",
+      "numericPropertiesSha256": "6800d6d3269a9bb1d77b6422b0d563c56129a4f898c3b2c8de469fff2290573d",
+      "outputSha256": "9127ddf0e7c88db6d19c0d106f31d7293d000f9bb922b8a307a4ebfbabeae503",
       "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod2.fbx",
       "version": 7400
     },
@@ -136,8 +160,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "824553d4846a5458d775b215e558fcbd5dafa135c34d85ca0173e655c1c0a6b0",
-      "outputSha256": "25ff9b8128483606b8c31984f3fec2a8b03960b1582de8fd16118d99d512c183",
+      "numericPropertiesSha256": "e749c4c04be6375ab0b182b954b78ba31d3978602b39ceee2b2f0d323d49a993",
+      "outputSha256": "b49f6ddda38afb1ba665530f8bebacbc87938b3f35c45359d893075addbd7121",
       "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-collider.fbx",
       "version": 7400
     },
@@ -153,6 +177,10 @@
         },
         {
           "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "FileName",
           "replacement": "textures/concrete-normal.png"
         },
         {
@@ -170,10 +198,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "85c299bde9e4849b23709d8e7ff77a36fd3df6376bcfc90d240de9aa6293bf50",
-      "outputSha256": "9ec00cb2f482d4eac05e2f55ac24593ef429e6dbdc578dc9dfa3366268dc3037",
+      "numericPropertiesSha256": "581399563870872f83c79279b0813b04f7f838c2e2d1436a030f5f2e5f82587b",
+      "outputSha256": "f07cbc345c672b9c5bc1f617a7c5f12cc4089fe114d6df5de152e5aa739063ca",
       "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod0.fbx",
       "version": 7400
     },
@@ -188,6 +224,10 @@
           "replacement": "textures/asphalt-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -202,10 +242,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "ff3d8808e3d646eeb41f9e9bcc85754e3878ca4f70b1f2879a0cf42ece475cea",
-      "outputSha256": "9284be64c6bd22efe4f5abd2dce67cedfe031ff80577b8b6fa2579077d55c240",
+      "numericPropertiesSha256": "2ed31574340f532052eeb4550fb1ce0c1cc308cb1e0eaf92b98774eaa7fdb46d",
+      "outputSha256": "98c1a102bb8cbcd38ca7173e5311dba68be2d3cae1f76136b6af914728d44672",
       "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod1.fbx",
       "version": 7400
     },
@@ -236,8 +284,8 @@
           "replacement": "textures/asphalt-normal.png"
         }
       ],
-      "numericPropertiesSha256": "f9f6f261e97ffd42e01be2df2518ee11c65e5ad7f420108c366855f0156116a3",
-      "outputSha256": "1afab6a3fb4c262be7f48d6f0e642e903f8bac409cd04bc1483fcdec591a9b61",
+      "numericPropertiesSha256": "03bbdb305030985737c5561a68392d2ab836f9c7ef4d55dd14cfa2ac8a292ac7",
+      "outputSha256": "22c7e5e973aeb8e99ab197be49b700d4107c5f941a4614f0901ef5695c549807",
       "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod2.fbx",
       "version": 7400
     },
@@ -256,8 +304,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "db53af9a79bd52b586484f4cb6b2e690578eb10eab0b85133a36eeaa8e2c5284",
-      "outputSha256": "68445409a17f01c3bbafb379556513a809be8ba8e54df8600c7f2c218f4c7240",
+      "numericPropertiesSha256": "3f93066d2a43f4aeb2500d28008ff6aed5f57db2e642b1c0d5951a652c97413d",
+      "outputSha256": "da89a12972b51a31fb13ca5343215d9b86d516de93f2d098b4b1a6652540a2f4",
       "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-collider.fbx",
       "version": 7400
     },
@@ -272,6 +320,10 @@
           "replacement": "textures/asphalt-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -286,10 +338,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "0f039e5bee823ea3188341a46cae59072ea228b5b3ac96edd26190eeef5dcc01",
-      "outputSha256": "566833e349056f08000f14b0299632b4425a8aacd8e232df55ceba574218859a",
+      "numericPropertiesSha256": "1e3c4d0cd2999e1e97370c556c958286f8aaa18a2a90136e33cae6a9ae6156e4",
+      "outputSha256": "ebe4cacde5a2bc5c2559ad2a68d06e01d6fcebc261c164eeba77fa0a8ee05225",
       "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod0.fbx",
       "version": 7400
     },
@@ -304,6 +364,10 @@
           "replacement": "textures/asphalt-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -318,10 +382,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "704f21a860e4a84822878376aea69396b9fec3893d24abb6d64379fd95b3311f",
-      "outputSha256": "152e9c51efadd534b5f94042a0d437bc1e9edfb99b5d1ee73d8614f5bf7c9e6a",
+      "numericPropertiesSha256": "a2d71745047adcafcf2f855f3555f515dd01bfb8b57de907c41caf371a9e3861",
+      "outputSha256": "d3fbe8f2cb91d9a9e04dffb9662a800154044633a0a97d5d0af8922c0f1df772",
       "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod1.fbx",
       "version": 7400
     },
@@ -336,6 +408,10 @@
           "replacement": "textures/asphalt-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -350,10 +426,18 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "c1359b2f0e3a247b659f6b38183838a2a3ff83c8c059ba4471955c86bdd7b8a4",
-      "outputSha256": "dc5f92297d1a0682a90db2d7a39f2b00e19dd5f5cf39d2c365f59a98d866955a",
+      "numericPropertiesSha256": "b46dd3d0d0c7d80fe412b91fc99ad7bfbf4f867f6b5bc32a108814bd351867db",
+      "outputSha256": "4bd042839b7cb184e7fb3e27f00da41218db860e043c46e2ee7d083ae412318a",
       "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod2.fbx",
       "version": 7400
     },
@@ -372,8 +456,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "f5398b45d4a9dd7af3b1d2a24d0a2ea3c168967b177d1f1ddf10b1386f159564",
-      "outputSha256": "15c844b58e5b1ebecfc1f1cb775c5771eeda1d63c114f506f04beb41d85e1d71",
+      "numericPropertiesSha256": "a0462c3151fe7722a855c18f53d677ec02fd7a60dc4410b959901267557c888d",
+      "outputSha256": "1f7a3cfbe181269f890400935c9daec7aef634f087ea7b737d2ebceb25ce4e89",
       "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-collider.fbx",
       "version": 7400
     },
@@ -392,6 +476,10 @@
           "replacement": "textures/stone-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -414,10 +502,18 @@
         {
           "node": "Filename",
           "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "ea917bdc9948620cd9ac25e83c51e887bd9c315c3c1f32de77edfa6ee90ad27c",
-      "outputSha256": "6f24ebcf247f9b758f2a4d3cb6ffc5908da8d8da4967695a8a24fd60c47a99aa",
+      "numericPropertiesSha256": "28267728d52def58040e506cecbcab96e09987e342d127ee806769785d8af907",
+      "outputSha256": "d4587b0b94af12d74c5ce5d2c3556ae2bc3dea289d790e50aa8d92b523411d9d",
       "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod0.fbx",
       "version": 7400
     },
@@ -436,6 +532,10 @@
           "replacement": "textures/stone-normal.png"
         },
         {
+          "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
           "node": "P",
           "replacement": "textures/concrete-normal.png"
         },
@@ -458,10 +558,18 @@
         {
           "node": "Filename",
           "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         }
       ],
-      "numericPropertiesSha256": "b7dd64beb763f90d97af00ddb3ca263184a2fd01f10370d47e681b4abb9a00d0",
-      "outputSha256": "36738d54e292b1bebd71a06566d886d107507e46cfa7e1da613214988adf221a",
+      "numericPropertiesSha256": "d225f98a9f94b7c9f92478fed9a44f0571c93ed7b83b5d8b316092dc309a5870",
+      "outputSha256": "2f5193981c43d579b3a526431d220bd5449a02302813fe40bd63d193d9a3f621",
       "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod1.fbx",
       "version": 7400
     },
@@ -504,8 +612,8 @@
           "replacement": "textures/stone-normal.png"
         }
       ],
-      "numericPropertiesSha256": "b7b913a4d611612da9191440eb2ed2ac3c32303c6e6533ccb9aa33d6cf753126",
-      "outputSha256": "5d33bddea967f40ae878f59d41626d227ff2030652e5ad45ded92958676bf1a9",
+      "numericPropertiesSha256": "efe6383433a425f0e94ba355f3ab0dbde4f6c2eb47a39200b9512ea126ea8781",
+      "outputSha256": "15ba3304e9db523f81e09f51f8efe902fdc3469661328bfca8766c12fee75d18",
       "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod2.fbx",
       "version": 7400
     },
@@ -524,8 +632,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "e7cb32f0ee3b731d66daf0322ad0d5c9f666c85147f3791728ae3de55e844c21",
-      "outputSha256": "4726cf1c4622736cf30bf91afc90b6cfce5f6a07426cc6fdf46c056ca80bd975",
+      "numericPropertiesSha256": "504a0d35abe974311de9ebad0a31fb3bf07b7283ec6e887218f43e55567a5fb6",
+      "outputSha256": "05fc533c22bebc88fe30cb48c6ed6a5ef634f8ee7ced2590ae8f262322bdeb53",
       "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-collider.fbx",
       "version": 7400
     },
@@ -541,6 +649,10 @@
         },
         {
           "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "FileName",
           "replacement": "textures/concrete-normal.png"
         },
         {
@@ -558,6 +670,14 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         },
         {
           "node": "P",
@@ -568,8 +688,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "8213528a095fa6adc97718d4c10c0ebbfcd7448b4f69857912c20b7a72ecced3",
-      "outputSha256": "855a51e6922b97f0f7829b7c64c1bcbb7ac5b6ae1e3ae721e62676ecad560e47",
+      "numericPropertiesSha256": "bc42c58afea8dc2fac086be2fd1cef79aa3d0e9ab279f1f2003f2d6e5e2fe31c",
+      "outputSha256": "0a538cf13de307cbea151340edf3d827925bd2e6ce56bc6c762fa05d3d9baaaa",
       "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod0.fbx",
       "version": 7400
     },
@@ -585,6 +705,10 @@
         },
         {
           "node": "FileName",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "FileName",
           "replacement": "textures/concrete-normal.png"
         },
         {
@@ -602,6 +726,14 @@
         {
           "node": "Filename",
           "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/metal-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/metal-normal.png"
         },
         {
           "node": "P",
@@ -612,8 +744,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "56038cbd0ceaf6d4a20fb897e9ad60a0e3fb332491aca4fd3037d6c9c83122ff",
-      "outputSha256": "4c79c9ea0a497b398bd5e81457880c3698b6099aeab8e877a4df754c5ba7a148",
+      "numericPropertiesSha256": "226afad839a0cbada86d5427035c1d5c1e509835b53b797386dd4733b9648bfa",
+      "outputSha256": "ddc5ee03442ad29cea83cef62b2f5dae8ecc17e8cf8ff2f7903fa31e8e9d4f85",
       "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod1.fbx",
       "version": 7400
     },
@@ -656,8 +788,8 @@
           "replacement": "textures/concrete-normal.png"
         }
       ],
-      "numericPropertiesSha256": "1cd15fe66c68a8f8c4d3dad64e148b306aa68b428326e56e30a2c80fcbcf6d56",
-      "outputSha256": "11a347768f9c17b707d94ee4c606b74e46cfcbd1823f28a3192cbbe3b6a24960",
+      "numericPropertiesSha256": "840b66e4ab61dee6dfa13c1fb031bb86ad490ea7814bb37fd4f952f6eeb9d40a",
+      "outputSha256": "b94b3b671e028a19f50e8a1365ef0f92e0c2439f339e672985d7086c3a802261",
       "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod2.fbx",
       "version": 7400
     },
@@ -719,6 +851,230 @@
       "numericPropertiesSha256": "07ba2e3281ad1771bb97b7a0f61488d2fd48452eab10432d30b363a12eb7dd1d",
       "outputSha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453",
       "path": "assets/CoastalBridgeTool/demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "1144b9c20fea64c4b49118c6e3268f42a03f8b95ca0ab754ae6ad4ca014fc10e",
+      "outputSha256": "c8009a93e4d9f5bd473305d21d8fc15acea3e0e29cca6539c948431048965456",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/CoastalGrass_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "6d6bb8cc4abc88fb4a5fe084d599c52aa894687a1f1fb5ac72fb5c61ed46c9d6",
+      "outputSha256": "1b76883f1e75d8e7f43a9ea5c79effa79b1b788ad03fb588c017edd4fa05e2f1",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/MeadowDaisy_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "890da7bd4394a46b4e345be60973152aa20728174cf848837f292084b54576d9",
+      "outputSha256": "1214f3ca25910691604902b17e343023c2a9ae184fda7aabf4a95d78530ef188",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/RoseThicket_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/FoliageNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/FoliageNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "e780cd390a1dcd30116087723e59691508501b7426fbdf33ed40aa0d9fb7766a",
+      "outputSha256": "c9a8809a059ee9171992ea537fb61569a65a0253174b06c7b90232ae81852253",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/WoodSorrel_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "b4e809ae51ad5bff3fb5ea5a7781df0cdb0db63ebfba257dba352809e6a0fd96",
+      "outputSha256": "f527bc253ee0e20d83ece0b15e6124ee5ff2360851b9e8e965c6c969da02b7ec",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD0.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "2577aa636e58bed2ce36e239827bed71e5ea9220333ad9c9fb732b6f8255d193",
+      "outputSha256": "8ba58a1004039d0cb1a682025983ae0f142290747a5f4d3257f3912897468433",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD1.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "37367f4486c20e1e9910975f4267c8b7ef82c5680e6402a0203fd1d2acf1723b",
+      "outputSha256": "327d4c307aee62940125fe59ce21d2a55a92256e2df310df538e905d04b6f0a2",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Models/VergeWall_A_LOD2.fbx",
       "version": 7400
     },
     {
@@ -1237,6 +1593,102 @@
       "changedStringProperties": [
         {
           "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "b4e809ae51ad5bff3fb5ea5a7781df0cdb0db63ebfba257dba352809e6a0fd96",
+      "outputSha256": "f527bc253ee0e20d83ece0b15e6124ee5ff2360851b9e8e965c6c969da02b7ec",
+      "path": "assets/BFjordTools/RoadDetail/Models/VergeWall_A_LOD0.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "2577aa636e58bed2ce36e239827bed71e5ea9220333ad9c9fb732b6f8255d193",
+      "outputSha256": "8ba58a1004039d0cb1a682025983ae0f142290747a5f4d3257f3912897468433",
+      "path": "assets/BFjordTools/RoadDetail/Models/VergeWall_A_LOD1.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/VergeStone_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/VergeStone_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "37367f4486c20e1e9910975f4267c8b7ef82c5680e6402a0203fd1d2acf1723b",
+      "outputSha256": "327d4c307aee62940125fe59ce21d2a55a92256e2df310df538e905d04b6f0a2",
+      "path": "assets/BFjordTools/RoadDetail/Models/VergeWall_A_LOD2.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
           "replacement": "textures/Rock_BaseColor.jpg"
         },
         {
@@ -1369,6 +1821,222 @@
       "changedStringProperties": [
         {
           "node": "FileName",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "ee45ff89083d8d8d2ec9f19856738aad7ac6d4a0a750c6de1513c440bb7a1388",
+      "outputSha256": "d1adb148ddb47102b8bae55bb8ea9d56db93ff0559f15aafa1db77263b06643d",
+      "path": "assets/BFjordTools/Rocks/Models/coastal_outcrop_LOD0.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "cde309b7eebe20c655edd5c5a92a00f76bbc688e583d1eb1db517e9ae361cfee",
+      "outputSha256": "477557767dff99516736f9cb3821395594fb81830f008c1556093bc07521599b",
+      "path": "assets/BFjordTools/Rocks/Models/coastal_outcrop_LOD1.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/coastal_outcrop_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "f3ef6043353a349ea8e07d9a79a2f51fa1b8f97796e51ecf6050304ff898555f",
+      "outputSha256": "fa14f1f2f0923d6ee0344634e65a524b025919681fb654aefe4d3f8479009066",
+      "path": "assets/BFjordTools/Rocks/Models/coastal_outcrop_LOD2.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/river_ledge.blend"
+        }
+      ],
+      "numericPropertiesSha256": "45c31039706d1059ec41e3661d7568ba264ac81417bdde4ab2efd7d77a806da7",
+      "outputSha256": "ab3252f54cf6da3e255e7098666370f59212a6034258df6b260b4559e5c1e0c4",
+      "path": "assets/BFjordTools/Rocks/Models/fractured_boulder_cluster_COL.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/river_ledge.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "887d1f76e2fde3bed20b5ebe866812d4afd1a186ca0836042fea2f654e9eb465",
+      "outputSha256": "ce6c388f7530189b03d71b095806062774ac14d139f20cba63f992511897a49c",
+      "path": "assets/BFjordTools/Rocks/Models/fractured_boulder_cluster_LOD0.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/river_ledge.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "28b94e88ef8f96b61116d266a623c199a563670133300c8c70113f9a3bdac8cf",
+      "outputSha256": "ed650f05cc8e67907a05618271dae71906121a2aec9a3345a894c011cee61e19",
+      "path": "assets/BFjordTools/Rocks/Models/fractured_boulder_cluster_LOD1.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/river_ledge.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fractured_boulder_cluster_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "47082bd5b5a9e39644e6d44c9c12d519238d82bc6d6025fdbe3313b99c3730bb",
+      "outputSha256": "21331c74e56b07d046bd180c7a7fb7eb31a8685594add4bc1e30d362cf9e805c",
+      "path": "assets/BFjordTools/Rocks/Models/fractured_boulder_cluster_LOD2.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
           "replacement": "textures/Rock_BaseColor.jpg"
         },
         {
@@ -1495,6 +2163,126 @@
       "numericPropertiesSha256": "4ee94069d0659b3babac1056387cb5ab8dd261c13b9ef64396a63e9c52819e26",
       "outputSha256": "235a04b6b1741291641041c0360899b5cc0b16fe10253aa15bf3da7c67d69c39",
       "path": "assets/BFjordTools/Rocks/Models/granite_boulder_LOD2.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/coastal_outcrop.blend"
+        }
+      ],
+      "numericPropertiesSha256": "4e55a83864f7ea09a1096e0099465fd11d8cab80d46c8683a6404901960bc4bc",
+      "outputSha256": "dda9b2660c2e28de6d633ec7184910b4a60b2a005452aaefc414e47a57082b28",
+      "path": "assets/BFjordTools/Rocks/Models/river_ledge_COL.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/coastal_outcrop.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "eb79a1d578c6aca2e05b1dfaa81de7f1f8459e4bfe13069456ab0d932217d6bd",
+      "outputSha256": "a07440d5eac1dbc250fb34b3e86cc31c3a69a7a8097f508f9c686972fed38d51",
+      "path": "assets/BFjordTools/Rocks/Models/river_ledge_LOD0.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/coastal_outcrop.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "d0c644da9f103901c6c2d70996a27184297b620fbbabfec783a5849b70b5303f",
+      "outputSha256": "73ef11ff0b8dcc50cf56609c65584a02988a12594241df8d86159a156ec60e0b",
+      "path": "assets/BFjordTools/Rocks/Models/river_ledge_LOD1.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/coastal_outcrop.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_BaseColor.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/river_ledge_NormalGL.png"
+        }
+      ],
+      "numericPropertiesSha256": "356430a96d98d8e99cd329a2013089dc81fbfa8a1b506bce3e450d29d6fd1971",
+      "outputSha256": "353f7bba79a845f338ef5aaec6a81de6fef2348a64848cb2c9444c87a664db70",
+      "path": "assets/BFjordTools/Rocks/Models/river_ledge_LOD2.fbx",
       "version": 7400
     },
     {
@@ -2033,8 +2821,414 @@
     "steel-through-truss-88/bridge-source.blend",
     "stone-viaduct-110/bridge-source.blend",
     "timber-trestle-80/bridge-source.blend",
+    "BFjordTools/FoliageDetail/FoliageDetail.blend",
+    "BFjordTools/FoliageDetail/FoliageDetail.blend1",
+    "BFjordTools/RoadDetail/Sources/road-detail.blend",
+    "BFjordTools/TunnelDetail/MasonryPortal.blend",
     "BFjordTools/Rocks/original.blend",
-    "BFjordTools/Rocks/original.blend1"
+    "BFjordTools/Rocks/original.blend1",
+    "BFjordTools/Rocks/Sources/coastal_outcrop.blend",
+    "BFjordTools/Rocks/Sources/fractured_boulder_cluster.blend",
+    "BFjordTools/Rocks/Sources/river_ledge.blend"
+  ],
+  "pngMetadataTransformations": [
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7223e8f77ab34bf9900681939068326e4bc194823a8b03c2f327b1c7570dfc62",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/FoliageAtlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b8fd8725a45757eb9c14d5bdcb083f1f1386d9afc936e8acd70c7e82d76997b9",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a1bb75bbb1e8da04920b59081561bb4cf8f833d51fb0a3a42bb9cc687d86c436",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Textures/VergeStone_BaseColor.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a6762b0c04959a8e743d8b4c319bb3cb7d5773c4242f52c830ae4a2e6bffe73b",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "4f61871b8a070f9a523bdeec70466d8c1a8cb7f0502cd1f2e09ba32bfbc40828",
+      "path": "assets/BFjordTools/FoliageDetail/Review/CoastalGrass_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "2322bdc02c174e798641aef73a3e0ae99e33a4438798ae10420b59461bf790a8",
+      "path": "assets/BFjordTools/FoliageDetail/Review/MeadowDaisy_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "cdfa00e9bfb7aab85b605d3039aaa7fc5269e1b7677ec4344ba86b492f09c42a",
+      "path": "assets/BFjordTools/FoliageDetail/Review/RoseThicket_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "fc176440ab8f956bfb77107caab5c3d9b41899479c18b1b24f6620fa5c776e70",
+      "path": "assets/BFjordTools/FoliageDetail/Review/WoodSorrel_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "9fc577957b2be4852560bad904514283464625369535c87151a356d25c2c874d",
+      "path": "assets/BFjordTools/FoliageDetail/Review/exported-lods.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "260c5e1d401861380f8878bd3f874f50d6d991834267f0c3c2ca0f98d20f1343",
+      "path": "assets/BFjordTools/RoadDetail/Review/road-detail-reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a1bb75bbb1e8da04920b59081561bb4cf8f833d51fb0a3a42bb9cc687d86c436",
+      "path": "assets/BFjordTools/RoadDetail/Textures/VergeStone_BaseColor.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a6762b0c04959a8e743d8b4c319bb3cb7d5773c4242f52c830ae4a2e6bffe73b",
+      "path": "assets/BFjordTools/RoadDetail/Textures/VergeStone_Normal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7efc777ec0826ed02c95db7636e011acb62141de33815eed11867c9184db827d",
+      "path": "assets/BFjordTools/TunnelDetail/portal-review.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7d3de39703eefc8d1cf45f13d539c7f7d0717a64927a86fc7f86acb6c74c6f39",
+      "path": "assets/BFjordTools/Rocks/Review/fidelity-lods-clay.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0e8520ea2fc822fa7cd3111a0fbc817060a81f9c2f413332dc7ccb1a777d51b0",
+      "path": "assets/BFjordTools/Rocks/Review/fidelity-lods-pbr.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "99d976bed3eb5074184f7d9882ce5b82e6eb5e84016be5fe33562c46c4c2aec8",
+      "path": "assets/BFjordTools/Rocks/Textures/Rock_MetallicSmoothness.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a049dd6ee528ad25f9d67ceaa7fed02a9148a653ab29dabe60a354fbd4c762f1",
+      "path": "assets/BFjordTools/Rocks/Textures/Rock_Roughness.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "28844de0571253eb840864475dccc2365d07affd75683746ef79534cd4a7659e",
+      "path": "assets/BFjordTools/Rocks/Textures/coastal_outcrop_BaseColor.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b0f84ec6df2b8d71f3845f95325bc4667db68d8f13e9730b5cc23a345fe0bdb0",
+      "path": "assets/BFjordTools/Rocks/Textures/coastal_outcrop_NormalGL.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "c1067bc27b0091812898de92a9e27eb370a1f66f25838dfd74a0e772bc151ce9",
+      "path": "assets/BFjordTools/Rocks/Textures/fractured_boulder_cluster_BaseColor.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f2ce514085690aeb471073641ff6276da473c2620d437f2cfab275e6de5526df",
+      "path": "assets/BFjordTools/Rocks/Textures/fractured_boulder_cluster_NormalGL.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a0b902c7abe523ce9ab7044abb8c844795017420ede87c82af33733e01818ff0",
+      "path": "assets/BFjordTools/Rocks/Textures/river_ledge_BaseColor.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "974c7c61ebca84e2a1b47a2308f92769445276e073b307b6ab20d4d73203017d",
+      "path": "assets/BFjordTools/Rocks/Textures/river_ledge_NormalGL.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "79ec37a1d8e42747183c64b3568c8a7ea531f43c7a4677633acf631fd0b82829",
+      "path": "docs/images/rock-lods-blender-clay.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a1b9bde38b44a3fafb24c52a8552c0f8c3d8f6beb260f4de7e7846281125ac27",
+      "path": "docs/images/rock-lods-blender-pbr.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0e8520ea2fc822fa7cd3111a0fbc817060a81f9c2f413332dc7ccb1a777d51b0",
+      "path": "docs/images/rock-fidelity-blender.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "9fc577957b2be4852560bad904514283464625369535c87151a356d25c2c874d",
+      "path": "docs/images/foliage-lods-blender.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7efc777ec0826ed02c95db7636e011acb62141de33815eed11867c9184db827d",
+      "path": "docs/images/tunnel-portal-blender.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "260c5e1d401861380f8878bd3f874f50d6d991834267f0c3c2ca0f98d20f1343",
+      "path": "docs/images/road-detail-blender.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    }
   ],
   "schemaVersion": 1
 }

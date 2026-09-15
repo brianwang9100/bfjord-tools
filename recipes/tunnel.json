@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "command": "bwork_structures",
+  "arguments": {
+    "action": "apply",
+    "recipePath": "masonry-example"
+  },
+  "targetScene": "Assets/Scenes/WorldAuthoringTools.unity"
+}

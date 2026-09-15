@@ -1,0 +1,401 @@
+{
+  "result": "passed",
+  "checks": [
+    {
+      "path": "Models/granite_boulder_LOD0.fbx",
+      "triangles": 2400,
+      "boundsSizeUnity": [
+        3.10066819190979,
+        2.249488922752789,
+        2.4999998807907104
+      ],
+      "minimumBlenderZ": -6.804148142691702e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/granite_boulder_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        3.09846031665802,
+        2.2519218190573156,
+        2.4980069398880005
+      ],
+      "minimumBlenderZ": -0.0009991391561925411,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/granite_boulder_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        3.089091420173645,
+        2.254043892840855,
+        2.4962856769561768
+      ],
+      "minimumBlenderZ": -0.00031073472928255796,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/granite_boulder_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        3.0974665880203247,
+        2.253037323622266,
+        2.505730628967285
+      ],
+      "minimumBlenderZ": -0.0003203054948244244,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_stone_LOD0.fbx",
+      "triangles": 1840,
+      "boundsSizeUnity": [
+        2.700000047683716,
+        1.150000010885691,
+        1.899999976158142
+      ],
+      "minimumBlenderZ": -3.4727548836599453e-08,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_stone_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        2.700000047683716,
+        1.1502743362798356,
+        1.899999976158142
+      ],
+      "minimumBlenderZ": -9.34004201553762e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_stone_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        2.6962064504623413,
+        1.15015748985752,
+        1.9036396741867065
+      ],
+      "minimumBlenderZ": 0.00012560836330521852,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_stone_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        2.7180991172790527,
+        1.158860693569295,
+        1.9221161007881165
+      ],
+      "minimumBlenderZ": -0.0014016729546710849,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/stratified_outcrop_LOD0.fbx",
+      "triangles": 2400,
+      "boundsSizeUnity": [
+        5.797308444976807,
+        3.197754454682581,
+        3.49629008769989
+      ],
+      "minimumBlenderZ": -8.18491680547595e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/stratified_outcrop_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        5.793086051940918,
+        3.192606341202918,
+        3.4978920221328735
+      ],
+      "minimumBlenderZ": -3.1124909583013505e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/stratified_outcrop_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        5.79620623588562,
+        3.186838005163281,
+        3.499254584312439
+      ],
+      "minimumBlenderZ": 3.7211398193903733e-06,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/stratified_outcrop_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        5.800266742706299,
+        3.2003877525858115,
+        3.5019421577453613
+      ],
+      "minimumBlenderZ": -0.00038794332067482173,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/cliff_slab_LOD0.fbx",
+      "triangles": 2400,
+      "boundsSizeUnity": [
+        5.001756429672241,
+        4.7924713064639946,
+        1.900315284729004
+      ],
+      "minimumBlenderZ": -8.382095984416083e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/cliff_slab_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        4.997011184692383,
+        4.790772806612949,
+        1.8965968489646912
+      ],
+      "minimumBlenderZ": -9.096762369154021e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/cliff_slab_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        4.997443437576294,
+        4.795957518101204,
+        1.8731160163879395
+      ],
+      "minimumBlenderZ": -2.9516697395592928e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/cliff_slab_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        4.997206449508667,
+        4.796850816172082,
+        1.9012681245803833
+      ],
+      "minimumBlenderZ": -0.0002514280495233834,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/scree_cluster_LOD0.fbx",
+      "triangles": 2400,
+      "boundsSizeUnity": [
+        4.19890570640564,
+        1.3001536105584819,
+        3.1021987199783325
+      ],
+      "minimumBlenderZ": -0.0004785035562235862,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/scree_cluster_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        4.20244288444519,
+        1.2997143285283528,
+        3.105318546295166
+      ],
+      "minimumBlenderZ": -3.9221526094479486e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/scree_cluster_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        4.1938135623931885,
+        1.2873274572193623,
+        3.0656291246414185
+      ],
+      "minimumBlenderZ": -0.02325897291302681,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/scree_cluster_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        4.200786113739014,
+        1.299860579194501,
+        3.1010631322860718
+      ],
+      "minimumBlenderZ": -0.0006449047941714525,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/upright_crag_LOD0.fbx",
+      "triangles": 2400,
+      "boundsSizeUnity": [
+        2.5971955060958862,
+        4.9958514412501245,
+        2.1990792751312256
+      ],
+      "minimumBlenderZ": -8.575521496823058e-05,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/upright_crag_LOD1.fbx",
+      "triangles": 850,
+      "boundsSizeUnity": [
+        2.5946449041366577,
+        4.9966316946811276,
+        2.1957075595855713
+      ],
+      "minimumBlenderZ": -0.00015027607150841504,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/upright_crag_LOD2.fbx",
+      "triangles": 230,
+      "boundsSizeUnity": [
+        2.5870370864868164,
+        4.993047775224568,
+        2.1811399459838867
+      ],
+      "minimumBlenderZ": -3.8756884350732435e-06,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/upright_crag_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        2.60390305519104,
+        5.002387758242548,
+        2.2007583379745483
+      ],
+      "minimumBlenderZ": -0.00018190954870078713,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/coastal_outcrop_LOD0.fbx",
+      "triangles": 6200,
+      "boundsSizeUnity": [
+        8.0,
+        4.000000095561532,
+        5.000000238418579
+      ],
+      "minimumBlenderZ": -9.556153202083806e-08,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/coastal_outcrop_LOD1.fbx",
+      "triangles": 2100,
+      "boundsSizeUnity": [
+        8.008957624435425,
+        4.004251124104485,
+        4.992405414581299
+      ],
+      "minimumBlenderZ": -0.0026260630693286657,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/coastal_outcrop_LOD2.fbx",
+      "triangles": 650,
+      "boundsSizeUnity": [
+        7.969127893447876,
+        3.989009884186089,
+        4.985512971878052
+      ],
+      "minimumBlenderZ": -0.0029320986941456795,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/coastal_outcrop_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        8.010880947113037,
+        3.9994303946150467,
+        4.998986482620239
+      ],
+      "minimumBlenderZ": 0.00056960538495332,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_ledge_LOD0.fbx",
+      "triangles": 6200,
+      "boundsSizeUnity": [
+        6.0,
+        1.7999997726983352,
+        4.0
+      ],
+      "minimumBlenderZ": 6.040865940803997e-08,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_ledge_LOD1.fbx",
+      "triangles": 2100,
+      "boundsSizeUnity": [
+        5.989097595214844,
+        1.793189553078264,
+        3.996989369392395
+      ],
+      "minimumBlenderZ": 0.004987450782209635,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_ledge_LOD2.fbx",
+      "triangles": 650,
+      "boundsSizeUnity": [
+        5.9920806884765625,
+        1.7946994425728917,
+        3.960039973258972
+      ],
+      "minimumBlenderZ": -0.015253436751663685,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/river_ledge_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        6.004333257675171,
+        1.7929801703430712,
+        4.0031397342681885
+      ],
+      "minimumBlenderZ": 0.0047019957564771175,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/fractured_boulder_cluster_LOD0.fbx",
+      "triangles": 6200,
+      "boundsSizeUnity": [
+        4.800000190734863,
+        3.199999719303335,
+        4.0
+      ],
+      "minimumBlenderZ": 8.996180156373157e-08,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/fractured_boulder_cluster_LOD1.fbx",
+      "triangles": 2100,
+      "boundsSizeUnity": [
+        4.798802614212036,
+        3.200667538680136,
+        3.9878311157226562
+      ],
+      "minimumBlenderZ": -0.0049001360312104225,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/fractured_boulder_cluster_LOD2.fbx",
+      "triangles": 650,
+      "boundsSizeUnity": [
+        4.812443017959595,
+        3.1634981711395085,
+        3.9209797382354736
+      ],
+      "minimumBlenderZ": -0.004579551983624697,
+      "closedSurface": true
+    },
+    {
+      "path": "Models/fractured_boulder_cluster_COL.fbx",
+      "triangles": 160,
+      "boundsSizeUnity": [
+        4.799736976623535,
+        3.1984711261466146,
+        4.004474878311157
+      ],
+      "minimumBlenderZ": 0.00043863337486982346,
+      "closedSurface": true
+    }
+  ]
+}

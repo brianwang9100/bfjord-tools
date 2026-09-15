@@ -16,8 +16,9 @@ import bmesh
 import numpy as np
 from mathutils import Vector, noise
 
-ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / 'art/BFjordTools/Rocks'
+OUT = next(candidate for parent in Path(__file__).resolve().parents
+           for candidate in (parent / 'assets/BFjordTools/Rocks', parent / 'art/BFjordTools/Rocks')
+           if (candidate / 'manifest.json').is_file())
 RECIPES = [
     ('granite_boulder', 'Granite boulder', 701, (3.1, 2.5, 2.25)),
     ('river_stone', 'Rounded river stone', 809, (2.7, 1.9, 1.15)),

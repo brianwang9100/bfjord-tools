@@ -262,10 +262,11 @@ namespace Bwork.Authoring.Editor.Rocks
                 if (planned != null)
                 {
                     pending = new GameObject(pendingName); pending.SetActive(false); pending.transform.SetParent(parent, false);
-                    var material = AssetDatabase.LoadAssetAtPath<Material>(RockLibrary.MaterialPath(source, recipe.materialProfile));
+
                     for (int i = 0; i < planned.result.placements.Length; i++)
                     {
                         var p = planned.result.placements[i]; var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(RockLibrary.PrefabPath(source, p.prefabKey));
+                        var material = RockLibrary.MaterialForVariant(source, p.prefabKey, recipe.materialProfile);
                         RockContract.Require(prefab != null && material != null, "Prepared rock assets are missing.");
                         var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab, pending.transform);
                         instance.name = p.prefabKey; instance.transform.SetPositionAndRotation(planned.poses[i].position, planned.poses[i].rotation);

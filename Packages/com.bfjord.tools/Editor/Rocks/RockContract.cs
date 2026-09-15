@@ -14,6 +14,7 @@ namespace Bwork.Authoring.Editor.Rocks
     [Serializable] public sealed class RockVariant
     {
         public string id, displayName, colliderPath;
+        public string materialId = "rock";
         public RockLOD[] lods;
         public float[] boundsSize;
         [JsonIgnore] public Vector3 Size => new Vector3(boundsSize[0], boundsSize[1], boundsSize[2]);
@@ -93,10 +94,11 @@ namespace Bwork.Authoring.Editor.Rocks
         public static void ValidateManifest(RockManifest m)
         {
             Require(m != null && m.schemaVersion == 1 && m.license == "CC0-1.0", "Rock manifest requires schemaVersion=1 and CC0-1.0.");
-            Require(m.variants != null && m.variants.Length > 0 && m.variants.Length <= 32 && m.materials != null && m.materials.Length == 1, "Require 1..32 variants and one shared stone material source.");
+            Require(m.variants != null && m.variants.Length > 0 && m.variants.Length <= 32 && m.materials != null && m.materials.Length >= 1 && m.materials.Length <= 8, "Require 1..32 variants and 1..8 shared stone material sources.");
             foreach (var v in m.variants)
             {
-                Require(v != null, "Null rock variant."); Id(v.id);
+                Require(v != null, "Null rock variant."); Id(v.id); Id(v.materialId);
+                Require(m.materials.Any(material => material != null && material.id == v.materialId), "Unknown rock material source: " + v.materialId);
                 Require(v.boundsSize != null && v.boundsSize.Length == 3 && v.boundsSize.All(x => float.IsFinite(x) && x > 0 && x <= 40), "Rock bounds must be finite positive meters, at most 40m per axis.");
                 Require(v.lods != null && v.lods.Length == 3, "Every rock requires three LODs.");
                 int prior = int.MaxValue; float height = 1;
@@ -110,6 +112,7 @@ namespace Bwork.Authoring.Editor.Rocks
                 ProjectContext.ValidateRelative(v.colliderPath); Require(v.colliderPath.EndsWith(".fbx", StringComparison.OrdinalIgnoreCase), "Rock collider requires FBX.");
             }
             Require(m.variants.Select(v => v.id).Distinct().Count() == m.variants.Length, "Duplicate rock variant ID.");
+            Require(m.materials.All(material => material != null) && m.materials.Select(material => material.id).Distinct().Count() == m.materials.Length, "Duplicate or null rock material source.");
             foreach (var material in m.materials)
             {
                 Require(material != null, "Null rock material."); Id(material.id);
