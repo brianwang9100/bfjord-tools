@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "command": "bwork_bridge_collection",
+  "arguments": {
+    "action": "setup"
+  }
+}

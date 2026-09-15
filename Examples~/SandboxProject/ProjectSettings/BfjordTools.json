@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "bridgeSourceRoot": "../../assets/CoastalBridgeTool",
+  "captureRoot": "../../captures",
+  "additionalAllowedScenes": [
+    "Assets/Scenes/BridgeCollection.unity"
+  ]
+}

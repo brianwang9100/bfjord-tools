@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "author": "BFjord Tools contributors",
+  "license": "CC0-1.0",
+  "generatorLicense": "MIT",
+  "source": "Original mathematical texture synthesis; no third-party image inputs",
+  "files": {
+    "water-ripple-normal.png": {
+      "size": [
+        512,
+        512
+      ],
+      "seed": 8139,
+      "modes": 36,
+      "encoding": "linear RGB tangent normal, OpenGL +Y",
+      "sha256": "982eb4ee658e1476156bd984b0b63f68ddcb26912a0ad6cfa21ca7a67721a8f3",
+      "bytes": 692756
+    },
+    "water-detail-normal.png": {
+      "size": [
+        512,
+        512
+      ],
+      "seed": 317,
+      "modes": 36,
+      "encoding": "linear RGB tangent normal, OpenGL +Y",
+      "sha256": "5c20bb5a68d13c5a0fab9dd6117e08352868d7b6b3aeac545a1f5ae997687ff7",
+      "bytes": 637282
+    },
+    "water-foam.png": {
+      "size": [
+        256,
+        256
+      ],
+      "seed": 7314,
+      "encoding": "linear R cellular foam filaments / G roughness variation / B unused",
+      "sha256": "db57b1bcd844934efed3944763297c2727c316a92b776adb5a8e8ae1fca19d19",
+      "bytes": 115144
+    }
+  }
+}

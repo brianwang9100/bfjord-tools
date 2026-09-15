@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "seed": 814,
+  "rockSlopeStart": 22,
+  "rockSlopeEnd": 46,
+  "exposedHeightStart": 32,
+  "exposedHeightEnd": 75,
+  "patchScaleMeters": 45,
+  "soilStrength": 0.35,
+  "gravelStrength": 0.8,
+  "bankWidthMeters": 6,
+  "bankHeightMeters": 1.8
+}

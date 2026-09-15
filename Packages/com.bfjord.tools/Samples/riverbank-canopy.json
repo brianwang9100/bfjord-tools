@@ -1,0 +1,44 @@
+{
+  "id": "riverbank-canopy-001",
+  "area": {
+    "x": 100,
+    "y": 100,
+    "width": 105,
+    "height": 165
+  },
+  "seed": 2763,
+  "maximumCount": 65,
+  "densityPerHectare": 850,
+  "minimumSpacing": 6.8,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 33,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "woody",
+  "species": [
+    {
+      "id": "MatureFir_A",
+      "prefabKey": "bfjord:MatureFir_A",
+      "weight": 1,
+      "radius": 3.0,
+      "minimumScale": 0.84,
+      "maximumScale": 1.08,
+      "groundOffsetMeters": -0.03
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 3
+    }
+  ],
+  "maximumWaterDistance": 28,
+  "maximumBankHeight": 12
+}

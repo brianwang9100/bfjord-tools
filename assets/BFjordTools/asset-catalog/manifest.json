@@ -1,0 +1,846 @@
+{
+  "externalPackageGuids": [
+    "933532a4fcc9baf4fa0491de14d08ed7",
+    "d0353a89b1f911e48b9e16bdc9f2e058"
+  ],
+  "files": [
+    {
+      "bytes": 4176,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/fern_02.mat",
+      "sha256": "f641e695a2b49326031b3e4801ed7d3e4e671354e6c690020bc7ca5f6cfeb5f9"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/fern_02.mat.meta",
+      "sha256": "cbdf9fc468a7b1d4cb5fa8bd532483bd59aeff72c212e723e43a6f805bd830db"
+    },
+    {
+      "bytes": 4161,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/pine_sapling_small_bark.mat",
+      "sha256": "e9e0a7696b143e5ad82ea4c739d56507be2cb22877b745e88c4cd96fece7c3ad"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/pine_sapling_small_bark.mat.meta",
+      "sha256": "7a3ee91644d1081fdb499ad09361e1485ec60efb22d0354d8b852d7a2abda765"
+    },
+    {
+      "bytes": 4191,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/pine_sapling_small_twig.mat",
+      "sha256": "b3f8c63f67e9a92955ec14cfa7435593198d6daa6eaf34372203446ee6cdb914"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/pine_sapling_small_twig.mat.meta",
+      "sha256": "ce71c71f289d2cc9151b9829b474a4f100e314a49add9310bfc2d41ee08333cc"
+    },
+    {
+      "bytes": 4155,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat",
+      "sha256": "1bb01b587fed9f5002eacdef479e1010acc46cdd8d0d36aebe7b06765d8fb57f"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat.meta",
+      "sha256": "ba95b34b102226bcb3b1c7b0e093c6f164bd93913f8294c2fc54f2ce6b202e5b"
+    },
+    {
+      "bytes": 4177,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat",
+      "sha256": "a098101a33d27f21f76ea74bccc4eacef59872ce8ab0b17528c147723744bfe7"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat.meta",
+      "sha256": "c2c65589f59763ab24a4a2cf192b429d32ded2ef41cc61333b0abb22a06cf0ed"
+    },
+    {
+      "bytes": 85327,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_a.fbx",
+      "sha256": "e6589cf7d240e714e7c44599421572dd7ba51e875d756eace96bc6e3be196f38"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_a.fbx.meta",
+      "sha256": "c294c69ab74c978ffbc086d1ebeb0290c8ed92f1ccb7f18a1de17e6bd5e363f6"
+    },
+    {
+      "bytes": 148831,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_b.fbx",
+      "sha256": "4cebf04c2b435ed298acc1581fd8a6edc8a075ce08637c076543adacddfba8bf"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_b.fbx.meta",
+      "sha256": "b9d6868012f3076b48faba9d16614c85e2005f1d7961f7e8149369e873265d58"
+    },
+    {
+      "bytes": 144079,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_c.fbx",
+      "sha256": "105b626b40993bc2104221254cc05841859765aaa620f9ea580241d2cf1e0ae8"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_c.fbx.meta",
+      "sha256": "5195a29234a7a50b2638415af8e93e8bea9b6abe5b469f0540af4b3d939e2d35"
+    },
+    {
+      "bytes": 86767,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_d.fbx",
+      "sha256": "9dbb736b1decd4de9b18f8c79f1b7abf18d41f3b7e7b858c44469e2e66184b0b"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_d.fbx.meta",
+      "sha256": "72d8e419fa3540c231b493667b08d8b2df4c8c9c3b5b96eef8cb420981ff290c"
+    },
+    {
+      "bytes": 5895236,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/pine_sapling_small_b.fbx",
+      "sha256": "7cefe4937cbb44bdf9c0c94bdbba0c296903a47b338306799e687c7a8870d3fd"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/pine_sapling_small_b.fbx.meta",
+      "sha256": "5966e24683744f960f20f6ef85f0c9264261d6b7248a5d58562a4e4de8b7930c"
+    },
+    {
+      "bytes": 451366,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+      "sha256": "bcad23ba3f2f331869f8bc97943e3183ee7cf607e750c0a19db9c7a7a11b5400"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx.meta",
+      "sha256": "f5623225dfddcf14af83d4a5bf687897f0a47e97fa26cfc391cdd9defea7e9ee"
+    },
+    {
+      "bytes": 447846,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock02.fbx",
+      "sha256": "6a3ea14af6e8b146ec464c0c93dd22ceb0b5cea351ac6d6f2de4cc65161b7249"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock02.fbx.meta",
+      "sha256": "c37c50c0420263b7f41335b49e067907b8c0adaf6f3fce29d148e149290b718d"
+    },
+    {
+      "bytes": 268630,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock03.fbx",
+      "sha256": "11d2fc31a715729e6972e9db894518235bd289abac1c1daccff3bdbfee4b562b"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock03.fbx.meta",
+      "sha256": "bc797cdb4a5597f7133784a12719ae105a669c513eaca440810ae4db374cc30e"
+    },
+    {
+      "bytes": 532550,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock04.fbx",
+      "sha256": "4136cbf3e64f92e09c100f300d01183324f21bb7c3490c21ebb35f66f4d3c473"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock04.fbx.meta",
+      "sha256": "866974983003274c076eba71235125c73770b59cd5bd05ad527c925ada158f97"
+    },
+    {
+      "bytes": 657158,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock05.fbx",
+      "sha256": "a41a70a7be6a31f68531bd7bb4d33164d00385aab3477fe679017f2914f14c88"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock05.fbx.meta",
+      "sha256": "30e6b30b70c4ed633c91185c30f339260b93e2277d245e89df914fa138049afe"
+    },
+    {
+      "bytes": 372886,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock06.fbx",
+      "sha256": "ad96521f5fc07935a7caebd9073000eca61c45a2a05e6fe8896f7d323b87d613"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock06.fbx.meta",
+      "sha256": "036bc440b58a4e554c532265a0b0f9b747c4fba5201f1b765c29a644817c81e5"
+    },
+    {
+      "bytes": 200910,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "sha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx.meta",
+      "sha256": "ce8249f7e4faac73bb7f93c0ae8ad9c91718d9fd00f4612d4fb2377047d720fb"
+    },
+    {
+      "bytes": 179742,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_b.fbx",
+      "sha256": "33afa3d6ecf7ab188081bfb8e892ea88606647235384297515b25cd475e1e3b9"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_b.fbx.meta",
+      "sha256": "8e810a96a354a18c45c94204086f0db698d1c0ab54181eeb16bf828bcb6f1db9"
+    },
+    {
+      "bytes": 159710,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_c.fbx",
+      "sha256": "614a8c5caca95bd47053c551849075892677ee4b2f96f40bd97a4d7fa20e91da"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_c.fbx.meta",
+      "sha256": "d86256457a78d6cb64e0aa3b61628407c2f244c7a0449597582ca92f9c5adede"
+    },
+    {
+      "bytes": 160782,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_d.fbx",
+      "sha256": "36b7181d9bafe9b66483ad2cf314bab0ab3ff5f4ffbbcac70f5f668b69fdd1fb"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_d.fbx.meta",
+      "sha256": "e9b237800d5d93626363a1a4cf988a43d72bbd810b0c8a6097b1f4fd4cae70d9"
+    },
+    {
+      "bytes": 9755,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/fern_02_b.prefab",
+      "sha256": "be3f65d8fafc9077a312b1f56d9a9ee5206b91096f4973be2c95fb9ddd027679"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/fern_02_b.prefab.meta",
+      "sha256": "9786c48ff9eca9ae6d6e72dbeb2d1d6218eb92f2ec0acf8110966ecb1563f59e"
+    },
+    {
+      "bytes": 10023,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/pine_sapling_small_b.prefab",
+      "sha256": "dfe739fd4735ab19e6da3154d7809884c64765d781d24397814cd7f67d487e3e"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/pine_sapling_small_b.prefab.meta",
+      "sha256": "bba9413220a2b009a135b94309bca33255c620cc5d58573c1965aed94e8a1738"
+    },
+    {
+      "bytes": 9822,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab",
+      "sha256": "d4ed03810228784c98a5ce42ab9f0346210242369e537589109460cec8db1584"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab.meta",
+      "sha256": "ff63b14d5ae4c1b031b69ae5e33019f8e314bd63fb9843d4109a322f6802fe9b"
+    },
+    {
+      "bytes": 9766,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab",
+      "sha256": "a3abea47391e16bf8a02fbc6f58112e6eee127be27bb4212d8054fc21f0f23d8"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab.meta",
+      "sha256": "37c15b1e1b1dedb075cc3d0088b6186b5a88f66da8202b41283fc605f1f08ff4"
+    },
+    {
+      "bytes": 317728,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_BaseMap.png",
+      "sha256": "9e5312543fa6ed55180062312cfccb73614202d2b4752673aed1c0b985a7eba4"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_BaseMap.png.meta",
+      "sha256": "4ddb1c0ce40a40f54c4bd2dfa35cdeb96972e5cf40c83eeaf30cded3fd217b6d"
+    },
+    {
+      "bytes": 21392,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_MetallicSmoothness.png",
+      "sha256": "7fd31d047ddaae4f535a1f6d8ef9bb80ef0446628c25d06a735fa30b78d35f25"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_MetallicSmoothness.png.meta",
+      "sha256": "0e8d2d5f84caeadc30ce62b638ccb8dc21ab571bb1cecff26d25d7e8a7688755"
+    },
+    {
+      "bytes": 288516,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_Normal.png",
+      "sha256": "972f62404bf4dc57c22ca6473c2c2dde727aaf3a70d3227461519e25d0bb458f"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/fern_02_Normal.png.meta",
+      "sha256": "fbc52ad40e8aacbe6bae01217916b43cde44fa5c41ac8e93c267532ba2745267"
+    },
+    {
+      "bytes": 462485,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_BaseMap.png",
+      "sha256": "7397cf201b9af2032cff22e2112b788727405af1986734cb322b917a73fc9ea4"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_BaseMap.png.meta",
+      "sha256": "ec938ddf151cfd4b7028d0e11933bd500308112af88012b441101e3afaa9f95d"
+    },
+    {
+      "bytes": 49921,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_MetallicSmoothness.png",
+      "sha256": "a1170e4f4284d4d74fcb1027e6e14ccde059fc7203b1e2229c01ea25bca92e5d"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_MetallicSmoothness.png.meta",
+      "sha256": "2ff2e72f412ca91231f77f7ad960f2bb8452b1008391750b3129decc13ba0df9"
+    },
+    {
+      "bytes": 717713,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_Normal.png",
+      "sha256": "144025816b71cbba970f123b8eba3b24c18176ee71b7e8ca00c24e8e07f78d85"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_bark_Normal.png.meta",
+      "sha256": "c9891329cf6bdc8bb0d97d7a5a1371365e475a1259478534aa5c50db5d8ac746"
+    },
+    {
+      "bytes": 1007403,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_BaseMap.png",
+      "sha256": "c4c58a9d351a9165bb8ca1f77938ae5aec03baeca7e26b28a00eac30c58cab6a"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_BaseMap.png.meta",
+      "sha256": "2202b9f798891130938c48f11e7d8131cddd9ea281c840c6bb7d80a6100454be"
+    },
+    {
+      "bytes": 42881,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_MetallicSmoothness.png",
+      "sha256": "8a287b1aab82dc5fcb922e932c8dd344eb0a0bbc842fe363fa7f3a12c29541aa"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_MetallicSmoothness.png.meta",
+      "sha256": "2b535a14034eb4cfb98a9011603e762eeee2e2da57df87d6d27fe6d71b26fcb8"
+    },
+    {
+      "bytes": 1158014,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_Normal.png",
+      "sha256": "580c96a52178b060de1e86cedd042d0b5ce3e5448639df66f49a7a4ce277b4de"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/pine_sapling_small_twig_Normal.png.meta",
+      "sha256": "9c11613caa5b506d06428fe741b026980ca1673dae80c3ce65a851c65b120eef"
+    },
+    {
+      "bytes": 437916,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png",
+      "sha256": "b900390b0b42219a26a98e74b6188e2842e754e9dfcd4582d5f59fe4f1cff377"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png.meta",
+      "sha256": "155922bd5f1e94711597c88fe6add342eaac49fee5f91d1061f79b8af82f6cec"
+    },
+    {
+      "bytes": 32461,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png",
+      "sha256": "ec0195b9eb9945a7a3c34ae5d825a95f754eaed6ebd6a71f05635ab7d7556956"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png.meta",
+      "sha256": "da8e248a5cfdf238dd2e7ee85ab0ffb15866f27ec3886106981672bd1795b504"
+    },
+    {
+      "bytes": 471092,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png",
+      "sha256": "57c4e31bdd593d68136607fa69e429b94348ad7d760799d3df28679e6f926487"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png.meta",
+      "sha256": "45938d78c60e4f540d832cebd7d952fa627a2fddf14e1fea3756ff2364607939"
+    },
+    {
+      "bytes": 452019,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png",
+      "sha256": "270c472ceab017a7ef55a88263c6e4470fc890e87cf8035537dc55edda32d6c5"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png.meta",
+      "sha256": "9a450c56d60117a75e78e6b7ed3c4df8963ab50e54d6985b90fb9985ccceb1c4"
+    },
+    {
+      "bytes": 36004,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png",
+      "sha256": "ae01b621f5cc5f0692da4365c0ce0932b12a5680d815f640d3d8e8d645f1729b"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png.meta",
+      "sha256": "5be55efdcf5ef8d602432bde47e443dd649712b9321666af899220e740736aa5"
+    },
+    {
+      "bytes": 391980,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png",
+      "sha256": "4ed894d7cc81ba7da5a930ac3d56e458bcaf7b786ec4f91c26595a2d5cd2313f"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png.meta",
+      "sha256": "e09818fc0b25aa74fc1b84138d96885bd49fc67582dbfe23ee9c4ecc4de68b80"
+    },
+    {
+      "bytes": 4154,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Bark.mat",
+      "sha256": "1ac6e61b9f3b0c3a579101fd757701c4b98260221cf4ad510a0fa3c7276c94d7"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Bark.mat.meta",
+      "sha256": "5d1f41999db5697c80ae9626bbd1e8a78a5843ca533bc4e52d39afe0c1024758"
+    },
+    {
+      "bytes": 4161,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_DeadBranches.mat",
+      "sha256": "538d0a2698e460618f0e8c4ad679adc5c608f846f4ecbd4860064fbdf6664ba4"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_DeadBranches.mat.meta",
+      "sha256": "8cee1a5ce50090df684e420f180c182addab0721989e3ab32a901e361a9575aa"
+    },
+    {
+      "bytes": 4185,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Foliage.mat",
+      "sha256": "6822acfa460fe11910fd9cebf83dc2cebd62427290856c96eeb3046365c3471b"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Foliage.mat.meta",
+      "sha256": "ce6d677d1fc4b346ebd5b90a60d096d0847a63109087f0daccad8e4fc4917940"
+    },
+    {
+      "bytes": 4154,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Trunk.mat",
+      "sha256": "83536eb66da1953c39d6cf24bb7e6b712a0e170cc8a0fb677988a37f2d97704f"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Materials/MatureFir_Trunk.mat.meta",
+      "sha256": "93e554e23a82291467b60947c48e6910062bbbb808f883de8d134c468aa68e1f"
+    },
+    {
+      "bytes": 7726067,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Models/MatureFir_A.fbx",
+      "sha256": "afa77ec83b42f8aa16d8c1594cc97c05452a11f439ed9b2de006b298692d5a44"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Models/MatureFir_A.fbx.meta",
+      "sha256": "32864088fb62910212c107977def232903250893eb6252c86298786f8eee6d8b"
+    },
+    {
+      "bytes": 10817,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Prefabs/MatureFir_A.prefab",
+      "sha256": "aa6338c05cf170d8a87e75897e597a9270a0dd81ba9903b1ba33320be280b553"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Prefabs/MatureFir_A.prefab.meta",
+      "sha256": "128d6c1bc37282924646df6324bf1f89d962d22ee5b743885bb836a811a48dc7"
+    },
+    {
+      "bytes": 518680,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_BaseMap.png",
+      "sha256": "35c6319884b078d099e580d6eb2acff2e1ba5c454e5157f7bd35d0a469fe30ea"
+    },
+    {
+      "bytes": 3421,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_BaseMap.png.meta",
+      "sha256": "8ca111d821115d2f7f8bb942b4f89774193eeb789b00420023a4478052a03ef1"
+    },
+    {
+      "bytes": 42218,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_MetallicSmoothness.png",
+      "sha256": "6810fedca828a0d41ad549e591ca798d25a8d8bb4c53d733cf8cc51a9d1e9e27"
+    },
+    {
+      "bytes": 3421,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_MetallicSmoothness.png.meta",
+      "sha256": "2ec202175cf02273946ca7b95566d9a016d1c11eb12ffa4a8bac5e05c9edba0d"
+    },
+    {
+      "bytes": 785457,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_Normal.png",
+      "sha256": "08ca73d2f69716bad19808418dddbf5c076f7be928c132d3c84f32005cc61507"
+    },
+    {
+      "bytes": 3421,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_bark_Normal.png.meta",
+      "sha256": "548fd9b93564464e03e116c985ef93477faf49728df733ca699bc77b2a7c4ff1"
+    },
+    {
+      "bytes": 982161,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_BaseMap.png",
+      "sha256": "177170e14cbeccfb63100120ad762faad02a63741659626c2376254d52d3e5a4"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_BaseMap.png.meta",
+      "sha256": "9c3d76673ba4b7e9eeac0609dfb3a3b124273b40438cd90dd7f21ad5fee03740"
+    },
+    {
+      "bytes": 28393,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_MetallicSmoothness.png",
+      "sha256": "54da45a2505e97a628de0aca7ee2e9f082a36e51e170fe139e14378fff1fd297"
+    },
+    {
+      "bytes": 3421,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_MetallicSmoothness.png.meta",
+      "sha256": "81b5cd84909468a9489b3d0bd9b0c8cc72121a102384ee70a5daf030e0aeddc9"
+    },
+    {
+      "bytes": 1261799,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_Normal.png",
+      "sha256": "8a13aa146493fd8718d9499de0aea2b8c6fb57d83b445a75a378fbb9184c6d56"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_trunk_a_Normal.png.meta",
+      "sha256": "cc55efae205709ec5d2fda757c1415eb440abf560306cf25e2233b265a941a96"
+    },
+    {
+      "bytes": 1303331,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_BaseMap.png",
+      "sha256": "bb59cd00de378e3157fb1650336a01f31fc73be27c22ddd7046d9309e510f73e"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_BaseMap.png.meta",
+      "sha256": "d12b83537518e848cb4a99558ae3e316c884aa9ae787d2676df119a880db8f77"
+    },
+    {
+      "bytes": 48317,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_MetallicSmoothness.png",
+      "sha256": "244993b124db779122e2bbb4fc11302e8d0667b0be8bf766af854036dcea2407"
+    },
+    {
+      "bytes": 3421,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_MetallicSmoothness.png.meta",
+      "sha256": "d714dce2027e77e3e5d2ed669030144b14d96e79f1953da83a54f22a1e8b82b5"
+    },
+    {
+      "bytes": 845373,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_Normal.png",
+      "sha256": "2bb3128598f36e07a2d0dbaaea608879cbc2022cdb2a1f4792b38cccf043d667"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/Bwork/ThirdParty/PolyHavenMatureFir/Textures/fir_tree_01_twig_Normal.png.meta",
+      "sha256": "a4eaeedb97182e2852c82b2a9e30f96c073816b2d4fae6579ebef1fc76268180"
+    },
+    {
+      "bytes": 4181,
+      "path": "Assets/RoadQuality/Art/Materials/Asphalt.mat",
+      "sha256": "6d1c6e85e5f795663eeacd291c4cb9a30cd58f53d359e060d2f7884ce52b4669"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Asphalt.mat.meta",
+      "sha256": "6be57db90d119bb626949b65212957abdebda8ea9c7b390c58dc13bf0671173e"
+    },
+    {
+      "bytes": 1999,
+      "path": "Assets/RoadQuality/Art/Materials/AsphaltEdge.mat",
+      "sha256": "07348a1b4e5bd6be3720501901a893fd9314dc6ecfc738dec4bb7c5057e302de"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/AsphaltEdge.mat.meta",
+      "sha256": "4e60fe29a9bc46b5fdd1a557b60ec3fddadb7569233704c461ea7404cea7b430"
+    },
+    {
+      "bytes": 4181,
+      "path": "Assets/RoadQuality/Art/Materials/Dirt.mat",
+      "sha256": "aa378619912fbf4b81f96b49bad8450915f9baaa131658c203e21c02196d9ac2"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Dirt.mat.meta",
+      "sha256": "f09c2e861339afef76dd151a7f484f28bf89c86f15d62f9453d7d0492d804036"
+    },
+    {
+      "bytes": 1998,
+      "path": "Assets/RoadQuality/Art/Materials/DirtVerge.mat",
+      "sha256": "ef87c2119df9fb02f7dc8f91bf76bf7ffa025dd601748bfb15c5dd2b942a5751"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/DirtVerge.mat.meta",
+      "sha256": "3ab72ce8d05fad1b019902f3024828f43cf0e5542bd775027ac24664adbb31cd"
+    },
+    {
+      "bytes": 4155,
+      "path": "Assets/RoadQuality/Art/Materials/Gravel.mat",
+      "sha256": "9ce723ea774f140eb89074d40e86b5314799fd798b581a4ff447ae0ba2565c37"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Gravel.mat.meta",
+      "sha256": "63ba26bef1edad3062897415174b49b9ad0ae2797980a9582362ed173145ae23"
+    },
+    {
+      "bytes": 1986,
+      "path": "Assets/RoadQuality/Art/Materials/GravelVerge.mat",
+      "sha256": "85369359e23464f5718b71e8fb4ccc2f3e2e6d16f99edd01c09cd8ee113da430"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/GravelVerge.mat.meta",
+      "sha256": "1a3a2abc193923183a5603307c56a68053ea86838e1ee26912a23ad186bfe987"
+    },
+    {
+      "bytes": 4155,
+      "path": "Assets/RoadQuality/Art/Materials/Ground.mat",
+      "sha256": "a9f64f943ffce9c9305de5c30d0f3c47272715ea94332bcefec22e4f61d0caca"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Ground.mat.meta",
+      "sha256": "73e619634fa03920fc9fe437a9c1e9bf447b0ff009bf06fa5d224843a263744f"
+    },
+    {
+      "bytes": 3915,
+      "path": "Assets/RoadQuality/Art/Materials/Marking.mat",
+      "sha256": "06069d854980e03a002f35f349afdf8435005f905c52e84a65297cd63382a0d4"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Marking.mat.meta",
+      "sha256": "b99266c38b6fbdfc9737de3833861105bc6a9fc28fe354a73bbc402896832152"
+    },
+    {
+      "bytes": 4107,
+      "path": "Assets/RoadQuality/Art/Materials/Rock.mat",
+      "sha256": "fe8c4aacb0e4b722c7ade9d7c9195fca5aac9fbab19b45f7f73224d9ad22b897"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Rock.mat.meta",
+      "sha256": "414169a80730db3e8ce6ddf84e4a946ef61f1b75736aa385a7782bca3a9be660"
+    },
+    {
+      "bytes": 697630,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg.meta",
+      "sha256": "dae52a38cf6051b7d7382a33760c082a59d4b3c83e7059fa7801e0d5da87fd79"
+    },
+    {
+      "bytes": 196089,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png",
+      "sha256": "904cdd6ed8c46bfd26006dcf0ad808d2ea6f677caddfc56c1f6eb8c7f66415ff"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png.meta",
+      "sha256": "6712682834daf5b7e0619058c7c731d72c89fbd6b448dffd9b5d801f164599ff"
+    },
+    {
+      "bytes": 776360,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg.meta",
+      "sha256": "fd792a75e1e415419c32635ccdae6dcc63e0c2c72bd0160591df0703b3aeda4f"
+    },
+    {
+      "bytes": 1146359,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg",
+      "sha256": "5c4b518f993c845b25a8d1a54b35b8657b85f93c21c54df7802f33b02771dcc1"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg.meta",
+      "sha256": "6da52dd3d64f2339267eaa15aa1dfda4f6c5ffcea1f182a3b376fc38ef8f5107"
+    },
+    {
+      "bytes": 241340,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_MetallicSmoothness.png",
+      "sha256": "9729c139826630bf5261c073b693a342af92b39b1de73c3a133422e1f37ab5ea"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_MetallicSmoothness.png.meta",
+      "sha256": "4e806809a73967e577b15f2473c98a664cc78901b554d05af1ffcdb4f659421f"
+    },
+    {
+      "bytes": 1138665,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg",
+      "sha256": "36a3a8e06857090a8fa3ea19e23366ba80d14f016fa12567d496f8576a3af397"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg.meta",
+      "sha256": "b158178ffe27fca6a828677085fd125e12b3dc4aac6432cc8effc4bf7520909d"
+    },
+    {
+      "bytes": 929643,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg",
+      "sha256": "9a55e233667a8cf3b3811154f1516eb1646127dff9b1f9af0430485763d40e04"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg.meta",
+      "sha256": "84c4e84bad773a43120a2970a694fa3b0ccedc7ee7cb047e6e8512e0ac619819"
+    },
+    {
+      "bytes": 75962,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png",
+      "sha256": "7c5d455aae7a81eac33fa938c05d6517ebde53ff8bd5f0df74bb926e0fb70e00"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png.meta",
+      "sha256": "ae414d763917f8154a2bb593acfccbadd423e262bdb89e94108805a3d21bdb47"
+    },
+    {
+      "bytes": 1545702,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg",
+      "sha256": "b1303eb80327e3f0edfa60fcf5c532dfabf29b7fb34673594bd4c27de32a2a65"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg.meta",
+      "sha256": "0d5581e2c3910120b4ba1ea74de90d3156370443267cbd9dac58172b27dfb951"
+    },
+    {
+      "bytes": 1195394,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg.meta",
+      "sha256": "b2cabfcf85019789f664a29c8a6755804acd4181234ed448e93b332afa53d670"
+    },
+    {
+      "bytes": 186318,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_MetallicSmoothness.png",
+      "sha256": "ac7a65afbdd6f25da777233b2fadc4a04c3e138d3bc9d8aaedd19ac7d34cffda"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_MetallicSmoothness.png.meta",
+      "sha256": "199b7cf65c0f061039e08dc0e3d05600ae4142ad75b35a33c3d3f78ddff4db95"
+    },
+    {
+      "bytes": 1466049,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_Normal.jpg",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_Normal.jpg.meta",
+      "sha256": "49135b2dc4383478831a364eeed9e3227504f1e4fb2786ec04dc3983cea08b0a"
+    },
+    {
+      "bytes": 905179,
+      "path": "Assets/RoadQuality/Art/Textures/Rock_BaseMap.jpg",
+      "sha256": "429315865fd89c150272592f6d93def174c6f69804a565ff08e53627a885579b"
+    },
+    {
+      "bytes": 3422,
+      "path": "Assets/RoadQuality/Art/Textures/Rock_BaseMap.jpg.meta",
+      "sha256": "3335745c705ad25100b16e93c98ff8ac266799c3a9ff9f7a94fee8b5b5b7ad79"
+    },
+    {
+      "bytes": 1059194,
+      "path": "Assets/RoadQuality/Art/Textures/Rock_Normal.jpg",
+      "sha256": "a6556e1220c6e6c822e68ceeb9589719e4db8c87340199657cc705fea6ecf391"
+    },
+    {
+      "bytes": 3422,
+      "path": "Assets/RoadQuality/Art/Textures/Rock_Normal.jpg.meta",
+      "sha256": "689a2bb80a20e19cbf105a9c166551e1c608bd8f009a9e43cac2746445d2d763"
+    },
+    {
+      "bytes": 4639,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlend.shader",
+      "sha256": "f789ccd3d35cdc374503e63af4549cc29301792680956b10509917aa7d61e3b6"
+    },
+    {
+      "bytes": 204,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlend.shader.meta",
+      "sha256": "657c0759c7f4b26253b9cd080630b79d0e85cfe3bed0c74e6530524ac50e54c2"
+    },
+    {
+      "bytes": 2721,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendInput.hlsl",
+      "sha256": "b1e61e8557d364155980bce5f80b0bc03015f10bab09924982a70a580738fac8"
+    },
+    {
+      "bytes": 161,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendInput.hlsl.meta",
+      "sha256": "d9d2795e952670bde681d07d7e75d2526024125b94adb1012b2976adef27f168"
+    },
+    {
+      "bytes": 3453,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendMask.hlsl",
+      "sha256": "e17fa3c08f60165728beffcda09244b4352c2602a14bd8aafe744154bc821df1"
+    },
+    {
+      "bytes": 161,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendMask.hlsl.meta",
+      "sha256": "9e528fff675865aa12dba0023a03573b4b871eef98285b1da64eaa9fef3e9a1a"
+    },
+    {
+      "bytes": 6254,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendPasses.hlsl",
+      "sha256": "216283ab396334d27f3f2a94e10c8a9af53e0e722dd092313ab0e82bc9080f91"
+    },
+    {
+      "bytes": 161,
+      "path": "Assets/RoadQuality/Shaders/SurfaceBlendPasses.hlsl.meta",
+      "sha256": "e6040b062defd9fae34dcdcb5dd77b21e90f107ccb61b8cfba78188a78d3f338"
+    }
+  ],
+  "missingRequestedVariants": [
+    "pine_sapling_small_a"
+  ],
+  "preparedModelPaths": [
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_a.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_b.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_c.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_d.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/pine_sapling_small_b.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock02.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock03.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock04.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock05.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock06.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_b.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_c.fbx",
+    "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_d.fbx"
+  ],
+  "readyPrefabPaths": [
+    "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/fern_02_b.prefab",
+    "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/pine_sapling_small_b.prefab",
+    "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab",
+    "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab"
+  ],
+  "schemaVersion": 1,
+  "unityVersion": "6000.6.0f1"
+}

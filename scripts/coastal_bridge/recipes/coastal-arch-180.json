@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "coastal-arch-180",
+  "seed": 1800915,
+  "totalLength": 180,
+  "archSpan": 120,
+  "archRise": 35,
+  "deckWidth": 8,
+  "deckThickness": 0.65,
+  "archRibWidth": 0.9,
+  "archRibDepth": 1.5,
+  "spandrelSpacing": 9,
+  "parapetHeight": 1.15,
+  "abutmentLength": 5,
+  "railingStyle": "openConcrete",
+  "materialsRevision": "coastal-concrete-1"
+}

@@ -1,0 +1,1284 @@
+{
+  "binaryAuthoringNote": "Blender generator and recipes are provided. Preexisting binary authoring files are omitted pending a separately audited privacy-clean regeneration.",
+  "fbxMetadataTransformations": [
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "de77f84a96bcb3ca2bcc70933d8b7963818396412c9f6eec2c55325ff17eeab9",
+      "outputSha256": "ee690ba98be0099a668c4cdbe156c6f4bddd0078a62046cafd29fc886701749e",
+      "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-collider.fbx",
+      "sourceSha256": "8025a8580db3df3d3dd213e1da29e0cbde33205107137d367b36030a3425b918",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "8c903fafedf735aea6e0024548fbffd8aa0fe2a9d181975689d74095026341ff",
+      "outputSha256": "887d25bded519fcab7635f84a1e09419fac62e247f086c00ec6f85edb290382a",
+      "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod0.fbx",
+      "sourceSha256": "8db0fa948c946f98c15f07b417772121c215c58765aa14871dcbe59903e9c13f",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "5fd35fe593c4157c55901d6011f577a6a8169d5840cd509cf4a12b7732a631e3",
+      "outputSha256": "e1ca4eb583fe087d029ffe2fa4e41794492db0f9537e467b387d328cab92e9f5",
+      "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod1.fbx",
+      "sourceSha256": "79e5e664124d7a369fe38850d14c2f2c5c35b248f0cfc41c648d9f123e1e3836",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "3cf4f5da584e7d1b6a362881a22385bf3e430aba1c7e1ee5c69ede22a3410744",
+      "outputSha256": "ac21ce3258efaa377ef577674b3ad9e1542e8bd2d5891e796c98cd609834f410",
+      "path": "assets/CoastalBridgeTool/coastal-arch-104/bridge-lod2.fbx",
+      "sourceSha256": "8b31e2672208f68b92528f4836a7cacfee0bd275eafd1fa72369434ef3755517",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "824553d4846a5458d775b215e558fcbd5dafa135c34d85ca0173e655c1c0a6b0",
+      "outputSha256": "25ff9b8128483606b8c31984f3fec2a8b03960b1582de8fd16118d99d512c183",
+      "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-collider.fbx",
+      "sourceSha256": "d411d723bcb9d82bdd8bde1d88606cb5d7301e0bf20fae5f994cbc690d244d70",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "85c299bde9e4849b23709d8e7ff77a36fd3df6376bcfc90d240de9aa6293bf50",
+      "outputSha256": "9ec00cb2f482d4eac05e2f55ac24593ef429e6dbdc578dc9dfa3366268dc3037",
+      "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod0.fbx",
+      "sourceSha256": "27d71f43d33ecb2828c821710b22ee051dfc248cf8be8103e6b336611e97f9f1",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "ff3d8808e3d646eeb41f9e9bcc85754e3878ca4f70b1f2879a0cf42ece475cea",
+      "outputSha256": "9284be64c6bd22efe4f5abd2dce67cedfe031ff80577b8b6fa2579077d55c240",
+      "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod1.fbx",
+      "sourceSha256": "900ba77265297317f8f19c9f4223234ad3b4774b780953a047b70271fde3d0e3",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "f9f6f261e97ffd42e01be2df2518ee11c65e5ad7f420108c366855f0156116a3",
+      "outputSha256": "1afab6a3fb4c262be7f48d6f0e642e903f8bac409cd04bc1483fcdec591a9b61",
+      "path": "assets/CoastalBridgeTool/coastal-arch-180/bridge-lod2.fbx",
+      "sourceSha256": "fe8d56b78518bb90e9ac6eaa67d4d7a624d1010417686e222df18234fe9ee4ea",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "db53af9a79bd52b586484f4cb6b2e690578eb10eab0b85133a36eeaa8e2c5284",
+      "outputSha256": "68445409a17f01c3bbafb379556513a809be8ba8e54df8600c7f2c218f4c7240",
+      "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-collider.fbx",
+      "sourceSha256": "b05bdd8874e28380eb56756d836c4c59a8c9dd45a81ec551a4578731941eaee1",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "0f039e5bee823ea3188341a46cae59072ea228b5b3ac96edd26190eeef5dcc01",
+      "outputSha256": "566833e349056f08000f14b0299632b4425a8aacd8e232df55ceba574218859a",
+      "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod0.fbx",
+      "sourceSha256": "4fc0cb63f021106b57e4d74f8649bd25fc88f3a3e15ab9b67e0f65197f2fdf51",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "704f21a860e4a84822878376aea69396b9fec3893d24abb6d64379fd95b3311f",
+      "outputSha256": "152e9c51efadd534b5f94042a0d437bc1e9edfb99b5d1ee73d8614f5bf7c9e6a",
+      "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod1.fbx",
+      "sourceSha256": "bc8ee582f0b5f856372cd525013b99e5f99e5cfaec2705be6e05a8c00d32d188",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "c1359b2f0e3a247b659f6b38183838a2a3ff83c8c059ba4471955c86bdd7b8a4",
+      "outputSha256": "dc5f92297d1a0682a90db2d7a39f2b00e19dd5f5cf39d2c365f59a98d866955a",
+      "path": "assets/CoastalBridgeTool/steel-through-truss-88/bridge-lod2.fbx",
+      "sourceSha256": "f0a4e06a405116cb0873cd881d0b487273683c6451369c1605d00c164d5b7759",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "f5398b45d4a9dd7af3b1d2a24d0a2ea3c168967b177d1f1ddf10b1386f159564",
+      "outputSha256": "15c844b58e5b1ebecfc1f1cb775c5771eeda1d63c114f506f04beb41d85e1d71",
+      "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-collider.fbx",
+      "sourceSha256": "f13dd4ee58a213d3e3d231591ab3b4249470b52d62eee1e1dad889750c683f98",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/stone-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "ea917bdc9948620cd9ac25e83c51e887bd9c315c3c1f32de77edfa6ee90ad27c",
+      "outputSha256": "6f24ebcf247f9b758f2a4d3cb6ffc5908da8d8da4967695a8a24fd60c47a99aa",
+      "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod0.fbx",
+      "sourceSha256": "1da15139fe152b5f4999e63c990e7625b2986d0f5adcced54cccbdc60fcb9af4",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/stone-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "b7dd64beb763f90d97af00ddb3ca263184a2fd01f10370d47e681b4abb9a00d0",
+      "outputSha256": "36738d54e292b1bebd71a06566d886d107507e46cfa7e1da613214988adf221a",
+      "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod1.fbx",
+      "sourceSha256": "3b164b89547d90384a46cdf7027574e7a72caf20ef337b062feebc77610d54f6",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/stone-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/stone-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "b7b913a4d611612da9191440eb2ed2ac3c32303c6e6533ccb9aa33d6cf753126",
+      "outputSha256": "5d33bddea967f40ae878f59d41626d227ff2030652e5ad45ded92958676bf1a9",
+      "path": "assets/CoastalBridgeTool/stone-viaduct-110/bridge-lod2.fbx",
+      "sourceSha256": "e42cd3b40401af51a29bf968a00f75694a8953dc5902b6be893aa425e90eaebd",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "e7cb32f0ee3b731d66daf0322ad0d5c9f666c85147f3791728ae3de55e844c21",
+      "outputSha256": "4726cf1c4622736cf30bf91afc90b6cfce5f6a07426cc6fdf46c056ca80bd975",
+      "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-collider.fbx",
+      "sourceSha256": "55a0b0a087e1753d2d9561e9754596aff22fe8646536403ddc8c662206049605",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "8213528a095fa6adc97718d4c10c0ebbfcd7448b4f69857912c20b7a72ecced3",
+      "outputSha256": "855a51e6922b97f0f7829b7c64c1bcbb7ac5b6ae1e3ae721e62676ecad560e47",
+      "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod0.fbx",
+      "sourceSha256": "dbf613db6ec1c0525eef0c33914a429f1c17426ad6cd33d40054d55683d55d42",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "56038cbd0ceaf6d4a20fb897e9ad60a0e3fb332491aca4fd3037d6c9c83122ff",
+      "outputSha256": "4c79c9ea0a497b398bd5e81457880c3698b6099aeab8e877a4df754c5ba7a148",
+      "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod1.fbx",
+      "sourceSha256": "abfc65ab966419cd857de2cc59b960fa12fa46b63a9fbd99e55b1df77e0160e1",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/timber-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/asphalt-normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/concrete-normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/concrete-normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "1cd15fe66c68a8f8c4d3dad64e148b306aa68b428326e56e30a2c80fcbcf6d56",
+      "outputSha256": "11a347768f9c17b707d94ee4c606b74e46cfcbd1823f28a3192cbbe3b6a24960",
+      "path": "assets/CoastalBridgeTool/timber-trestle-80/bridge-lod2.fbx",
+      "sourceSha256": "ad2f22aca69a732747d3257f68406e7f55ec0d73c6ce7d913eeff3698ef61e02",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "708ea25013e9f341cd226ff3132ffb11c3ce8e746171d47251c2b52c2661387b",
+      "outputSha256": "bcad23ba3f2f331869f8bc97943e3183ee7cf607e750c0a19db9c7a7a11b5400",
+      "path": "assets/CoastalBridgeTool/demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+      "sourceSha256": "635dafa6ecc58156e0f37b2275b1de2f7e74dc23d5612bd9f2998d55326b27cb",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/shrub_03_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "07ba2e3281ad1771bb97b7a0f61488d2fd48452eab10432d30b363a12eb7dd1d",
+      "outputSha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453",
+      "path": "assets/CoastalBridgeTool/demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "sourceSha256": "59977a8b39c8229dc3ac64a473c6f23922062e3c1175849b708a0bd7352085d0",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/fern_02_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "e2ab173a1b1ee2585645179022c756fccf457c1f0b42c72ac9b69f6918cf2298",
+      "outputSha256": "e6589cf7d240e714e7c44599421572dd7ba51e875d756eace96bc6e3be196f38",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_a.fbx",
+      "sourceSha256": "554c972046e3a1442611dff2cfaa0bc885190ccc5390b3a14ef1b953fa6b297e",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/fern_02_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "ca7254bfc326105da22f010e8d5ebdc9a284de1abfd9e9d409c8b2f1cf0ba9f9",
+      "outputSha256": "4cebf04c2b435ed298acc1581fd8a6edc8a075ce08637c076543adacddfba8bf",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_b.fbx",
+      "sourceSha256": "c01b7d86eb9f5850bff3f99c3a8ce7bcc3d63c4b9f290de8ce6fd54d26d5006a",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/fern_02_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "a74f7d40baee8de68e02cd24c47d92949623568a5177e978b31445354360f6c7",
+      "outputSha256": "105b626b40993bc2104221254cc05841859765aaa620f9ea580241d2cf1e0ae8",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_c.fbx",
+      "sourceSha256": "3512e4960007a26cfafc5261f36b5db9c0844a8629806fb7c7c419539b0c3b35",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/fern_02_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "77b77d31d8b8a5ba1d018bf13969925d49cc74e734aa4ae3057ca075ca24aef1",
+      "outputSha256": "9dbb736b1decd4de9b18f8c79f1b7abf18d41f3b7e7b858c44469e2e66184b0b",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/fern_02_d.fbx",
+      "sourceSha256": "17aed9b016ca43f2efc5778358d390637e5258246af1a8a0e4de775c736fcf84",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/pine_sapling_small_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/pine_sapling_small_bark_nor_gl_2k.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/pine_sapling_small_bark_rough_2k.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/pine_sapling_small_bark_nor_gl_2k.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/pine_sapling_small_bark_nor_gl_2k.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/pine_sapling_small_bark_rough_2k.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/pine_sapling_small_bark_rough_2k.png"
+        }
+      ],
+      "numericPropertiesSha256": "890c2c7e3898d6002fbe7b871177168944c83495e355a6a851ab3298864fc155",
+      "outputSha256": "7cefe4937cbb44bdf9c0c94bdbba0c296903a47b338306799e687c7a8870d3fd",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/pine_sapling_small_b.fbx",
+      "sourceSha256": "2a44cb10a0581d165efd197d3557f571b2049cf01d76bafee1edf8746b54b2f2",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "708ea25013e9f341cd226ff3132ffb11c3ce8e746171d47251c2b52c2661387b",
+      "outputSha256": "bcad23ba3f2f331869f8bc97943e3183ee7cf607e750c0a19db9c7a7a11b5400",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+      "sourceSha256": "635dafa6ecc58156e0f37b2275b1de2f7e74dc23d5612bd9f2998d55326b27cb",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "ddfa7efd843790e45af46f6ab1e676ddc1690ab40ebfae25f0460fe5f4e5fd59",
+      "outputSha256": "6a3ea14af6e8b146ec464c0c93dd22ceb0b5cea351ac6d6f2de4cc65161b7249",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock02.fbx",
+      "sourceSha256": "177011e9564ec6ec7df3d98ecac5acf29810d8220e9183cf6b9f8a5597aa241d",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "1235946bd696049580e06f29171240e74171971e98841f46be46300afeef0e4f",
+      "outputSha256": "11d2fc31a715729e6972e9db894518235bd289abac1c1daccff3bdbfee4b562b",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock03.fbx",
+      "sourceSha256": "216086e1708a1928a017159ef535ad743b8aca77178e9ef97e58a66433788e39",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "0f90b0db2ec85d3446060090826dd4a5b5112d08ec0332e35f8ef5e6da36e884",
+      "outputSha256": "4136cbf3e64f92e09c100f300d01183324f21bb7c3490c21ebb35f66f4d3c473",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock04.fbx",
+      "sourceSha256": "3570e654a02bb8146fc6e15725e28f360250c5949ca440550033c0add65b8c8b",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "74af36c3f26737adaaea744ba9ef8df51571e2ca2b966db0384cd597fb400efb",
+      "outputSha256": "a41a70a7be6a31f68531bd7bb4d33164d00385aab3477fe679017f2914f14c88",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock05.fbx",
+      "sourceSha256": "d5a1f0cf34e73b28ad631b8016014456b8289a18809070144f2432ef639e8d31",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/rock_moss_set_01_2k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_diff_2k.jpg"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_nor_gl_2k.exr"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/rock_moss_set_01_rough_2k.jpg"
+        }
+      ],
+      "numericPropertiesSha256": "c3a54ca29f669aac303842c6345d735feb812f1a453acc26af4745e749cf5f3d",
+      "outputSha256": "ad96521f5fc07935a7caebd9073000eca61c45a2a05e6fe8896f7d323b87d613",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock06.fbx",
+      "sourceSha256": "c5e7cc01a06fa342b265944910aa78c6987b226b6fc69b5373d65cff6b2ed6b4",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/shrub_03_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "07ba2e3281ad1771bb97b7a0f61488d2fd48452eab10432d30b363a12eb7dd1d",
+      "outputSha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "sourceSha256": "59977a8b39c8229dc3ac64a473c6f23922062e3c1175849b708a0bd7352085d0",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/shrub_03_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "2430db858fc2ca3856a7e4b710f725a85d1634e73680789923378d696fbfc72d",
+      "outputSha256": "33afa3d6ecf7ab188081bfb8e892ea88606647235384297515b25cd475e1e3b9",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_b.fbx",
+      "sourceSha256": "60b46c33447e79c4b7f5b305789e9c4b20cae8e66ab1da50daa496aad315295a",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/shrub_03_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "2f8e1a6888d39264ab659ecd4adfb6429e710915d82ce148afda7ed6247ef168",
+      "outputSha256": "614a8c5caca95bd47053c551849075892677ee4b2f96f40bd97a4d7fa20e91da",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_c.fbx",
+      "sourceSha256": "199971978d367fcdda042e90c8ea0dbb7fb31acbb73cdfd053991e230f878154",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/shrub_03_2k.blend"
+        }
+      ],
+      "numericPropertiesSha256": "4e73554b9cd144fd4107c6f834e99e4372ad3c5d771b1306cb1494d4229e23de",
+      "outputSha256": "36b7181d9bafe9b66483ad2cf314bab0ab3ff5f4ffbbcac70f5f668b69fdd1fb",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_d.fbx",
+      "sourceSha256": "02f1f51677608fa1f9f91547ad4c9e1d5a961405e570ce9a65a28ea2cfcfa840",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "P",
+          "replacement": "source/fir_tree_01_1k.blend"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_bark_BaseMap.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_bark_Normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_bark_BaseMap.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_bark_Normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_twig_BaseMap.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_twig_Normal.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_trunk_a_BaseMap.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/fir_tree_01_trunk_a_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_bark_BaseMap.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_bark_BaseMap.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_bark_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_bark_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_twig_BaseMap.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_twig_BaseMap.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_twig_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_twig_Normal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_trunk_a_BaseMap.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_trunk_a_BaseMap.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/fir_tree_01_trunk_a_Normal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/fir_tree_01_trunk_a_Normal.png"
+        }
+      ],
+      "numericPropertiesSha256": "3df8ce6f044533718cd2768a07a3856efeda0cab6f76e04939486bd88060d2be",
+      "outputSha256": "afa77ec83b42f8aa16d8c1594cc97c05452a11f439ed9b2de006b298692d5a44",
+      "path": "assets/BFjordTools/asset-catalog/Assets/Bwork/ThirdParty/PolyHavenMatureFir/Models/MatureFir_A.fbx",
+      "sourceSha256": "3396ab19c22e04cc8166885f02e7d3197a5eab99713f1f976236eb664d818d81",
+      "version": 7400
+    }
+  ],
+  "geometryValidation": "Each FBX parsed and round-tripped byte-for-byte before transformation. All non-string properties, including compressed vertex/index arrays, remain byte-identical. Modified node offsets/property lengths are regenerated and reparsed.",
+  "omittedBinaryAuthoringFiles": [
+    "coastal-arch-104/bridge-source.blend",
+    "coastal-arch-180/bridge-source.blend",
+    "steel-through-truss-88/bridge-source.blend",
+    "stone-viaduct-110/bridge-source.blend",
+    "timber-trestle-80/bridge-source.blend"
+  ],
+  "schemaVersion": 1
+}

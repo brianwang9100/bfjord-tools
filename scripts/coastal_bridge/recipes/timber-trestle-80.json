@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "timber-trestle-80",
+  "seed": 1040915,
+  "totalLength": 80,
+  "archSpan": 52,
+  "archRise": 14,
+  "deckWidth": 7,
+  "deckThickness": 0.55,
+  "archRibWidth": 0.8,
+  "archRibDepth": 1.2,
+  "spandrelSpacing": 7,
+  "parapetHeight": 1.15,
+  "abutmentLength": 4,
+  "railingStyle": "openConcrete",
+  "materialsRevision": "bridge-defaults-2",
+  "designType": "timberTrestle",
+  "bayCount": 12,
+  "pierHeight": 16,
+  "trussHeight": 8
+}

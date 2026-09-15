@@ -1,0 +1,71 @@
+{
+  "id": "riverbank-ferns-001",
+  "area": {
+    "x": 110,
+    "y": 120,
+    "width": 90,
+    "height": 105
+  },
+  "seed": 41840,
+  "maximumCount": 400,
+  "densityPerHectare": 480,
+  "minimumSpacing": 0.62,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 34,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "ground",
+  "species": [
+    {
+      "id": "fern_02_a",
+      "prefabKey": "bfjord:fern_02_a",
+      "weight": 1,
+      "radius": 0.3,
+      "minimumScale": 0.8,
+      "maximumScale": 1.2,
+      "groundOffsetMeters": -0.015
+    },
+    {
+      "id": "fern_02_b",
+      "prefabKey": "bfjord:fern_02_b",
+      "weight": 1,
+      "radius": 0.49,
+      "minimumScale": 0.8,
+      "maximumScale": 1.2,
+      "groundOffsetMeters": -0.015
+    },
+    {
+      "id": "fern_02_c",
+      "prefabKey": "bfjord:fern_02_c",
+      "weight": 1,
+      "radius": 0.43,
+      "minimumScale": 0.8,
+      "maximumScale": 1.2,
+      "groundOffsetMeters": -0.015
+    },
+    {
+      "id": "fern_02_d",
+      "prefabKey": "bfjord:fern_02_d",
+      "weight": 1,
+      "radius": 0.29,
+      "minimumScale": 0.8,
+      "maximumScale": 1.2,
+      "groundOffsetMeters": -0.015
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ],
+  "maximumWaterDistance": 12,
+  "maximumBankHeight": 4
+}

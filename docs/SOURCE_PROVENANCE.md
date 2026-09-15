@@ -1,0 +1,9 @@
+# Source provenance and export boundary
+
+The Unity package consists of the original authoring implementation, its JSON samples, shaders and Editor tests. Its internal Bwork namespaces are retained. A repository audit of the 13 Core C# files and shaders found no copied third-party implementation or vendor copyright header; the source documentation identifies the road fitting, junction conformance and projected triangle math as original work. References to Clipper2, LibTessDotNet and other projects are research links, not vendored implementations.
+
+The public export is an explicit whitelist: `Unity/WorldAuthoringTools` maps to `Packages/com.bfjord.tools`; the coastal bridge generator maps to `scripts/coastal_bridge`; renderer-manifest dependencies, reviewed texture inputs and the bounded demo snapshot map to `assets/CoastalBridgeTool`; accepted scene images map to `docs/images`. The private application's source, Git history, databases, settings, diagnostics, full Assets trees and research logs are excluded.
+
+FBX metadata is parsed as typed, length-delimited properties. Private absolute source paths are replaced with relative texture/source basenames; node property lengths and offsets are regenerated. Every source first round-trips exactly, every output is reparsed, and all non-string properties remain byte-identical. Manifests are recomputed after transformation. Historical binary Blender snapshots are omitted until privacy-clean source generation has been separately inspected.
+
+The exporter tracks only its own destination files. It compares prior exported hashes before replacing or removing a file and aborts on local modifications. Unowned destination files and Git metadata are preserved. Exporting does not initialize a Git repository, configure a remote or publish anything.

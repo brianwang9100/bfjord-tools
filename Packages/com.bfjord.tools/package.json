@@ -1,0 +1,12 @@
+{
+  "name": "com.bfjord.tools",
+  "version": "0.2.0",
+  "displayName": "BFjord Tools",
+  "description": "Asset-backed Unity terrain, road, bridge, foliage and water authoring tools with reproducible demonstrations.",
+  "unity": "6000.6",
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "17.6.0",
+    "com.unity.pipeline": "0.7.0-exp.1",
+    "com.unity.nuget.newtonsoft-json": "3.2.2"
+  }
+}

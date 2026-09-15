@@ -1,0 +1,71 @@
+{
+  "id": "riverbank-herbs-001",
+  "area": {
+    "x": 100,
+    "y": 120,
+    "width": 105,
+    "height": 130
+  },
+  "seed": 1963,
+  "maximumCount": 1800,
+  "densityPerHectare": 7000,
+  "minimumSpacing": 0.4,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 34,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "herbs",
+  "species": [
+    {
+      "id": "shrub_03_a",
+      "prefabKey": "bfjord:shrub_03_a",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_b",
+      "prefabKey": "bfjord:shrub_03_b",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_c",
+      "prefabKey": "bfjord:shrub_03_c",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_d",
+      "prefabKey": "bfjord:shrub_03_d",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ],
+  "maximumWaterDistance": 14,
+  "maximumBankHeight": 4
+}

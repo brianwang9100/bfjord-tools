@@ -1,0 +1,1180 @@
+{
+  "revision": "polyhaven-realistic-candidate-01",
+  "provider": "Poly Haven",
+  "credit": "Powered by Poly Haven \u2014 https://polyhaven.com",
+  "license": "CC0-1.0",
+  "blenderVersion": "5.2.1 LTS",
+  "texturePolicy": "1024 pine twig albedo/normal, other albedo/normal 512, metallic/smoothness 256; mipmapped ASTC 6x6 iPhone; BaseMap sRGB, other maps linear",
+  "geometryPolicy": "One original-detail near pine and original near rocks/facades, lower LOD offline reduction; supplier shrub LODs; four-model gallery within 12 MiB; other exports deferred",
+  "cullScreenFraction": 0.008,
+  "lodScreenFractions": [
+    0.12,
+    0.035,
+    0.008
+  ],
+  "models": [
+    {
+      "id": "pine_sapling_small_b",
+      "sourceAsset": "pine_sapling_small",
+      "fbx": "Models/pine_sapling_small_b.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "pine_sapling_small_b_LOD0",
+          "sourceObject": "pine_sapling_small_b",
+          "triangles": 122235,
+          "vertices": 124752,
+          "sourceEvaluatedTriangles": 122235,
+          "materials": [
+            "pine_sapling_small_bark",
+            "pine_sapling_small_twig"
+          ],
+          "boundsMinBlender": [
+            -0.2652446925640106,
+            -0.39897364377975464,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.26351654529571533,
+            0.3313728868961334,
+            1.0456082820892334
+          ]
+        },
+        {
+          "name": "pine_sapling_small_b_LOD1",
+          "sourceObject": "pine_sapling_small_b",
+          "triangles": 7992,
+          "vertices": 17183,
+          "sourceEvaluatedTriangles": 122235,
+          "materials": [
+            "pine_sapling_small_bark",
+            "pine_sapling_small_twig"
+          ],
+          "boundsMinBlender": [
+            -0.26525071263313293,
+            -0.39824607968330383,
+            -0.0010487671243026853
+          ],
+          "boundsMaxBlender": [
+            0.2612040340900421,
+            0.3288833498954773,
+            1.044769525527954
+          ]
+        },
+        {
+          "name": "pine_sapling_small_b_LOD2",
+          "sourceObject": "pine_sapling_small_b",
+          "triangles": 1992,
+          "vertices": 5331,
+          "sourceEvaluatedTriangles": 122235,
+          "materials": [
+            "pine_sapling_small_bark",
+            "pine_sapling_small_twig"
+          ],
+          "boundsMinBlender": [
+            -0.2634775638580322,
+            -0.39824607968330383,
+            -0.0011786868562921882
+          ],
+          "boundsMaxBlender": [
+            0.2612040340900421,
+            0.3288833498954773,
+            1.0362145900726318
+          ]
+        }
+      ],
+      "groundOffsetMeters": -0.0009154988802038133,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "fern_02_a",
+      "sourceAsset": "fern_02",
+      "fbx": "Models/fern_02_a.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "fern_02_a_LOD0",
+          "sourceObject": "fern_02_a",
+          "triangles": 784,
+          "vertices": 525,
+          "sourceEvaluatedTriangles": 784,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.2976571321487427,
+            -0.3021530210971832,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.25428348779678345,
+            0.31126806139945984,
+            0.28680354356765747
+          ]
+        },
+        {
+          "name": "fern_02_a_LOD1",
+          "sourceObject": "fern_02_a",
+          "triangles": 784,
+          "vertices": 525,
+          "sourceEvaluatedTriangles": 784,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.2976571321487427,
+            -0.3021530210971832,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.25428348779678345,
+            0.31126806139945984,
+            0.28680354356765747
+          ]
+        },
+        {
+          "name": "fern_02_a_LOD2",
+          "sourceObject": "fern_02_a",
+          "triangles": 272,
+          "vertices": 224,
+          "sourceEvaluatedTriangles": 784,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.29891422390937805,
+            -0.29912805557250977,
+            -0.00021157217270229012
+          ],
+          "boundsMaxBlender": [
+            0.25600385665893555,
+            0.31126806139945984,
+            0.2857125699520111
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.028773518279194832,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "fern_02_b",
+      "sourceAsset": "fern_02",
+      "fbx": "Models/fern_02_b.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "fern_02_b_LOD0",
+          "sourceObject": "fern_02_b",
+          "triangles": 2384,
+          "vertices": 1590,
+          "sourceEvaluatedTriangles": 2384,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.5281425714492798,
+            -0.4718152582645416,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.4616048336029053,
+            0.421874463558197,
+            0.427694708108902
+          ]
+        },
+        {
+          "name": "fern_02_b_LOD1",
+          "sourceObject": "fern_02_b",
+          "triangles": 891,
+          "vertices": 705,
+          "sourceEvaluatedTriangles": 2384,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.5275813937187195,
+            -0.4728744626045227,
+            -0.0002243260678369552
+          ],
+          "boundsMaxBlender": [
+            0.4621770679950714,
+            0.41501984000205994,
+            0.42462441325187683
+          ]
+        },
+        {
+          "name": "fern_02_b_LOD2",
+          "sourceObject": "fern_02_b",
+          "triangles": 272,
+          "vertices": 287,
+          "sourceEvaluatedTriangles": 2384,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.5275813937187195,
+            -0.47146084904670715,
+            -0.0014790609711781144
+          ],
+          "boundsMaxBlender": [
+            0.4655006229877472,
+            0.41501984000205994,
+            0.42899778485298157
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.030510280281305313,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "fern_02_c",
+      "sourceAsset": "fern_02",
+      "fbx": "Models/fern_02_c.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "fern_02_c_LOD0",
+          "sourceObject": "fern_02_c",
+          "triangles": 2248,
+          "vertices": 1500,
+          "sourceEvaluatedTriangles": 2248,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.4299395680427551,
+            -0.34794387221336365,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.44438624382019043,
+            0.4172818064689636,
+            0.3490203619003296
+          ]
+        },
+        {
+          "name": "fern_02_c_LOD1",
+          "sourceObject": "fern_02_c",
+          "triangles": 891,
+          "vertices": 702,
+          "sourceEvaluatedTriangles": 2248,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.4299395680427551,
+            -0.3447839319705963,
+            -0.00021154603746253997
+          ],
+          "boundsMaxBlender": [
+            0.44438624382019043,
+            0.41726675629615784,
+            0.3479185700416565
+          ]
+        },
+        {
+          "name": "fern_02_c_LOD2",
+          "sourceObject": "fern_02_c",
+          "triangles": 271,
+          "vertices": 282,
+          "sourceEvaluatedTriangles": 2248,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.42711448669433594,
+            -0.34276875853538513,
+            -0.0013948874548077583
+          ],
+          "boundsMaxBlender": [
+            0.4458160400390625,
+            0.41960737109184265,
+            0.350428968667984
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.028773672878742218,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "fern_02_d",
+      "sourceAsset": "fern_02",
+      "fbx": "Models/fern_02_d.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "fern_02_d_LOD0",
+          "sourceObject": "fern_02_d",
+          "triangles": 816,
+          "vertices": 545,
+          "sourceEvaluatedTriangles": 816,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.2907802164554596,
+            -0.2411416471004486,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.28200197219848633,
+            0.35213664174079895,
+            0.2130875587463379
+          ]
+        },
+        {
+          "name": "fern_02_d_LOD1",
+          "sourceObject": "fern_02_d",
+          "triangles": 816,
+          "vertices": 545,
+          "sourceEvaluatedTriangles": 816,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.2907802164554596,
+            -0.2411416471004486,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.28200197219848633,
+            0.35213664174079895,
+            0.2130875587463379
+          ]
+        },
+        {
+          "name": "fern_02_d_LOD2",
+          "sourceObject": "fern_02_d",
+          "triangles": 272,
+          "vertices": 223,
+          "sourceEvaluatedTriangles": 816,
+          "materials": [
+            "fern_02"
+          ],
+          "boundsMinBlender": [
+            -0.2922269105911255,
+            -0.24058739840984344,
+            0.001172605436295271
+          ],
+          "boundsMaxBlender": [
+            0.27981138229370117,
+            0.35213664174079895,
+            0.21066942811012268
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.013578944839537144,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "shrub_03_a",
+      "sourceAsset": "shrub_03",
+      "fbx": "Models/shrub_03_a.fbx",
+      "supplierLods": true,
+      "lods": [
+        {
+          "name": "shrub_03_a_LOD0",
+          "sourceObject": "shrub_03_a_LOD0",
+          "triangles": 2385,
+          "vertices": 1694,
+          "sourceEvaluatedTriangles": 2385,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.07354381680488586,
+            -0.07849743962287903,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.1270800232887268,
+            0.07270558923482895,
+            0.4027838110923767
+          ]
+        },
+        {
+          "name": "shrub_03_a_LOD1",
+          "sourceObject": "shrub_03_a_LOD1",
+          "triangles": 1741,
+          "vertices": 1301,
+          "sourceEvaluatedTriangles": 1741,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.07354381680488586,
+            -0.07849743962287903,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.1270800232887268,
+            0.07270558923482895,
+            0.4027838110923767
+          ]
+        },
+        {
+          "name": "shrub_03_a_LOD2",
+          "sourceObject": "shrub_03_a_LOD2",
+          "triangles": 870,
+          "vertices": 824,
+          "sourceEvaluatedTriangles": 870,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.07354381680488586,
+            -0.07849743962287903,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.1270800232887268,
+            0.07269937545061111,
+            0.4027838110923767
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.0018257149495184422,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "shrub_03_b",
+      "sourceAsset": "shrub_03",
+      "fbx": "Models/shrub_03_b.fbx",
+      "supplierLods": true,
+      "lods": [
+        {
+          "name": "shrub_03_b_LOD0",
+          "sourceObject": "shrub_03_b_LOD0",
+          "triangles": 2134,
+          "vertices": 1522,
+          "sourceEvaluatedTriangles": 2134,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.09265579283237457,
+            -0.060450129210948944,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.09164728224277496,
+            0.06211003288626671,
+            0.35250383615493774
+          ]
+        },
+        {
+          "name": "shrub_03_b_LOD1",
+          "sourceObject": "shrub_03_b_LOD1",
+          "triangles": 1471,
+          "vertices": 1113,
+          "sourceEvaluatedTriangles": 1471,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.09265579283237457,
+            -0.060450129210948944,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.09164728224277496,
+            0.06211003288626671,
+            0.35250383615493774
+          ]
+        },
+        {
+          "name": "shrub_03_b_LOD2",
+          "sourceObject": "shrub_03_b_LOD2",
+          "triangles": 735,
+          "vertices": 713,
+          "sourceEvaluatedTriangles": 735,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.09265579283237457,
+            -0.060450129210948944,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.0916624441742897,
+            0.06211003288626671,
+            0.35250383615493774
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.0008460530661977828,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "shrub_03_c",
+      "sourceAsset": "shrub_03",
+      "fbx": "Models/shrub_03_c.fbx",
+      "supplierLods": true,
+      "lods": [
+        {
+          "name": "shrub_03_c_LOD0",
+          "sourceObject": "shrub_03_c_LOD0",
+          "triangles": 1790,
+          "vertices": 1274,
+          "sourceEvaluatedTriangles": 1790,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.03539683669805527,
+            -0.060411497950553894,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.06041635572910309,
+            0.052744340151548386,
+            0.30439478158950806
+          ]
+        },
+        {
+          "name": "shrub_03_c_LOD1",
+          "sourceObject": "shrub_03_c_LOD1",
+          "triangles": 1349,
+          "vertices": 1004,
+          "sourceEvaluatedTriangles": 1349,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.03539683669805527,
+            -0.060411497950553894,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.06041635572910309,
+            0.052744340151548386,
+            0.30439478158950806
+          ]
+        },
+        {
+          "name": "shrub_03_c_LOD2",
+          "sourceObject": "shrub_03_c_LOD2",
+          "triangles": 674,
+          "vertices": 644,
+          "sourceEvaluatedTriangles": 674,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.03539683669805527,
+            -0.060411497950553894,
+            1.5961937606334686e-05
+          ],
+          "boundsMaxBlender": [
+            0.0603957325220108,
+            0.052744340151548386,
+            0.30439478158950806
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.0008309875847771764,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "shrub_03_d",
+      "sourceAsset": "shrub_03",
+      "fbx": "Models/shrub_03_d.fbx",
+      "supplierLods": true,
+      "lods": [
+        {
+          "name": "shrub_03_d_LOD0",
+          "sourceObject": "shrub_03_d_LOD0",
+          "triangles": 1978,
+          "vertices": 1392,
+          "sourceEvaluatedTriangles": 1978,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.0477474071085453,
+            -0.054190050810575485,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.06502506881952286,
+            0.03508852794766426,
+            0.25555121898651123
+          ]
+        },
+        {
+          "name": "shrub_03_d_LOD1",
+          "sourceObject": "shrub_03_d_LOD1",
+          "triangles": 1219,
+          "vertices": 936,
+          "sourceEvaluatedTriangles": 1219,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.0477474071085453,
+            -0.054190050810575485,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.06502506881952286,
+            0.03508852794766426,
+            0.25555121898651123
+          ]
+        },
+        {
+          "name": "shrub_03_d_LOD2",
+          "sourceObject": "shrub_03_d_LOD2",
+          "triangles": 609,
+          "vertices": 605,
+          "sourceEvaluatedTriangles": 609,
+          "materials": [
+            "shrub_03"
+          ],
+          "boundsMinBlender": [
+            -0.047795724123716354,
+            -0.054126132279634476,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.06503760814666748,
+            0.03508852794766426,
+            0.25555121898651123
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.0009536516736261547,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock01",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock01.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock01_LOD0",
+          "sourceObject": "rock_moss_set_01_rock01",
+          "triangles": 11000,
+          "vertices": 5502,
+          "sourceEvaluatedTriangles": 11000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.1140209436416626,
+            -1.6677640676498413,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            1.1236112117767334,
+            1.701040267944336,
+            1.4726980924606323
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock01_LOD1",
+          "sourceObject": "rock_moss_set_01_rock01",
+          "triangles": 2492,
+          "vertices": 1248,
+          "sourceEvaluatedTriangles": 11000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.1105329990386963,
+            -1.66848623752594,
+            0.0038818323519080877
+          ],
+          "boundsMaxBlender": [
+            1.1249125003814697,
+            1.693079948425293,
+            1.476032018661499
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock01_LOD2",
+          "sourceObject": "rock_moss_set_01_rock01",
+          "triangles": 642,
+          "vertices": 323,
+          "sourceEvaluatedTriangles": 11000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.1167504787445068,
+            -1.6731499433517456,
+            -0.0047834343276917934
+          ],
+          "boundsMaxBlender": [
+            1.1316261291503906,
+            1.6881996393203735,
+            1.4728367328643799
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.6565686464309692,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock02",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock02.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock02_LOD0",
+          "sourceObject": "rock_moss_set_01_rock02",
+          "triangles": 10996,
+          "vertices": 5470,
+          "sourceEvaluatedTriangles": 10996,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.2730549573898315,
+            -1.619305968284607,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            1.3823258876800537,
+            1.6444144248962402,
+            1.2619911432266235
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock02_LOD1",
+          "sourceObject": "rock_moss_set_01_rock02",
+          "triangles": 2492,
+          "vertices": 1218,
+          "sourceEvaluatedTriangles": 10996,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.2680622339248657,
+            -1.61910080909729,
+            -0.0017554954392835498
+          ],
+          "boundsMaxBlender": [
+            1.3815513849258423,
+            1.6460788249969482,
+            1.26056706905365
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock02_LOD2",
+          "sourceObject": "rock_moss_set_01_rock02",
+          "triangles": 642,
+          "vertices": 293,
+          "sourceEvaluatedTriangles": 10996,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.2708075046539307,
+            -1.6009904146194458,
+            0.016974633559584618
+          ],
+          "boundsMaxBlender": [
+            1.375295877456665,
+            1.661845088005066,
+            1.2469429969787598
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.4656194746494293,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock03",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock03.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock03_LOD0",
+          "sourceObject": "rock_moss_set_01_rock03",
+          "triangles": 5000,
+          "vertices": 2500,
+          "sourceEvaluatedTriangles": 5000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.0179996490478516,
+            -1.0559659004211426,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            1.0905829668045044,
+            1.0236197710037231,
+            1.0996944904327393
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock03_LOD1",
+          "sourceObject": "rock_moss_set_01_rock03",
+          "triangles": 2492,
+          "vertices": 1246,
+          "sourceEvaluatedTriangles": 5000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.0166277885437012,
+            -1.0517008304595947,
+            -0.0004957154160365462
+          ],
+          "boundsMaxBlender": [
+            1.0891562700271606,
+            1.0226070880889893,
+            1.0985769033432007
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock03_LOD2",
+          "sourceObject": "rock_moss_set_01_rock03",
+          "triangles": 642,
+          "vertices": 321,
+          "sourceEvaluatedTriangles": 5000,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.0165765285491943,
+            -1.0542467832565308,
+            0.006541287060827017
+          ],
+          "boundsMaxBlender": [
+            1.088809847831726,
+            1.0232175588607788,
+            1.1009984016418457
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.4108721911907196,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock04",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock04.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock04_LOD0",
+          "sourceObject": "rock_moss_set_01_rock04",
+          "triangles": 10589,
+          "vertices": 5301,
+          "sourceEvaluatedTriangles": 10589,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.9502788186073303,
+            -1.0773223638534546,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            1.1773505210876465,
+            0.8874189853668213,
+            1.768319845199585
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock04_LOD1",
+          "sourceObject": "rock_moss_set_01_rock04",
+          "triangles": 2491,
+          "vertices": 1252,
+          "sourceEvaluatedTriangles": 10589,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.9515214562416077,
+            -1.0775667428970337,
+            -0.0010948301060125232
+          ],
+          "boundsMaxBlender": [
+            1.178173303604126,
+            0.8880701661109924,
+            1.7692424058914185
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock04_LOD2",
+          "sourceObject": "rock_moss_set_01_rock04",
+          "triangles": 641,
+          "vertices": 327,
+          "sourceEvaluatedTriangles": 10589,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.9548951983451843,
+            -1.0750837326049805,
+            0.005453629419207573
+          ],
+          "boundsMaxBlender": [
+            1.184091567993164,
+            0.8833169341087341,
+            1.7695420980453491
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.6609705686569214,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock05",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock05.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock05_LOD0",
+          "sourceObject": "rock_moss_set_01_rock05",
+          "triangles": 16548,
+          "vertices": 8276,
+          "sourceEvaluatedTriangles": 16548,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.8606676459312439,
+            -1.6477245092391968,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.9566551446914673,
+            1.3509392738342285,
+            1.2054507732391357
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock05_LOD1",
+          "sourceObject": "rock_moss_set_01_rock05",
+          "triangles": 2492,
+          "vertices": 1248,
+          "sourceEvaluatedTriangles": 16548,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.8611013889312744,
+            -1.652573823928833,
+            -0.00039742220542393625
+          ],
+          "boundsMaxBlender": [
+            0.9573240876197815,
+            1.349913239479065,
+            1.2075949907302856
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock05_LOD2",
+          "sourceObject": "rock_moss_set_01_rock05",
+          "triangles": 642,
+          "vertices": 323,
+          "sourceEvaluatedTriangles": 16548,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -0.8687780499458313,
+            -1.6532825231552124,
+            -0.0070055280812084675
+          ],
+          "boundsMaxBlender": [
+            0.9500937461853027,
+            1.3488117456436157,
+            1.2139441967010498
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.5725544691085815,
+      "unit": "meter",
+      "kind": "nature"
+    },
+    {
+      "id": "rock_moss_set_01_rock06",
+      "sourceAsset": "rock_moss_set_01",
+      "fbx": "Models/rock_moss_set_01_rock06.fbx",
+      "supplierLods": false,
+      "lods": [
+        {
+          "name": "rock_moss_set_01_rock06_LOD0",
+          "sourceObject": "rock_moss_set_01_rock06",
+          "triangles": 8994,
+          "vertices": 4499,
+          "sourceEvaluatedTriangles": 8994,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.2007771730422974,
+            -1.277156949043274,
+            0.0
+          ],
+          "boundsMaxBlender": [
+            0.9252050518989563,
+            1.4801461696624756,
+            1.261852741241455
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock06_LOD1",
+          "sourceObject": "rock_moss_set_01_rock06",
+          "triangles": 2492,
+          "vertices": 1248,
+          "sourceEvaluatedTriangles": 8994,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.2027255296707153,
+            -1.2753705978393555,
+            0.002700365614145994
+          ],
+          "boundsMaxBlender": [
+            0.9240868091583252,
+            1.4813958406448364,
+            1.259989857673645
+          ]
+        },
+        {
+          "name": "rock_moss_set_01_rock06_LOD2",
+          "sourceObject": "rock_moss_set_01_rock06",
+          "triangles": 642,
+          "vertices": 323,
+          "sourceEvaluatedTriangles": 8994,
+          "materials": [
+            "rock_moss_set_01"
+          ],
+          "boundsMinBlender": [
+            -1.1863555908203125,
+            -1.27947199344635,
+            0.002700365614145994
+          ],
+          "boundsMaxBlender": [
+            0.92634117603302,
+            1.4715087413787842,
+            1.2546532154083252
+          ]
+        }
+      ],
+      "groundOffsetMeters": 0.5280566811561584,
+      "unit": "meter",
+      "kind": "nature"
+    }
+  ],
+  "materials": [
+    {
+      "name": "pine_sapling_small_bark",
+      "sourceAsset": "pine_sapling_small",
+      "baseMap": "Textures/pine_sapling_small_bark_BaseMap.png",
+      "normalMap": "Textures/pine_sapling_small_bark_Normal.png",
+      "metallicSmoothnessMap": "Textures/pine_sapling_small_bark_MetallicSmoothness.png",
+      "alphaClip": false,
+      "cutoff": 0.45,
+      "twoSided": false,
+      "opaqueGlassApproximation": false,
+      "textureSize": 512,
+      "maskTextureSize": 256,
+      "sourceMaps": [
+        "pine_sapling_small_bark_diff_2k.png",
+        "pine_sapling_small_bark_nor_gl_2k.png",
+        "pine_sapling_small_bark_rough_2k.png"
+      ]
+    },
+    {
+      "name": "pine_sapling_small_twig",
+      "sourceAsset": "pine_sapling_small",
+      "baseMap": "Textures/pine_sapling_small_twig_BaseMap.png",
+      "normalMap": "Textures/pine_sapling_small_twig_Normal.png",
+      "metallicSmoothnessMap": "Textures/pine_sapling_small_twig_MetallicSmoothness.png",
+      "alphaClip": true,
+      "cutoff": 0.45,
+      "twoSided": true,
+      "opaqueGlassApproximation": false,
+      "textureSize": 1024,
+      "maskTextureSize": 256,
+      "sourceMaps": [
+        "pine_sapling_small_twig_diff_2k.png",
+        "pine_sapling_small_twig_alpha_2k.png",
+        "pine_sapling_small_twig_nor_gl_2k.png",
+        "pine_sapling_small_twig_rough_2k.png"
+      ]
+    },
+    {
+      "name": "fern_02",
+      "sourceAsset": "fern_02",
+      "baseMap": "Textures/fern_02_BaseMap.png",
+      "normalMap": "Textures/fern_02_Normal.png",
+      "metallicSmoothnessMap": "Textures/fern_02_MetallicSmoothness.png",
+      "alphaClip": true,
+      "cutoff": 0.45,
+      "twoSided": true,
+      "opaqueGlassApproximation": false,
+      "textureSize": 512,
+      "maskTextureSize": 256,
+      "sourceMaps": [
+        "fern_02_diff_2k.jpg",
+        "fern_02_alpha_2k.png",
+        "fern_02_nor_gl_2k.exr",
+        "fern_02_rough_2k.exr"
+      ]
+    },
+    {
+      "name": "shrub_03",
+      "sourceAsset": "shrub_03",
+      "baseMap": "Textures/shrub_03_BaseMap.png",
+      "normalMap": "Textures/shrub_03_Normal.png",
+      "metallicSmoothnessMap": "Textures/shrub_03_MetallicSmoothness.png",
+      "alphaClip": true,
+      "cutoff": 0.45,
+      "twoSided": true,
+      "opaqueGlassApproximation": false,
+      "textureSize": 512,
+      "maskTextureSize": 256,
+      "sourceMaps": [
+        "shrub_03_diff_2k.jpg",
+        "shrub_03_alpha_2k.png",
+        "shrub_03_nor_gl_2k.exr",
+        "shrub_03_rough_2k.exr"
+      ]
+    },
+    {
+      "name": "rock_moss_set_01",
+      "sourceAsset": "rock_moss_set_01",
+      "baseMap": "Textures/rock_moss_set_01_BaseMap.png",
+      "normalMap": "Textures/rock_moss_set_01_Normal.png",
+      "metallicSmoothnessMap": "Textures/rock_moss_set_01_MetallicSmoothness.png",
+      "alphaClip": false,
+      "cutoff": 0.45,
+      "twoSided": false,
+      "opaqueGlassApproximation": false,
+      "textureSize": 512,
+      "maskTextureSize": 256,
+      "sourceMaps": [
+        "rock_moss_set_01_diff_2k.jpg",
+        "rock_moss_set_01_nor_gl_2k.exr",
+        "rock_moss_set_01_rough_2k.jpg"
+      ]
+    }
+  ]
+}

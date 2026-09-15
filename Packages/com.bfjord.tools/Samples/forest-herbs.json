@@ -1,0 +1,69 @@
+{
+  "id": "forest-edge-herbs-001",
+  "area": {
+    "x": 193,
+    "y": 173,
+    "width": 48,
+    "height": 46
+  },
+  "seed": 41837,
+  "maximumCount": 1800,
+  "densityPerHectare": 8200,
+  "minimumSpacing": 0.32,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 30,
+  "clusterCount": 18,
+  "clusterRadius": 12,
+  "spacingGroup": "herbs",
+  "species": [
+    {
+      "id": "shrub_03_a",
+      "prefabKey": "bfjord:shrub_03_a",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_b",
+      "prefabKey": "bfjord:shrub_03_b",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_c",
+      "prefabKey": "bfjord:shrub_03_c",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    },
+    {
+      "id": "shrub_03_d",
+      "prefabKey": "bfjord:shrub_03_d",
+      "weight": 1,
+      "radius": 0.14,
+      "minimumScale": 0.9,
+      "maximumScale": 1.35,
+      "groundOffsetMeters": -0.01
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ]
+}

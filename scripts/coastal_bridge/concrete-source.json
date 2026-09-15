@@ -1,0 +1,12 @@
+{
+  "baseColorPath": "../../assets/CoastalBridgeTool/inputs/concrete/Concrete034_2K-JPG_Color.jpg",
+  "normalPath": "../../assets/CoastalBridgeTool/inputs/concrete/Concrete034_2K-JPG_NormalGL.jpg",
+  "roughnessPath": "../../assets/CoastalBridgeTool/inputs/concrete/Concrete034_2K-JPG_Roughness.jpg",
+  "tilingMeters": 1.1,
+  "squareTileRepeatY": 2,
+  "source": {
+    "name": "ambientCG Concrete034 / Lennart Demes, approximation material; 1.1 by 0.55m repeated twice vertically into a 1.1m square tile",
+    "license": "CC0-1.0",
+    "url": "https://ambientcg.com/view?id=Concrete034"
+  }
+}

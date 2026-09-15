@@ -1,0 +1,58 @@
+{
+  "asset": "clean_asphalt",
+  "author": "Dimitrios Savva",
+  "source": "https://polyhaven.com/a/clean_asphalt",
+  "license": "CC0-1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "physicalDimensionsMetres": [
+    2.1,
+    2.1
+  ],
+  "sourceFiles": [
+    {
+      "asset": "clean_asphalt",
+      "role": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_diff_1k.jpg",
+      "file": "clean_asphalt_diff_1k.jpg",
+      "bytes": 697630,
+      "md5": "7edccb95cbf72e63889baade8455f9e5",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "asset": "clean_asphalt",
+      "role": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/clean_asphalt/clean_asphalt_rough_1k.png",
+      "file": "clean_asphalt_rough_1k.png",
+      "bytes": 1878547,
+      "md5": "a6b14fa39340820d707401d377b58e7d",
+      "sha256": "aff9bbdf84f878887e3b259bcb46e38135eb3416e56d83da5d02b123dade1911"
+    },
+    {
+      "asset": "clean_asphalt",
+      "role": "nor_gl",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_nor_gl_1k.jpg",
+      "file": "clean_asphalt_nor_gl_1k.jpg",
+      "bytes": 776360,
+      "md5": "24dadd366637a722b59c19a672cbbcf6",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    }
+  ],
+  "preparedInputs": [
+    {
+      "path": "Asphalt_BaseMap.jpg",
+      "bytes": 697630,
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "path": "Asphalt_Normal.jpg",
+      "bytes": 776360,
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    },
+    {
+      "path": "Asphalt_MetallicSmoothness.png",
+      "bytes": 196089,
+      "sha256": "904cdd6ed8c46bfd26006dcf0ad808d2ea6f677caddfc56c1f6eb8c7f66415ff"
+    }
+  ],
+  "note": "Color and OpenGL normal match official 1K source bytes. The mask is the existing reviewed RoadQuality preparation from source roughness. Only required prepared inputs are retained."
+}

@@ -1,0 +1,730 @@
+{
+  "files": [
+    {
+      "bytes": 639,
+      "path": "DemoMaterials/README.md",
+      "sha256": "5182dd46448073c98db3b8f4af320892adec9cf1fa2fc5623752239bf6379437"
+    },
+    {
+      "bytes": 2019,
+      "path": "DemoMaterials/Rock030.provenance.json",
+      "sha256": "22049f9589bff5be84c73c1ae8ae2e83f088a60ada6108b542f57fceaf773b33"
+    },
+    {
+      "bytes": 5905796,
+      "path": "DemoMaterials/Rock030_2K-JPG_Color.jpg",
+      "sha256": "c7169827afa47148833a3d778bd2827f12b124852efcabf3364910b1cb6d4beb"
+    },
+    {
+      "bytes": 10244967,
+      "path": "DemoMaterials/Rock030_2K-JPG_NormalGL.jpg",
+      "sha256": "bf4b029b98fc771887e80807e28f97488c3a8936369152bd1020b2535415a5af"
+    },
+    {
+      "bytes": 2591,
+      "path": "LICENSE.md",
+      "sha256": "ad8a7b905e1c67cc7ebd134b12d3f127d1cbf96dd2d9ae3d2ecf7bff332e1db2"
+    },
+    {
+      "bytes": 18358,
+      "path": "coastal-arch-104/bridge-collider.fbx",
+      "sha256": "ee690ba98be0099a668c4cdbe156c6f4bddd0078a62046cafd29fc886701749e"
+    },
+    {
+      "bytes": 761454,
+      "path": "coastal-arch-104/bridge-lod0.fbx",
+      "sha256": "887d25bded519fcab7635f84a1e09419fac62e247f086c00ec6f85edb290382a"
+    },
+    {
+      "bytes": 119248,
+      "path": "coastal-arch-104/bridge-lod1.fbx",
+      "sha256": "e1ca4eb583fe087d029ffe2fa4e41794492db0f9537e467b387d328cab92e9f5"
+    },
+    {
+      "bytes": 85168,
+      "path": "coastal-arch-104/bridge-lod2.fbx",
+      "sha256": "ac21ce3258efaa377ef577674b3ad9e1542e8bd2d5891e796c98cd609834f410"
+    },
+    {
+      "bytes": 3836,
+      "path": "coastal-arch-104/manifest.json",
+      "sha256": "0c1778d8acc10b9caaa223aa43df0cac363ba82f9cce8ad70838e5e24c501283"
+    },
+    {
+      "bytes": 1299022,
+      "path": "coastal-arch-104/textures/asphalt-basecolor.png",
+      "sha256": "7c292bbad3e1aebf017e97994a46c235850f55243da5f459de428bbcea59ac0e"
+    },
+    {
+      "bytes": 535300,
+      "path": "coastal-arch-104/textures/asphalt-mask.png",
+      "sha256": "aecd40310355b710f347581ecb39d6fb6a87f3291a247a628c18a4e6367d57cc"
+    },
+    {
+      "bytes": 1775074,
+      "path": "coastal-arch-104/textures/asphalt-normal.png",
+      "sha256": "3841020ef0b5727a7ee601203a191f9eba55aea30389f6e29d58656bbac060b3"
+    },
+    {
+      "bytes": 753570,
+      "path": "coastal-arch-104/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "coastal-arch-104/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "coastal-arch-104/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 18374,
+      "path": "coastal-arch-180/bridge-collider.fbx",
+      "sha256": "25ff9b8128483606b8c31984f3fec2a8b03960b1582de8fd16118d99d512c183"
+    },
+    {
+      "bytes": 980766,
+      "path": "coastal-arch-180/bridge-lod0.fbx",
+      "sha256": "9ec00cb2f482d4eac05e2f55ac24593ef429e6dbdc578dc9dfa3366268dc3037"
+    },
+    {
+      "bytes": 146336,
+      "path": "coastal-arch-180/bridge-lod1.fbx",
+      "sha256": "9284be64c6bd22efe4f5abd2dce67cedfe031ff80577b8b6fa2579077d55c240"
+    },
+    {
+      "bytes": 101584,
+      "path": "coastal-arch-180/bridge-lod2.fbx",
+      "sha256": "1afab6a3fb4c262be7f48d6f0e642e903f8bac409cd04bc1483fcdec591a9b61"
+    },
+    {
+      "bytes": 3825,
+      "path": "coastal-arch-180/manifest.json",
+      "sha256": "c07d5e0d7861f4d8b3d3b9f42c2a528caa94d03a5a69a5f750251b255bb7d5cb"
+    },
+    {
+      "bytes": 1299022,
+      "path": "coastal-arch-180/textures/asphalt-basecolor.png",
+      "sha256": "7c292bbad3e1aebf017e97994a46c235850f55243da5f459de428bbcea59ac0e"
+    },
+    {
+      "bytes": 535300,
+      "path": "coastal-arch-180/textures/asphalt-mask.png",
+      "sha256": "aecd40310355b710f347581ecb39d6fb6a87f3291a247a628c18a4e6367d57cc"
+    },
+    {
+      "bytes": 1775074,
+      "path": "coastal-arch-180/textures/asphalt-normal.png",
+      "sha256": "3841020ef0b5727a7ee601203a191f9eba55aea30389f6e29d58656bbac060b3"
+    },
+    {
+      "bytes": 753570,
+      "path": "coastal-arch-180/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "coastal-arch-180/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "coastal-arch-180/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 4155,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat",
+      "sha256": "1bb01b587fed9f5002eacdef479e1010acc46cdd8d0d36aebe7b06765d8fb57f"
+    },
+    {
+      "bytes": 188,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat.meta",
+      "sha256": "ba95b34b102226bcb3b1c7b0e093c6f164bd93913f8294c2fc54f2ce6b202e5b"
+    },
+    {
+      "bytes": 4177,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat",
+      "sha256": "a098101a33d27f21f76ea74bccc4eacef59872ce8ab0b17528c147723744bfe7"
+    },
+    {
+      "bytes": 188,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat.meta",
+      "sha256": "c2c65589f59763ab24a4a2cf192b429d32ded2ef41cc61333b0abb22a06cf0ed"
+    },
+    {
+      "bytes": 451366,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+      "sha256": "bcad23ba3f2f331869f8bc97943e3183ee7cf607e750c0a19db9c7a7a11b5400"
+    },
+    {
+      "bytes": 3094,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx.meta",
+      "sha256": "f5623225dfddcf14af83d4a5bf687897f0a47e97fa26cfc391cdd9defea7e9ee"
+    },
+    {
+      "bytes": 200910,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "sha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453"
+    },
+    {
+      "bytes": 3094,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx.meta",
+      "sha256": "ce8249f7e4faac73bb7f93c0ae8ad9c91718d9fd00f4612d4fb2377047d720fb"
+    },
+    {
+      "bytes": 9822,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab",
+      "sha256": "d4ed03810228784c98a5ce42ab9f0346210242369e537589109460cec8db1584"
+    },
+    {
+      "bytes": 154,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab.meta",
+      "sha256": "ff63b14d5ae4c1b031b69ae5e33019f8e314bd63fb9843d4109a322f6802fe9b"
+    },
+    {
+      "bytes": 9766,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab",
+      "sha256": "a3abea47391e16bf8a02fbc6f58112e6eee127be27bb4212d8054fc21f0f23d8"
+    },
+    {
+      "bytes": 154,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab.meta",
+      "sha256": "37c15b1e1b1dedb075cc3d0088b6186b5a88f66da8202b41283fc605f1f08ff4"
+    },
+    {
+      "bytes": 437916,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png",
+      "sha256": "b900390b0b42219a26a98e74b6188e2842e754e9dfcd4582d5f59fe4f1cff377"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png.meta",
+      "sha256": "155922bd5f1e94711597c88fe6add342eaac49fee5f91d1061f79b8af82f6cec"
+    },
+    {
+      "bytes": 32461,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png",
+      "sha256": "ec0195b9eb9945a7a3c34ae5d825a95f754eaed6ebd6a71f05635ab7d7556956"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png.meta",
+      "sha256": "da8e248a5cfdf238dd2e7ee85ab0ffb15866f27ec3886106981672bd1795b504"
+    },
+    {
+      "bytes": 471092,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png",
+      "sha256": "57c4e31bdd593d68136607fa69e429b94348ad7d760799d3df28679e6f926487"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png.meta",
+      "sha256": "45938d78c60e4f540d832cebd7d952fa627a2fddf14e1fea3756ff2364607939"
+    },
+    {
+      "bytes": 452019,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png",
+      "sha256": "270c472ceab017a7ef55a88263c6e4470fc890e87cf8035537dc55edda32d6c5"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png.meta",
+      "sha256": "9a450c56d60117a75e78e6b7ed3c4df8963ab50e54d6985b90fb9985ccceb1c4"
+    },
+    {
+      "bytes": 36004,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png",
+      "sha256": "ae01b621f5cc5f0692da4365c0ce0932b12a5680d815f640d3d8e8d645f1729b"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png.meta",
+      "sha256": "5be55efdcf5ef8d602432bde47e443dd649712b9321666af899220e740736aa5"
+    },
+    {
+      "bytes": 391980,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png",
+      "sha256": "4ed894d7cc81ba7da5a930ac3d56e458bcaf7b786ec4f91c26595a2d5cd2313f"
+    },
+    {
+      "bytes": 3424,
+      "path": "demo-dependencies/Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png.meta",
+      "sha256": "e09818fc0b25aa74fc1b84138d96885bd49fc67582dbfe23ee9c4ecc4de68b80"
+    },
+    {
+      "bytes": 4181,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Materials/Asphalt.mat",
+      "sha256": "6d1c6e85e5f795663eeacd291c4cb9a30cd58f53d359e060d2f7884ce52b4669"
+    },
+    {
+      "bytes": 188,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Materials/Asphalt.mat.meta",
+      "sha256": "6be57db90d119bb626949b65212957abdebda8ea9c7b390c58dc13bf0671173e"
+    },
+    {
+      "bytes": 4155,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Materials/Gravel.mat",
+      "sha256": "9ce723ea774f140eb89074d40e86b5314799fd798b581a4ff447ae0ba2565c37"
+    },
+    {
+      "bytes": 188,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Materials/Gravel.mat.meta",
+      "sha256": "63ba26bef1edad3062897415174b49b9ad0ae2797980a9582362ed173145ae23"
+    },
+    {
+      "bytes": 697630,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg.meta",
+      "sha256": "dae52a38cf6051b7d7382a33760c082a59d4b3c83e7059fa7801e0d5da87fd79"
+    },
+    {
+      "bytes": 196089,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png",
+      "sha256": "904cdd6ed8c46bfd26006dcf0ad808d2ea6f677caddfc56c1f6eb8c7f66415ff"
+    },
+    {
+      "bytes": 3420,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png.meta",
+      "sha256": "6712682834daf5b7e0619058c7c731d72c89fbd6b448dffd9b5d801f164599ff"
+    },
+    {
+      "bytes": 776360,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg.meta",
+      "sha256": "fd792a75e1e415419c32635ccdae6dcc63e0c2c72bd0160591df0703b3aeda4f"
+    },
+    {
+      "bytes": 1146359,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg",
+      "sha256": "5c4b518f993c845b25a8d1a54b35b8657b85f93c21c54df7802f33b02771dcc1"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg.meta",
+      "sha256": "6da52dd3d64f2339267eaa15aa1dfda4f6c5ffcea1f182a3b376fc38ef8f5107"
+    },
+    {
+      "bytes": 1138665,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg",
+      "sha256": "36a3a8e06857090a8fa3ea19e23366ba80d14f016fa12567d496f8576a3af397"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg.meta",
+      "sha256": "b158178ffe27fca6a828677085fd125e12b3dc4aac6432cc8effc4bf7520909d"
+    },
+    {
+      "bytes": 929643,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg",
+      "sha256": "9a55e233667a8cf3b3811154f1516eb1646127dff9b1f9af0430485763d40e04"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg.meta",
+      "sha256": "84c4e84bad773a43120a2970a694fa3b0ccedc7ee7cb047e6e8512e0ac619819"
+    },
+    {
+      "bytes": 75962,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png",
+      "sha256": "7c5d455aae7a81eac33fa938c05d6517ebde53ff8bd5f0df74bb926e0fb70e00"
+    },
+    {
+      "bytes": 3420,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png.meta",
+      "sha256": "ae414d763917f8154a2bb593acfccbadd423e262bdb89e94108805a3d21bdb47"
+    },
+    {
+      "bytes": 1545702,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg",
+      "sha256": "b1303eb80327e3f0edfa60fcf5c532dfabf29b7fb34673594bd4c27de32a2a65"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg.meta",
+      "sha256": "0d5581e2c3910120b4ba1ea74de90d3156370443267cbd9dac58172b27dfb951"
+    },
+    {
+      "bytes": 1195394,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg.meta",
+      "sha256": "b2cabfcf85019789f664a29c8a6755804acd4181234ed448e93b332afa53d670"
+    },
+    {
+      "bytes": 1466049,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Ground_Normal.jpg",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    {
+      "bytes": 3423,
+      "path": "demo-dependencies/Assets/RoadQuality/Art/Textures/Ground_Normal.jpg.meta",
+      "sha256": "49135b2dc4383478831a364eeed9e3227504f1e4fb2786ec04dc3983cea08b0a"
+    },
+    {
+      "bytes": 1566,
+      "path": "demo-dependencies/README.md",
+      "sha256": "d0e26d00cdd1049ccf820424690f1983df328c8e2203bc6d120439a56bcc17ea"
+    },
+    {
+      "bytes": 3962,
+      "path": "demo-dependencies/credits/polyhaven-source-manifest.json",
+      "sha256": "bb5ec840ceadf73adae345efd563c0b07efefde3f71a028cda1ba6faf24c67ac"
+    },
+    {
+      "bytes": 9642,
+      "path": "demo-dependencies/manifest.json",
+      "sha256": "9874912ab0208cf15608b222109e10b5916694560c666b8ec2a7ba98812bf86b"
+    },
+    {
+      "bytes": 697630,
+      "path": "inputs/asphalt/Asphalt_BaseMap.jpg",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "bytes": 196089,
+      "path": "inputs/asphalt/Asphalt_MetallicSmoothness.png",
+      "sha256": "904cdd6ed8c46bfd26006dcf0ad808d2ea6f677caddfc56c1f6eb8c7f66415ff"
+    },
+    {
+      "bytes": 776360,
+      "path": "inputs/asphalt/Asphalt_Normal.jpg",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    },
+    {
+      "bytes": 2107,
+      "path": "inputs/asphalt/provenance.json",
+      "sha256": "c09aedcf998950553e14d0b0bbac2c035af6e537440f4b0da2cd444fe4f298cf"
+    },
+    {
+      "bytes": 1156573,
+      "path": "inputs/concrete/Concrete034_2K-JPG_Color.jpg",
+      "sha256": "fa27982687596d7aa080db1e9b88c30f48a3c32eb3e50b27a2ea27c431e4cde9"
+    },
+    {
+      "bytes": 3325261,
+      "path": "inputs/concrete/Concrete034_2K-JPG_NormalGL.jpg",
+      "sha256": "b077dfe6b3b8fbe794d82b9014d030fa01984a25ab67d2e21310995e6ea5b881"
+    },
+    {
+      "bytes": 879275,
+      "path": "inputs/concrete/Concrete034_2K-JPG_Roughness.jpg",
+      "sha256": "fd39973b8ef8212d1c99d18b6665595db3ab96f1c124e062fea52b9bda4ffa63"
+    },
+    {
+      "bytes": 960,
+      "path": "inputs/concrete/provenance.json",
+      "sha256": "e4f3f2a2bb7bae6775216197656880de88305b1f3fbe63c9390e32eff276ca85"
+    },
+    {
+      "bytes": 1171,
+      "path": "material-profiles/warm-concrete/profile.json",
+      "sha256": "0b2bf6a764ebf7dcdf768b0d6677e9b04d7bd4a9858aa4b7a110bb8c30830d91"
+    },
+    {
+      "bytes": 753570,
+      "path": "material-profiles/warm-concrete/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "material-profiles/warm-concrete/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "material-profiles/warm-concrete/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 1176,
+      "path": "material-profiles/weathered-concrete/profile.json",
+      "sha256": "8a5e57e9be806d942580ce376d7b438212884c586887e08e7559f999b4ba9af7"
+    },
+    {
+      "bytes": 753570,
+      "path": "material-profiles/weathered-concrete/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "material-profiles/weathered-concrete/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "material-profiles/weathered-concrete/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 18371,
+      "path": "steel-through-truss-88/bridge-collider.fbx",
+      "sha256": "68445409a17f01c3bbafb379556513a809be8ba8e54df8600c7f2c218f4c7240"
+    },
+    {
+      "bytes": 947658,
+      "path": "steel-through-truss-88/bridge-lod0.fbx",
+      "sha256": "566833e349056f08000f14b0299632b4425a8aacd8e232df55ceba574218859a"
+    },
+    {
+      "bytes": 125770,
+      "path": "steel-through-truss-88/bridge-lod1.fbx",
+      "sha256": "152e9c51efadd534b5f94042a0d437bc1e9edfb99b5d1ee73d8614f5bf7c9e6a"
+    },
+    {
+      "bytes": 70794,
+      "path": "steel-through-truss-88/bridge-lod2.fbx",
+      "sha256": "dc5f92297d1a0682a90db2d7a39f2b00e19dd5f5cf39d2c365f59a98d866955a"
+    },
+    {
+      "bytes": 4831,
+      "path": "steel-through-truss-88/manifest.json",
+      "sha256": "1d347ecde90ef3c9111dd3be1e0ecbd5dff9109266999c3b5c46403652a15b09"
+    },
+    {
+      "bytes": 1299022,
+      "path": "steel-through-truss-88/textures/asphalt-basecolor.png",
+      "sha256": "7c292bbad3e1aebf017e97994a46c235850f55243da5f459de428bbcea59ac0e"
+    },
+    {
+      "bytes": 535300,
+      "path": "steel-through-truss-88/textures/asphalt-mask.png",
+      "sha256": "aecd40310355b710f347581ecb39d6fb6a87f3291a247a628c18a4e6367d57cc"
+    },
+    {
+      "bytes": 1775074,
+      "path": "steel-through-truss-88/textures/asphalt-normal.png",
+      "sha256": "3841020ef0b5727a7ee601203a191f9eba55aea30389f6e29d58656bbac060b3"
+    },
+    {
+      "bytes": 753570,
+      "path": "steel-through-truss-88/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "steel-through-truss-88/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "steel-through-truss-88/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 1118482,
+      "path": "steel-through-truss-88/textures/stone-basecolor.png",
+      "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
+    },
+    {
+      "bytes": 5699,
+      "path": "steel-through-truss-88/textures/stone-mask.png",
+      "sha256": "01c9001c0dbc93132fe6a8096de71ae39187bf157b3d56739da603bc43d4a9aa"
+    },
+    {
+      "bytes": 2166125,
+      "path": "steel-through-truss-88/textures/stone-normal.png",
+      "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
+    },
+    {
+      "bytes": 980012,
+      "path": "steel-through-truss-88/textures/timber-basecolor.png",
+      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+    },
+    {
+      "bytes": 5699,
+      "path": "steel-through-truss-88/textures/timber-mask.png",
+      "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
+    },
+    {
+      "bytes": 1992302,
+      "path": "steel-through-truss-88/textures/timber-normal.png",
+      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+    },
+    {
+      "bytes": 18354,
+      "path": "stone-viaduct-110/bridge-collider.fbx",
+      "sha256": "15c844b58e5b1ebecfc1f1cb775c5771eeda1d63c114f506f04beb41d85e1d71"
+    },
+    {
+      "bytes": 640942,
+      "path": "stone-viaduct-110/bridge-lod0.fbx",
+      "sha256": "6f24ebcf247f9b758f2a4d3cb6ffc5908da8d8da4967695a8a24fd60c47a99aa"
+    },
+    {
+      "bytes": 140990,
+      "path": "stone-viaduct-110/bridge-lod1.fbx",
+      "sha256": "36738d54e292b1bebd71a06566d886d107507e46cfa7e1da613214988adf221a"
+    },
+    {
+      "bytes": 57198,
+      "path": "stone-viaduct-110/bridge-lod2.fbx",
+      "sha256": "5d33bddea967f40ae878f59d41626d227ff2030652e5ad45ded92958676bf1a9"
+    },
+    {
+      "bytes": 4799,
+      "path": "stone-viaduct-110/manifest.json",
+      "sha256": "72f4858dba3ea33a2cc50e6b948bf984bfbbc312ed04165a32c8b5b83acb7895"
+    },
+    {
+      "bytes": 1299022,
+      "path": "stone-viaduct-110/textures/asphalt-basecolor.png",
+      "sha256": "7c292bbad3e1aebf017e97994a46c235850f55243da5f459de428bbcea59ac0e"
+    },
+    {
+      "bytes": 535300,
+      "path": "stone-viaduct-110/textures/asphalt-mask.png",
+      "sha256": "aecd40310355b710f347581ecb39d6fb6a87f3291a247a628c18a4e6367d57cc"
+    },
+    {
+      "bytes": 1775074,
+      "path": "stone-viaduct-110/textures/asphalt-normal.png",
+      "sha256": "3841020ef0b5727a7ee601203a191f9eba55aea30389f6e29d58656bbac060b3"
+    },
+    {
+      "bytes": 753570,
+      "path": "stone-viaduct-110/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "stone-viaduct-110/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "stone-viaduct-110/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 1118482,
+      "path": "stone-viaduct-110/textures/stone-basecolor.png",
+      "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
+    },
+    {
+      "bytes": 5699,
+      "path": "stone-viaduct-110/textures/stone-mask.png",
+      "sha256": "01c9001c0dbc93132fe6a8096de71ae39187bf157b3d56739da603bc43d4a9aa"
+    },
+    {
+      "bytes": 2166125,
+      "path": "stone-viaduct-110/textures/stone-normal.png",
+      "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
+    },
+    {
+      "bytes": 980012,
+      "path": "stone-viaduct-110/textures/timber-basecolor.png",
+      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+    },
+    {
+      "bytes": 5699,
+      "path": "stone-viaduct-110/textures/timber-mask.png",
+      "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
+    },
+    {
+      "bytes": 1992302,
+      "path": "stone-viaduct-110/textures/timber-normal.png",
+      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+    },
+    {
+      "bytes": 18354,
+      "path": "timber-trestle-80/bridge-collider.fbx",
+      "sha256": "4726cf1c4622736cf30bf91afc90b6cfce5f6a07426cc6fdf46c056ca80bd975"
+    },
+    {
+      "bytes": 1286542,
+      "path": "timber-trestle-80/bridge-lod0.fbx",
+      "sha256": "855a51e6922b97f0f7829b7c64c1bcbb7ac5b6ae1e3ae721e62676ecad560e47"
+    },
+    {
+      "bytes": 149294,
+      "path": "timber-trestle-80/bridge-lod1.fbx",
+      "sha256": "4c79c9ea0a497b398bd5e81457880c3698b6099aeab8e877a4df754c5ba7a148"
+    },
+    {
+      "bytes": 112030,
+      "path": "timber-trestle-80/bridge-lod2.fbx",
+      "sha256": "11a347768f9c17b707d94ee4c606b74e46cfcbd1823f28a3192cbbe3b6a24960"
+    },
+    {
+      "bytes": 4824,
+      "path": "timber-trestle-80/manifest.json",
+      "sha256": "05f4305b988c3c9e11cb150886e4d1944108ea88ad58334e5fa2cbc42759414b"
+    },
+    {
+      "bytes": 1299022,
+      "path": "timber-trestle-80/textures/asphalt-basecolor.png",
+      "sha256": "7c292bbad3e1aebf017e97994a46c235850f55243da5f459de428bbcea59ac0e"
+    },
+    {
+      "bytes": 535300,
+      "path": "timber-trestle-80/textures/asphalt-mask.png",
+      "sha256": "aecd40310355b710f347581ecb39d6fb6a87f3291a247a628c18a4e6367d57cc"
+    },
+    {
+      "bytes": 1775074,
+      "path": "timber-trestle-80/textures/asphalt-normal.png",
+      "sha256": "3841020ef0b5727a7ee601203a191f9eba55aea30389f6e29d58656bbac060b3"
+    },
+    {
+      "bytes": 753570,
+      "path": "timber-trestle-80/textures/concrete-basecolor.png",
+      "sha256": "af68edc89f75c2904edcd888e7e8cfaa2b9fab07fb9d47edb11054748ec5356c"
+    },
+    {
+      "bytes": 618919,
+      "path": "timber-trestle-80/textures/concrete-mask.png",
+      "sha256": "c28354418eccf1f12b7e6dcd30e36881a41b37a87643ed2a6bba4ade9743f72d"
+    },
+    {
+      "bytes": 2386686,
+      "path": "timber-trestle-80/textures/concrete-normal.png",
+      "sha256": "5ec743a9e4f25008026d456280aeec66b39476c7a73c9ffa6ed5f67f475f0307"
+    },
+    {
+      "bytes": 1118482,
+      "path": "timber-trestle-80/textures/stone-basecolor.png",
+      "sha256": "d5cc18beca496f99e64f7d211c64e34000c631e403db1d738106b399df530718"
+    },
+    {
+      "bytes": 5699,
+      "path": "timber-trestle-80/textures/stone-mask.png",
+      "sha256": "01c9001c0dbc93132fe6a8096de71ae39187bf157b3d56739da603bc43d4a9aa"
+    },
+    {
+      "bytes": 2166125,
+      "path": "timber-trestle-80/textures/stone-normal.png",
+      "sha256": "af26f26a937621add7ac066de634afc68f242ea08646eda9a4f36c3974c558fb"
+    },
+    {
+      "bytes": 980012,
+      "path": "timber-trestle-80/textures/timber-basecolor.png",
+      "sha256": "fab628e29cc3a41a690e2f49eaac40aaf00afbf6cc0f8af917b8cd8e300eb191"
+    },
+    {
+      "bytes": 5699,
+      "path": "timber-trestle-80/textures/timber-mask.png",
+      "sha256": "e96e0e94ffe7fabcd685b55aec1e63fbb0e6f80ca00ef2527dc323e19873aa9f"
+    },
+    {
+      "bytes": 1992302,
+      "path": "timber-trestle-80/textures/timber-normal.png",
+      "sha256": "beba84559bbc229d8497b1c9e985b1d206e3d2197c81ee20e2ac01a9ea5b5dac"
+    }
+  ],
+  "schemaVersion": 1
+}

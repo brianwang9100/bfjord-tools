@@ -1,0 +1,29 @@
+{
+  "asset": "Concrete034",
+  "author": "ambientCG / Lennart Demes",
+  "source": "https://ambientcg.com/view?id=Concrete034",
+  "download": "https://ambientcg.com/get?file=Concrete034_2K-JPG.zip",
+  "license": "CC0-1.0",
+  "licenseURL": "https://docs.ambientcg.com/license/",
+  "technique": "Approximation",
+  "physicalDimensionsMetres": [
+    1.1,
+    0.55
+  ],
+  "retrieved": "2026-09-15",
+  "files": [
+    {
+      "file": "Concrete034_2K-JPG_NormalGL.jpg",
+      "sha256": "b077dfe6b3b8fbe794d82b9014d030fa01984a25ab67d2e21310995e6ea5b881"
+    },
+    {
+      "file": "Concrete034_2K-JPG_Color.jpg",
+      "sha256": "fa27982687596d7aa080db1e9b88c30f48a3c32eb3e50b27a2ea27c431e4cde9"
+    },
+    {
+      "file": "Concrete034_2K-JPG_Roughness.jpg",
+      "sha256": "fd39973b8ef8212d1c99d18b6665595db3ab96f1c124e062fea52b9bda4ffa63"
+    }
+  ],
+  "selection": "Only the three generator inputs are retained; no archive, displacement or third-party model files."
+}

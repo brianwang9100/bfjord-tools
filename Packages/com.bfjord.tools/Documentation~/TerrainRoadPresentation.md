@@ -1,0 +1,27 @@
+# Terrain and road surfaces
+
+The toolkit paints ordinary Unity Terrain with four shared CC0 surfaces: leafy grass, park soil, gravel and exposed rock. Grass, soil and gravel use the scanned material's physical 2m, 3m and 2.5m tile sizes. The rocky terrain scan is a larger 90m outcrop surface. Color and normal maps remain shared; the road metallic/smoothness maps are **not** misinterpreted as Unity Terrain's differently packed mask maps.
+
+`bwork_terrain action=paint recipePath=/path/to/terrain-paint-temperate.json` applies a `TerrainPaintProfile`; omit `recipePath` for the temperate defaults. `Samples/terrain-paint-highland.json` makes exposed rock and deposited gravel more prominent. The profile persists beside the generated terrain so subsequent terrain, road and connected-water edits use the same classification. Palette painting replaces the toolkit's own four layers (or upgrades its earlier Loam/Stone pair); unknown externally authored palettes are rejected. Painting is derived scenery, not a terrain-height owner. Undo, failed-operation snapshots and height restoration retain the existing authoring recovery paths.
+
+The profile controls rock slope thresholds, elevation exposure, coherent patch size/seed, soil and talus strength, and bank width/height gates. The painter combines final slope, four-metre concavity, exposure, coarse soil patches and finer breakup; all layer weights normalize. Rock favors exposed slopes, deposited gravel favors concave sloping ground, and grass/soil share calmer terrain. Active connected water supplies signed bank distance and surface height: both proximity and low elevation are required for bank deposition. This is an artistic moisture/deposition proxy, not hydrology or erosion simulation. A bridge or elevated hillside does not become wet simply because water lies below it.
+
+## Height shapes and protection
+
+`bwork_terrain action=prepare stampShape=ridge` previews the bounded sample without applying it; `action=apply` uses the same recipe. `stampShape` supports `ridge`, `basin` and `mesa`. The ridge has an asymmetric main spine, two spurs and a saddle. Basin and mesa use the same masked stamp/thermal relaxation/smoothing pipeline. A supplied height recipe overrides the built-in shape and exposes world center, size, rotation, falloff, amplitude, zero plane, add/replace/min/max blend and explicit normalized stamp arrays. These are baked authoring inputs, not runtime generation.
+
+Every height operation retains the existing stored-grid editability mask, road/water/structure footprints and protected borders. Paint is regenerated from resulting heights without moving any protected height cell. Thermal relaxation is not hydraulic erosion. `remove` restores owned heights and refreshes their terrain appearance.
+
+## Road profiles
+
+Road recipe `surface` accepts `asphalt`, `gravel` or `dirt`; unknown IDs fail before output publication. All three use scanned Poly Haven materials. Asphalt feathers through noisy aggregate into a gravel shoulder; gravel and dirt feather into grass. The existing shared metre-XZ SurfaceBlend field keeps noise and material endpoints consistent across bands. Textures retain physical scale rather than stretching with road length.
+
+The near shoulder now meets the natural ground at the existing outer verge row (6.8m from center for an 8m recipe width); it no longer blends a flat platform across the full 16m earthwork half-width. The outer earthwork band is omitted from the road renderer and road collider: the conformed, painted Terrain owns that visible surface and collision beyond the verge. Path fitting, junction mouths, four-band conformance footprint, grade bounds, road/water exclusions and height receipts remain authoritative. Finished geometric normals account for the crown and cut/fill slopes, with coincident junction mouth normals averaged across meshes. This modifies shading without moving the accepted road centerline.
+
+## Bounded showcase sequence
+
+In the explicitly configured 512m sandbox, run `bwork_sandbox action=create`, then `bwork_terrain action=apply stampShape=ridge`, then `bwork_roads action=apply`. Apply the connected-water sample and layered vegetation as the composition requires. The coordinator owns camera placement and the one assembled-world Unity review; these commands do not launch another Editor or touch a production island.
+
+Focused offline evidence at the September 15 implementation checkpoint: the shared Editor source compiled against Unity 6000.6.0f1 references; representative three-/four-arm road math retained the 24% grade bound and at least 0.03554m stored-grid clearance. Package tests cover normalized masks, bank classification, malformed profile rejection and protected cells under all three stamp shapes. Compilation and math checks are not visual acceptance or an iPad performance claim; live Unity review remains the milestone's responsibility.
+
+Reuse: [Unity Terrain Tools](https://docs.unity3d.com/Packages/com.unity.terrain-tools@5.3/manual/index.html) and ordinary TerrainLayer APIs provide the authored output model. [RoadArchitect](https://github.com/FritzsHero/RoadArchitect) remains a MIT reference rather than a new dependency; its current project activity does not verify Unity 6000.6/URP17.6 or iPad suitability. The verified finite road/junction solver is retained. Scans use [Poly Haven CC0](https://polyhaven.com/license), with `credits/road-material-source-manifest.json` and `credits/ground-material-source-manifest.json` identifying the exact sources.

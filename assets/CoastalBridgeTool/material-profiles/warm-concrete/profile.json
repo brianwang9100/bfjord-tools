@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "warm-concrete",
+  "materials": [
+    {
+      "key": "concrete",
+      "tilingMeters": 1.1,
+      "baseColor": [
+        0.78,
+        0.66,
+        0.48,
+        1
+      ],
+      "metallic": 0,
+      "smoothness": 0.2,
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "normalPath": "textures/concrete-normal.png",
+      "maskPath": "textures/concrete-mask.png"
+    },
+    {
+      "key": "concreteWeathered",
+      "tilingMeters": 1.1,
+      "baseColor": [
+        0.6396,
+        0.5412,
+        0.39359999999999995,
+        1
+      ],
+      "metallic": 0,
+      "smoothness": 0.2,
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "normalPath": "textures/concrete-normal.png",
+      "maskPath": "textures/concrete-mask.png"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Original BFjord material tint profile",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "name": "ambientCG Concrete034 / Lennart Demes, approximation material; 1.1 by 0.55m repeated twice vertically into a 1.1m square tile",
+      "license": "CC0-1.0",
+      "url": "https://ambientcg.com/view?id=Concrete034"
+    }
+  ]
+}

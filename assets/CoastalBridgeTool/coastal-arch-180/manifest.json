@@ -1,0 +1,171 @@
+{
+  "archRise": 35,
+  "archSpan": 120,
+  "boundsMax": {
+    "x": 6.517667770385742,
+    "y": 1.1950000524520874,
+    "z": 90.09064483642578
+  },
+  "boundsMin": {
+    "x": -6.517667770385742,
+    "y": -41.625,
+    "z": -90.09064483642578
+  },
+  "clearCarriageway": 7,
+  "colliderRelativePath": "bridge-collider.fbx",
+  "coordinateSystem": "unity-y-up-z-forward",
+  "deckDatum": 0,
+  "deckWidth": 8,
+  "generatorVersion": "coastal-bridge-1",
+  "id": "coastal-arch-180",
+  "lods": [
+    {
+      "fbxRelativePath": "bridge-lod0.fbx",
+      "level": 0,
+      "screenRelativeHeight": 0.35,
+      "triangles": 41940
+    },
+    {
+      "fbxRelativePath": "bridge-lod1.fbx",
+      "level": 1,
+      "screenRelativeHeight": 0.12,
+      "triangles": 5756
+    },
+    {
+      "fbxRelativePath": "bridge-lod2.fbx",
+      "level": 2,
+      "screenRelativeHeight": 0.015,
+      "triangles": 3572
+    }
+  ],
+  "materialSlots": [
+    {
+      "materialKey": "concrete",
+      "slotName": "BridgeConcrete"
+    },
+    {
+      "materialKey": "asphalt",
+      "slotName": "BridgeAsphalt"
+    },
+    {
+      "materialKey": "metal",
+      "slotName": "BridgeMetal"
+    },
+    {
+      "materialKey": "concreteWeathered",
+      "slotName": "BridgeConcreteWeathered"
+    },
+    {
+      "materialKey": "roadPaintAmber",
+      "slotName": "BridgeRoadPaintAmber"
+    },
+    {
+      "materialKey": "roadPaintWhite",
+      "slotName": "BridgeRoadPaintWhite"
+    }
+  ],
+  "materials": [
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "key": "concrete",
+      "maskPath": "textures/concrete-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/concrete-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 1.1
+    },
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/asphalt-basecolor.png",
+      "key": "asphalt",
+      "maskPath": "textures/asphalt-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/asphalt-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 2.1
+    },
+    {
+      "baseColor": [
+        0.055,
+        0.061,
+        0.063,
+        1
+      ],
+      "key": "metal",
+      "metallic": 0.7,
+      "smoothness": 0.38,
+      "tilingMeters": 1
+    },
+    {
+      "baseColor": [
+        0.78,
+        0.775,
+        0.74,
+        1
+      ],
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "key": "concreteWeathered",
+      "maskPath": "textures/concrete-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/concrete-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 1.1
+    },
+    {
+      "baseColor": [
+        0.9,
+        0.48,
+        0.055,
+        1
+      ],
+      "key": "roadPaintAmber",
+      "metallic": 0,
+      "smoothness": 0.22,
+      "tilingMeters": 1
+    },
+    {
+      "baseColor": [
+        0.72,
+        0.74,
+        0.7,
+        1
+      ],
+      "key": "roadPaintWhite",
+      "metallic": 0,
+      "smoothness": 0.18,
+      "tilingMeters": 1
+    }
+  ],
+  "recipeHash": "217c1cdce26006b549e429425502e2def171f17f680fa82d2d59287bb2ad7571",
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork open-spandrel bridge geometry",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "ambientCG Concrete034 / Lennart Demes, approximation material; 1.1 by 0.55m repeated twice vertically into a 1.1m square tile",
+      "url": "https://ambientcg.com/view?id=Concrete034"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Poly Haven clean_asphalt, reused reviewed RoadQuality maps",
+      "url": "https://polyhaven.com/a/clean_asphalt"
+    }
+  ],
+  "totalLength": 180,
+  "units": "meters"
+}

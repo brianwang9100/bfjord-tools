@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "revision": "bfjord-ground-01",
+  "provider": "Poly Haven",
+  "license": "CC0-1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "asset": "rocky_terrain",
+  "source": "https://polyhaven.com/a/rocky_terrain",
+  "tileMeters": 90,
+  "files": [
+    {
+      "role": "diffuse",
+      "file": "Assets/RoadQuality/Art/Textures/Rock_BaseMap.jpg",
+      "sha256": "429315865fd89c150272592f6d93def174c6f69804a565ff08e53627a885579b"
+    },
+    {
+      "role": "normal",
+      "file": "Assets/RoadQuality/Art/Textures/Rock_Normal.jpg",
+      "sha256": "a6556e1220c6e6c822e68ceeb9589719e4db8c87340199657cc705fea6ecf391"
+    }
+  ]
+}

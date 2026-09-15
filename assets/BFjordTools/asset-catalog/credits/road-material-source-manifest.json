@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "revision": "road-quality-materials-02",
+  "provider": "Poly Haven",
+  "credit": "Texture assets by Poly Haven contributors — https://polyhaven.com. Not endorsed by Poly Haven.",
+  "licenseURL": "https://polyhaven.com/license",
+  "apiTermsURL": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "sourceAssets": [
+    {
+      "id": "clean_asphalt",
+      "author": "Dimitrios Savva",
+      "page": "https://polyhaven.com/a/clean_asphalt",
+      "license": "CC0-1.0",
+      "tileMeters": 2.1
+    },
+    {
+      "id": "gravel_floor_03",
+      "author": "Charlotte Baglioni",
+      "page": "https://polyhaven.com/a/gravel_floor_03",
+      "license": "CC0-1.0",
+      "tileMeters": 2.5
+    },
+    {
+      "id": "park_dirt",
+      "author": "Christopher Melani",
+      "page": "https://polyhaven.com/a/park_dirt",
+      "license": "CC0-1.0",
+      "tileMeters": 3.0
+    },
+    {
+      "id": "leafy_grass",
+      "author": "Charlotte Baglioni",
+      "page": "https://polyhaven.com/a/leafy_grass",
+      "license": "CC0-1.0",
+      "tileMeters": 2.0
+    }
+  ],
+  "sourceFiles": [
+    {
+      "asset": "clean_asphalt",
+      "role": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_diff_1k.jpg",
+      "file": "clean_asphalt_diff_1k.jpg",
+      "bytes": 697630,
+      "md5": "7edccb95cbf72e63889baade8455f9e5",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083",
+      "reusedFrom": "Unity/BworkWorld/Assets/Bwork/ThirdParty/PolyHavenCleanAsphalt/Textures/clean_asphalt_diff_1k.jpg"
+    },
+    {
+      "asset": "clean_asphalt",
+      "role": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/clean_asphalt/clean_asphalt_rough_1k.png",
+      "file": "clean_asphalt_rough_1k.png",
+      "bytes": 1878547,
+      "md5": "a6b14fa39340820d707401d377b58e7d",
+      "sha256": "aff9bbdf84f878887e3b259bcb46e38135eb3416e56d83da5d02b123dade1911"
+    },
+    {
+      "asset": "clean_asphalt",
+      "role": "nor_gl",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_nor_gl_1k.jpg",
+      "file": "clean_asphalt_nor_gl_1k.jpg",
+      "bytes": 776360,
+      "md5": "24dadd366637a722b59c19a672cbbcf6",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310",
+      "reusedFrom": "Unity/BworkWorld/Assets/Bwork/ThirdParty/PolyHavenCleanAsphalt/Textures/clean_asphalt_nor_gl_1k.jpg"
+    },
+    {
+      "asset": "gravel_floor_03",
+      "role": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_floor_03/gravel_floor_03_diff_1k.jpg",
+      "file": "gravel_floor_03_diff_1k.jpg",
+      "bytes": 929643,
+      "md5": "b2d31ac9dd803cf32c9ced98bccf44bb",
+      "sha256": "9a55e233667a8cf3b3811154f1516eb1646127dff9b1f9af0430485763d40e04"
+    },
+    {
+      "asset": "gravel_floor_03",
+      "role": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/gravel_floor_03/gravel_floor_03_rough_1k.png",
+      "file": "gravel_floor_03_rough_1k.png",
+      "bytes": 1572924,
+      "md5": "66ebd4ddce7b723060b540c2ba0cfbcf",
+      "sha256": "06b3f9cc061ba8c03ab2752aa54aa7e03322f4a8e2a265345487b91606a329eb"
+    },
+    {
+      "asset": "gravel_floor_03",
+      "role": "nor_gl",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/gravel_floor_03/gravel_floor_03_nor_gl_1k.jpg",
+      "file": "gravel_floor_03_nor_gl_1k.jpg",
+      "bytes": 1545702,
+      "md5": "3985a5985a97fa50712f34fd69e61a82",
+      "sha256": "b1303eb80327e3f0edfa60fcf5c532dfabf29b7fb34673594bd4c27de32a2a65"
+    },
+    {
+      "asset": "leafy_grass",
+      "role": "Diffuse",
+      "file": "leafy_grass_diffuse.jpg",
+      "bytes": 1195394,
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a",
+      "reusedFrom": "Unity/BworkWorld/Assets/Bwork/ThirdParty/PolyHavenTerrain/Textures/leafy_grass_diffuse.jpg"
+    },
+    {
+      "asset": "leafy_grass",
+      "role": "TerrainMask",
+      "file": "leafy_grass_mask.png",
+      "bytes": 2314848,
+      "sha256": "2a28ef4f118b907172147275de81a730809ca0d1f09565f584f93b9a905feefc",
+      "reusedFrom": "Unity/BworkWorld/Assets/Bwork/ThirdParty/PolyHavenTerrain/Textures/leafy_grass_mask.png"
+    },
+    {
+      "asset": "leafy_grass",
+      "role": "nor_gl",
+      "file": "leafy_grass_normal.jpg",
+      "bytes": 1466049,
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6",
+      "reusedFrom": "Unity/BworkWorld/Assets/Bwork/ThirdParty/PolyHavenTerrain/Textures/leafy_grass_normal.jpg"
+    },
+    {
+      "asset": "park_dirt",
+      "role": "Diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/park_dirt/park_dirt_diff_1k.jpg",
+      "file": "park_dirt_diff_1k.jpg",
+      "bytes": 1146359,
+      "md5": "886c84c87cc21d5379675dfa404c9cc9",
+      "sha256": "5c4b518f993c845b25a8d1a54b35b8657b85f93c21c54df7802f33b02771dcc1"
+    },
+    {
+      "asset": "park_dirt",
+      "role": "Rough",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/park_dirt/park_dirt_rough_1k.png",
+      "file": "park_dirt_rough_1k.png",
+      "bytes": 2566792,
+      "md5": "a2d1aa5cc326dbaa9399793c1bcc3ccc",
+      "sha256": "94e574b4832bb5c19eca8dfb96a3257219238d6ad71ed3b8ddaeaf20e937a2ae"
+    },
+    {
+      "asset": "park_dirt",
+      "role": "nor_gl",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/park_dirt/park_dirt_nor_gl_1k.jpg",
+      "file": "park_dirt_nor_gl_1k.jpg",
+      "bytes": 1138665,
+      "md5": "ce48b10becd7bd2146771909a076b74d",
+      "sha256": "36a3a8e06857090a8fa3ea19e23366ba80d14f016fa12567d496f8576a3af397"
+    }
+  ],
+  "providerMetadata": [
+    {
+      "asset": "clean_asphalt",
+      "fileAPI": "https://api.polyhaven.com/files/clean_asphalt",
+      "sha256": "4c8cfadc6f2dcfd5092b8d75c62ee5a6ad731a56870dc0c5c86ccd6a2891e63f"
+    },
+    {
+      "asset": "gravel_floor_03",
+      "fileAPI": "https://api.polyhaven.com/files/gravel_floor_03",
+      "sha256": "56b1bfe0f7966992d0662c037ce960f0ce73ad1abc5af56e5c996297e32c1af3"
+    },
+    {
+      "asset": "park_dirt",
+      "fileAPI": "https://api.polyhaven.com/files/park_dirt",
+      "sha256": "27dc5c6a17e0083520f27eb81fbd9fcf11e0a78446db6fb8263bc5d236ad7531"
+    }
+  ]
+}

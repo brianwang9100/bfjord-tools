@@ -1,0 +1,107 @@
+{
+    "uniqueVertexAndIndexBytes": 10470858,
+    "textureASTC6BytesIncludingMips": 2942304,
+    "geometryAndTextureBytes": 13413162,
+    "meshes": [
+        {
+            "name": "MatureFir_A_LOD0_Branches",
+            "lod": 0,
+            "vertices": 20320,
+            "triangles": 21422,
+            "vertexBytes": 975360,
+            "indexBytes": 128532,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD0_Trunk",
+            "lod": 0,
+            "vertices": 9410,
+            "triangles": 14368,
+            "vertexBytes": 451680,
+            "indexBytes": 86208,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD0_Foliage",
+            "lod": 0,
+            "vertices": 80087,
+            "triangles": 66744,
+            "vertexBytes": 3844176,
+            "indexBytes": 800928,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD0_DeadBranches",
+            "lod": 0,
+            "vertices": 1498,
+            "triangles": 1768,
+            "vertexBytes": 71904,
+            "indexBytes": 10608,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD1_Branches",
+            "lod": 1,
+            "vertices": 18427,
+            "triangles": 17872,
+            "vertexBytes": 884496,
+            "indexBytes": 107232,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD1_Trunk",
+            "lod": 1,
+            "vertices": 3239,
+            "triangles": 4468,
+            "vertexBytes": 155472,
+            "indexBytes": 26808,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD1_Foliage",
+            "lod": 1,
+            "vertices": 52437,
+            "triangles": 33753,
+            "vertexBytes": 2516976,
+            "indexBytes": 202518,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD1_DeadBranches",
+            "lod": 1,
+            "vertices": 1724,
+            "triangles": 1318,
+            "vertexBytes": 82752,
+            "indexBytes": 7908,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD2_Trunk",
+            "lod": 2,
+            "vertices": 1138,
+            "triangles": 1407,
+            "vertexBytes": 54624,
+            "indexBytes": 8442,
+            "chargedUnique": true
+        },
+        {
+            "name": "MatureFir_A_LOD2_Foliage",
+            "lod": 2,
+            "vertices": 52437,
+            "triangles": 33753,
+            "vertexBytes": 2516976,
+            "indexBytes": 202518,
+            "chargedUnique": false
+        },
+        {
+            "name": "MatureFir_A_LOD2_DeadBranches",
+            "lod": 2,
+            "vertices": 1044,
+            "triangles": 687,
+            "vertexBytes": 50112,
+            "indexBytes": 4122,
+            "chargedUnique": true
+        }
+    ],
+    "status": "One mature tree art candidate; aggregate GPU reservation and actual terrain-scene visual review remain required. Far foliage is conservative and not a dense mobile forest policy."
+}

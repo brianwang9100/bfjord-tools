@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "com.bfjord.tools": "file:../../../Packages/com.bfjord.tools",
+    "com.unity.render-pipelines.universal": "17.6.0",
+    "com.unity.pipeline": "0.7.0-exp.1",
+    "com.unity.modules.terrain": "1.0.0",
+    "com.unity.modules.terrainphysics": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0"
+  },
+  "testables": [
+    "com.bfjord.tools"
+  ]
+}

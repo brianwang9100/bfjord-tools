@@ -1,0 +1,42 @@
+{
+  "id": "forest-edge-canopy-001",
+  "area": {
+    "x": 182,
+    "y": 158,
+    "width": 68,
+    "height": 70
+  },
+  "seed": 41838,
+  "maximumCount": 40,
+  "densityPerHectare": 85,
+  "minimumSpacing": 7.2,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 30,
+  "clusterCount": 5,
+  "clusterRadius": 22,
+  "spacingGroup": "woody",
+  "species": [
+    {
+      "id": "MatureFir_A",
+      "prefabKey": "bfjord:MatureFir_A",
+      "weight": 1,
+      "radius": 3.0,
+      "minimumScale": 0.84,
+      "maximumScale": 1.08,
+      "groundOffsetMeters": -0.03
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 3
+    }
+  ]
+}

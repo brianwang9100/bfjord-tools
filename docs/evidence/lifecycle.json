@@ -1,0 +1,180 @@
+{
+  "reset": "Removed bundled samples in reverse dependency order; terrain recipe retained.",
+  "terrainFootprints": {
+    "passed": true,
+    "protectedCount": 4184,
+    "changedCount": 8145,
+    "restoredExactly": true
+  },
+  "roads": {
+    "passed": true,
+    "prepareReadOnly": true,
+    "repeatExact": true,
+    "removeRestored": true,
+    "obsoleteMeshesDeleted": true,
+    "report": {
+      "applied": true,
+      "roads": 3,
+      "junctions": 1,
+      "vertices": 2756,
+      "triangles": 3638,
+      "gradePercent": 23.999999463558286,
+      "surfaceGradePercent": 29.872582706766465,
+      "changedHeightCells": 5900,
+      "minimumTerrainClearanceMeters": 0.03282790392449897,
+      "priorMinimumTerrainClearanceMeters": -1.7356072882443527,
+      "maximumAdditionalCutMeters": 2.2734564542770386,
+      "terrainConstraintVertices": 329665,
+      "terrainFullDetailSimplification": 4,
+      "sourceIds": [
+        "original-sandbox-west",
+        "original-sandbox-east",
+        "original-sandbox-south"
+      ],
+      "spans": 0
+    }
+  },
+  "water": {
+    "passed": true,
+    "prepareReadOnly": true,
+    "repeatExact": true,
+    "removeRestored": true,
+    "obsoleteAssetsDeleted": true,
+    "reciprocalOwnershipGuard": true,
+    "report": {
+      "applied": true,
+      "nodes": 9,
+      "reaches": 7,
+      "vertices": 29243,
+      "triangles": 55711,
+      "changedCells": 9079,
+      "surface": "One welded river/lake/delta/ocean union; no stacked water meshes."
+    }
+  },
+  "structures": {
+    "passed": true,
+    "prepareReadOnly": true,
+    "repeatExact": true,
+    "removeRestored": true,
+    "holesRestored": true,
+    "report": {
+      "applied": true,
+      "structures": 2,
+      "bridges": 1,
+      "tunnels": 1,
+      "parts": 23,
+      "vertices": 27516,
+      "triangles": 9172,
+      "maximumGradePercent": 24.37431812286377,
+      "changedHoleCells": 117,
+      "changedHeightCells": 1166,
+      "approachMinimumClearance": 0.03303372503321711,
+      "approachBeforeMinimumClearance": -0.9442165940981511,
+      "approachMaximumAdditionalCut": 1.1702719330787659,
+      "clearances": [
+        {
+          "id": "curved-coast-bridge",
+          "minimumSampledUndersideClearance": 3.999999
+        }
+      ],
+      "sourceIds": [
+        "original-sandbox-bridge",
+        "original-sandbox-tunnel"
+      ]
+    }
+  },
+  "foliage": {
+    "passed": true,
+    "prepareReadOnly": true,
+    "repeatExact": true,
+    "separateBatchesPreserved": true,
+    "report": {
+      "forest": {
+        "action": "apply",
+        "batchId": "forest",
+        "batchRoot": "Bwork Foliage [owned:bwork_foliage:v1:forest]",
+        "recipeId": "sandbox-eastern-slope-forest-002",
+        "state": "applied",
+        "error": null,
+        "recipeAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-forest-recipe.json",
+        "resultAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-forest-result.json",
+        "target": 612,
+        "considered": 2768,
+        "placed": 612,
+        "existing": 612,
+        "lodGroups": 612,
+        "renderers": 3188,
+        "collidersRemoved": 0,
+        "rejectedGround": 0,
+        "rejectedHeight": 0,
+        "rejectedSlope": 1000,
+        "rejectedExclusion": 229,
+        "rejectedSpacing": 927,
+        "exclusionGroups": 3,
+        "exclusionTriangles": 68521,
+        "exclusionPrimitives": 1,
+        "elapsedSeconds": 1.0329475,
+        "assetCatalog": null
+      },
+      "scrub": {
+        "action": "apply",
+        "batchId": "scrub",
+        "batchRoot": "Bwork Foliage [owned:bwork_foliage:v1:scrub]",
+        "recipeId": "sandbox-scrub-001",
+        "state": "applied",
+        "error": null,
+        "recipeAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-scrub-recipe.json",
+        "resultAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-scrub-result.json",
+        "target": 238,
+        "considered": 471,
+        "placed": 238,
+        "existing": 238,
+        "lodGroups": 238,
+        "renderers": 714,
+        "collidersRemoved": 0,
+        "rejectedGround": 0,
+        "rejectedHeight": 0,
+        "rejectedSlope": 25,
+        "rejectedExclusion": 99,
+        "rejectedSpacing": 109,
+        "exclusionGroups": 3,
+        "exclusionTriangles": 68521,
+        "exclusionPrimitives": 1,
+        "elapsedSeconds": 0.6596131,
+        "assetCatalog": null
+      },
+      "rock": {
+        "action": "apply",
+        "batchId": "rock",
+        "batchRoot": "Bwork Foliage [owned:bwork_foliage:v1:rock]",
+        "recipeId": "sandbox-rock-001",
+        "state": "applied",
+        "error": null,
+        "recipeAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-rock-recipe.json",
+        "resultAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-rock-result.json",
+        "target": 166,
+        "considered": 10624,
+        "placed": 141,
+        "existing": 141,
+        "lodGroups": 141,
+        "renderers": 423,
+        "collidersRemoved": 0,
+        "rejectedGround": 0,
+        "rejectedHeight": 0,
+        "rejectedSlope": 5760,
+        "rejectedExclusion": 2284,
+        "rejectedSpacing": 2439,
+        "exclusionGroups": 3,
+        "exclusionTriangles": 68521,
+        "exclusionPrimitives": 1,
+        "elapsedSeconds": 2.9736282,
+        "assetCatalog": null
+      }
+    }
+  },
+  "result": {
+    "passed": true,
+    "seconds": 55.73509,
+    "scope": "Isolated 512m authoring sandbox; not island or device acceptance."
+  }
+}

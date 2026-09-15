@@ -1,0 +1,251 @@
+{
+  "externalPackageGuids": [
+    "933532a4fcc9baf4fa0491de14d08ed7",
+    "d0353a89b1f911e48b9e16bdc9f2e058"
+  ],
+  "files": [
+    {
+      "bytes": 4155,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat",
+      "sha256": "1bb01b587fed9f5002eacdef479e1010acc46cdd8d0d36aebe7b06765d8fb57f"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/rock_moss_set_01.mat.meta",
+      "sha256": "ba95b34b102226bcb3b1c7b0e093c6f164bd93913f8294c2fc54f2ce6b202e5b"
+    },
+    {
+      "bytes": 4177,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat",
+      "sha256": "a098101a33d27f21f76ea74bccc4eacef59872ce8ab0b17528c147723744bfe7"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Materials/shrub_03.mat.meta",
+      "sha256": "c2c65589f59763ab24a4a2cf192b429d32ded2ef41cc61333b0abb22a06cf0ed"
+    },
+    {
+      "bytes": 451366,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx",
+      "sha256": "bcad23ba3f2f331869f8bc97943e3183ee7cf607e750c0a19db9c7a7a11b5400"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/rock_moss_set_01_rock01.fbx.meta",
+      "sha256": "f5623225dfddcf14af83d4a5bf687897f0a47e97fa26cfc391cdd9defea7e9ee"
+    },
+    {
+      "bytes": 200910,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx",
+      "sha256": "29f6ff8c5329bc68bffadbb04b3de000a70b715437bf3c2c7f988af29d86f453"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Models/shrub_03_a.fbx.meta",
+      "sha256": "ce8249f7e4faac73bb7f93c0ae8ad9c91718d9fd00f4612d4fb2377047d720fb"
+    },
+    {
+      "bytes": 9822,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab",
+      "sha256": "d4ed03810228784c98a5ce42ab9f0346210242369e537589109460cec8db1584"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab.meta",
+      "sha256": "ff63b14d5ae4c1b031b69ae5e33019f8e314bd63fb9843d4109a322f6802fe9b"
+    },
+    {
+      "bytes": 9766,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab",
+      "sha256": "a3abea47391e16bf8a02fbc6f58112e6eee127be27bb4212d8054fc21f0f23d8"
+    },
+    {
+      "bytes": 154,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab.meta",
+      "sha256": "37c15b1e1b1dedb075cc3d0088b6186b5a88f66da8202b41283fc605f1f08ff4"
+    },
+    {
+      "bytes": 437916,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png",
+      "sha256": "b900390b0b42219a26a98e74b6188e2842e754e9dfcd4582d5f59fe4f1cff377"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_BaseMap.png.meta",
+      "sha256": "155922bd5f1e94711597c88fe6add342eaac49fee5f91d1061f79b8af82f6cec"
+    },
+    {
+      "bytes": 32461,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png",
+      "sha256": "ec0195b9eb9945a7a3c34ae5d825a95f754eaed6ebd6a71f05635ab7d7556956"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_MetallicSmoothness.png.meta",
+      "sha256": "da8e248a5cfdf238dd2e7ee85ab0ffb15866f27ec3886106981672bd1795b504"
+    },
+    {
+      "bytes": 471092,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png",
+      "sha256": "57c4e31bdd593d68136607fa69e429b94348ad7d760799d3df28679e6f926487"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/rock_moss_set_01_Normal.png.meta",
+      "sha256": "45938d78c60e4f540d832cebd7d952fa627a2fddf14e1fea3756ff2364607939"
+    },
+    {
+      "bytes": 452019,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png",
+      "sha256": "270c472ceab017a7ef55a88263c6e4470fc890e87cf8035537dc55edda32d6c5"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_BaseMap.png.meta",
+      "sha256": "9a450c56d60117a75e78e6b7ed3c4df8963ab50e54d6985b90fb9985ccceb1c4"
+    },
+    {
+      "bytes": 36004,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png",
+      "sha256": "ae01b621f5cc5f0692da4365c0ce0932b12a5680d815f640d3d8e8d645f1729b"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_MetallicSmoothness.png.meta",
+      "sha256": "5be55efdcf5ef8d602432bde47e443dd649712b9321666af899220e740736aa5"
+    },
+    {
+      "bytes": 391980,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png",
+      "sha256": "4ed894d7cc81ba7da5a930ac3d56e458bcaf7b786ec4f91c26595a2d5cd2313f"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/Bwork/ThirdParty/PolyHaven/Textures/shrub_03_Normal.png.meta",
+      "sha256": "e09818fc0b25aa74fc1b84138d96885bd49fc67582dbfe23ee9c4ecc4de68b80"
+    },
+    {
+      "bytes": 4181,
+      "path": "Assets/RoadQuality/Art/Materials/Asphalt.mat",
+      "sha256": "6d1c6e85e5f795663eeacd291c4cb9a30cd58f53d359e060d2f7884ce52b4669"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Asphalt.mat.meta",
+      "sha256": "6be57db90d119bb626949b65212957abdebda8ea9c7b390c58dc13bf0671173e"
+    },
+    {
+      "bytes": 4155,
+      "path": "Assets/RoadQuality/Art/Materials/Gravel.mat",
+      "sha256": "9ce723ea774f140eb89074d40e86b5314799fd798b581a4ff447ae0ba2565c37"
+    },
+    {
+      "bytes": 188,
+      "path": "Assets/RoadQuality/Art/Materials/Gravel.mat.meta",
+      "sha256": "63ba26bef1edad3062897415174b49b9ad0ae2797980a9582362ed173145ae23"
+    },
+    {
+      "bytes": 697630,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg",
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_BaseMap.jpg.meta",
+      "sha256": "dae52a38cf6051b7d7382a33760c082a59d4b3c83e7059fa7801e0d5da87fd79"
+    },
+    {
+      "bytes": 196089,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png",
+      "sha256": "904cdd6ed8c46bfd26006dcf0ad808d2ea6f677caddfc56c1f6eb8c7f66415ff"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_MetallicSmoothness.png.meta",
+      "sha256": "6712682834daf5b7e0619058c7c731d72c89fbd6b448dffd9b5d801f164599ff"
+    },
+    {
+      "bytes": 776360,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg",
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Asphalt_Normal.jpg.meta",
+      "sha256": "fd792a75e1e415419c32635ccdae6dcc63e0c2c72bd0160591df0703b3aeda4f"
+    },
+    {
+      "bytes": 1146359,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg",
+      "sha256": "5c4b518f993c845b25a8d1a54b35b8657b85f93c21c54df7802f33b02771dcc1"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_BaseMap.jpg.meta",
+      "sha256": "6da52dd3d64f2339267eaa15aa1dfda4f6c5ffcea1f182a3b376fc38ef8f5107"
+    },
+    {
+      "bytes": 1138665,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg",
+      "sha256": "36a3a8e06857090a8fa3ea19e23366ba80d14f016fa12567d496f8576a3af397"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Dirt_Normal.jpg.meta",
+      "sha256": "b158178ffe27fca6a828677085fd125e12b3dc4aac6432cc8effc4bf7520909d"
+    },
+    {
+      "bytes": 929643,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg",
+      "sha256": "9a55e233667a8cf3b3811154f1516eb1646127dff9b1f9af0430485763d40e04"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_BaseMap.jpg.meta",
+      "sha256": "84c4e84bad773a43120a2970a694fa3b0ccedc7ee7cb047e6e8512e0ac619819"
+    },
+    {
+      "bytes": 75962,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png",
+      "sha256": "7c5d455aae7a81eac33fa938c05d6517ebde53ff8bd5f0df74bb926e0fb70e00"
+    },
+    {
+      "bytes": 3420,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_MetallicSmoothness.png.meta",
+      "sha256": "ae414d763917f8154a2bb593acfccbadd423e262bdb89e94108805a3d21bdb47"
+    },
+    {
+      "bytes": 1545702,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg",
+      "sha256": "b1303eb80327e3f0edfa60fcf5c532dfabf29b7fb34673594bd4c27de32a2a65"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Gravel_Normal.jpg.meta",
+      "sha256": "0d5581e2c3910120b4ba1ea74de90d3156370443267cbd9dac58172b27dfb951"
+    },
+    {
+      "bytes": 1195394,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_BaseMap.jpg.meta",
+      "sha256": "b2cabfcf85019789f664a29c8a6755804acd4181234ed448e93b332afa53d670"
+    },
+    {
+      "bytes": 1466049,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_Normal.jpg",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    {
+      "bytes": 3423,
+      "path": "Assets/RoadQuality/Art/Textures/Ground_Normal.jpg.meta",
+      "sha256": "49135b2dc4383478831a364eeed9e3227504f1e4fb2786ec04dc3983cea08b0a"
+    }
+  ],
+  "schemaVersion": 1,
+  "unityVersion": "6000.6.0f1",
+  "urpVersion": "17.6"
+}

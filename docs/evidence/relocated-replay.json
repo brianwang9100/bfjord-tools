@@ -1,0 +1,499 @@
+[
+  {
+    "request": "terrain",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "state": "prepared",
+        "cells": 10591,
+        "maximumHeightChangeMeters": 47.4347649,
+        "milliseconds": 43.8843,
+        "operations": [
+          "Stamp",
+          "ThermalErosion",
+          "Smooth",
+          "Flatten"
+        ]
+      }
+    }
+  },
+  {
+    "request": "terrain-apply",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "state": "applied",
+        "cells": 10591,
+        "maximumHeightChangeMeters": 47.4347649,
+        "milliseconds": 284.27000000000004,
+        "operations": [
+          "Stamp",
+          "ThermalErosion",
+          "Smooth",
+          "Flatten"
+        ]
+      }
+    }
+  },
+  {
+    "request": "roads",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "applied": true,
+        "roads": 3,
+        "junctions": 1,
+        "vertices": 2756,
+        "triangles": 3638,
+        "gradePercent": 23.999999463558286,
+        "surfaceGradePercent": 29.872582706766465,
+        "changedHeightCells": 5900,
+        "minimumTerrainClearanceMeters": 0.03282790392449897,
+        "priorMinimumTerrainClearanceMeters": -1.7356072882443527,
+        "maximumAdditionalCutMeters": 2.2734564542770386,
+        "terrainConstraintVertices": 329665,
+        "terrainFullDetailSimplification": 4,
+        "sourceIds": [
+          "original-sandbox-west",
+          "original-sandbox-east",
+          "original-sandbox-south"
+        ],
+        "spans": 0
+      }
+    }
+  },
+  {
+    "request": "water",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "applied": true,
+        "nodes": 9,
+        "reaches": 7,
+        "vertices": 29243,
+        "triangles": 55711,
+        "changedCells": 9079,
+        "surface": "One welded river/lake/delta/ocean union; no stacked water meshes."
+      }
+    }
+  },
+  {
+    "request": "foliage-assets",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "action": "build-assets",
+        "batchId": "",
+        "batchRoot": "Bwork Foliage [owned:bwork_foliage:v1]",
+        "recipeId": null,
+        "state": "assets-ready",
+        "error": null,
+        "recipeAssetPath": null,
+        "resultAssetPath": null,
+        "target": 0,
+        "considered": 0,
+        "placed": 0,
+        "existing": 0,
+        "lodGroups": 0,
+        "renderers": 0,
+        "collidersRemoved": 0,
+        "rejectedGround": 0,
+        "rejectedHeight": 0,
+        "rejectedSlope": 0,
+        "rejectedExclusion": 0,
+        "rejectedSpacing": 0,
+        "exclusionGroups": 0,
+        "exclusionTriangles": 0,
+        "exclusionPrimitives": 0,
+        "elapsedSeconds": 0.0,
+        "assetCatalog": {
+          "revision": "foliage-presentation-1",
+          "fingerprint": "ad5563167558793f364bbb37aa2431aa",
+          "directory": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478",
+          "entries": [
+            {
+              "id": "MatureFir_A",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/MatureFir_A.prefab",
+              "triangles": [
+                104302,
+                57411,
+                35847
+              ],
+              "height": 18.9570465,
+              "windAmplitude": 0.22,
+              "boundsPadding": 0.4488
+            },
+            {
+              "id": "pine_sapling_small_b",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/pine_sapling_small_b.prefab",
+              "triangles": [
+                122235,
+                7992,
+                1992
+              ],
+              "height": 1.046787,
+              "windAmplitude": 0.055,
+              "boundsPadding": 0.1122
+            },
+            {
+              "id": "fern_02_a",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/fern_02_a.prefab",
+              "triangles": [
+                784,
+                784,
+                272
+              ],
+              "height": 0.2870151,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "fern_02_b",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/fern_02_b.prefab",
+              "triangles": [
+                2384,
+                891,
+                272
+              ],
+              "height": 0.430476844,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "fern_02_c",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/fern_02_c.prefab",
+              "triangles": [
+                2248,
+                891,
+                271
+              ],
+              "height": 0.351823866,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "fern_02_d",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/fern_02_d.prefab",
+              "triangles": [
+                816,
+                816,
+                272
+              ],
+              "height": 0.213087559,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "shrub_03_a",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/shrub_03_a.prefab",
+              "triangles": [
+                2385,
+                1741,
+                870
+              ],
+              "height": 0.4027838,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "shrub_03_b",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/shrub_03_b.prefab",
+              "triangles": [
+                2134,
+                1471,
+                735
+              ],
+              "height": 0.352503836,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "shrub_03_c",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/shrub_03_c.prefab",
+              "triangles": [
+                1790,
+                1349,
+                674
+              ],
+              "height": 0.304394782,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "shrub_03_d",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/shrub_03_d.prefab",
+              "triangles": [
+                1978,
+                1219,
+                609
+              ],
+              "height": 0.255551219,
+              "windAmplitude": 0.035,
+              "boundsPadding": 0.0714
+            },
+            {
+              "id": "rock_moss_set_01_rock01",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock01.prefab",
+              "triangles": [
+                11000,
+                2492,
+                642
+              ],
+              "height": 1.48081541,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            },
+            {
+              "id": "rock_moss_set_01_rock02",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock02.prefab",
+              "triangles": [
+                10996,
+                2492,
+                642
+              ],
+              "height": 1.26374662,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            },
+            {
+              "id": "rock_moss_set_01_rock03",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock03.prefab",
+              "triangles": [
+                5000,
+                2492,
+                642
+              ],
+              "height": 1.10149407,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            },
+            {
+              "id": "rock_moss_set_01_rock04",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock04.prefab",
+              "triangles": [
+                10589,
+                2491,
+                641
+              ],
+              "height": 1.77063692,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            },
+            {
+              "id": "rock_moss_set_01_rock05",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock05.prefab",
+              "triangles": [
+                16548,
+                2492,
+                642
+              ],
+              "height": 1.22094977,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            },
+            {
+              "id": "rock_moss_set_01_rock06",
+              "prefabPath": "Assets/Generated/AuthoringTools/FoliageLibrary/ad5563167558793f364bbb37aa2431aa-5b92fdf910ad4e6e92f7ad84616b6478/rock_moss_set_01_rock06.prefab",
+              "triangles": [
+                8994,
+                2492,
+                642
+              ],
+              "height": 1.26185274,
+              "windAmplitude": 0.0,
+              "boundsPadding": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "request": "foliage-canopy",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "action": "apply",
+        "batchId": "canopy",
+        "batchRoot": "Bwork Foliage [owned:bwork_foliage:v1:canopy]",
+        "recipeId": "forest-edge-canopy-001",
+        "state": "applied",
+        "error": null,
+        "recipeAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-canopy-recipe.json",
+        "resultAssetPath": "Assets/Generated/AuthoringTools/bwork-foliage-canopy-result.json",
+        "target": 40,
+        "considered": 665,
+        "placed": 40,
+        "existing": 40,
+        "lodGroups": 40,
+        "renderers": 440,
+        "collidersRemoved": 0,
+        "rejectedGround": 40,
+        "rejectedHeight": 0,
+        "rejectedSlope": 32,
+        "rejectedExclusion": 18,
+        "rejectedSpacing": 535,
+        "exclusionGroups": 2,
+        "exclusionTriangles": 59349,
+        "exclusionPrimitives": 1,
+        "elapsedSeconds": 0.3131275,
+        "assetCatalog": null
+      }
+    }
+  },
+  {
+    "request": "bridge-collection",
+    "exitCode": 0,
+    "result": {
+      "schemaVersion": 1,
+      "success": true,
+      "result": {
+        "scene": "Assets/Scenes/BridgeCollection.unity",
+        "sceneDirty": false,
+        "cameras": [
+          "coastal-arch-180-hero",
+          "coastal-arch-180-reverse",
+          "coastal-arch-180-side",
+          "coastal-arch-180-riding",
+          "stone-viaduct-110-hero",
+          "stone-viaduct-110-reverse",
+          "stone-viaduct-110-side",
+          "stone-viaduct-110-riding",
+          "steel-through-truss-88-hero",
+          "steel-through-truss-88-reverse",
+          "steel-through-truss-88-side",
+          "steel-through-truss-88-riding",
+          "timber-trestle-80-hero",
+          "timber-trestle-80-reverse",
+          "timber-trestle-80-side",
+          "timber-trestle-80-riding",
+          "coastal-warm"
+        ],
+        "sites": [
+          {
+            "id": "coastal-arch-180",
+            "label": "Coastal arch",
+            "batchId": "collection-coastal-arch-180",
+            "manifest": "[checkout]/assets/CoastalBridgeTool/coastal-arch-180/manifest.json",
+            "placement": "Assets/Generated/BridgeCollection/coastal-arch-180-placement.json",
+            "deckElevation": 46.0,
+            "bearingBottom": 4.375,
+            "bridge": {
+              "state": "applied",
+              "batchId": "collection-coastal-arch-180",
+              "root": "Bwork Bridge Asset [batch:collection-coastal-arch-180]",
+              "sourceHash": "ac45f8d0e67ba8e8a91c45849ff41443e3cbb0325e2cb7096dabebba2cb0f9fc",
+              "recipeHash": "217c1cdce26006b549e429425502e2def171f17f680fa82d2d59287bb2ad7571",
+              "triangles": [
+                41940,
+                5756,
+                3572
+              ],
+              "renderers": 17,
+              "colliders": 1,
+              "pendingRecovery": false,
+              "generationDirectory": "Assets/Generated/BridgeAssets/collection-coastal-arch-180/ac45f8d0e67ba8e8-58c31c289d7a4ed188a2caa7eda593bf",
+              "targetScene": "Assets/Scenes/BridgeCollection.unity",
+              "cleanupPending": 0
+            }
+          },
+          {
+            "id": "stone-viaduct-110",
+            "label": "Stone viaduct",
+            "batchId": "collection-stone-viaduct-110",
+            "manifest": "[checkout]/assets/CoastalBridgeTool/stone-viaduct-110/manifest.json",
+            "placement": "Assets/Generated/BridgeCollection/stone-viaduct-110-placement.json",
+            "deckElevation": 19.5,
+            "bearingBottom": 0.5,
+            "bridge": {
+              "state": "applied",
+              "batchId": "collection-stone-viaduct-110",
+              "root": "Bwork Bridge Asset [batch:collection-stone-viaduct-110]",
+              "sourceHash": "fdbacdfd3fc7c0e61f75079cab9f6e8b086bf2690d4f7a86b42005b6196674a8",
+              "recipeHash": "aae9337190b50f8b1a1f34d497be3c9b13bb80ab59c491c53bd6d36d089ed3ee",
+              "triangles": [
+                23032,
+                4680,
+                1056
+              ],
+              "renderers": 15,
+              "colliders": 1,
+              "pendingRecovery": false,
+              "generationDirectory": "Assets/Generated/BridgeAssets/collection-stone-viaduct-110/fdbacdfd3fc7c0e6-d120342198644d568c870e06d24bc8d8",
+              "targetScene": "Assets/Scenes/BridgeCollection.unity",
+              "cleanupPending": 0
+            }
+          },
+          {
+            "id": "steel-through-truss-88",
+            "label": "Steel through truss",
+            "batchId": "collection-steel-through-truss-88",
+            "manifest": "[checkout]/assets/CoastalBridgeTool/steel-through-truss-88/manifest.json",
+            "placement": "Assets/Generated/BridgeCollection/steel-through-truss-88-placement.json",
+            "deckElevation": 13.0,
+            "bearingBottom": 3.30000019,
+            "bridge": {
+              "state": "applied",
+              "batchId": "collection-steel-through-truss-88",
+              "root": "Bwork Bridge Asset [batch:collection-steel-through-truss-88]",
+              "sourceHash": "d0e1932bcdf4e7bc50c93c4bdb0aa000dd0c50134abd5fd21eb1ae6ba113dd15",
+              "recipeHash": "2c76500d0f6e14620b3197bb9011d8e3ccf1643f24cea7a6e389a80943d70716",
+              "triangles": [
+                37812,
+                4260,
+                1812
+              ],
+              "renderers": 18,
+              "colliders": 1,
+              "pendingRecovery": false,
+              "generationDirectory": "Assets/Generated/BridgeAssets/collection-steel-through-truss-88/d0e1932bcdf4e7bc-8e186466d60048128f1a9e731cca0c73",
+              "targetScene": "Assets/Scenes/BridgeCollection.unity",
+              "cleanupPending": 0
+            }
+          },
+          {
+            "id": "timber-trestle-80",
+            "label": "Timber trestle",
+            "batchId": "collection-timber-trestle-80",
+            "manifest": "[checkout]/assets/CoastalBridgeTool/timber-trestle-80/manifest.json",
+            "placement": "Assets/Generated/BridgeCollection/timber-trestle-80-placement.json",
+            "deckElevation": 16.9,
+            "bearingBottom": 0.5,
+            "bridge": {
+              "state": "applied",
+              "batchId": "collection-timber-trestle-80",
+              "root": "Bwork Bridge Asset [batch:collection-timber-trestle-80]",
+              "sourceHash": "f8cc60409b15466c21fb0b88209047f784bca244adb56ba813b6acd7825431dc",
+              "recipeHash": "5b676c0d4bcdc71a2c8711df2d0499cf069535628bed5aa8aedca65aa692f4e6",
+              "triangles": [
+                53460,
+                5412,
+                3612
+              ],
+              "renderers": 17,
+              "colliders": 1,
+              "pendingRecovery": false,
+              "generationDirectory": "Assets/Generated/BridgeAssets/collection-timber-trestle-80/f8cc60409b15466c-a1f9f8a9cfd549198bde7b683d255ac0",
+              "targetScene": "Assets/Scenes/BridgeCollection.unity",
+              "cleanupPending": 0
+            }
+          }
+        ],
+        "terrainCount": 4,
+        "note": "Finite Editor presentation sites, 500 m apart. Status bridge receipts report source triangles for all three LODs; no physics, device or sustained-performance claim. Coastal-warm temporarily applies the independent warm profile and restores default surfaces."
+      }
+    }
+  }
+]

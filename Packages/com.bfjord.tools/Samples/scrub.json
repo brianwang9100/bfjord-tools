@@ -1,0 +1,58 @@
+{
+  "id": "sandbox-scrub-001",
+  "area": {
+    "x": 45,
+    "y": 45,
+    "width": 220,
+    "height": 120
+  },
+  "seed": 72103,
+  "maximumCount": 500,
+  "densityPerHectare": 90,
+  "minimumSpacing": 4,
+  "minimumHeight": -10,
+  "maximumHeight": 75,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 34,
+  "species": [
+    {
+      "id": "shrub",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab",
+      "weight": 0.57,
+      "radius": 1.1,
+      "minimumScale": 0.72,
+      "maximumScale": 1.18
+    },
+    {
+      "id": "fern",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/fern_02_b.prefab",
+      "weight": 0.31,
+      "radius": 0.7,
+      "minimumScale": 0.75,
+      "maximumScale": 1.22
+    },
+    {
+      "id": "pine-sapling",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/pine_sapling_small_b.prefab",
+      "weight": 0.12,
+      "radius": 1.3,
+      "minimumScale": 0.72,
+      "maximumScale": 0.94
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "scrub-access",
+      "kind": "capsule",
+      "a": {
+        "x": 45,
+        "y": 250
+      },
+      "b": {
+        "x": 205,
+        "y": 250
+      },
+      "radius": 5
+    }
+  ]
+}

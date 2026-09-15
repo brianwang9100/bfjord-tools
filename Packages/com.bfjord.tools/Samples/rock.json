@@ -1,0 +1,57 @@
+{
+  "id": "sandbox-rock-001",
+  "area": {
+    "x": 30,
+    "y": 180,
+    "width": 170,
+    "height": 150
+  },
+  "seed": 99317,
+  "maximumCount": 420,
+  "densityPerHectare": 65,
+  "minimumSpacing": 6,
+  "minimumHeight": -10,
+  "maximumHeight": 100,
+  "minimumSlopeDegrees": 4,
+  "maximumSlopeDegrees": 42,
+  "species": [
+    {
+      "id": "moss-rock",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/rock_moss_set_01_rock01.prefab",
+      "weight": 0.72,
+      "radius": 1.4,
+      "minimumScale": 0.62,
+      "maximumScale": 1.15
+    },
+    {
+      "id": "shrub",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/shrub_03_a.prefab",
+      "weight": 0.18,
+      "radius": 1.1,
+      "minimumScale": 0.68,
+      "maximumScale": 1.0
+    },
+    {
+      "id": "fern",
+      "prefabKey": "Assets/Bwork/ThirdParty/PolyHaven/Prefabs/fern_02_b.prefab",
+      "weight": 0.1,
+      "radius": 0.7,
+      "minimumScale": 0.7,
+      "maximumScale": 1.0
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "rock-work-pad",
+      "kind": "box",
+      "a": {
+        "x": 320,
+        "y": 265
+      },
+      "size": {
+        "x": 34,
+        "y": 28
+      }
+    }
+  ]
+}

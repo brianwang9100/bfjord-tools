@@ -1,0 +1,89 @@
+{
+  "id": "riverbank-rocks-001",
+  "area": {
+    "x": 100,
+    "y": 120,
+    "width": 105,
+    "height": 130
+  },
+  "seed": 8413,
+  "maximumCount": 90,
+  "densityPerHectare": 1800,
+  "minimumSpacing": 2.2,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 40,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "rocks",
+  "species": [
+    {
+      "id": "rock_moss_set_01_rock01",
+      "prefabKey": "bfjord:rock_moss_set_01_rock01",
+      "weight": 1,
+      "radius": 1.7,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    },
+    {
+      "id": "rock_moss_set_01_rock02",
+      "prefabKey": "bfjord:rock_moss_set_01_rock02",
+      "weight": 1,
+      "radius": 1.65,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    },
+    {
+      "id": "rock_moss_set_01_rock03",
+      "prefabKey": "bfjord:rock_moss_set_01_rock03",
+      "weight": 1,
+      "radius": 1.1,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    },
+    {
+      "id": "rock_moss_set_01_rock04",
+      "prefabKey": "bfjord:rock_moss_set_01_rock04",
+      "weight": 1,
+      "radius": 1.1,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    },
+    {
+      "id": "rock_moss_set_01_rock05",
+      "prefabKey": "bfjord:rock_moss_set_01_rock05",
+      "weight": 1,
+      "radius": 1.5,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    },
+    {
+      "id": "rock_moss_set_01_rock06",
+      "prefabKey": "bfjord:rock_moss_set_01_rock06",
+      "weight": 1,
+      "radius": 1.4,
+      "minimumScale": 0.6,
+      "maximumScale": 1.05,
+      "groundOffsetMeters": -0.22
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 3
+    }
+  ],
+  "maximumWaterDistance": 8,
+  "maximumBankHeight": 3
+}

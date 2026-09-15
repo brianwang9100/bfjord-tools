@@ -1,0 +1,192 @@
+{
+  "model": "MatureFir_A",
+  "source": "fir_tree_01_a",
+  "unit": "meter",
+  "lods": [
+    {
+      "level": 0,
+      "supplierSourceLOD": 1,
+      "sourceTriangles": 177444,
+      "triangles": 104302,
+      "parts": [
+        {
+          "name": "MatureFir_A_LOD0_Branches",
+          "material": "MatureFir_Bark",
+          "triangles": 21422,
+          "vertices": 12892,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD0_Trunk",
+          "material": "MatureFir_Trunk",
+          "triangles": 14368,
+          "vertices": 7316,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD0_Foliage",
+          "material": "MatureFir_Foliage",
+          "triangles": 66744,
+          "vertices": 80087,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": true,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD0_DeadBranches",
+          "material": "MatureFir_DeadBranches",
+          "triangles": 1768,
+          "vertices": 1068,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "supplierSourceLOD": 2,
+      "sourceTriangles": 70661,
+      "triangles": 57411,
+      "parts": [
+        {
+          "name": "MatureFir_A_LOD1_Branches",
+          "material": "MatureFir_Bark",
+          "triangles": 17872,
+          "vertices": 10931,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD1_Trunk",
+          "material": "MatureFir_Trunk",
+          "triangles": 4468,
+          "vertices": 2312,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD1_Foliage",
+          "material": "MatureFir_Foliage",
+          "triangles": 33753,
+          "vertices": 52437,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": true,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD1_DeadBranches",
+          "material": "MatureFir_DeadBranches",
+          "triangles": 1318,
+          "vertices": 830,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "supplierSourceLOD": 2,
+      "sourceTriangles": 70661,
+      "triangles": 35847,
+      "parts": [
+        {
+          "name": "MatureFir_A_LOD2_Trunk",
+          "material": "MatureFir_Trunk",
+          "triangles": 1407,
+          "vertices": 746,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        },
+        {
+          "name": "MatureFir_A_LOD2_Foliage",
+          "material": "MatureFir_Foliage",
+          "triangles": 33753,
+          "vertices": 52437,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": true,
+          "meshSharedWithLOD1": true
+        },
+        {
+          "name": "MatureFir_A_LOD2_DeadBranches",
+          "material": "MatureFir_DeadBranches",
+          "triangles": 687,
+          "vertices": 495,
+          "emptyFacesRemoved": 0,
+          "looseVerticesRemoved": 0,
+          "foliageGeometryUnreduced": false,
+          "meshSharedWithLOD1": false
+        }
+      ]
+    }
+  ],
+  "boundsMinBlender": [
+    -3.2415592670440674,
+    -2.9079246520996094,
+    -4.731118679046631e-06
+  ],
+  "boundsMaxBlender": [
+    3.3417060375213623,
+    3.5591228008270264,
+    18.954601287841797
+  ],
+  "groundOffsetMeters": 0.08020533621311188,
+  "foliagePolicy": "Provider LOD1/LOD2 alpha cards retained; no foliage collapse. Far shares middle foliage mesh and omits only thin live-branch wood. Supplier branch tubes remain unchanged at near/middle.",
+  "maps": [
+    {
+      "file": "Textures/fir_tree_01_bark_BaseMap.png",
+      "sha256": "35c6319884b078d099e580d6eb2acff2e1ba5c454e5157f7bd35d0a469fe30ea"
+    },
+    {
+      "file": "Textures/fir_tree_01_bark_MetallicSmoothness.png",
+      "sha256": "6810fedca828a0d41ad549e591ca798d25a8d8bb4c53d733cf8cc51a9d1e9e27"
+    },
+    {
+      "file": "Textures/fir_tree_01_bark_Normal.png",
+      "sha256": "08ca73d2f69716bad19808418dddbf5c076f7be928c132d3c84f32005cc61507"
+    },
+    {
+      "file": "Textures/fir_tree_01_trunk_a_BaseMap.png",
+      "sha256": "177170e14cbeccfb63100120ad762faad02a63741659626c2376254d52d3e5a4"
+    },
+    {
+      "file": "Textures/fir_tree_01_trunk_a_MetallicSmoothness.png",
+      "sha256": "54da45a2505e97a628de0aca7ee2e9f082a36e51e170fe139e14378fff1fd297"
+    },
+    {
+      "file": "Textures/fir_tree_01_trunk_a_Normal.png",
+      "sha256": "8a13aa146493fd8718d9499de0aea2b8c6fb57d83b445a75a378fbb9184c6d56"
+    },
+    {
+      "file": "Textures/fir_tree_01_twig_BaseMap.png",
+      "sha256": "bb59cd00de378e3157fb1650336a01f31fc73be27c22ddd7046d9309e510f73e"
+    },
+    {
+      "file": "Textures/fir_tree_01_twig_MetallicSmoothness.png",
+      "sha256": "244993b124db779122e2bbb4fc11302e8d0667b0be8bf766af854036dcea2407"
+    },
+    {
+      "file": "Textures/fir_tree_01_twig_Normal.png",
+      "sha256": "2bb3128598f36e07a2d0dbaaea608879cbc2022cdb2a1f4792b38cccf043d667"
+    }
+  ],
+  "fbxSha256": "3396ab19c22e04cc8166885f02e7d3197a5eab99713f1f976236eb664d818d81"
+}

@@ -1,0 +1,215 @@
+{
+  "archRise": 18,
+  "archSpan": 70,
+  "boundsMax": {
+    "x": 3.9000000953674316,
+    "y": 1.25,
+    "z": 55.0
+  },
+  "boundsMin": {
+    "x": -3.9000000953674316,
+    "y": -19.0,
+    "z": -55.0
+  },
+  "clearCarriageway": 6,
+  "colliderRelativePath": "bridge-collider.fbx",
+  "coordinateSystem": "unity-y-up-z-forward",
+  "deckDatum": 0,
+  "deckWidth": 7,
+  "designType": "stoneViaduct",
+  "generatorVersion": "bridge-families-2",
+  "id": "stone-viaduct-110",
+  "lods": [
+    {
+      "fbxRelativePath": "bridge-lod0.fbx",
+      "level": 0,
+      "screenRelativeHeight": 0.35,
+      "triangles": 23032
+    },
+    {
+      "fbxRelativePath": "bridge-lod1.fbx",
+      "level": 1,
+      "screenRelativeHeight": 0.12,
+      "triangles": 4680
+    },
+    {
+      "fbxRelativePath": "bridge-lod2.fbx",
+      "level": 2,
+      "screenRelativeHeight": 0.015,
+      "triangles": 1056
+    }
+  ],
+  "materialSlots": [
+    {
+      "materialKey": "concrete",
+      "slotName": "BridgeConcrete"
+    },
+    {
+      "materialKey": "asphalt",
+      "slotName": "BridgeAsphalt"
+    },
+    {
+      "materialKey": "metal",
+      "slotName": "BridgeMetal"
+    },
+    {
+      "materialKey": "concreteWeathered",
+      "slotName": "BridgeConcreteWeathered"
+    },
+    {
+      "materialKey": "roadPaintAmber",
+      "slotName": "BridgeRoadPaintAmber"
+    },
+    {
+      "materialKey": "roadPaintWhite",
+      "slotName": "BridgeRoadPaintWhite"
+    },
+    {
+      "materialKey": "stone",
+      "slotName": "BridgeStone"
+    },
+    {
+      "materialKey": "timber",
+      "slotName": "BridgeTimber"
+    }
+  ],
+  "materials": [
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "key": "concrete",
+      "maskPath": "textures/concrete-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/concrete-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 1.1
+    },
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/asphalt-basecolor.png",
+      "key": "asphalt",
+      "maskPath": "textures/asphalt-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/asphalt-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 2.1
+    },
+    {
+      "baseColor": [
+        0.055,
+        0.061,
+        0.063,
+        1
+      ],
+      "key": "metal",
+      "metallic": 0.7,
+      "smoothness": 0.38,
+      "tilingMeters": 1
+    },
+    {
+      "baseColor": [
+        0.78,
+        0.775,
+        0.74,
+        1
+      ],
+      "baseColorPath": "textures/concrete-basecolor.png",
+      "key": "concreteWeathered",
+      "maskPath": "textures/concrete-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/concrete-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 1.1
+    },
+    {
+      "baseColor": [
+        0.9,
+        0.48,
+        0.055,
+        1
+      ],
+      "key": "roadPaintAmber",
+      "metallic": 0,
+      "smoothness": 0.22,
+      "tilingMeters": 1
+    },
+    {
+      "baseColor": [
+        0.72,
+        0.74,
+        0.7,
+        1
+      ],
+      "key": "roadPaintWhite",
+      "metallic": 0,
+      "smoothness": 0.18,
+      "tilingMeters": 1
+    },
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/stone-basecolor.png",
+      "key": "stone",
+      "maskPath": "textures/stone-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/stone-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 2
+    },
+    {
+      "baseColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorPath": "textures/timber-basecolor.png",
+      "key": "timber",
+      "maskPath": "textures/timber-mask.png",
+      "metallic": 0,
+      "normalPath": "textures/timber-normal.png",
+      "smoothness": 0.2,
+      "tilingMeters": 2
+    }
+  ],
+  "recipeHash": "aae9337190b50f8b1a1f34d497be3c9b13bb80ab59c491c53bd6d36d089ed3ee",
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork bridge-family geometry",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "ambientCG Concrete034 / Lennart Demes, approximation material; 1.1 by 0.55m repeated twice vertically into a 1.1m square tile",
+      "url": "https://ambientcg.com/view?id=Concrete034"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Poly Haven clean_asphalt, reused reviewed RoadQuality maps",
+      "url": "https://polyhaven.com/a/clean_asphalt"
+    },
+    {
+      "license": "CC0-1.0",
+      "name": "Original Bwork coursed stone and sawn timber material maps",
+      "url": "https://github.com/brianwang9100/bfjord-tools"
+    }
+  ],
+  "totalLength": 110,
+  "units": "meters"
+}

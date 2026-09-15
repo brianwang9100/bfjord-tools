@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "command": "bwork_foliage",
+  "arguments": {
+    "action": "apply",
+    "batchId": "canopy",
+    "recipePath": "Packages/com.bfjord.tools/Samples/forest-canopy.json"
+  },
+  "targetScene": "Assets/Scenes/WorldAuthoringTools.unity"
+}

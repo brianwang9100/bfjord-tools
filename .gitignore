@@ -1,0 +1,24 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
+.DS_Store
+__pycache__/
+*.pyc
+*.blend1
+*.blend2
+artifacts/
+output/
+.bfjord-export.json
+
+# Reproducible sample output is generated locally.
+Examples~/SandboxProject/Assets/*
+!Examples~/SandboxProject/Assets/.gitkeep
+Examples~/SandboxProject/ProjectSettings/*
+!Examples~/SandboxProject/ProjectSettings/ProjectVersion.txt
+!Examples~/SandboxProject/ProjectSettings/BfjordTools.json
+Examples~/SandboxProject/Packages/packages-lock.json
+captures/

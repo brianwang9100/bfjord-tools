@@ -1,0 +1,14 @@
+{
+  "name": "Bwork.WorldAuthoring.Editor",
+  "rootNamespace": "Bwork.Authoring",
+  "references": [
+    "Unity.Pipeline",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.Newtonsoft.Json"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}
