@@ -2959,6 +2959,7 @@
     "BFjordTools/ShoreDetail/Sources/ShoreDetail.blend",
     "BFjordTools/ForestFloorDetail/Sources/ForestFloor07.blend",
     "BFjordTools/ForestFloorDetail/Sources/ForestFloor07.blend1",
+    "BFjordTools/TreeDetail07/GiantRedwood_C.blend",
     "BFjordTools/TreeDetail07/TreeDetail07.blend",
     "BFjordTools/Rocks/original.blend",
     "BFjordTools/Rocks/original.blend1",
@@ -4252,6 +4253,91 @@
     },
     {
       "imageDataUnchanged": true,
+      "outputSha256": "2c4ca2917715cd0a2cf4cf31e3e14b86f685357455a8974711d091435216d07d",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_AmbientOcclusion.png",
+      "removedMetadataChunks": [
+        "zTXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "782ce51f12b908dfa49365442dfda20cbf98a1798deef4388e815f96da834b66",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Color.png",
+      "removedMetadataChunks": [
+        "zTXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f3cc996ad6fe1a83ea6a97291b72ad0b941d84d98508224f6d66abd3f75dfdc6",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Displacement.png",
+      "removedMetadataChunks": [
+        "zTXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a527ea441dd1ccdea5f3b9278d59828dcfe0f7bbaf55ed2e2a0028dee2d42dee",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_NormalGL.png",
+      "removedMetadataChunks": [
+        "zTXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "ed8fad50439a75e73759d7a6c9282af9c043b5e74c5025223cc43f5fc9decd67",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Roughness.png",
+      "removedMetadataChunks": [
+        "zTXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
       "outputSha256": "28efc01c3760223911df59c374b4a8f53cb204d269ad23eaa706b1c58813fcb5",
       "path": "assets/BFjordTools/ShoreDetail/Sources/sand_02_arm_2k.png",
       "removedMetadataChunks": [
@@ -4470,6 +4556,63 @@
     },
     {
       "imageDataUnchanged": true,
+      "outputSha256": "696a44112f9fed0120ebd715c8fc098b36feaf02b780562e2bf50ccbd3b42a27",
+      "path": "assets/BFjordTools/TreeDetail07/Review/Before08/GiantRedwood_C-crown.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "41e3bbea4b7bc10f82f8f9775f004172037b557bc96015a4f297f908e67d10a8",
+      "path": "assets/BFjordTools/TreeDetail07/Review/Before08/GiantRedwood_C-full.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "45788fd6a8ab321dc0789d1e924e8a1053ff0d6a4fe4d89493c3acc1e940711d",
+      "path": "assets/BFjordTools/TreeDetail07/Review/Before08/GiantRedwood_C-roots.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
       "outputSha256": "65848a22aff45cc4d8626b6d580e4de746e90d35dad1e575b09c44f3a2c14d0c",
       "path": "assets/BFjordTools/TreeDetail07/Review/CoastalPine_C-crown.png",
       "removedMetadataChunks": [
@@ -4527,7 +4670,7 @@
     },
     {
       "imageDataUnchanged": true,
-      "outputSha256": "696a44112f9fed0120ebd715c8fc098b36feaf02b780562e2bf50ccbd3b42a27",
+      "outputSha256": "b4e125013914f5cd03b79b658ea4e3f5f2246e1be3f85b4f12c4d661ecd625af",
       "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-crown.png",
       "removedMetadataChunks": [
         "eXIf",
@@ -4546,7 +4689,7 @@
     },
     {
       "imageDataUnchanged": true,
-      "outputSha256": "41e3bbea4b7bc10f82f8f9775f004172037b557bc96015a4f297f908e67d10a8",
+      "outputSha256": "bd9bd957e5d1d758ef58f1f8659b5b49edf0fb94f5430cd8aaac806fe778f0d9",
       "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-full.png",
       "removedMetadataChunks": [
         "eXIf",
@@ -4565,7 +4708,7 @@
     },
     {
       "imageDataUnchanged": true,
-      "outputSha256": "45788fd6a8ab321dc0789d1e924e8a1053ff0d6a4fe4d89493c3acc1e940711d",
+      "outputSha256": "8fcdded07bba5563425e0ae6106a815cda67a4b6c45071fb8aa7d8f588ba853e",
       "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-roots.png",
       "removedMetadataChunks": [
         "eXIf",
@@ -4641,7 +4784,7 @@
     },
     {
       "imageDataUnchanged": true,
-      "outputSha256": "aa2d40f05173a23453c86ea5ce94b607b300f09de97d8bc9356784e53c99f9b6",
+      "outputSha256": "ef89768e28f8602b14c77e7e4f27b248abbaf829b11c5a87dddc06e9a9ea96e2",
       "path": "assets/BFjordTools/TreeDetail07/Review/tree07-family.png",
       "removedMetadataChunks": [
         "eXIf",

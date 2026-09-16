@@ -122,6 +122,32 @@ def build(kind,lod,wood_only=False):
     for q in range(r.randrange(7,12)):
      t=.18+q*.075;base2=at(secondary,min(t,.98));a3=a2+(-1 if q%2 else 1)*r.uniform(.5,1.4);le=r.uniform(.42,.92);shoot=g.curved(base2,base2+direction(a3)*le+Vector((0,0,r.uniform(-.2,.55))),Vector((0,0,.08)),4);branch(shoot,.009);terminals.append((shoot,a3,r.randrange(10000000)))
  if wood_only:return wood
+ # Redwood keeps its accepted woody scaffold. Feathered sprays fill the tip and
+ # both sides of each fine shoot; local rolls create foliage depth between tiers.
+ if red:
+  for shoot,ang,seed in terminals:
+   rr=random.Random(seed);axis=(shoot[-1]-shoot[0]).normalized()
+   side=axis.cross(Vector((0,0,1))).normalized()
+   for layer in range(2):
+    roll=rr.uniform(-.7,.7)+(0 if layer==0 else 1.05)
+    lateral=Quaternion(axis,roll)@side;normal=axis.cross(lateral).normalized()
+    length=rr.uniform(.66,.91);origin=at(shoot,.08+layer*.26)
+    tone=rr.randrange(1,5);pairs=9
+    # Lower LODs cover the same spray envelope with fewer, broader needles.
+    width=[.030,.060,.15][lod]
+    for j in range(pairs):
+     t=.07+.87*j/max(1,pairs-1);stem=origin+axis*(length*t)+normal*(.10*math.sin(t*math.pi)-.07*t*t)
+     reach=rr.uniform(.19,.27)*(math.sin(math.pi*(.16+.80*t))**.6)
+     for sign in (-1,1):
+      d=(lateral*sign*.88+axis*.45+normal*rr.uniform(-.16,.16)).normalized()
+      across=normal.cross(d).normalized();tip=stem+d*reach
+      mid=stem+d*reach*.48+normal*width*.40
+      if lod==0 or (lod==1 and j in (0,3,6,8)) or (lod==2 and layer==0 and j in (2,7)):
+       fine.face([stem,mid-across*width,tip,mid+across*width],[(.5,0),(0,.48),(.5,1),(1,.48)],tone)
+    # Narrow living axis connects the paired needles into a botanical spray.
+    tip=origin+axis*length
+    if lod<2 or layer==0:fine.face([origin-lateral*.008,origin+lateral*.008,tip+lateral*.002,tip-lateral*.002],[(.45,0),(.55,0),(.53,1),(.47,1)],tone)
+  return fine
  for shoot,ang,seed in terminals:
   rr=random.Random(seed);count=24 if red else 20 if pine else 19
   for j in range(count):
@@ -194,10 +220,10 @@ for rec in families:
  for label,target,loc,scale in [('full',(0,0,height*.47),(18,-30,height*.63),height*1.12),('roots',(0,0,1),(4,-7,3),4.8 if 'Redwood' in kind else 3.4),('crown',(1,0,height*.70),(10,-17,height*.80),7 if 'Redwood' in kind else 6)]:
   cam.location=loc;cam.rotation_euler=(Vector(target)-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.ortho_scale=scale;scene.render.filepath=str(review/(kind+'-'+label+'.png'))
   if not a.skip_review_renders:bpy.ops.render.render(write_still=True)
-for i,rec in enumerate(families):
+for i,rec in enumerate(families if not a.family else []):
  for ob in scene.objects:
   if ob.type=='MESH' and ob.name.startswith(rec['id']):ob.location.x=(i-1)*14;ob.hide_render='_LOD0' not in ob.name
 cam.location=(32,-55,25);cam.rotation_euler=(Vector((0,0,9))-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.ortho_scale=42;scene.render.resolution_x=1800;scene.render.resolution_y=1200;scene.render.filepath=str(review/'tree07-family.png')
 bpy.ops.wm.save_as_mainfile(filepath=str(review.parent/('TreeDetail07.blend' if not a.family else a.family+'.blend')))
-if not a.skip_review_renders:bpy.ops.render.render(write_still=True)
+if not a.skip_review_renders and not a.family:bpy.ops.render.render(write_still=True)
 print('TREE07_VERIFIED',flush=True)

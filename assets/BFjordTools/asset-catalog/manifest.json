@@ -485,9 +485,9 @@
       "sha256": "4ce8d43c2794e15083bb3cc7710562a3cf22e03b11665aaf0cf4cf7d19ba5f48"
     },
     {
-      "bytes": 9313434,
+      "bytes": 5334836,
       "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png",
-      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+      "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6"
     },
     {
       "bytes": 464,
@@ -495,9 +495,9 @@
       "sha256": "35212a454d51270a2bac20878e7f716d9e90f6e9ffc9b6eb8227ea857cd5b767"
     },
     {
-      "bytes": 7288717,
+      "bytes": 5169034,
       "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Mask.png",
-      "sha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1"
+      "sha256": "302488f893fe774a3c7a453c9159ce0e4692ddcc2a87e8451c265f1fc925fb7f"
     },
     {
       "bytes": 464,
@@ -505,9 +505,9 @@
       "sha256": "9931c2f3ab20d95c5fa7a49d76987bdb62b01c14637e97588f8ee9981a73af49"
     },
     {
-      "bytes": 10412994,
+      "bytes": 8446779,
       "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_NormalGL.png",
-      "sha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589"
+      "sha256": "c8623bf965b028aa4e5a46a8cf8435250cd4219c96d3c51df7c6b405c8096d24"
     },
     {
       "bytes": 464,
@@ -515,9 +515,9 @@
       "sha256": "f3071549f45a59608ce73addbbce17b18df52a0d882ac24cdff3145d46a5da01"
     },
     {
-      "bytes": 9313434,
+      "bytes": 5334836,
       "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png",
-      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+      "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6"
     },
     {
       "bytes": 464,
@@ -525,9 +525,9 @@
       "sha256": "e4630347a840e4b6b46f926ada4074bf7eea8cc83253d0abe33393b56c534f5c"
     },
     {
-      "bytes": 6982546,
+      "bytes": 5107771,
       "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Mask.png",
-      "sha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9"
+      "sha256": "8db8800a9a23bcc9881fc0e4e350f2692fd8884047e1e16fc8d9edfaa66958c1"
     },
     {
       "bytes": 464,
@@ -535,9 +535,9 @@
       "sha256": "c2df6a3c044afd924107b738966b983a9d574a3a3c71acaa1ae282d3f1a2e173"
     },
     {
-      "bytes": 10484898,
+      "bytes": 8445630,
       "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_NormalGL.png",
-      "sha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e"
+      "sha256": "40f87ef149cd2ef4be145bef336a6eb16960471772f1db19dbf64c280d9304ba"
     },
     {
       "bytes": 464,
@@ -575,9 +575,9 @@
       "sha256": "738b672dd8ee32e0bdc1a9c4325d310acac6bca111f6412a34f189dee617c963"
     },
     {
-      "bytes": 12829,
+      "bytes": 13022,
       "path": "Assets/BFjord/ShoreDetail/manifest.json",
-      "sha256": "34b76769f4c12d219e71b71ca275bef18b2329026b612b26bff5da547786520f"
+      "sha256": "113ebf3b88e41ca5fd28c51555dec33f1c4054a5f34d6ea083cd2dd1ac1a261e"
     },
     {
       "bytes": 119,
@@ -585,9 +585,9 @@
       "sha256": "8cee84bd4ed5fcdbb18a2eefd3523d692ef4469a0eda0edc8af8de7e76dd0231"
     },
     {
-      "bytes": 1243,
+      "bytes": 2181,
       "path": "Assets/BFjord/ShoreDetail/sand-source.json",
-      "sha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb"
+      "sha256": "06215105915e42d592b7622a5f8f4850cbefc879a8fcadea899bb9b68a5ecb57"
     },
     {
       "bytes": 119,
@@ -735,9 +735,9 @@
       "sha256": "0f317e6e8c6086a051812829a19094968e1f99f6b481a4a059f80e2de0bf7b8e"
     },
     {
-      "bytes": 26669964,
+      "bytes": 35362892,
       "path": "Assets/BFjord/TreeDetail07/Models/GiantRedwood_C.fbx",
-      "sha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531"
+      "sha256": "c7e7acb0abf962c24af1af90362e8bec6300657ac6536f404a8c0d459043dcd1"
     },
     {
       "bytes": 3094,
@@ -845,9 +845,9 @@
       "sha256": "4ce7b75e7b7529df879f1053819ec73f7ccb792294df280e3d5bbe6f79d96f0c"
     },
     {
-      "bytes": 9519,
+      "bytes": 10094,
       "path": "Assets/BFjord/TreeDetail07/tree07-manifest.json",
-      "sha256": "6b4d0d46f2add332119d01a8350c255be0092c6bce909713e63fb9095c4f32d3"
+      "sha256": "2da854ea9445273d2df5fd02eb4f092276491461e779794cd9ff9ed8c3711293"
     },
     {
       "bytes": 158,

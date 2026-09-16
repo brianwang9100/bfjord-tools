@@ -5,8 +5,8 @@
       "allLodCrownRadius": 5.175258075335188,
       "boundsBlenderZUp": [
         [
-          -4.030514717102051,
-          -4.02525520324707,
+          -4.473883152008057,
+          -4.358954906463623,
           -0.6681783199310303
         ],
         [
@@ -21,19 +21,19 @@
           "finiteVerticesNormalsTangentsUV": true,
           "lod": 0,
           "nondegenerate": true,
-          "triangles": 147647
+          "triangles": 197459
         },
         {
           "finiteVerticesNormalsTangentsUV": true,
           "lod": 1,
           "nondegenerate": true,
-          "triangles": 80822
+          "triangles": 102170
         },
         {
           "finiteVerticesNormalsTangentsUV": true,
           "lod": 2,
           "nondegenerate": true,
-          "triangles": 15419
+          "triangles": 22535
         }
       ],
       "crownRadius": 5.175258075335188,
@@ -151,10 +151,10 @@
       "sourceSha256": "889e3903c042a042d0b166588543951900ad7309d1ac647f9fe4656a62ed74bf"
     },
     {
-      "bytes": 26669964,
+      "bytes": 35362892,
       "path": "Models/GiantRedwood_C.fbx",
-      "sha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531",
-      "sourceSha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531"
+      "sha256": "c7e7acb0abf962c24af1af90362e8bec6300657ac6536f404a8c0d459043dcd1",
+      "sourceSha256": "c7e7acb0abf962c24af1af90362e8bec6300657ac6536f404a8c0d459043dcd1"
     },
     {
       "bytes": 25496252,
@@ -218,9 +218,18 @@
     }
   ],
   "generator": "Scripts/world_assets/tree_detail_07/generate_trees07.py",
-  "generatorSha256": "c1b4b3681bc5eb45daec9305e8e969916060c671edcd7b8d301909080ad014b7",
+  "generatorSha256": "92c58d9b545994846613ac473b0b1f34edd04cfbd7708efaf19e41bdc54a3e4e",
   "geometrySha256": "2c921af55a1f356aa46c419dfc4f2968919575f4b7a6b556e80c7c72a1755552",
   "license": "CC0-1.0",
+  "refinements": [
+    {
+      "botanicalReference": "https://landscapeplants.oregonstate.edu/plants/sequoia-sempervirens",
+      "change": "Two rolled needle sprays per fine shoot, connected axes and paired tapered needles; fewer enlarged representatives at lower LODs. Existing woody scaffold, atlas, root and conservative spacing radius retained. Pine and Beech bytes preserved.",
+      "family": "GiantRedwood_C",
+      "limitation": "Needles are deliberately enlarged geometric canopy representations, not botanical scans.",
+      "toolkitVersion": "0.8.0"
+    }
+  ],
   "revision": "tree-detail-07",
   "sourceProvenance": {
     "geometry": "Original deterministic authored branching, closed wood voxel unions, explicit geometric leaves and needle fascicles.",

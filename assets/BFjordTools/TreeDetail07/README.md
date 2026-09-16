@@ -42,7 +42,7 @@ python3 scripts/tree_detail_07/prepare_catalog.py \
 
 Export/reimport verifies nine meshes for finite vertices, normals, tangents and UVs, nondegenerate triangular faces, and available UVs. The full source scene and source renders are separate from Unity acceptance. Some UV direction changes at fused junctions remain visible close up; the wider geometric conifer sprays favor silhouette readability over exact needle dimensions. No hardware compatibility, sustained frame rate, or proprietary reference parity is claimed.
 
-## Final source measurements
+## Version 0.7 source measurements (historical)
 
 | Family | LOD0 / LOD1 / LOD2 triangles | Height above ground | Root footprint radius | Minimum spacing radius |
 |---|---:|---:|---:|---:|
@@ -51,3 +51,25 @@ Export/reimport verifies nine meshes for finite vertices, normals, tangents and 
 | MatureBeech_C | 169,486 / 95,185 / 23,548 | 9.65 m | 1.30 m | 5.65 m |
 
 The catalog additions total 101,805,389 bytes of source assets and importer metadata. Source FBX/PNG bytes are not Unity runtime residency. Nine FBX reimport geometry checks and all 26 exact catalog hash checks passed. The three public FBXs have no absolute local paths or embedded image bindings.
+
+## Version 0.8 redwood crown refinement
+
+`GiantRedwood_C` now uses two differently rolled feather sprays at every existing fine-shoot anchor. Each spray has a narrow connecting axis and two ranks of tapered geometric needles. Layering fills the space above and below boughs while preserving the irregular large branch gaps, trunk, fused roots and woody scaffold. The existing single atlas and every texture/importer byte remain unchanged. Pine and beech models, textures and importer metadata are byte-identical to 0.7.
+
+The [Oregon State University species account](https://landscapeplants.oregonstate.edu/plants/sequoia-sempervirens) informed the flat, two-ranked needle arrangement. Real needles are much smaller; this asset deliberately enlarges their geometric representation for canopy readability. The private forest and conifer references informed layered crown volume and visible branch gaps only. No private image data enters the generator or deliverables. The free Sapling alternative was rechecked; the existing Blender mesh workflow keeps original geometry, deterministic anchors and ordinary Unity/URP mesh compatibility without an additional runtime dependency. iPad performance is unmeasured.
+
+Final FBX reimport checks pass for all three redwood LODs: **197,459 / 102,170 / 22,535 triangles** (formerly 147,647 / 80,822 / 15,419). The root footprint remains **2.320036 m**, all-LOD crown radius **5.175258 m**, and minimum spacing radius **5.675258 m**. The exact local bounding box changes to accommodate the sprays, so import the replacement mesh rather than retaining stale mesh bounds. Existing placement exclusion radii need no change. The 26-file local catalog receipt totals **110,498,892 bytes**; source bytes are not runtime residency.
+
+`redwood08-changed-hashes.json` is the explicit old/new receipt for the redwood model, local manifest and local catalog additions. The shared catalog is integrated separately by the root agent. Sixteen pine/beech files were verified unchanged; all 12 model/texture hashes and 26 local catalog hashes pass. `before08-hashes.json` records the pre-change local family receipt.
+
+The full and crown comparison renders use the same camera/light setup: `Review/Before08/GiantRedwood_C-{full,crown}.png` and `Review/GiantRedwood_C-{full,crown}.png`. `GiantRedwood_C.blend` preserves the refined source review; `TreeDetail07.blend` and `Review/tree07-family.png` are refreshed from the frozen FBX. Source renders are not Unity or physical-device acceptance. Root operates the final Unity sandbox review.
+
+For a bounded redwood build, add `--family GiantRedwood_C` to the generator command. This writes a single-family manifest for deliberate reconciliation with `tree07-manifest.json`; it does not automatically overwrite the combined manifest or shared catalog. Refresh the combined source review after reconciling the local manifest:
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background \
+  --python scripts/tree_detail_07/refresh_family_review.py -- \
+  --source assets/BFjordTools/TreeDetail07 \
+  --catalog assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07 \
+  --family GiantRedwood_C
+```

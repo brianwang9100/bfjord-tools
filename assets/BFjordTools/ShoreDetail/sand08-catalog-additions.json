@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "bytes": 5334836,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png",
+      "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+      "sourceSha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6"
+    },
+    {
+      "bytes": 5169034,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Mask.png",
+      "sha256": "302488f893fe774a3c7a453c9159ce0e4692ddcc2a87e8451c265f1fc925fb7f",
+      "sourceSha256": "302488f893fe774a3c7a453c9159ce0e4692ddcc2a87e8451c265f1fc925fb7f"
+    },
+    {
+      "bytes": 8446779,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_NormalGL.png",
+      "sha256": "c8623bf965b028aa4e5a46a8cf8435250cd4219c96d3c51df7c6b405c8096d24",
+      "sourceSha256": "c8623bf965b028aa4e5a46a8cf8435250cd4219c96d3c51df7c6b405c8096d24"
+    },
+    {
+      "bytes": 5334836,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png",
+      "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+      "sourceSha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6"
+    },
+    {
+      "bytes": 5107771,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Mask.png",
+      "sha256": "8db8800a9a23bcc9881fc0e4e350f2692fd8884047e1e16fc8d9edfaa66958c1",
+      "sourceSha256": "8db8800a9a23bcc9881fc0e4e350f2692fd8884047e1e16fc8d9edfaa66958c1"
+    },
+    {
+      "bytes": 8445630,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_NormalGL.png",
+      "sha256": "40f87ef149cd2ef4be145bef336a6eb16960471772f1db19dbf64c280d9304ba",
+      "sourceSha256": "40f87ef149cd2ef4be145bef336a6eb16960471772f1db19dbf64c280d9304ba"
+    }
+  ],
+  "schemaVersion": 1
+}

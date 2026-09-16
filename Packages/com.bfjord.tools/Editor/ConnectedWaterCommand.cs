@@ -126,6 +126,8 @@ namespace Bwork.Authoring.Editor
             var requested=ParseRecipe(File.ReadAllText(path));WaterFidelity.CopyAppearance(installed,requested);
             installed.oceanWaveHeight=requested.oceanWaveHeight;installed.oceanWaveLength=requested.oceanWaveLength;
             installed.oceanWaveSpeed=requested.oceanWaveSpeed;installed.oceanBlendDistance=requested.oceanBlendDistance;
+            installed.oceanSwashRunupHeight=requested.oceanSwashRunupHeight;
+            installed.oceanSwashRunupDistance=requested.oceanSwashRunupDistance;installed.oceanSwashPeriod=requested.oceanSwashPeriod;
             var field=new ConnectedWaterField(installed);var shader=RequireShader();var maps=RequireMaps(shader);
             var next=JsonUtility.FromJson<Receipt>(JsonUtility.ToJson(prior));
             next.recipeJson=JsonUtility.ToJson(installed,true);next.recipeHash=AppearanceHash(next.recipeJson,shader,maps);
@@ -136,9 +138,15 @@ namespace Bwork.Authoring.Editor
             Mesh mesh=field.BuildMesh();Material material=null;
             try
             {
-                // Only shading weights/derivatives and culling bounds may change in this path.
-                if(!mesh.vertices.SequenceEqual(originalMesh.vertices)||!mesh.triangles.SequenceEqual(originalMesh.triangles))
-                    throw new InvalidDataException("Surface refresh would alter canonical water geometry; preserve the installed surface.");
+                // Prove the installed mesh still matches its receipt before replacing visual
+                // coverage. Only explicitly copied surface fields can differ in the next recipe.
+                var expected=new ConnectedWaterField(ParseRecipe(prior.recipeJson)).BuildMesh();
+                try
+                {
+                    if(!expected.vertices.SequenceEqual(originalMesh.vertices)||!expected.triangles.SequenceEqual(originalMesh.triangles))
+                        throw new InvalidDataException("Installed water geometry differs from its receipt; preserve the owned surface.");
+                }
+                finally{Object.DestroyImmediate(expected);}
                 var savedMesh=WaterGeneration.Create(mesh,next.assets[0],created);mesh=null;
                 material=Material(shader,installed);var savedMaterial=WaterGeneration.Create(material,next.assets[1],created);material=null;
                 filter.sharedMesh=savedMesh;renderer.sharedMaterial=savedMaterial;
@@ -158,7 +166,8 @@ namespace Bwork.Authoring.Editor
             finally{if(mesh!=null)Object.DestroyImmediate(mesh);if(material!=null)Object.DestroyImmediate(material);}
             WaterGeneration.Cleanup(next.cleanupAssets,true);
             return new{refreshed=true,terrainChanged=false,canonicalGeometryChanged=false,meshBoundsRefreshed=true,
-                oceanWaveHeight=installed.oceanWaveHeight,recipeHash=next.recipeHash};
+                oceanWaveHeight=installed.oceanWaveHeight,oceanSwashRunupDistance=installed.oceanSwashRunupDistance,
+                oceanSwashRunupHeight=installed.oceanSwashRunupHeight,visualMeshChanged=true,recipeHash=next.recipeHash};
         }
         /// <summary>Refreshing a generation must not invalidate retained or foreign scene references.</summary>
         public static void ValidateSurfaceReferences(Transform group,MeshFilter filter,MeshRenderer renderer)
@@ -273,6 +282,8 @@ namespace Bwork.Authoring.Editor
             material.SetFloat("_OceanWaveSharpness",r.oceanWaveSharpness);material.SetFloat("_OceanShoreFoam",r.oceanShoreFoam);
             material.SetFloat("_OceanBreakerStrength",r.oceanBreakerStrength);material.SetFloat("_OceanBeachDepth",r.oceanBeachDepth);
             material.SetFloat("_OceanSwashSpeed",r.oceanSwashSpeed);material.SetFloat("_OceanSwashDepthSpacing",r.oceanSwashDepthSpacing);
+            material.SetFloat("_OceanSwashRunupHeight",r.oceanSwashRunupHeight);material.SetFloat("_OceanSwashRunupDistance",r.oceanSwashRunupDistance);
+            material.SetFloat("_OceanSwashPeriod",r.oceanSwashPeriod);
             material.SetVector("_OceanWaveDirection",new Vector4(r.oceanWaveDirection.x,r.oceanWaveDirection.y,0,0));
             var ocean=installedOcean(r);material.SetVector("_OceanBounds",new Vector4(ocean.position.x,ocean.position.z,ocean.radius.x,ocean.radius.y));
             var offset=WaterFidelity.PatternOffset(r.waterPatternSeed);material.SetVector("_PatternOffset",new Vector4(offset.x,offset.y,0,0));

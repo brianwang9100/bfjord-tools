@@ -1,0 +1,77 @@
+{
+  "revision": "tree-detail-07-redwood-08",
+  "changes": [
+    {
+      "path": "Assets/BFjord/TreeDetail07/tree07-catalog-additions.json",
+      "old": {
+        "bytes": 5115,
+        "sha256": "928c2176b2ebf2ed5c9c85744c895f87030e156b9ff371a5688eb053f36007ea"
+      },
+      "new": {
+        "bytes": 5115,
+        "sha256": "23aca45ee73b68a798dbf2e0f5c4e0dc9c9d323e3a192c464532f266258013ce"
+      }
+    },
+    {
+      "path": "Assets/BFjord/TreeDetail07/tree07-manifest.json",
+      "old": {
+        "bytes": 8439,
+        "sha256": "116a38f64872383511da75091678e3e85e7706ca9ae3414cb342fae1a24dea3c"
+      },
+      "new": {
+        "bytes": 9014,
+        "sha256": "4c0d9a2907ec86ab2fd1045cd8be517084a153173ebbee79bab8efc10e7b4b30"
+      }
+    },
+    {
+      "path": "Assets/BFjord/TreeDetail07/Models/GiantRedwood_C.fbx",
+      "old": {
+        "bytes": 26669964,
+        "sha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531"
+      },
+      "new": {
+        "bytes": 35362892,
+        "sha256": "c7e7acb0abf962c24af1af90362e8bec6300657ac6536f404a8c0d459043dcd1"
+      }
+    }
+  ],
+  "preservedPineBeechFiles": [
+    "Textures/CoastalPine_CNormal.png",
+    "Textures/MatureBeech_CMask.png.meta",
+    "Textures/MatureBeech_CMask.png",
+    "Textures/CoastalPine_CMask.png",
+    "Textures/MatureBeech_CAtlas.png.meta",
+    "Textures/CoastalPine_CNormal.png.meta",
+    "Textures/MatureBeech_CAtlas.png",
+    "Textures/CoastalPine_CAtlas.png.meta",
+    "Textures/CoastalPine_CMask.png.meta",
+    "Textures/MatureBeech_CNormal.png",
+    "Textures/CoastalPine_CAtlas.png",
+    "Textures/MatureBeech_CNormal.png.meta",
+    "Models/CoastalPine_C.fbx",
+    "Models/MatureBeech_C.fbx",
+    "Models/MatureBeech_C.fbx.meta",
+    "Models/CoastalPine_C.fbx.meta"
+  ],
+  "checks": [
+    {
+      "lod": 0,
+      "triangles": 197459,
+      "finiteVerticesNormalsTangentsUV": true,
+      "nondegenerate": true
+    },
+    {
+      "lod": 1,
+      "triangles": 102170,
+      "finiteVerticesNormalsTangentsUV": true,
+      "nondegenerate": true
+    },
+    {
+      "lod": 2,
+      "triangles": 22535,
+      "finiteVerticesNormalsTangentsUV": true,
+      "nondegenerate": true
+    }
+  ],
+  "rootAndCrownExtentsUnchanged": true
+}

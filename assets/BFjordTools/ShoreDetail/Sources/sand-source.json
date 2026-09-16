@@ -1,32 +1,71 @@
 {
-  "id": "sand_02",
-  "author": "Charlotte Baglioni",
-  "supplier": "Poly Haven",
-  "source": "https://polyhaven.com/a/sand_02",
-  "license": "CC0-1.0",
-  "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "redistributionPermission": "https://polyhaven.com/license",
-  "tileMeters": 2.1,
+  "archive": {
+    "bytes": 62683796,
+    "sha256": "2424fa07c7b182000c9450718e870d50587e3d5cd8ccff1b99326f4fb3882594",
+    "url": "https://ambientcg.com/get?file=Ground052_2K-PNG.zip"
+  },
+  "author": "Lennart Demes",
+  "derivation": {
+    "description": "Original ivory color treatment of white beach scan; not a measured mineral composition or calibrated albedo claim. Matched source AO, roughness, normal and height retained.",
+    "id": "ivory-08",
+    "linearBaseColor": [
+      0.68,
+      0.645,
+      0.565
+    ],
+    "linearSoftKnee": 0.8,
+    "linearUpperBound": 0.9,
+    "luminanceContrastExponent": 0.85,
+    "sourceChromaRetention": 0.2
+  },
   "files": {
+    "ao": {
+      "archiveMember": "Ground052_2K-PNG_AmbientOcclusion.png",
+      "bytes": 2081483,
+      "exportedBytes": 2080540,
+      "exportedSha256": "2c4ca2917715cd0a2cf4cf31e3e14b86f685357455a8974711d091435216d07d",
+      "file": "Ground052_2K-PNG_AmbientOcclusion.png",
+      "sha256": "25e99c863fb8ec54ed46a34820c0235de81d4906bda28447051a996257d23077"
+    },
     "diff": {
-      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_diff_2k.png",
-      "bytes": 23651527,
-      "sha256": "c19977e1c27fe46b08a32db6fbb0251a2157c8e785839b8a4736000486c2bf30"
-    },
-    "nor_gl": {
-      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_nor_gl_2k.png",
-      "bytes": 24253850,
-      "sha256": "1fbbcc074ca6814fab6e0c4a874fa32ffb288fbc5c0778a920409dec399adfca"
-    },
-    "arm": {
-      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_arm_2k.png",
-      "bytes": 17096157,
-      "sha256": "92e730e74506685c2b48cfb38a88f5d442ffe3eb1669ee1693913f512b4459ee"
+      "archiveMember": "Ground052_2K-PNG_Color.png",
+      "bytes": 6030021,
+      "exportedBytes": 6029078,
+      "exportedSha256": "782ce51f12b908dfa49365442dfda20cbf98a1798deef4388e815f96da834b66",
+      "file": "Ground052_2K-PNG_Color.png",
+      "sha256": "18f33d16be48d9f0a5cde9b27f5f8524abd79896c0b2a7ee5aa0ac2f301eccf5"
     },
     "disp": {
-      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_disp_2k.png",
-      "bytes": 6697934,
-      "sha256": "098cc7c7e5e35e25c9aef25f3a4bd4d221bf31b662502bec0e9a2d76b202d020"
+      "archiveMember": "Ground052_2K-PNG_Displacement.png",
+      "bytes": 6046975,
+      "exportedBytes": 6046034,
+      "exportedSha256": "f3cc996ad6fe1a83ea6a97291b72ad0b941d84d98508224f6d66abd3f75dfdc6",
+      "file": "Ground052_2K-PNG_Displacement.png",
+      "sha256": "21999f11d4915089a62b972abb9c133f0fd529554f0c4f6cb1478f972a2e8cef"
+    },
+    "nor_gl": {
+      "archiveMember": "Ground052_2K-PNG_NormalGL.png",
+      "bytes": 22953159,
+      "exportedBytes": 22952216,
+      "exportedSha256": "a527ea441dd1ccdea5f3b9278d59828dcfe0f7bbaf55ed2e2a0028dee2d42dee",
+      "file": "Ground052_2K-PNG_NormalGL.png",
+      "sha256": "2f033a956618984c7a4b5a516b611fc6286b23d7e152326528af6415ed502b63"
+    },
+    "rough": {
+      "archiveMember": "Ground052_2K-PNG_Roughness.png",
+      "bytes": 1196158,
+      "exportedBytes": 1195215,
+      "exportedSha256": "ed8fad50439a75e73759d7a6c9282af9c043b5e74c5025223cc43f5fc9decd67",
+      "file": "Ground052_2K-PNG_Roughness.png",
+      "sha256": "b2aa824d8652494129481c21420507d84ccaf4f68ddc83a2ab7778dde1e05b34"
     }
-  }
+  },
+  "id": "Ground052",
+  "license": "CC0-1.0",
+  "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "redistributionPermission": "https://docs.ambientcg.com/license/",
+  "source": "https://ambientcg.com/view?id=Ground052",
+  "supplier": "ambientCG",
+  "technique": "Surface Photogrammetry",
+  "tileMeters": 2.0
 }

@@ -3,7 +3,7 @@
   "id": "bfjord-shore-detail",
   "license": "CC0-1.0",
   "coordinateSystem": "Unity metres; +Y up; bottom ground pivot",
-  "source": "Original Blender geometry and atlas; Poly Haven Sand 02 by Charlotte Baglioni CC0. Original wind-ripple modulation.",
+  "source": "Original Blender geometry and atlas; ambientCG Ground052 by Lennart Demes CC0 with original ivory treatment and optional ripple modulation.",
   "material": {
     "id": "BFjord_ShoreAtlas",
     "color": "Textures/ShoreAtlas_Color.png",
@@ -14,7 +14,7 @@
     "resolution": 2048
   },
   "sand": {
-    "tileMeters": 2.1,
+    "tileMeters": 2.0,
     "dry": [
       "BeachSand_Color.png",
       "BeachSand_NormalGL.png",
@@ -27,19 +27,22 @@
     ],
     "wetShading": {
       "baseColorMultiplier": [
-        0.62,
-        0.64,
-        0.65,
+        0.84,
+        0.82,
+        0.79,
         1
       ],
       "smoothnessRange": [
-        0.42,
-        0.72
+        0.22,
+        0.48
       ],
-      "normalScale": 0.5
+      "normalScale": 0.4
     },
-    "rippleHeightMeters": 0.009,
-    "rippleWavelengthMeters": 0.175
+    "rippleHeightMeters": 0.0025,
+    "rippleWavelengthMeters": 0.16666666666666666,
+    "sourceId": "Ground052",
+    "colorTreatment": "ivory-08",
+    "dryNormalScale": 0.65
   },
   "variants": [
     {
@@ -502,6 +505,6 @@
   "limitations": [
     "Authored procedural details, not scanned shell or wrack models.",
     "FBX reimport is a software check; Unity/URP, runtime costs and iPad visual acceptance are root integration work.",
-    "Sand source contains existing subtle footprints; original wind ripples supplement that source."
+    "Sand uses an authored ivory treatment of a scanned white beach; this is not a calibrated mineral/albedo claim. Ripples are an optional 2.5 mm original field."
   ]
 }

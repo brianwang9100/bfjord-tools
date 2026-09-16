@@ -27,6 +27,9 @@
   "oceanBeachDepth": 3,
   "oceanSwashSpeed": 0.22,
   "oceanSwashDepthSpacing": 1.4,
+  "oceanSwashRunupHeight": 0.55,
+  "oceanSwashRunupDistance": 18,
+  "oceanSwashPeriod": 8,
   "waterPatternSeed": 50391,
   "oceanWaveDirection": {
     "x": 0.2,

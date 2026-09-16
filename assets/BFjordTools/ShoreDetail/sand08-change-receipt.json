@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "revision": "sand-08",
+  "source": "ambientCG Ground052 CC0-1.0",
+  "files": [
+    {
+      "path": "Scripts/world_assets/shore_detail/build_sand.py",
+      "old": null,
+      "new": {
+        "sha256": "3060e81a9d8f5d6521e993a08cd08258fc013deccce12275d2035976073ec975",
+        "bytes": 4811
+      }
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/build_shore.py",
+      "old": {
+        "sha256": "b9885c547fa13d7ac74b2210defeef2d2c39a6915f69d55cae663ec498b80cdb",
+        "bytes": 20551
+      },
+      "new": {
+        "sha256": "96800f6d2cad3822a6f93ab20c324d51d13a64afb816ebb146cdda27ef8ea1d1",
+        "bytes": 19648
+      }
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/fetch_sand.py",
+      "old": {
+        "sha256": "bf9fab2ef0e22acc40db49b29ef00fbf6af45d00ad364e8a56a1fad73c93378e",
+        "bytes": 1171
+      },
+      "new": {
+        "sha256": "fd7577da609f328991a7b77da62d379d9568e39da6bef63e7d3cf8dc95d62cf0",
+        "bytes": 1974
+      }
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/verify_color_encoding.py",
+      "old": {
+        "sha256": "009cabee4f5f7d4a7704d26b2de667342638ac498b1ff507a41b58594b80c4b7",
+        "bytes": 1230
+      },
+      "new": {
+        "sha256": "e8c6aa960bc1bdd080307e0fade8722376c48ff929db3b55abf99955596002c9",
+        "bytes": 2705
+      }
+    },
+    {
+      "path": "Unity/WorldAuthoringTools/Editor/TerrainMaterialBank.cs",
+      "old": {
+        "sha256": "0d5db9d710d53de1fbdc90048bc892fc35f8368c5307ae0157608be251820948",
+        "bytes": 2757
+      },
+      "new": {
+        "sha256": "e22020696286a92e52c2815f0e3f4f1efbd4e6d0ac36c7195dc68b292f59fb9e",
+        "bytes": 2755
+      }
+    },
+    {
+      "path": "Unity/WorldAuthoringTools/Editor/TerrainPresentation.cs",
+      "old": {
+        "sha256": "fe57c196fcf00dc5e2201f816953bbf295a4f8768f9114294f004ba43227dcee",
+        "bytes": 17404
+      },
+      "new": {
+        "sha256": "e658416abc7beb036928f167348573fb8ea4d05a269c6699a688d27eb2e7324a",
+        "bytes": 17439
+      }
+    },
+    {
+      "path": "Unity/WorldAuthoringTools/Samples/shoreline-terrain.json",
+      "old": {
+        "sha256": "d9fbb20e575e3c1a194096b5ad5cc3e904153c796eaca40fac0e42665179a0f5",
+        "bytes": 492
+      },
+      "new": {
+        "sha256": "710dfa0fa74f8a73a46dfdcb64f036aa680bfa3cb38e3322f5078a2cfa392394",
+        "bytes": 497
+      }
+    },
+    {
+      "path": "Unity/WorldAuthoringTools/Tests/Editor/ShorelineTerrainTests.cs",
+      "old": {
+        "sha256": "c22b8d3bb39f37d02567a57a74fd7320bc3f741c1e7b3bf19e9363a932a73cdf",
+        "bytes": 4805
+      },
+      "new": {
+        "sha256": "46860c1d38562b5ff32db54987045b23d98547433674f9b90ca6d00d8f34adb4",
+        "bytes": 5418
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/README.md",
+      "old": {
+        "sha256": "0512b5cfb568f628fe9418da9ac709f57e1cadb9cc9a7d44e7ddabd1033777b4",
+        "bytes": 5299
+      },
+      "new": {
+        "sha256": "bf3914b3bce1d45037f6e12f3203baa57229a23b4102bb884289241fe3ddabec",
+        "bytes": 5580
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/sand08-verification.json",
+      "old": null,
+      "new": {
+        "sha256": "d6ba119cd864e2659b3c38144aee3263df4de498659c78ea4bab434f2496c080",
+        "bytes": 860
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_AmbientOcclusion.png",
+      "old": null,
+      "new": {
+        "sha256": "25e99c863fb8ec54ed46a34820c0235de81d4906bda28447051a996257d23077",
+        "bytes": 2081483
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Color.png",
+      "old": null,
+      "new": {
+        "sha256": "18f33d16be48d9f0a5cde9b27f5f8524abd79896c0b2a7ee5aa0ac2f301eccf5",
+        "bytes": 6030021
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Displacement.png",
+      "old": null,
+      "new": {
+        "sha256": "21999f11d4915089a62b972abb9c133f0fd529554f0c4f6cb1478f972a2e8cef",
+        "bytes": 6046975
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_NormalGL.png",
+      "old": null,
+      "new": {
+        "sha256": "2f033a956618984c7a4b5a516b611fc6286b23d7e152326528af6415ed502b63",
+        "bytes": 22953159
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/Ground052_2K-PNG_Roughness.png",
+      "old": null,
+      "new": {
+        "sha256": "b2aa824d8652494129481c21420507d84ccaf4f68ddc83a2ab7778dde1e05b34",
+        "bytes": 1196158
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand-source.json",
+      "old": {
+        "sha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb",
+        "bytes": 1243
+      },
+      "new": {
+        "sha256": "06215105915e42d592b7622a5f8f4850cbefc879a8fcadea899bb9b68a5ecb57",
+        "bytes": 2181
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand02-legacy-source.json",
+      "old": null,
+      "new": {
+        "sha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb",
+        "bytes": 1243
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_Color.png",
+      "old": {
+        "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+        "bytes": 9313434
+      },
+      "new": {
+        "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+        "bytes": 5334836
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_Mask.png",
+      "old": {
+        "sha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1",
+        "bytes": 7288717
+      },
+      "new": {
+        "sha256": "302488f893fe774a3c7a453c9159ce0e4692ddcc2a87e8451c265f1fc925fb7f",
+        "bytes": 5169034
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_NormalGL.png",
+      "old": {
+        "sha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589",
+        "bytes": 10412994
+      },
+      "new": {
+        "sha256": "c8623bf965b028aa4e5a46a8cf8435250cd4219c96d3c51df7c6b405c8096d24",
+        "bytes": 8446779
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_Color.png",
+      "old": {
+        "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+        "bytes": 9313434
+      },
+      "new": {
+        "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+        "bytes": 5334836
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_Mask.png",
+      "old": {
+        "sha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9",
+        "bytes": 6982546
+      },
+      "new": {
+        "sha256": "8db8800a9a23bcc9881fc0e4e350f2692fd8884047e1e16fc8d9edfaa66958c1",
+        "bytes": 5107771
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_NormalGL.png",
+      "old": {
+        "sha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e",
+        "bytes": 10484898
+      },
+      "new": {
+        "sha256": "40f87ef149cd2ef4be145bef336a6eb16960471772f1db19dbf64c280d9304ba",
+        "bytes": 8445630
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/manifest.json",
+      "old": {
+        "sha256": "34b76769f4c12d219e71b71ca275bef18b2329026b612b26bff5da547786520f",
+        "bytes": 12829
+      },
+      "new": {
+        "sha256": "113ebf3b88e41ca5fd28c51555dec33f1c4054a5f34d6ea083cd2dd1ac1a261e",
+        "bytes": 13022
+      }
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/sand08-catalog-additions.json",
+      "old": null,
+      "new": {
+        "sha256": "83eb59a4069229a1c97b264b73b104153bd4f82916d1eda30455a8709222b082",
+        "bytes": 1201
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png",
+      "old": {
+        "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+        "bytes": 9313434
+      },
+      "new": {
+        "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+        "bytes": 5334836
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/BeachSand_Mask.png",
+      "old": {
+        "sha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1",
+        "bytes": 7288717
+      },
+      "new": {
+        "sha256": "302488f893fe774a3c7a453c9159ce0e4692ddcc2a87e8451c265f1fc925fb7f",
+        "bytes": 5169034
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/BeachSand_NormalGL.png",
+      "old": {
+        "sha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589",
+        "bytes": 10412994
+      },
+      "new": {
+        "sha256": "c8623bf965b028aa4e5a46a8cf8435250cd4219c96d3c51df7c6b405c8096d24",
+        "bytes": 8446779
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png",
+      "old": {
+        "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+        "bytes": 9313434
+      },
+      "new": {
+        "sha256": "490ee0c513f1edf975a254cf463521e6ba3c5c4ba3f617d08998bf8456c0e1e6",
+        "bytes": 5334836
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/RippleSand_Mask.png",
+      "old": {
+        "sha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9",
+        "bytes": 6982546
+      },
+      "new": {
+        "sha256": "8db8800a9a23bcc9881fc0e4e350f2692fd8884047e1e16fc8d9edfaa66958c1",
+        "bytes": 5107771
+      }
+    },
+    {
+      "path": "art/BFjordTools/asset-catalog/Assets/BFjord/ShoreDetail/Textures/RippleSand_NormalGL.png",
+      "old": {
+        "sha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e",
+        "bytes": 10484898
+      },
+      "new": {
+        "sha256": "40f87ef149cd2ef4be145bef336a6eb16960471772f1db19dbf64c280d9304ba",
+        "bytes": 8445630
+      }
+    },
+    {
+      "path": "docs/fidelity/SAND_08.md",
+      "old": null,
+      "new": {
+        "sha256": "ccd651e688bacd43735d3f3b0d92a2f979560ab7f9df03dde5b1758373c363aa",
+        "bytes": 6230
+      }
+    }
+  ],
+  "unchangedModelsAndAtlas": true
+}

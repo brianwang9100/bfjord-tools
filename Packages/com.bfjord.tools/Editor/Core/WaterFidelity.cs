@@ -21,6 +21,9 @@ namespace Bwork.Authoring.WaterSandbox
             Range(r.oceanBeachDepth,.5f,8,"oceanBeachDepth");
             Range(r.oceanSwashSpeed,0,2,"oceanSwashSpeed");
             Range(r.oceanSwashDepthSpacing,.3f,4,"oceanSwashDepthSpacing");
+            Range(r.oceanSwashRunupHeight,0,1,"oceanSwashRunupHeight");
+            Range(r.oceanSwashRunupDistance,0,24,"oceanSwashRunupDistance");
+            Range(r.oceanSwashPeriod,4,16,"oceanSwashPeriod");
         }
 
         /// <summary>Only appearance crosses into an existing receipt; geometry and displacement bounds stay owned.</summary>
@@ -35,6 +38,17 @@ namespace Bwork.Authoring.WaterSandbox
                 var field=typeof(ConnectedWaterRecipe).GetField(name);
                 field.SetValue(installed,field.GetValue(requested));
             }
+        }
+
+        /// <summary>Visual shore-normal wave, mirrored by RunupField in the shader; no authoritative water change.</summary>
+        public static float RunupHeight(float oceanDistance,float alongshoreCoordinate,float time,ConnectedWaterRecipe r)
+        {
+            if(r.oceanSwashRunupHeight<=0||r.oceanSwashRunupDistance<=0)return 0;
+            float inward=Mathf.SmoothStep(0,1,Mathf.Clamp01((oceanDistance+18)/12));
+            float fadeWidth=Mathf.Min(4,r.oceanSwashRunupDistance);
+            float outward=1-Mathf.SmoothStep(0,1,Mathf.Clamp01((oceanDistance-r.oceanSwashRunupDistance+fadeWidth)/fadeWidth));
+            float phase=oceanDistance*(Mathf.PI/9)-time*(2*Mathf.PI/r.oceanSwashPeriod)+alongshoreCoordinate*.025f;
+            return r.oceanSwashRunupHeight*inward*outward*Mathf.Sin(phase);
         }
 
         static void Range(float value,float min,float max,string name)

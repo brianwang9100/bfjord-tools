@@ -30,6 +30,9 @@ Shader "Bwork/Sandbox/Connected Wave Water"
         _OceanBeachDepth("Breaking zone depth metres", Range(.5,8)) = 3
         _OceanSwashSpeed("Swash cycles per second", Range(0,2)) = .6
         _OceanSwashDepthSpacing("Swash depth spacing metres", Range(.3,4)) = 1.1
+        _OceanSwashRunupHeight("Visual runup height metres", Range(0,1)) = 0
+        _OceanSwashRunupDistance("Visual runup apron metres", Range(0,24)) = 0
+        _OceanSwashPeriod("Runup period seconds", Range(4,16)) = 8
         _OceanWaveDirection("Ocean travel direction X/Z", Vector) = (.8,.6,0,0)
         [HideInInspector] _OceanBounds("Canonical ocean center XZ / radii XZ", Vector) = (0,0,0,0)
         [HideInInspector] _PatternOffset("Seeded pattern origin", Vector) = (0,0,0,0)
@@ -91,19 +94,20 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             float _RiverCurrentStrength,_OceanSurfaceStrength,_AnimationTime;
             float _RiverStreakScale,_RiverTurbulence,_OceanWaveSharpness,_OceanShoreFoam,_OceanBreakerStrength;
             float _OceanBeachDepth,_OceanSwashSpeed,_OceanSwashDepthSpacing;
+            float _OceanSwashRunupHeight,_OceanSwashRunupDistance,_OceanSwashPeriod;
             float4 _PatternOffset,_OceanWaveDirection,_OceanBounds;
             CBUFFER_END
             float WaterTime(){return _AnimationTime>=0?_AnimationTime:_Time.y;}
             struct Attributes
             {
                 float4 positionOS:POSITION; float2 uv:TEXCOORD0; float2 flow:TEXCOORD1;
-                float4 gradients:TEXCOORD2; float4 blendGradients:TEXCOORD3; float4 color:COLOR;
+                float4 gradients:TEXCOORD2; float4 blendGradients:TEXCOORD3; float4 swash:TEXCOORD4; float4 color:COLOR;
             };
             struct Varyings
             {
                 float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; float2 uv:TEXCOORD1;
                 float2 flow:TEXCOORD2; float4 color:TEXCOORD3; float4 gradients:TEXCOORD4;
-                float4 blendGradients:TEXCOORD5; float fog:TEXCOORD6;
+                float4 blendGradients:TEXCOORD5; float fog:TEXCOORD6; float4 swash:TEXCOORD7;
             };
             // Value and exact x/z derivatives share phase, direction, weights and amplitude.
             float3 Wave(float2 p,float height,float length,float speed,float sharpness,float2 direction)
@@ -134,13 +138,37 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 result.yz+=(sea.x-inland.x)*blendGradients.xy;
                 return result;
             }
+            // Analytic shore-normal runup. The signed distance is baked from the ocean
+            // boundary, so the same wave front follows each bank without a camera-space offset.
+            float3 RunupField(float2 p,float4 data)
+            {
+                if(_UseDepth<.5||_OceanSwashRunupDistance<=0||_OceanSwashRunupHeight<=0)return 0;
+                float fadeWidth=min(4,_OceanSwashRunupDistance);
+                float a=saturate((data.x+18)/12),b=saturate((data.x-_OceanSwashRunupDistance+fadeWidth)/fadeWidth);
+                float inward=a*a*(3-2*a),outward=1-b*b*(3-2*b);
+                float envelope=inward*outward;
+                float derivative=(6*a*(1-a)/12)*outward-inward*(6*b*(1-b)/fadeWidth);
+                // A broad oblique variation breaks an unnaturally synchronous straight front.
+                float phase=data.x*.34906585-WaterTime()*6.283185307/max(_OceanSwashPeriod,4)+p.x*.025;
+                float scale=_OceanSwashRunupHeight*saturate(data.w);
+                float value=scale*envelope*sin(phase);
+                float2 gradient=scale*(derivative*sin(phase)*data.yz+
+                    envelope*cos(phase)*(data.yz*.34906585+float2(.025,0)));
+                return float3(value,gradient);
+            }
+            float RunupCoverage(float4 data)
+            {
+                if(_UseDepth<.5||_OceanSwashRunupDistance<=0||_OceanSwashRunupHeight<=0)return 0;
+                return saturate(data.w)*smoothstep(-18,-6,data.x)*
+                    (1-smoothstep(max(0,_OceanSwashRunupDistance-2),_OceanSwashRunupDistance,data.x));
+            }
             Varyings Vert(Attributes i)
             {
                 Varyings o=(Varyings)0;
                 o.positionWS=TransformObjectToWorld(i.positionOS.xyz);
-                o.positionWS.y+=WaveField(i.uv,i.color,i.blendGradients).x*saturate(i.color.r);
+                o.positionWS.y+=WaveField(i.uv,i.color,i.blendGradients).x*saturate(i.color.r)+RunupField(i.uv,i.swash).x;
                 o.positionCS=TransformWorldToHClip(o.positionWS);
-                o.uv=i.uv;o.flow=i.flow;o.color=i.color;o.gradients=i.gradients;o.blendGradients=i.blendGradients;
+                o.swash=i.swash;o.uv=i.uv;o.flow=i.flow;o.color=i.color;o.gradients=i.gradients;o.blendGradients=i.blendGradients;
                 o.fog=ComputeFogFactor(o.positionCS.z);return o;
             }
             float2 DecodeSlope(half3 encoded)
@@ -192,7 +220,8 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             half4 Frag(Varyings i):SV_Target
             {
                 float3 wave=WaveField(i.uv,i.color,i.blendGradients);
-                float2 slope=i.gradients.xy+wave.yz*saturate(i.color.r)+wave.x*i.gradients.zw;
+                float3 runup=RunupField(i.uv,i.swash);float runupCoverage=RunupCoverage(i.swash);
+                float2 slope=i.gradients.xy+wave.yz*saturate(i.color.r)+wave.x*i.gradients.zw+runup.yz;
                 float2 direction=i.flow*min(1,4*rsqrt(max(dot(i.flow,i.flow),.0001)));
                 // Dual phase advection resets without a visible snap; distance is in world metres.
                 float phase0=frac(WaterTime()*_FlowSpeed*.125),phase1=frac(phase0+.5),weight=1-abs(phase0*2-1);
@@ -202,7 +231,7 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float distanceToCamera=distance(GetCameraPositionWS(),i.positionWS);
                 float detailFade=1-smoothstep(12,75,distanceToCamera);
                 // Sea ripples cover a larger area than the river, with a coherent wind drift.
-                float ocean=OceanShadingWeight(i.uv,saturate(i.color.b)),river=(1-ocean)*(1-saturate(i.color.a));
+                float ocean=max(OceanShadingWeight(i.uv,saturate(i.color.b)),runupCoverage),river=(1-ocean)*(1-saturate(i.color.a));
                 float2 oceanDirection=_OceanWaveDirection.xy*rsqrt(max(dot(_OceanWaveDirection.xy,_OceanWaveDirection.xy),.0001));
                 float2 oceanDrift=oceanDirection*.255*WaterTime()*_OceanWaveSpeed;
                 // Blend sampled normals, never world coordinates: a spatial UV lerp stretches
@@ -273,7 +302,7 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 // Depth contours follow the actual opaque bank, including curved beaches. Subtract
                 // displacement to keep the breaking zone anchored to the resting surface. Increasing
                 // phase moves fronts to smaller depths (toward shore), never out toward deep water.
-                float restingDepth=max(0,shoreDepth-wave.x*saturate(i.color.r));
+                float restingDepth=max(0,shoreDepth-wave.x*saturate(i.color.r)-runup.x);
                 float beachZone=(_UseDepth>.5?1-smoothstep(_OceanBeachDepth*.45,_OceanBeachDepth,restingDepth):0)*ocean;
                 float swashPhase=restingDepth/max(_OceanSwashDepthSpacing,.3)+WaterTime()*_OceanSwashSpeed;
                 swashPhase+=(grain.g-.5)*.12;
@@ -282,7 +311,10 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float trailingWash=smoothstep(.06,.22,swash)*(1-smoothstep(.42,.76,swash));
                 float beachFoam=beachZone*porous*max(front*_OceanBreakerStrength,
                     trailingWash*_OceanShoreFoam*.68);
-                float washAtEdge=shore*ocean*_OceanShoreFoam*porous*.74;
+                // Thin water at the moving terrain intersection carries foam even on the
+                // retreat; the contact is displaced geometry, never a painted stationary edge.
+                float movingContact=(1-smoothstep(.04,.30,shoreDepth))*runupCoverage;
+                float washAtEdge=max(shore*.74,movingContact)*ocean*_OceanShoreFoam*porous;
                 float breakingCap=seaCrest*porous*_OceanBreakerStrength*ocean*lerp(.55,1,beachZone);
                 // Inland banks keep a narrow contact line, while authored whitewater is carried
                 // by the same downstream strands. Isotropic map pores never cut moving filaments.
@@ -316,8 +348,9 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 // The canonical footprint fades its wave envelope to zero at clipped mesh
                 // edges. Reuse that bounded field to feather coverage horizontally as
                 // well as vertically, including river banks and shallow lake margins.
-                float edgeCoverage=smoothstep(0,lerp(.045,.10,grain.g),saturate(i.color.r));
-                float depthCoverage=_UseDepth>.5?smoothstep(0,max(.05,_ShoreFadeDepth),shoreDepth):1;
+                float edgeCoverage=max(smoothstep(0,lerp(.045,.10,grain.g),saturate(i.color.r)),runupCoverage);
+                float contactFade=lerp(max(.05,_ShoreFadeDepth),.06,runupCoverage);
+                float depthCoverage=_UseDepth>.5?smoothstep(0,contactFade,shoreDepth):1;
                 surface.alpha=(_UseDepth>.5?alpha:_DeepOpacity)*edgeCoverage*depthCoverage;
                 InputData lighting=(InputData)0;lighting.positionWS=i.positionWS;lighting.normalWS=n;
                 lighting.viewDirectionWS=view;lighting.shadowCoord=TransformWorldToShadowCoord(i.positionWS);lighting.fogCoord=i.fog;

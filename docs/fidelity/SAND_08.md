@@ -1,0 +1,33 @@
+# Pale beach sand, BFjord 0.8
+
+The 0.8 shoreline replaces the dark Sand02 source with ambientCG Ground052 white beach photogrammetry, then applies a documented original ivory color treatment. It keeps one matched 2K color/normal/packed-mask set for both dry and wet layers at the source's approximately 2 m physical tile size. The change targets pale sand, fine relief and coherent wetness; it makes no AAA parity or physical-device claim.
+
+## Source decision and reference observations
+
+Research checked September 15, 2026:
+
+- [Ground052](https://ambientcg.com/view?id=Ground052) is a scanned white beach at approximately 2 × 2 m. Its small natural deposits and subdued relief better fit the requested shoreline than the compacted dark Sand02 scan. [ambientCG's license](https://docs.ambientcg.com/license/) explicitly permits modification, raw-file redistribution and commercial use under CC0. Only the 2K pack was downloaded; five matched map files were retained.
+- [Ground027](https://ambientcg.com/view?id=Ground027) is another CC0 white beach scan, but the examined page gives no physical dimensions. Ground052 offers an explicit usable scale. [Ground055S](https://ambientcg.com/view?id=Ground055S) is a 1.5 m beach scan; no additional pack was needed after Ground052 proved suitable.
+- [Poly Haven Sand01](https://polyhaven.com/a/sand_01) is described as trampled sand/clay with a hard-packed plaster-like surface. [Coast Sand04](https://polyhaven.com/a/coast_sand_04) has coarse debris and a damp brown surface. These do not improve the requested pale fine-sand ground. The previous Sand02 source remains pinned for provenance; no encoding defect is claimed for its already-corrected color.
+- [Poly Haven's texture standards](https://docs.polyhaven.com/en/technical-standards/textures) emphasize matched maps, calibrated scale and clean albedo. Those principles inform the pipeline; our new mineral color treatment is artistic and must not be presented as a measured material.
+- [Unity 6 Terrain Layers](https://docs.unity3d.com/6000.0/Documentation/Manual/class-TerrainLayer.html) supports the existing TerrainLayer map/remap/normal controls. This revision uses ordinary imported maps and those controls; it adds no runtime package or shader dependency.
+
+Privately inspected NatureManufacture coast and ground-detail imagery supplied direction: large pale ivory areas; fine granular variation beneath larger sparse organic deposits; selective ripple patches; interrupted wet edges and local contact detail. Supplier reference pixels and commercial assets are absent from the source/output textures and this document. The ground material is one component of that visual hierarchy; cliffs, vegetation, debris distribution, light and water still govern the assembled result.
+
+## Material choices
+
+Ground052 is naturally much lighter than Sand02 but carries a muted yellow/green cast. The source RGB average is approximately (160, 158, 137), compared with old published Sand02 (97, 86, 72). A linear-space ivory mineral base (0.68, 0.645, 0.565), relative luminance exponent 0.85 and 20% residual chroma preserve grain/debris structure while reducing the cast. Above linear 0.8 a smooth knee approaches 0.9; it never hard-clips to white. One sRGB encode writes the output. Exact output measurements appear in `assets/BFjordTools/ShoreDetail/Review/sand08-verification.json`.
+
+The five source maps remain aligned. Metallic is zero, AO/roughness/height come from the scan. Normal XY is retained within the unit disk and positive Z is reconstructed to match Unity normal-map import; this avoids relying on non-unit blue values left by the supplier's downsampling. Dry/wet normal strength is 0.65/0.4. The dry remap remains compatible with the current terrain shader; the wet smoothness interval narrows to 0.22–0.48 and tint is (0.84, 0.82, 0.79), so damp areas read as the same pale material.
+
+The default wet band narrows from 6 to 3.5 m and from 1 to 0.65 m vertically. Both elevation and ocean distance still gate coverage. When the active water recipe enables swash, its outward visual apron extends the wet proximity footprint by `oceanSwashRunupDistance`; the 0.65 m elevation gate and total sand coverage still bound wetness. This accounts for the assembled scene's real sea/terrain intersection outside the canonical rectangle. The inward distance gate is unchanged, and disabled/zero-apron recipes retain their old behavior. Rebuild water before repainting terrain so the active recipe supplies the current apron. Preserved recipes with explicit values keep their values; the shipped shoreline sample is updated. Other terrain palettes keep their material controls.
+
+The 2 m scan tile retains physically plausible deposits. Increasing texture scale to hide repetition would enlarge grains and twigs. The existing optional terrain anti-tiling system remains responsible for repetition, with world placement and sparse debris handling larger-scale variation. Optional 16.7 cm/2.5 mm ripples sit above scan detail in normal/height only; the default dry/wet surface uses the unrippled scan. This avoids a uniform raked carpet or exaggerated dune-scale grooves. At 2K, submillimeter grain is not geometrically resolved and should not be claimed.
+
+## Reproduction and integration
+
+Run `fetch_sand.py`, `build_sand.py`, and `verify_color_encoding.py` with Python 3 + NumPy + Pillow. The source receipt pins the exact archive URL, byte count, SHA-256 and five member hashes. The build touches only six sand maps and a local additions receipt. It never regenerates shell FBXs or the shore atlas. `build_shore.py` delegates to that same pipeline when a full shore rebuild is explicitly wanted; set `BFJORD_PYTHON` if Blender's environment lacks those libraries.
+
+Root integration should copy family `manifest.json` and `Sources/sand-source.json` into catalog provenance, merge `sand08-catalog-additions.json` with the global catalog, and regenerate any whole-family inventory after those copies. Stable existing texture GUIDs are retained. Run the updated `ShorelineTerrainTests` with the assembled toolkit, repaint the shipped shoreline profile and inspect both low-angle grain and broader beach coverage under the same light. Source assets and catalog bytes must freeze before export/installation. Six maps retain 2048² dimensions; PNG size is a distribution measure, not GPU memory or iPad performance evidence.
+
+Offline verification covers exact encoding, scan-channel preservation, tangent normal unit length, absence of pure-white clipping and local/catalog identity. Unity import/compression, assembled-scene appearance and physical iPad performance are root integration acceptance, not claimed by these map checks.

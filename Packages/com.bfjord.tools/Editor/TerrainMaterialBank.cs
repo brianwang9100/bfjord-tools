@@ -38,7 +38,7 @@ namespace Bwork.Authoring.Editor
                 const string shoreRoot = "Assets/BFjord/ShoreDetail/Textures/BeachSand_";
                 Texture2D Read(string suffix) => AssetDatabase.LoadAssetAtPath<Texture2D>(shoreRoot + suffix + ".png") ??
                     throw new InvalidOperationException("Install the shore detail sand maps: " + suffix);
-                result[1] = new Surface(Read("Color"), Read("NormalGL"), Read("Mask"), 2.1f);
+                result[1] = new Surface(Read("Color"), Read("NormalGL"), Read("Mask"), 2f);
                 result[2] = result[1];
             }
             if (palette == "woodland") result[1] = Load("ForestLitter", 2.14f);

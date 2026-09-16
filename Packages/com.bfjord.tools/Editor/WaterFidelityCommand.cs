@@ -8,10 +8,10 @@ namespace Bwork.Authoring.Editor
     /// <summary>Appearance-only presets reuse the active water's transaction and restoration receipt.</summary>
     public static class WaterFidelityCommand
     {
-        [CliCommand("bwork_water_fidelity","Apply a low, medium or high river flow with breaking ocean foam to installed connected water. Optional surface refresh updates swell bounds without carving.",MainThreadRequired=true)]
+        [CliCommand("bwork_water_fidelity","Apply a low, medium or high river flow with breaking ocean foam to installed connected water. Optional surface refresh updates swell bounds and visual swash coverage without carving.",MainThreadRequired=true)]
         public static object Run(
             [CliArg("preset","low, medium or high")]string preset="medium",
-            [CliArg("refreshSurface","Refresh owned swell bounds and shading weights without changing terrain or canonical mesh positions")]bool refreshSurface=false)
+            [CliArg("refreshSurface","Refresh visual apron, swell bounds and shading weights without changing terrain or canonical water fields")]bool refreshSurface=false)
         {
             if(preset!="low"&&preset!="medium"&&preset!="high")throw new ArgumentException("Use low, medium or high flow.");
             return ConnectedWaterCommand.Run(refreshSurface?"refresh-surface":"refresh-appearance",ToolSandbox.SamplePath("water-fidelity-"+preset+".json"));

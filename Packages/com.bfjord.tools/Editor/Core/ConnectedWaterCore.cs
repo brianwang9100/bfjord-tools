@@ -38,6 +38,8 @@ namespace Bwork.Authoring.WaterSandbox
         public float oceanSurfaceStrength = .32f, oceanWaveSharpness = 0;
         public float oceanShoreFoam = 0, oceanBreakerStrength = 0, oceanBeachDepth = 3;
         public float oceanSwashSpeed = .6f, oceanSwashDepthSpacing = 1.1f;
+        // Surface-owned, opt-in visual coverage. Never used by Sample or terrain carving.
+        public float oceanSwashRunupHeight = 0, oceanSwashRunupDistance = 0, oceanSwashPeriod = 8;
         public int waterPatternSeed = 0;
         public float oceanBlendDistance = 24;
         public Vector2 oceanWaveDirection = new Vector2(.8f,.6f);
@@ -314,13 +316,26 @@ namespace Bwork.Authoring.WaterSandbox
 
         public Mesh BuildMesh()
         {
-            float step=recipe.cellSize;int startX=Mathf.FloorToInt(Bounds.min.x/step)-1,startZ=Mathf.FloorToInt(Bounds.min.z/step)-1;
-            int nx=Mathf.CeilToInt(Bounds.max.x/step)-startX+1,nz=Mathf.CeilToInt(Bounds.max.z/step)-startZ+1;
+            float apron=recipe.oceanSwashRunupHeight>0?recipe.oceanSwashRunupDistance:0;
+            var ocean=recipe.nodes.Single(n=>n.kind=="ocean");
+            var renderBounds=Bounds;renderBounds.Expand(new Vector3(2*apron,0,2*apron));
+            float step=recipe.cellSize;int startX=Mathf.FloorToInt(renderBounds.min.x/step)-1,startZ=Mathf.FloorToInt(renderBounds.min.z/step)-1;
+            int nx=Mathf.CeilToInt(renderBounds.max.x/step)-startX+1,nz=Mathf.CeilToInt(renderBounds.max.z/step)-startZ+1;
+            // Expand only the ocean's render union; every canonical sample remains unchanged.
+            float RenderDistance(Vector2 p,WaterFieldSample sample)=>apron>0?Mathf.Min(sample.Distance,BodyDistance(ocean,p)-apron):sample.Distance;
+            void ValidateApronHeight(Vector2 p,WaterFieldSample sample)
+            {
+                // Canonical overlap validation cannot see the visual ocean extension.
+                // Reject incompatible joins before replacing any owned scene assets.
+                if(apron>0&&sample.Distance<=0&&BodyDistance(ocean,p)<=apron&&Mathf.Abs(sample.Height-ocean.position.y)>.025f)
+                    throw new ArgumentException("Ocean swash apron overlaps incompatible inland water near "+p+
+                        ". Shrink oceanSwashRunupDistance or extend the sea-level flat connection collar.");
+            }
             if((long)(nx+1)*(nz+1)>300000)throw new ArgumentException("Union lattice budget exceeded.");
             var positions=new Vector2[(nx+1)*(nz+1)];var samples=new WaterFieldSample[positions.Length];
-            for(int z=0;z<=nz;z++)for(int x=0;x<=nx;x++){int i=z*(nx+1)+x;positions[i]=new Vector2((startX+x)*step,(startZ+z)*step);samples[i]=Sample(positions[i]);}
+            for(int z=0;z<=nz;z++)for(int x=0;x<=nx;x++){int i=z*(nx+1)+x;positions[i]=new Vector2((startX+x)*step,(startZ+z)*step);samples[i]=Sample(positions[i]);ValidateApronHeight(positions[i],samples[i]);}
             var vertices=new List<Vector3>();var uv=new List<Vector2>();var flow=new List<Vector2>();var colors=new List<Color>();var indices=new List<int>();
-            var surfaceGradients=new List<Vector4>();var blendGradients=new List<Vector4>();
+            var surfaceGradients=new List<Vector4>();var blendGradients=new List<Vector4>();var swashData=new List<Vector4>();
             var nodesToVertices=new Dictionary<int,int>();var edgesToVertices=new Dictionary<long,int>();
             int Vertex(int node)
             {
@@ -329,16 +344,28 @@ namespace Bwork.Authoring.WaterSandbox
             }
             int AddVertex(Vector2 p,WaterFieldSample s,bool boundary)
             {
+                ValidateApronHeight(p,s);
                 int index=vertices.Count;if(index>=300000)throw new ArgumentException("Union vertex budget exceeded.");
-                vertices.Add(new Vector3(p.x,s.Height,p.y));uv.Add(p);flow.Add(s.Flow);
+                // Curved inland clipping can leave a tiny positive distance; only the ocean
+                // apron may substitute its resting level, never an inland bank intersection.
+                bool outsideCanonical=s.Distance>0&&apron>0&&BodyDistance(ocean,p)-apron<s.Distance;
+                float level=outsideCanonical?ocean.position.y:s.Height;
+                vertices.Add(new Vector3(p.x,level,p.y));uv.Add(p);flow.Add(s.Flow);
                 float bank=boundary?0:Mathf.SmoothStep(0,1,Mathf.Clamp01(-s.Distance/recipe.waveBankFade));
                 colors.Add(new Color(bank*bank,s.Foam,s.Ocean,s.Lake));
+                // UV4 is ocean distance, its X/Z gradient, and an opt-in validity marker.
+                // The same field extends through the mouth, so no extra amplitude seam is added.
+                const float dh=.25f;float oceanDistance=BodyDistance(ocean,p);
+                float mask=apron>0?1:0;
+                swashData.Add(new Vector4(oceanDistance,
+                    (BodyDistance(ocean,p+new Vector2(dh,0))-BodyDistance(ocean,p-new Vector2(dh,0)))/(2*dh),
+                    (BodyDistance(ocean,p+new Vector2(0,dh))-BodyDistance(ocean,p-new Vector2(0,dh)))/(2*dh),mask));
                 // Bake smooth field derivatives once; shader normals never use triangle face derivatives.
                 const float h=.25f;
                 var left=Sample(p-new Vector2(h,0));var right=Sample(p+new Vector2(h,0));
                 var back=Sample(p-new Vector2(0,h));var front=Sample(p+new Vector2(0,h));
                 float Bank(WaterFieldSample sample){float t=Mathf.SmoothStep(0,1,Mathf.Clamp01(-sample.Distance/recipe.waveBankFade));return t*t;}
-                surfaceGradients.Add(new Vector4((right.Height-left.Height)/(2*h),(front.Height-back.Height)/(2*h),
+                surfaceGradients.Add(new Vector4(outsideCanonical?0:(right.Height-left.Height)/(2*h),outsideCanonical?0:(front.Height-back.Height)/(2*h),
                     boundary?0:(Bank(right)-Bank(left))/(2*h),boundary?0:(Bank(front)-Bank(back))/(2*h)));
                 blendGradients.Add(new Vector4((right.Ocean-left.Ocean)/(2*h),(front.Ocean-back.Ocean)/(2*h),
                     (right.Lake-left.Lake)/(2*h),(front.Lake-back.Lake)/(2*h)));return index;
@@ -346,10 +373,11 @@ namespace Bwork.Authoring.WaterSandbox
             int Crossing(int a,int b)
             {
                 if(a>b){int temporary=a;a=b;b=temporary;}
-                if(Mathf.Abs(samples[a].Distance)<1e-6f)return Vertex(a);
-                if(Mathf.Abs(samples[b].Distance)<1e-6f)return Vertex(b);
+                float da=RenderDistance(positions[a],samples[a]),db=RenderDistance(positions[b],samples[b]);
+                if(Mathf.Abs(da)<1e-6f)return Vertex(a);
+                if(Mathf.Abs(db)<1e-6f)return Vertex(b);
                 long key=Key(a,b);if(edgesToVertices.TryGetValue(key,out int found))return found;
-                float t=samples[a].Distance/(samples[a].Distance-samples[b].Distance);
+                float t=da/(da-db);
                 var p=Vector2.Lerp(positions[a],positions[b],t);int index=AddVertex(p,Sample(p),true);edgesToVertices.Add(key,index);return index;
             }
             void Triangle(int a,int b,int c)
@@ -357,7 +385,7 @@ namespace Bwork.Authoring.WaterSandbox
                 Span<int> source=stackalloc int[3]{a,b,c};Span<int> polygon=stackalloc int[4];int polygonCount=0;
                 for(int i=0;i<3;i++)
                 {
-                    int current=source[i],next=source[(i+1)%3];bool inside=samples[current].Distance<=0,nextInside=samples[next].Distance<=0;
+                    int current=source[i],next=source[(i+1)%3];bool inside=RenderDistance(positions[current],samples[current])<=0,nextInside=RenderDistance(positions[next],samples[next])<=0;
                     if(inside)polygon[polygonCount++]=Vertex(current);if(inside!=nextInside)polygon[polygonCount++]=Crossing(current,next);
                 }
                 for(int i=1;i<polygonCount-1;i++)
@@ -373,8 +401,8 @@ namespace Bwork.Authoring.WaterSandbox
             if(indices.Count==0)throw new ArgumentException("Union produced no wet triangles.");
             ValidateConnected(vertices.Count,indices);
             var mesh=new Mesh{name=recipe.id,indexFormat=vertices.Count>65535?IndexFormat.UInt32:IndexFormat.UInt16};
-            mesh.SetVertices(vertices);mesh.SetUVs(0,uv);mesh.SetUVs(1,flow);mesh.SetUVs(2,surfaceGradients);mesh.SetUVs(3,blendGradients);mesh.SetColors(colors);mesh.SetTriangles(indices,0);mesh.RecalculateNormals();mesh.RecalculateBounds();
-            var bounds=mesh.bounds;bounds.Expand(new Vector3(0,2*Mathf.Max(recipe.lakeWaveHeight,Mathf.Max(recipe.riverWaveHeight,recipe.oceanWaveHeight)),0));mesh.bounds=bounds;return mesh;
+            mesh.SetVertices(vertices);mesh.SetUVs(0,uv);mesh.SetUVs(1,flow);mesh.SetUVs(2,surfaceGradients);mesh.SetUVs(3,blendGradients);mesh.SetUVs(4,swashData);mesh.SetColors(colors);mesh.SetTriangles(indices,0);mesh.RecalculateNormals();mesh.RecalculateBounds();
+            var bounds=mesh.bounds;bounds.Expand(new Vector3(0,2*(Mathf.Max(recipe.lakeWaveHeight,Mathf.Max(recipe.riverWaveHeight,recipe.oceanWaveHeight))+(apron>0?recipe.oceanSwashRunupHeight:0)),0));mesh.bounds=bounds;return mesh;
         }
         static void ValidateConnected(int count,List<int> triangles)
         {

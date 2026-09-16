@@ -1,0 +1,110 @@
+{
+  "tree07-catalog-additions.json": {
+    "bytes": 5115,
+    "sha256": "928c2176b2ebf2ed5c9c85744c895f87030e156b9ff371a5688eb053f36007ea"
+  },
+  "tree07-manifest.json": {
+    "bytes": 8439,
+    "sha256": "116a38f64872383511da75091678e3e85e7706ca9ae3414cb342fae1a24dea3c"
+  },
+  "tree07-manifest.json.meta": {
+    "bytes": 158,
+    "sha256": "60ba6768bd8eb29436721ac0dbffd0305ae4efb20fdb3a20a2ab6843cfe21d93"
+  },
+  "Textures/CoastalPine_CNormal.png": {
+    "bytes": 3065471,
+    "sha256": "9c4c773fe6d30e789087cbdd8b19b4dbc3fe7552a48ad7c45af149efa2cec046"
+  },
+  "Textures/MatureBeech_CMask.png.meta": {
+    "bytes": 3424,
+    "sha256": "e1cea946beb0ec7499dba58e082c4e21261ed6c14f4e010e3cddbef732eea16d"
+  },
+  "Textures/GiantRedwood_CAtlas.png.meta": {
+    "bytes": 3424,
+    "sha256": "d51d5d8e78070c32c0a8b9a88d2971db370ce5b38dbaef7d7ef14b7b6cb0f984"
+  },
+  "Textures/MatureBeech_CMask.png": {
+    "bytes": 39299,
+    "sha256": "8870aeac13b22a5a4e2cebc422785124c277eb91f95fd2ce993fa420acef3105"
+  },
+  "Textures/GiantRedwood_CNormal.png": {
+    "bytes": 3065471,
+    "sha256": "9c4c773fe6d30e789087cbdd8b19b4dbc3fe7552a48ad7c45af149efa2cec046"
+  },
+  "Textures/GiantRedwood_CNormal.png.meta": {
+    "bytes": 3424,
+    "sha256": "02ded9b15c3dd8b056207bc8798a3bc2fbb135d0ea46e1789b592e16039b3c68"
+  },
+  "Textures/CoastalPine_CMask.png": {
+    "bytes": 1095432,
+    "sha256": "8df78d750c0771b0cb0496f0d57d46c4cc6626573b74c3f1a02f3d304d4b1ce0"
+  },
+  "Textures/MatureBeech_CAtlas.png.meta": {
+    "bytes": 3424,
+    "sha256": "de0d649fa26b8e8fb1619bd6f8698e1e8358e4d3c4f2502741f38d9154db9dd4"
+  },
+  "Textures/GiantRedwood_CMask.png": {
+    "bytes": 1095432,
+    "sha256": "8df78d750c0771b0cb0496f0d57d46c4cc6626573b74c3f1a02f3d304d4b1ce0"
+  },
+  "Textures/CoastalPine_CNormal.png.meta": {
+    "bytes": 3424,
+    "sha256": "0f7c3e7ae06eae8f6e7194a98260b08aa771ee04df939c51f97389f5e9825e4f"
+  },
+  "Textures/GiantRedwood_CAtlas.png": {
+    "bytes": 3842560,
+    "sha256": "0386934cc66f716100a5cc270ef91a2fe7686d9ea8d64725b4b092354fbdb8b6"
+  },
+  "Textures/MatureBeech_CAtlas.png": {
+    "bytes": 2720126,
+    "sha256": "f89750a17b3eb90503db3239c692fa988a25effbf0b96b03a8432b6c5f9c0e9a"
+  },
+  "Textures/GiantRedwood_CMask.png.meta": {
+    "bytes": 3424,
+    "sha256": "bd4c67efa9791e52483f6d6880b580f5049ca8b3848d7a0eac373b0903234662"
+  },
+  "Textures/CoastalPine_CAtlas.png.meta": {
+    "bytes": 3424,
+    "sha256": "0eb5a22be3b7333eb0e0802b942146cbd8978ab2d179fb5e138ed04ad425a11f"
+  },
+  "Textures/CoastalPine_CMask.png.meta": {
+    "bytes": 3424,
+    "sha256": "6abc65caf9d6f305f975085d27eebfba86026796b9f236a986554a4175ae27b3"
+  },
+  "Textures/MatureBeech_CNormal.png": {
+    "bytes": 2461637,
+    "sha256": "980676ace1a5b61da7e9e023fbb0393600c42a85dce2f53c5b26594ae28409b7"
+  },
+  "Textures/CoastalPine_CAtlas.png": {
+    "bytes": 3918558,
+    "sha256": "3ae5b1ac729e5db40c094674d237c29bcb42b6dd4100d09638f9920079870ab3"
+  },
+  "Textures/MatureBeech_CNormal.png.meta": {
+    "bytes": 3424,
+    "sha256": "4ce7b75e7b7529df879f1053819ec73f7ccb792294df280e3d5bbe6f79d96f0c"
+  },
+  "Models/CoastalPine_C.fbx": {
+    "bytes": 28286492,
+    "sha256": "889e3903c042a042d0b166588543951900ad7309d1ac647f9fe4656a62ed74bf"
+  },
+  "Models/GiantRedwood_C.fbx": {
+    "bytes": 26669964,
+    "sha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531"
+  },
+  "Models/MatureBeech_C.fbx": {
+    "bytes": 25496252,
+    "sha256": "2086fe4b43470681274a01e1f57f4d1605dee25f9eff958e99285fb37cdeed75"
+  },
+  "Models/GiantRedwood_C.fbx.meta": {
+    "bytes": 3094,
+    "sha256": "1f72275b5db93cf3c2e749eaaba0c462fa2b9c59549ac491bde6a41ab22c7789"
+  },
+  "Models/MatureBeech_C.fbx.meta": {
+    "bytes": 3094,
+    "sha256": "5628a9ac733f4d9f6cacdc898f192809162455d25c69b8ac555867ce7195acb6"
+  },
+  "Models/CoastalPine_C.fbx.meta": {
+    "bytes": 3094,
+    "sha256": "0f317e6e8c6086a051812829a19094968e1f99f6b481a4a059f80e2de0bf7b8e"
+  }
+}

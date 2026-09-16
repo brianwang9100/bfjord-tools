@@ -253,20 +253,10 @@ def meta(path):
     path.with_name(path.name+'.meta').write_text(text)
 
 def sand():
-    source=OUT/'Sources';arrays={}
-    for role in ['diff','nor_gl','arm','disp']:
-        p=source/f'sand_02_{role}_2k.png';im=bpy.data.images.load(str(p));im.colorspace_settings.name='Non-Color';a=np.empty(N*N*4,np.float32);im.pixels.foreach_get(a);arrays[role]=a.reshape((N,N,4))
-    color=arrays['diff'][:,:,:3];normal=arrays['nor_gl'][:,:,:3];arm=arrays['arm'];height=arrays['disp'][:,:,0]
-    png('BeachSand_Color.png',color,True);png('BeachSand_NormalGL.png',normal)
-    png('BeachSand_Mask.png',np.stack([np.zeros_like(height),arm[:,:,0],height,1-arm[:,:,1]],2))
-    # Original tileable low-relief wind ripple layer combined with the verified scan.
-    y,x=np.mgrid[0:N,0:N]/N;phase=y*math.tau*12+.42*np.sin(x*math.tau*3)+.15*np.sin(x*math.tau*7)
-    ripple=np.sin(phase)+.22*np.sin(phase*2)
-    ny=normal*2-1;dx=.42*np.cos(x*math.tau*3)*math.tau*3+.15*np.cos(x*math.tau*7)*math.tau*7
-    slope=(np.cos(phase)+.44*np.cos(phase*2))*.009/2.1
-    ny[:,:,0]-=slope*dx;ny[:,:,1]-=slope*math.tau*12;ny/=np.linalg.norm(ny,axis=2)[:,:,None]
-    png('RippleSand_Color.png',color,True);png('RippleSand_NormalGL.png',ny*.5+.5)
-    png('RippleSand_Mask.png',np.stack([np.zeros_like(height),arm[:,:,0],np.clip(height*.55+.22+ripple*.14,0,1),1-arm[:,:,1]],2))
+    # Keep full authoring on the same pinned scan pipeline as the sand-only update.
+    import os, sys
+    python=os.environ.get('BFJORD_PYTHON','python3')
+    subprocess.run([python,str(Path(__file__).with_name('build_sand.py'))]+(['--colors-only'] if COLOR_ONLY else []),check=True)
 
 def main():
     bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
@@ -289,7 +279,7 @@ def main():
     for im in bpy.data.images:
         if im.filepath:im.filepath=bpy.path.relpath(im.filepath,start=str(OUT/'Sources'))
     bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'Sources/ShoreDetail.blend'))
-    data={'schemaVersion':1,'id':'bfjord-shore-detail','license':'CC0-1.0','coordinateSystem':'Unity metres; +Y up; bottom ground pivot','source':'Original Blender geometry and atlas; Poly Haven Sand 02 by Charlotte Baglioni CC0. Original wind-ripple modulation.','material':{'id':'BFjord_ShoreAtlas','color':'Textures/ShoreAtlas_Color.png','normal':'Textures/ShoreAtlas_NormalGL.png','mask':'Textures/ShoreAtlas_Mask.png','channels':'Mask R metallic=0 G AO B height A smoothness. Normal OpenGL +Y; no green flip.','opaque':True,'resolution':2048},'sand':{'tileMeters':2.1,'dry':['BeachSand_Color.png','BeachSand_NormalGL.png','BeachSand_Mask.png'],'ripple':['RippleSand_Color.png','RippleSand_NormalGL.png','RippleSand_Mask.png'],'wetShading':{'baseColorMultiplier':[.62,.64,.65,1],'smoothnessRange':[.42,.72],'normalScale':.5},'rippleHeightMeters':.009,'rippleWavelengthMeters':.175},'variants':variants,'limitations':['Authored procedural details, not scanned shell or wrack models.','FBX reimport is a software check; Unity/URP, runtime costs and iPad visual acceptance are root integration work.','Sand source contains existing subtle footprints; original wind ripples supplement that source.']}
+    data={'schemaVersion':1,'id':'bfjord-shore-detail','license':'CC0-1.0','coordinateSystem':'Unity metres; +Y up; bottom ground pivot','source':'Original Blender geometry and atlas; ambientCG Ground052 by Lennart Demes CC0, original ivory treatment and wind-ripple modulation.','material':{'id':'BFjord_ShoreAtlas','color':'Textures/ShoreAtlas_Color.png','normal':'Textures/ShoreAtlas_NormalGL.png','mask':'Textures/ShoreAtlas_Mask.png','channels':'Mask R metallic=0 G AO B height A smoothness. Normal OpenGL +Y; no green flip.','opaque':True,'resolution':2048},'sand':{'tileMeters':2.0,'dry':['BeachSand_Color.png','BeachSand_NormalGL.png','BeachSand_Mask.png'],'ripple':['RippleSand_Color.png','RippleSand_NormalGL.png','RippleSand_Mask.png'],'wetShading':{'baseColorMultiplier':[.84,.82,.79,1],'smoothnessRange':[.22,.48],'normalScale':.4},'rippleHeightMeters':.0025,'rippleWavelengthMeters':2/12},'variants':variants,'limitations':['Authored procedural details, not scanned shell or wrack models.','FBX reimport is a software check; Unity/URP, runtime costs and iPad visual acceptance are root integration work.','Sand uses an authored ivory color treatment of a white beach scan; not a calibrated mineral/albedo claim. Optional ripples supplement the scan.']}
     (OUT/'manifest.json').write_text(json.dumps(data,indent=2)+'\n')
     for folder in ['Models','Textures']:
         for p in (OUT/folder).iterdir():shutil.copy2(p,CAT/folder/p.name)

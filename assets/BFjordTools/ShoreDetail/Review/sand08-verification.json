@@ -1,0 +1,33 @@
+{
+  "source": "Ground052",
+  "checks": [
+    "BeachSand: exact source treatment, unit normals, nonmetallic matched channels, catalog identity",
+    "RippleSand: exact source treatment, unit normals, nonmetallic matched channels, catalog identity"
+  ],
+  "materialStatistics": {
+    "meanEncodedRGB": [
+      214.75290274620056,
+      209.75771808624268,
+      197.76416301727295
+    ],
+    "meanLinearRGB": [
+      0.6794437423626882,
+      0.6443967670286166,
+      0.5647400505935289
+    ],
+    "maxEncodedRGB": [
+      243,
+      243,
+      243
+    ],
+    "clippedChannels": 0,
+    "tileMeters": 2.0,
+    "resolution": 2048,
+    "rawSourceMeanEncodedRGB": [
+      160.0488408596637,
+      157.7758240549903,
+      137.33330291616446
+    ]
+  },
+  "limits": "Offline map verification only; Unity lighting/compression and device acceptance remain separate."
+}

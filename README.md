@@ -2,9 +2,29 @@
 
 Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, nine original rock families, connected river/lake/delta/ocean geometry, a bounded waterfall fixture, and an optional original masonry tunnel portal.
 
+![0.8 Unity pale photogrammetry sand beside the moving ocean wash](docs/images/fidelity-08-sand-detail.png)
+
+**0.8.0 is ready:** pale photogrammetry sand, an ocean swash that visibly advances and retreats, and a substantially fuller `GiantRedwood_C` crown. **178/178 Unity Editor checks passed in 26.06 seconds**, the shader-error list was empty, and canonical Terrain heights, holes and the connected-water graph remained unchanged. The [0.8 nature record](docs/fidelity/NATURE_08.md) documents the CC0 sand source, visual controls, redwood LODs and limits.
+
+| Shoreline before | Pale sand and moving wash |
+|---|---|
+| ![0.7 Unity shoreline before moving swash](docs/images/fidelity-08-shore-before.png) | ![0.8 Unity shoreline with pale sand and moving shallow wash](docs/images/fidelity-08-shore-after.png) |
+| Swash retreated | Swash advanced |
+| ![0.8 Unity ocean swash at its retreated phase](docs/images/fidelity-08-shore-retreat.png) | ![0.8 Unity ocean swash at its advanced phase](docs/images/fidelity-08-shore-advance.png) |
+
+[Watch one complete Unity shore-wash cycle](docs/clips/fidelity-08-shore.mp4): 120 actual Unity frames over 10 seconds, encoded offline at 12 fps. This is an evidence capture, not a runtime or device-performance measurement. The 18 m visual apron, 0.55 m amplitude and eight-second period animate rendered shore coverage only; canonical terrain and water geography do not move.
+
+| Giant redwood before | Fuller GiantRedwood_C |
+|---|---|
+| ![0.7 Unity giant redwood with the original sparse crown](docs/images/fidelity-08-redwood-before.png) | ![0.8 Unity giant redwood with a denser layered crown](docs/images/fidelity-08-redwood-after.png) |
+| Pale sand detail | Grain and ripple close view |
+| ![0.8 Unity pale ivory beach material](docs/images/fidelity-08-sand-detail.png) | ![0.8 Unity close view of pale sand grain and ripple detail](docs/images/fidelity-08-sand-close.png) |
+
+The sand uses matched 2K PBR maps from the CC0 ambientCG Ground 052 white-beach scan, recolored with an original ivory treatment. The redwood keeps three useful LODs and deliberate canopy gaps; its geometric needles remain enlarged in extreme closeups. This iteration improves the bounded authoring sandbox and does not claim AAA parity or mobile performance acceptance.
+
 ![0.7 Unity seaweed and shell details on scanned sand](docs/images/fidelity-07-beach-detail.png)
 
-**0.7.0 is ready:** scanned beach sand, softer water contact, shells/seaweed/driftwood, exposed roots, leaf litter, mushrooms and three more tree families. The library now has 42 variants. **172/172 Editor checks passed**; actual Unity stills and a shoreline clip are in the [0.7 review](docs/fidelity/NATURE_07.md). The sample's straight coast, broad wet band and stylized vegetation remain visible limitations.
+The previous **0.7.0 iteration is complete:** scanned beach sand, softer water contact, shells/seaweed/driftwood, exposed roots, leaf litter, mushrooms and three more tree families. The library reached 42 variants. **172/172 Editor checks passed**; actual Unity stills and a shoreline clip remain in the [0.7 review](docs/fidelity/NATURE_07.md). The sample's straight coast, broad wet band and stylized vegetation remain visible limitations.
 
 ![0.6 Unity woodland with additive oak B and birch B variants](docs/images/fidelity-06-woodland.png)
 

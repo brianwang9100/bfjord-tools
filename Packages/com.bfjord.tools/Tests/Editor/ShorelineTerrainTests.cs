@@ -23,8 +23,8 @@ namespace Bwork.Authoring.Editor.Tests
                 Assert.That(surfaces[1].color, Is.SameAs(surfaces[2].color));
                 Assert.That(surfaces[1].normal, Is.SameAs(surfaces[2].normal));
                 Assert.That(surfaces[1].mask, Is.SameAs(surfaces[2].mask));
-                Assert.That(surfaces[1].tileMeters, Is.EqualTo(2.1f));
-                Assert.That(surfaces[2].tileMeters, Is.EqualTo(2.1f));
+                Assert.That(surfaces[1].tileMeters, Is.EqualTo(2f));
+                Assert.That(surfaces[2].tileMeters, Is.EqualTo(2f));
                 Assert.That(surfaces[1].color.width, Is.EqualTo(2048));
             }
             finally { UnityEngine.Object.DestroyImmediate(material); }
@@ -68,6 +68,38 @@ namespace Bwork.Authoring.Editor.Tests
                 Assert.That(w.x+w.y+w.z+w.w, Is.EqualTo(1).Within(.0001f));
                 for (int i = 0; i < 4; i++) Assert.That(w[i], Is.InRange(0,1));
             }
+        }
+
+        [Test]
+        public void DampMaterialStaysNearWaterlineLeavingDryPaleUpperBeach()
+        {
+            var low = TerrainPresentation.ShorelineWeights(0,.1f,.1f,.5f,.5f,profile);
+            var upper = TerrainPresentation.ShorelineWeights(0,.8f,.1f,.5f,.5f,profile);
+            var inland = TerrainPresentation.ShorelineWeights(0,.1f,4,.5f,.5f,profile);
+            Assert.That(low.z, Is.GreaterThan(.95f));
+            Assert.That(upper.z, Is.Zero);
+            Assert.That(upper.y, Is.EqualTo(1));
+            Assert.That(inland.z, Is.Zero);
+            Assert.That(inland.y, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void VisualOceanApronWetsOnlyLowBeachWithinItsOuterReach()
+        {
+            // The showcase's actual sea/terrain contact is 11.4 m outside the
+            // recipe rectangle, inside its enabled 18 m visual swash apron.
+            var contact = TerrainPresentation.ShorelineWeights(0,.1f,11.4f,.5f,.5f,profile,18);
+            var upper = TerrainPresentation.ShorelineWeights(0,.8f,11.4f,.5f,.5f,profile,18);
+            var beyond = TerrainPresentation.ShorelineWeights(0,.1f,22,.5f,.5f,profile,18);
+            var interior = TerrainPresentation.ShorelineWeights(0,.1f,-11.4f,.5f,.5f,profile,18);
+            Assert.That(contact.z, Is.GreaterThan(.95f));
+            Assert.That(upper.z, Is.Zero);
+            Assert.That(upper.y, Is.EqualTo(1));
+            Assert.That(beyond.z, Is.Zero);
+            Assert.That(interior.z, Is.Zero, "An outward visual apron must not expand the inward gate.");
+            for (int d=-30; d<=30; d++)
+                Assert.That(TerrainPresentation.ShorelineWeights(0,.1f,d,.5f,.5f,profile,0),
+                    Is.EqualTo(TerrainPresentation.ShorelineWeights(0,.1f,d,.5f,.5f,profile)));
         }
 
         [Test]

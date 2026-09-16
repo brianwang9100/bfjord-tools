@@ -18,7 +18,7 @@ namespace Bwork.Authoring.Editor
         public float patchScaleMeters = 32, soilStrength = .55f, gravelStrength = .65f;
         public float bankWidthMeters = 7, bankHeightMeters = 2.2f;
         public float shorelineWidthMeters = 26, shorelineHeightMeters = 6;
-        public float shorelineWetWidthMeters = 6, shorelineWetHeightMeters = 1;
+        public float shorelineWetWidthMeters = 3.5f, shorelineWetHeightMeters = .65f;
         public bool heightBlend = true;
         public float heightTransition = .16f, bankBreakup = .45f, patchWarpMeters = 8;
         // Appearance seed is independent of classification/stamps and does not move
@@ -124,6 +124,10 @@ namespace Bwork.Authoring.Editor
             bool shoreline = profile.palette == "shoreline";
             var layerNames = shoreline ? ShorelineLayerNames : LayerNames;
             var ocean = shoreline ? water?.Recipe.nodes.FirstOrDefault(node => node.kind == "ocean") : null;
+            // Only an enabled swash allocates a visual ocean apron. Terrain
+            // elevation still determines where that apron actually meets sand.
+            float oceanApron = shoreline && water != null && water.Recipe.oceanSwashRunupHeight > 0
+                ? water.Recipe.oceanSwashRunupDistance : 0;
             var data = terrain.terrainData;
             var materials = MaterialNames.Select(name => AssetDatabase.LoadAssetAtPath<Material>(ProjectContext.Material(name)) ??
                 throw new InvalidOperationException("Missing CC0 terrain surface: " + name)).ToArray();
@@ -170,7 +174,7 @@ namespace Bwork.Authoring.Editor
                         (1 - Smooth(.2f, profile.bankHeightMeters, Mathf.Max(0, y - sample.Height)));
                 }
                 Vector4 weights = shoreline
-                    ? ShorelineWeights(data.GetSteepness(u, v), y-(ocean?.position.y ?? 0), OceanSignedDistance(new Vector2(wx,wz), ocean), noise, detail, profile)
+                    ? ShorelineWeights(data.GetSteepness(u, v), y-(ocean?.position.y ?? 0), OceanSignedDistance(new Vector2(wx,wz), ocean), noise, detail, profile, oceanApron)
                     : Weights(data.GetSteepness(u, v), y, near-y, noise, detail, bank, profile);
                 for (int layer = 0; layer < 4; layer++) map[z, x, layer] = weights[layer];
             }
@@ -182,11 +186,11 @@ namespace Bwork.Authoring.Editor
                 bool wet = shoreline && i == 2;
                 layers[i] = ToolSandbox.Persist(new TerrainLayer { name = layerNames[i],
                     diffuseTexture = surfaces[i].color, normalMapTexture = surfaces[i].normal,
-                    diffuseRemapMin = Vector4.zero, diffuseRemapMax = wet ? new Vector4(.62f,.64f,.65f,1) : Vector4.one,
-                    maskMapTexture = surfaces[i].mask, maskMapRemapMin = new Vector4(0,0,0,wet ? .42f : 0),
-                    maskMapRemapMax = new Vector4(0, 1, 1, wet ? .72f : .45f),
+                    diffuseRemapMin = Vector4.zero, diffuseRemapMax = wet ? new Vector4(.84f,.82f,.79f,1) : Vector4.one,
+                    maskMapTexture = surfaces[i].mask, maskMapRemapMin = new Vector4(0,0,0,wet ? .22f : 0),
+                    maskMapRemapMax = new Vector4(0, 1, 1, wet ? .48f : .45f),
                     tileSize = Vector2.one * surfaces[i].tileMeters,
-                    normalScale = wet ? .5f : materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = wet ? .58f : i == 3 ? .08f : .04f,
+                    normalScale = wet ? .4f : shoreline && i == 1 ? .65f : materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = wet ? .35f : i == 3 ? .08f : .04f,
                     // The default DiffuseAlphaChannel source treats opaque JPG alpha as
                     // mirror smoothness, ignoring the layer's smoothness value entirely.
                     smoothnessSource = TerrainLayerSmoothnessSource.ConstantOnly,
@@ -227,7 +231,7 @@ namespace Bwork.Authoring.Editor
             return new Vector2(Mathf.Max(q.x,0),Mathf.Max(q.y,0)).magnitude + Mathf.Min(Mathf.Max(q.x,q.y),0);
         }
 
-        public static Vector4 ShorelineWeights(float slope, float heightAboveOcean, float oceanDistance, float noise, float detail, TerrainPaintProfile profile)
+        public static Vector4 ShorelineWeights(float slope, float heightAboveOcean, float oceanDistance, float noise, float detail, TerrainPaintProfile profile, float oceanApronMeters = 0)
         {
             float rock = Smooth(profile.rockSlopeStart, profile.rockSlopeEnd, slope+(noise-.5f)*12);
             float breakup = Mathf.Lerp(1-profile.bankBreakup*.55f, 1, Mathf.Clamp01(noise*.6f+detail*.4f));
@@ -237,7 +241,12 @@ namespace Bwork.Authoring.Editor
             // exposes leaf litter, which native height blending then amplifies.
             float sand = (1-Smooth(width*.58f,width,distance)) *
                 (1-Smooth(profile.shorelineHeightMeters*.58f,profile.shorelineHeightMeters,elevation)) * (1-rock);
-            float wet = sand * (1-Smooth(wetWidth*.3f,wetWidth,distance)) *
+            // Positive distance lies outside the canonical ocean. Its visual
+            // apron can intersect low beach terrain before the recipe boundary;
+            // measure wet proximity from that footprint, retaining the original
+            // inward gate and both dry-sand and wet-elevation bounds.
+            float wetDistance = oceanDistance > 0 ? Mathf.Max(0, oceanDistance-Mathf.Max(0,oceanApronMeters)) : distance;
+            float wet = sand * (1-Smooth(wetWidth*.3f,wetWidth,wetDistance)) *
                 (1-Smooth(profile.shorelineWetHeightMeters*.3f,profile.shorelineWetHeightMeters,elevation));
             return new Vector4(Mathf.Max(0,1-rock-sand), sand-wet, wet, rock);
         }
