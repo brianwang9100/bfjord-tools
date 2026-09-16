@@ -36,7 +36,9 @@ Prepare and status are read-only. Apply fully plans and instantiates a pending g
 - `species`: weighted prefab key, footprint radius, and scale range. Each prefab must contain one LOD group and at least one renderer.
 - `exclusions`: up to 256 unique `circle`, `capsule`, or axis-aligned `box` footprints.
 
-Spacing is enforced within the selected batch. Separate batches do not currently repel one another, so overlapping biome recipes should use nonoverlapping areas or explicit exclusion primitives.
+Spacing is enforced within the selected batch. Batches with the same nonempty `spacingGroup` also reserve their existing scaled footprints across batches; recipes without a shared group remain independent. Use `woody` for canopy cohorts and explicit exclusion primitives where other groups must remain clear.
+
+Canopy placement in 0.6 checks the low root collar across all LODs against the Terrain footprint. It lowers upright trees within a bounded allowance or rejects unsupported cliffs and holes; it never changes Terrain heights. Existing batches acquire this correction when reapplied. Crown spacing and root support use separate bounds.
 
 Package recipe paths resolve through Unity's package registry, including external UPM cache locations. Project-relative paths must remain inside the project.
 

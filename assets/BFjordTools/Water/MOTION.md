@@ -57,7 +57,7 @@ Run `status` to inspect the fixture; `remove` deletes only its owned scene root 
 The reference-informed fidelity revision updates sheet geometry, two maps and both shaders. Its current evidence is generator periodicity checks, reviewed map output and exact manifest verification. The Unity results below describe **0.3.0 before this revision**; new assembled-scene visual and Editor validation belongs to the coordinator's milestone. See `docs/fidelity/WATER.md` in the working source repository for scope and verification status.
 
 
-The mathematical generator verifies periodic tile values before writing. All three delivered PNG hashes and dimensions were checked against `motion-manifest.json`; current source payload is 1,934,214 bytes, distinct from imported mip/compression residency. Package importers request linear, mipmapped, repeating data and iPhone ASTC 6×6. No new external image library is required.
+The mathematical generator verifies periodic tile values before writing. All three delivered PNG hashes and dimensions were checked against `motion-manifest.json`; current source payload is 1,959,403 bytes, distinct from imported mip/compression residency. Package importers request linear, mipmapped, repeating data and iPhone ASTC 6×6. No new external image library is required.
 
 The assembled Unity run completed with zero shader errors, waterfall prepare/replace/remove/reapply, foreign-child protection and unchanged Terrain heights. Three fixed cameras each captured 24 animation frames and stills at 0 / 0.75 / 1.5 seconds; measured water regions changed at each comparison. The final waterfall contract suite passed 5/5 after the full extension suite passed 63/63. See the public `docs/VALIDATION.md` extension ledger for exact evidence. This remains visual water without physical currents, particles or device performance acceptance.
 
@@ -70,3 +70,7 @@ python3 art/BFjordTools/Water/generate_motion_maps.py --output Unity/WorldAuthor
 ## Fidelity 0.5
 
 The v0.5 original generator shortens river patches and gives the ocean dense aerated film with round pores. The waterfall map is unchanged. Low/medium/high connected-water presets share these maps. A deterministic material seed translates their periodic pattern origin; it does not rewrite source maps or use Unity global randomness. See `docs/fidelity/WATER_05.md` for directional mapping, foam controls, capture commands and remaining validation.
+
+## Iteration 0.6
+
+River R now stores 12 original tapered/split downstream rafts with irregular spacing and varied width; its shader footprint is 8m across by 24m along flow. Ocean R stores warped connected rims and torn film with multiple-scale porosity, replacing similarly sized round holes. G/B keep coverage/breakup roles; channel types, dimensions and bindings are unchanged. `test_motion_maps.py` checks independent-axis seamlessness, finite channels, river directional structure/tapering and porous ocean variation. See `docs/fidelity/WATER_06.md` for exact same-camera/time comparison commands and execution evidence. The waterfall map remains byte-identical to 0.5.

@@ -166,7 +166,7 @@ Shader "Bwork/Sandbox/Connected Wave Water"
             half3 RiverTile(float2 sampleXZ,float2 anchor,float2 along,float2 across,float2 direction,float phase)
             {
                 float2 local=sampleXZ-anchor-direction*(8*phase);
-                float2 uv=float2(dot(local,across)/8,dot(local,along)/6)*_RiverStreakScale;
+                float2 uv=float2(dot(local,across)/8,dot(local,along)/24)*_RiverStreakScale;
                 // Every anchor gets a reproducible offset; rotation acts on bounded local metres.
                 uv+=frac(anchor*float2(.173,.319))+_PatternOffset.xy;
                 return SAMPLE_TEXTURE2D(_RiverMotionMap,sampler_RiverMotionMap,uv).rgb;
@@ -251,22 +251,25 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float shoreWidth=max(.05,_FoamWidth)*lerp(.38,1.2,grain.g);
                 float shore=_UseDepth>.5?1-smoothstep(0,shoreWidth,shoreDepth):0;
                 float breakup=smoothstep(_FoamCutoff-.13,_FoamCutoff+.14,grain.r)*smoothstep(.18,.62,grain.g);
-                float crest=smoothstep(.12,.66,wave.x/max(_OceanWaveHeight,.001))*ocean*_CrestFoamStrength;
                 half3 seaPattern=SAMPLE_TEXTURE2D(_OceanMotionMap,sampler_OceanMotionMap,
-                    (i.uv-oceanDrift)/6+_PatternOffset.xy).rgb;
-                // Broken fronts occupy only high, wind-facing parts of a swell. Smaller crossing
+                    (i.uv-oceanDrift)/11+_PatternOffset.xy).rgb;
+                // Broken fronts cover raised swell shoulders and strengthen toward the wind. Crossing
                 // patches stop all three analytic wavelengths from drawing parallel foam bands.
                 half3 crossingSea=SAMPLE_TEXTURE2D(_OceanMotionMap,sampler_OceanMotionMap,
-                    mul(float2x2(.8,-.6,.6,.8),i.uv-oceanDrift*.63)/3.7+float2(.31,.67)+_PatternOffset.xy).rgb;
-                float seaCrest=smoothstep(-.06,.5,wave.x/max(_OceanWaveHeight,.001));
+                    mul(float2x2(.8,-.6,.6,.8),i.uv-oceanDrift*.63)/4.3+float2(.31,.67)+_PatternOffset.xy).rgb;
+                float seaCrest=smoothstep(-.14,.43,wave.x/max(_OceanWaveHeight,.001));
                 float windFace=smoothstep(-.10,.13,dot(wave.yz,oceanDirection));
-                float seaFoam=smoothstep(.22,.74,seaPattern.r*.72+crossingSea.r*.28)*
-                    seaCrest*lerp(.35,1,windFace)*_OceanSurfaceStrength*ocean;
-                float currentFoam=smoothstep(.10,.50,current.r)*lerp(.35,1,current.g)*currentMask*_RiverCurrentStrength;
-                // Small isotropic pores interrupt continuous thread-shaped white ribbons.
-                currentFoam*=smoothstep(.16,.62,seaPattern.r);
+                // Coverage layers are modulated, not added until whole crests saturate white.
+                // The two footprints give large torn rafts and smaller connected foam rims.
+                float lace=saturate(seaPattern.r*.78+crossingSea.r*.48);
+                float porous=smoothstep(.035,.46,lace)*lerp(.78,1,crossingSea.b);
+                float seaFoam=porous*seaCrest*lerp(.62,1,windFace)*_OceanSurfaceStrength*ocean;
+                // Blended flow tiles retain thin coverage; a high post-blend threshold erased
+                // those strands and let the old isotropic authored foam dominate the river.
+                float filaments=smoothstep(.012,.20,current.r)*lerp(.72,1,current.g);
+                float currentFoam=filaments*currentMask*_RiverCurrentStrength;
                 float shallowCurrent=_UseDepth>.5?(1-smoothstep(.25,1.8,shoreDepth))*currentMask:0;
-                float turbulence=shallowCurrent*smoothstep(.20,.70,current.r+grain.r*.24)*_RiverTurbulence;
+                float turbulence=shallowCurrent*filaments*lerp(.45,1,current.b)*_RiverTurbulence;
                 // Depth contours follow the actual opaque bank, including curved beaches. Subtract
                 // displacement to keep the breaking zone anchored to the resting surface. Increasing
                 // phase moves fronts to smaller depths (toward shore), never out toward deep water.
@@ -277,15 +280,20 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 float swash=frac(swashPhase);
                 float front=smoothstep(.46,.67,swash)*(1-smoothstep(.78,.96,swash));
                 float trailingWash=smoothstep(.06,.22,swash)*(1-smoothstep(.42,.76,swash));
-                float porous=smoothstep(.18,.72,seaPattern.r*.7+crossingSea.r*.3);
-                float beachFoam=beachZone*(front*lerp(.72,1,porous)*_OceanBreakerStrength+
-                    trailingWash*lerp(.35,1,porous)*_OceanShoreFoam);
-                float washAtEdge=shore*ocean*_OceanShoreFoam*lerp(.6,1,porous);
-                // A broad broken cap joins the swell to the aerated beach fronts, while the
-                // undersurface remains glossy. No displacement is added outside the saved envelope.
-                float breakingCap=smoothstep(-.02,.52,wave.x/max(_OceanWaveHeight,.001))*
-                    lerp(.55,1,porous)*_OceanBreakerStrength*ocean*lerp(.35,.85,beachZone);
-                float foam=saturate(saturate((shore+i.color.g)*_FoamStrength+crest)*breakup+currentFoam+seaFoam+turbulence+beachFoam+washAtEdge+breakingCap);
+                float beachFoam=beachZone*porous*max(front*_OceanBreakerStrength,
+                    trailingWash*_OceanShoreFoam*.68);
+                float washAtEdge=shore*ocean*_OceanShoreFoam*porous*.74;
+                float breakingCap=seaCrest*porous*_OceanBreakerStrength*ocean*lerp(.55,1,beachZone);
+                // Inland banks keep a narrow contact line, while authored whitewater is carried
+                // by the same downstream strands. Isotropic map pores never cut moving filaments.
+                float contactLine=(_UseDepth>.5?1-smoothstep(.04,.32,shoreDepth):0)*(1-ocean);
+                float inlandFoam=max(max(currentFoam,turbulence),
+                    filaments*saturate(i.color.g)*_FoamStrength*river);
+                inlandFoam=max(inlandFoam,contactLine*breakup*_FoamStrength*.55);
+                float oceanFoam=max(max(seaFoam,breakingCap),max(beachFoam,washAtEdge));
+                oceanFoam=max(oceanFoam,seaCrest*porous*_CrestFoamStrength*ocean);
+                float lakeFoam=shore*breakup*_FoamStrength*(1-ocean)*saturate(i.color.a);
+                float foam=saturate(max(inlandFoam,max(oceanFoam,lakeFoam)));
                 float absorption=1-exp2(-depth/max(_DepthColorDistance,.2)*1.8);
                 SurfaceData surface=(SurfaceData)0;
                 half3 shallow=lerp(_ShallowColor.rgb,_OceanShallowColor.rgb,ocean);

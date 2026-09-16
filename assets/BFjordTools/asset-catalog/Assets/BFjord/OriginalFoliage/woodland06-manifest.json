@@ -1,0 +1,150 @@
+{
+  "assets": [
+    {
+      "boundsBlenderZUp": [
+        [
+          -3.813683271408081,
+          -4.737481117248535,
+          -0.48845958709716797
+        ],
+        [
+          3.8876006603240967,
+          3.7854421138763428,
+          9.38631534576416
+        ]
+      ],
+      "id": "MatureOak_B",
+      "model": "Models/MatureOak_B.fbx",
+      "rootFootprintRadius": 1.1604970770549137,
+      "sealedCollarBottom": -0.45,
+      "sha256": "dc7a6145a75e40c9f927da0ff182d3bb975858776c6d8e50f0fce8d3df408a04",
+      "sourceSha256": "dc7a6145a75e40c9f927da0ff182d3bb975858776c6d8e50f0fce8d3df408a04",
+      "triangles": [
+        141277,
+        61005,
+        19670
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -2.473280906677246,
+          -3.248504877090454,
+          -0.4679694175720215
+        ],
+        [
+          2.737468719482422,
+          2.9344193935394287,
+          11.327695846557617
+        ]
+      ],
+      "id": "SilverBirch_B",
+      "model": "Models/SilverBirch_B.fbx",
+      "rootFootprintRadius": 0.6467841209026112,
+      "sealedCollarBottom": -0.45,
+      "sha256": "410981d42060543b0568d91eb9244ae86e4a39ee4d8bf019cf2029c3a3d30944",
+      "sourceSha256": "410981d42060543b0568d91eb9244ae86e4a39ee4d8bf019cf2029c3a3d30944",
+      "triangles": [
+        101204,
+        53476,
+        18776
+      ]
+    }
+  ],
+  "blender": "5.2.1 LTS",
+  "exportReimportChecks": [
+    {
+      "finiteTangents": true,
+      "id": "MatureOak_B",
+      "lod": 0,
+      "nondegenerate": true,
+      "triangles": 141264,
+      "uv": true
+    },
+    {
+      "finiteTangents": true,
+      "id": "MatureOak_B",
+      "lod": 1,
+      "nondegenerate": true,
+      "triangles": 60980,
+      "uv": true
+    },
+    {
+      "finiteTangents": true,
+      "id": "MatureOak_B",
+      "lod": 2,
+      "nondegenerate": true,
+      "triangles": 19637,
+      "uv": true
+    },
+    {
+      "finiteTangents": true,
+      "id": "SilverBirch_B",
+      "lod": 0,
+      "nondegenerate": true,
+      "triangles": 101204,
+      "uv": true
+    },
+    {
+      "finiteTangents": true,
+      "id": "SilverBirch_B",
+      "lod": 1,
+      "nondegenerate": true,
+      "triangles": 53476,
+      "uv": true
+    },
+    {
+      "finiteTangents": true,
+      "id": "SilverBirch_B",
+      "lod": 2,
+      "nondegenerate": true,
+      "triangles": 18776,
+      "uv": true
+    }
+  ],
+  "generator": "Scripts/world_assets/foliage_detail/generate_woodland06.py",
+  "generatorSha256": "ea4bb5c054d49d26df37e2e0aea8acdbf5c99ab715af6de11a7252e28c24bd42",
+  "license": "CC0-1.0",
+  "revision": "woodland-06",
+  "sourceTextures": {
+    "asset": "bark_brown_02",
+    "credit": "Powered by Poly Haven; original bark scan by Rob Tuytel",
+    "files": [
+      {
+        "bytes": 2334535,
+        "file": "bark_brown_02_diff_1k.png",
+        "sha256": "22144dbe0e9f1cfd44de3f3c8311c898fe672f087c1e81a18baab77476dc046f",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_diff_1k.png"
+      },
+      {
+        "bytes": 2436328,
+        "file": "bark_brown_02_nor_gl_1k.png",
+        "sha256": "45c632c61b642759ee935a4300b71aa1e6097d2b2d8aae42376c4661ecc518eb",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_nor_gl_1k.png"
+      },
+      {
+        "bytes": 727782,
+        "file": "bark_brown_02_rough_1k.png",
+        "sha256": "346e756131c7409fef357f6aa391f1d8b2db815fd965f0f5529fe76a2baf26ae",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_rough_1k.png"
+      }
+    ],
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license"
+  },
+  "textureSize": 2048,
+  "textures": [
+    {
+      "file": "Textures/Woodland06Atlas.png",
+      "sha256": "f8b11790c8ac4146af22db2f5be3addc85d7522aeb7152884d3ac5a5b678d0ff"
+    },
+    {
+      "file": "Textures/Woodland06Normal.png",
+      "sha256": "e9c0663aa6f5fbd8bc3b0c02809599a02e45945a8903d091feeba90fca130194"
+    },
+    {
+      "file": "Textures/Woodland06Mask.png",
+      "sha256": "4a1c1bcfc4abdbde8025f53b1c65ec7ed57086f4d926dfcb2744908d1d41098d"
+    }
+  ]
+}

@@ -35,6 +35,16 @@
       "sha256": "f7c510a89c01caa8d9fc84080ac6fecaa41820ad3cc46864e304d887ef1473e6"
     },
     {
+      "bytes": 18942828,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MatureOak_B.fbx",
+      "sha256": "dc7a6145a75e40c9f927da0ff182d3bb975858776c6d8e50f0fce8d3df408a04"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MatureOak_B.fbx.meta",
+      "sha256": "af5dbd2a1b903a7b61945d4321b97dfcfd74316caacba0db0e5278b72cf1dbc8"
+    },
+    {
       "bytes": 522278,
       "path": "Assets/BFjord/OriginalFoliage/Models/MeadowDaisy_A.fbx",
       "sha256": "1b76883f1e75d8e7f43a9ea5c79effa79b1b788ad03fb588c017edd4fa05e2f1"
@@ -63,6 +73,16 @@
       "bytes": 3094,
       "path": "Assets/BFjord/OriginalFoliage/Models/SilverBirch_A.fbx.meta",
       "sha256": "83e2f5f77370159f16fd61a1de9ba17c144546c10c77adfd68bd67a74475bddf"
+    },
+    {
+      "bytes": 15335740,
+      "path": "Assets/BFjord/OriginalFoliage/Models/SilverBirch_B.fbx",
+      "sha256": "410981d42060543b0568d91eb9244ae86e4a39ee4d8bf019cf2029c3a3d30944"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/SilverBirch_B.fbx.meta",
+      "sha256": "048152bb79edffa4f61a72e13ab3c31c86f2f8f5fe2f8e4055e4f9299cb6faeb"
     },
     {
       "bytes": 635222,
@@ -103,6 +123,36 @@
       "bytes": 3419,
       "path": "Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png.meta",
       "sha256": "7343c80e346f38763d1aa299c47d31e5e75d5b1f6c16685b4bce1f3b996a1552"
+    },
+    {
+      "bytes": 6363690,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Atlas.png",
+      "sha256": "bc429568e23d697a05bff5f98ff0385a6a6b8d6aa6476e950a705cd358d7ee35"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Atlas.png.meta",
+      "sha256": "bf8c70b3b9711530f47cbd4e308dca0571843916825057e9442d702549809095"
+    },
+    {
+      "bytes": 620998,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Mask.png",
+      "sha256": "ba77835aa06b36947e91a64bdb9391bc4f2fddfc31219bdcf4fb31adc0a4b4c4"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Mask.png.meta",
+      "sha256": "bcc4467a9b5c648efa54f782f5dcd94a1fcf04ee506e85f6bbc69ad631a243b8"
+    },
+    {
+      "bytes": 4546427,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Normal.png",
+      "sha256": "95343731be9601646e8d7e663ae3583b943f47629fc84c05c91aa2a799ee3134"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/Woodland06Normal.png.meta",
+      "sha256": "343ddfb87ebf982cdc60945da08b7334187c5407b948c2bf3b1ff206bcead231"
     },
     {
       "bytes": 1264076,
@@ -153,6 +203,16 @@
       "bytes": 158,
       "path": "Assets/BFjord/OriginalFoliage/woodland-manifest.json.meta",
       "sha256": "169f1b1416a65ca1d340d984e1c27e498c6b9c3ea17d56a997edd43bfad0ae5d"
+    },
+    {
+      "bytes": 4158,
+      "path": "Assets/BFjord/OriginalFoliage/woodland06-manifest.json",
+      "sha256": "8f01cec03004cd4a12cccf948e642d710a2dd91f0efe9293cd593be6e6546ce1"
+    },
+    {
+      "bytes": 158,
+      "path": "Assets/BFjord/OriginalFoliage/woodland06-manifest.json.meta",
+      "sha256": "dc7a5b4461430cd5a0d5552de4733869a7e85ed220aa5cfed52f3c20066fd74e"
     },
     {
       "bytes": 531,

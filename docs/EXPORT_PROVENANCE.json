@@ -2953,6 +2953,7 @@
     "BFjordTools/FoliageDetail/FoliageDetail.blend1",
     "BFjordTools/FoliageDetail/Woodland05/Woodland05.blend",
     "BFjordTools/FoliageDetail/Woodland05/Woodland05.blend1",
+    "BFjordTools/FoliageDetail/Woodland06/Woodland06.blend",
     "BFjordTools/RoadDetail/Sources/road-detail.blend",
     "BFjordTools/TunnelDetail/MasonryPortal.blend",
     "BFjordTools/Rocks/original.blend",
@@ -2974,6 +2975,30 @@
       "imageDataUnchanged": true,
       "outputSha256": "b8fd8725a45757eb9c14d5bdcb083f1f1386d9afc936e8acd70c7e82d76997b9",
       "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "bc429568e23d697a05bff5f98ff0385a6a6b8d6aa6476e950a705cd358d7ee35",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/Woodland06Atlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "ba77835aa06b36947e91a64bdb9391bc4f2fddfc31219bdcf4fb31adc0a4b4c4",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/Woodland06Mask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "95343731be9601646e8d7e663ae3583b943f47629fc84c05c91aa2a799ee3134",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/Woodland06Normal.png",
       "removedMetadataChunks": [
         "eXIf"
       ]
@@ -3812,6 +3837,147 @@
         "tEXt",
         "tEXt",
         "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5e0baeb82393cbd07ec240053ef23cd2774ad4a88588cf66413f07fb2eb37178",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/MatureOak_B-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e9ff64f4f7e5a81d2621d7faa9c351617398b3507bc9d77af83335e3759f4e5e",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/SilverBirch_B-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "2839fc999c97ef861aa768ed156ea20233359329a04ffd1991ed2b235e574665",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/birch-bark.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "d8b83f7f7c6b9f302eb3826cafb12389cef7350081a8781a2ea1a2dfa129c28e",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/oak-bark.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "2ed60d45eddb3e948299d0fd23f46284e1b4d34406f11278ad9b78a5fc61b7dd",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/oak-leaves.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "d26ef523d1a0f36486faaf1eac20f8ad299db53912b33fafc8fffe292f3d488a",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Review/woodland-assets.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5b918d8cfa766fd34e6af50576795208fb3d9a091b454984afce29aa5f6cf115",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Sources/bark_brown_02_diff_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "efca53d879fe7816338f34f455eae312bd710d027d1b958732652c1ae3a991ce",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Sources/bark_brown_02_nor_gl_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e25c3d72e1595e149ac1da709ff349261546b873eaafcda0e759958e821ab116",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland06/Sources/bark_brown_02_rough_1k.png",
+      "removedMetadataChunks": [
         "tEXt",
         "tEXt"
       ]

@@ -19,6 +19,11 @@ namespace Bwork.Authoring.Editor
         public float bankWidthMeters = 7, bankHeightMeters = 2.2f;
         public bool heightBlend = true;
         public float heightTransition = .16f, bankBreakup = .45f, patchWarpMeters = 8;
+        // Appearance seed is independent of classification/stamps and does not move
+        // banks or landforms. false restores the native sampler for comparisons.
+        public bool antiTiling = true;
+        public int appearanceSeed = 731;
+        public float stochasticCellTiles = 1f, macroScaleMeters = 37, macroVariation = .28f;
     }
 
     public static class TerrainPresentation
@@ -78,7 +83,8 @@ namespace Bwork.Authoring.Editor
                 !Range(profile.exposedHeightStart, -1000, 5000) || !Range(profile.exposedHeightEnd, profile.exposedHeightStart + 1, 6000) ||
                 !Range(profile.patchScaleMeters, 4, 256) || !Range(profile.soilStrength, 0, 1) || !Range(profile.gravelStrength, 0, 1) ||
                 !Range(profile.bankWidthMeters, .5f, 30) || !Range(profile.bankHeightMeters, .1f, 10) ||
-                !Range(profile.heightTransition, .01f, 1) || !Range(profile.bankBreakup, 0, .8f) || !Range(profile.patchWarpMeters, 0, 32))
+                !Range(profile.heightTransition, .01f, 1) || !Range(profile.bankBreakup, 0, .8f) || !Range(profile.patchWarpMeters, 0, 32) ||
+                !Range(profile.stochasticCellTiles, 1, 8) || !Range(profile.macroScaleMeters, 8, 256) || !Range(profile.macroVariation, 0, .5f))
                 throw new ArgumentException("Terrain paint requires a version-1 profile with finite, ordered slope/height bounds and bounded patch/bank scales.");
             TerrainMaterialBank.Validate(profile.palette);
         }
@@ -120,12 +126,16 @@ namespace Bwork.Authoring.Editor
             if (!owned) throw new InvalidOperationException("Terrain palette is externally authored; restore the toolkit palette before automatic painting.");
             var material = terrain.materialTemplate;
             string materialPath = material == null ? "" : AssetDatabase.GetAssetPath(material);
-            if (material == null || material.shader.name != "Universal Render Pipeline/Terrain/Lit" ||
+            if (material == null || material.shader == null ||
+                material.shader.name != TerrainAntiTiling.NativeShader && !material.shader.name.StartsWith(TerrainAntiTiling.ShaderPrefix, StringComparison.Ordinal) ||
                 materialPath != ToolSandbox.Generated + "/Terrain.mat")
                 throw new InvalidOperationException("Terrain material is externally authored; restore the toolkit Terrain.mat before automatic painting.");
             var masks = LayerNames.Select(name => AssetDatabase.LoadAssetAtPath<Texture2D>(MaskRoot + name + "_TerrainMask.png") ??
                 throw new InvalidOperationException("Missing CC0 Terrain mask: " + name + ". Install the current sample asset catalog.")).ToArray();
             var surfaces = TerrainMaterialBank.Resolve(profile.palette, materials, masks, TileMeters);
+            // Compile/validate the adapter before modifying any layer, material or map.
+            var shader = profile.antiTiling ? TerrainAntiTiling.Prepare(profile.heightBlend) : Shader.Find(TerrainAntiTiling.NativeShader);
+            if (shader == null) throw new InvalidOperationException("Missing native Terrain Lit shader.");
             int width = data.alphamapWidth, height = data.alphamapHeight;
             var map = new float[height, width, 4];
             float stepX = 4 / data.size.x, stepZ = 4 / data.size.z;
@@ -170,11 +180,13 @@ namespace Bwork.Authoring.Editor
             }
             data.terrainLayers = layers;
             data.SetAlphamaps(0, 0, map);
+            TerrainAntiTiling.Configure(material, profile, surfaces, shader);
             material.SetFloat("_EnableHeightBlend", profile.heightBlend ? 1 : 0);
             material.SetFloat("_HeightTransition", profile.heightTransition);
             if (profile.heightBlend) material.EnableKeyword("_TERRAIN_BLEND_HEIGHT");
             else material.DisableKeyword("_TERRAIN_BLEND_HEIGHT");
             EditorUtility.SetDirty(material);
+            data.SetBaseMapDirty();
             terrain.Flush(); EditorUtility.SetDirty(data);
         }
 

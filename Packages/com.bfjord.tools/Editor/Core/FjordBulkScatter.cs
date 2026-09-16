@@ -60,7 +60,8 @@ namespace Bwork.FjordCoast.Editor
             Func<Vector2, float?> ground,
             Func<Vector3, Vector3> normal,
             Func<Vector3, float, bool> excludes,
-            IReadOnlyList<Placement> neighbors = null)
+            IReadOnlyList<Placement> neighbors = null,
+            Func<Species, Vector3, float, Vector3?> fitSupport = null)
         {
             Validate(recipe, ground, normal, excludes);
             if (neighbors != null && (neighbors.Count > 100000 || neighbors.Any(p => !Finite(p.position) || !Finite(p.supportRadius) || p.supportRadius <= 0 || p.supportRadius > 1000)))
@@ -130,7 +131,16 @@ namespace Bwork.FjordCoast.Editor
                 if (!HasSpacing(point, radius, maximumRadius, recipe.minimumSpacing, cellSize, grid, blockers))
                 { result.rejectedSpacing++; continue; }
 
-                var placement = new Placement(species, point + Vector3.up * species.groundOffsetMeters * scale, random.NextFloat() * 360f, scale);
+                var planted = point + Vector3.up * species.groundOffsetMeters * scale;
+                if (fitSupport != null)
+                {
+                    var fit = fitSupport(species, planted, scale);
+                    if (!fit.HasValue || !Finite(fit.Value)) { result.rejectedGround++; continue; }
+                    if (fit.Value.x != planted.x || fit.Value.z != planted.z)
+                        throw new InvalidOperationException("Support fitting must preserve the accepted horizontal footprint.");
+                    planted = fit.Value;
+                }
+                var placement = new Placement(species, planted, random.NextFloat() * 360f, scale);
                 int index = blockers.Count;
                 placements.Add(placement);
                 blockers.Add(placement);

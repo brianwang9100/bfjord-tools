@@ -1,8 +1,14 @@
-# Art direction and 0.5.0 review status
+# Art direction and 0.6.0 review status
 
 BFjord Tools targets a restrained temperate coast built from bounded, editable Unity assets. The 0.4.0 source fidelity pass is complete across terrain, roads, bridges, foliage, rocks, water, and the optional tunnel portal. Unity 6000.6.0f1 imported and compiled the candidate without errors; the Editor suite, world assembly, water lifecycle/motion review, four-design bridge gallery, and isolated road/tunnel lifecycles completed. See the [0.4.0 validation record](fidelity/VALIDATION.md) for measured scope.
 
-## Current 0.5.0 addition
+## Current 0.6.0 integration review
+
+The current pass reduces obvious Terrain texture grids, seats upright tree collars on slopes, adds oak B and birch B, and refines river strands and ocean foam. The [0.6 detail record](fidelity/NATURE_06.md) provides same-camera terrain comparisons, tree/contact views and water clips. Source is frozen; assembled Unity checks and visual review remain in progress, with no v0.6 test-pass claim yet.
+
+The costs stay explicit: adapted four-layer Terrain can use up to 36 material samples versus 12, with `antiTiling=false` retaining native sampling. Native XZ projection remains; steep rock may still stretch. B tree identities are additive, preserving A assets and existing prefabs. Water adds no samples or geometry and retains its displacement bounds. Neither the source renders nor the Editor captures establish reference parity or iPad performance.
+
+## Previous 0.5.0 addition
 
 The 0.5.0 assembly adds broad oak and slender birch silhouettes alongside mature fir, rigid hollow deadwood and mixed tall-grass patches. These assets are original Blender work with their own leaf/bark PBR atlas. The recorded scene has 19 mixed-canopy placements (6 oak, 3 birch, 10 fir), 17 logs and 174 mixed-grass placements while retaining all 66,049 Terrain height samples. The actual woodland/deadwood/grass and three Terrain-palette captures have been reviewed; road markings, the river-flow still comparison and larger foamy beach waves are also reviewed. Actual [river motion](clips/fidelity-05-river.mp4) and [beach motion](clips/fidelity-05-beach.mp4) are complete. The recorded integration snapshot passed 133/133 in 103.54 seconds with no failures, skips or inconclusive results; the separate CLI suite passed 8/8 in 0.537 seconds. The [labeled nine-rock comparison](images/fidelity-05-boulders.png) passed exact repeat-placement and unchanged-Terrain checks in 8.511 seconds. The final assembled-road and water-refresh lifecycle checks passed; the source is published in bfjord-tools.
 

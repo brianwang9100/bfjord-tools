@@ -47,27 +47,44 @@ def field(u, v, kind):
         return clamp(ropes*(.40+.80*lanes)), coverage, fine
 
     if kind == 'river':
-        warp = (noise(u,v,4,5,271)-.5)*.1
-        fine = noise(u+warp,v,47,23,931)
-        f = (.50*noise(u+warp,v,11,7,571) + .32*noise(u+warp,v,27,13,351) + .18*fine)
-        coverage = noise(u,v,5,4,713)
-        threads = clamp((f-.53)*4.3)*clamp((coverage-.34)*3)
-        return threads, coverage, fine
+        # Narrow tapered rafts, stretched in downstream V. No image input or isotropic
+        # erosion mask: the wispy ends and splits are part of the moving raft itself.
+        foam = 0.
+        for lane in range(12):
+            phase = lane*2.3999632297
+            center = (lane*.61803398875+.13)%1
+            center += .035*math.sin(TAU*v+phase)+.014*math.sin(2*TAU*v-phase*.71)+.005*math.sin(7*TAU*v+phase)
+            cross = abs((u-center+.5)%1-.5)
+            station = (v+.5+.37*math.sin(phase*1.73))%1-.5
+            length = .10+.20*(.5+.5*math.sin(phase*2.17))
+            taper = clamp(1-abs(station)/length)
+            taper = taper*taper*(3-2*taper)
+            width = (.016+.025*(.5+.5*math.sin(phase*.87)))*(.10+.90*taper)
+            width *= .35+1.05*noise(lane/12,v,12,11,149)
+            core = clamp(1-cross/max(width,.0001))
+            core = core*core*(3-2*core)
+            # A thinner side strand joins the parent at one end and peels downstream.
+            split = abs((u-center-width*.85+.5)%1-.5)
+            branch = clamp(1-split/max(width*.32,.0001))*.48*taper
+            foam = max(foam, (core*(.4+.6*core)*.92+branch)*taper)
+        fine = noise(u,v,83,19,931)
+        foam *= .46+.54*fine
+        coverage = noise(u,v,7,2,713)
+        return clamp(foam), coverage, fine
     if kind == 'ocean':
-        clouds = (.58*noise(u,v,5,6,419) + .28*noise(u,v,13,17,733) + .14*noise(u,v,37,41,953))
-        breakup = noise(u,v,23,29,311)
-        # Dense aerated film with round holes, not continuous Voronoi wire outlines.
-        # The shader supplies crest/shore placement; this map supplies porous white coverage.
-        cells=43;px=u*cells;py=v*cells;ix=math.floor(px);iy=math.floor(py);nearest=2.
-        for oy in (-1,0,1):
-            for ox in (-1,0,1):
-                cx=ix+ox;cy=iy+oy
-                jx=noise((cx%cells)/cells,(cy%cells)/cells,cells,cells,211)
-                jy=noise((cx%cells)/cells,(cy%cells)/cells,cells,cells,787)
-                nearest=min(nearest,math.hypot(px-cx-.15-.7*jx,py-cy-.15-.7*jy))
-        bubbles=clamp((nearest-.10)*3.7)
-        foam=clamp(.16+bubbles*.76)*(.63+.37*clouds)
-        return foam, clouds, breakup
+        # Warped multiple-scale film: thin connected rims, torn sheets, and fine
+        # cellular porosity have different footprints instead of a uniform dot grid.
+        warp_u = u+.053*(noise(u,v,5,7,211)-.5)
+        warp_v = v+.045*(noise(u,v,7,5,787)-.5)
+        clouds = .60*noise(u,v,5,6,419)+.40*noise(u,v,11,13,733)
+        meso = .67*noise(warp_u,warp_v,23,29,311)+.33*noise(warp_u,warp_v,47,53,953)
+        fine = .62*noise(warp_u,warp_v,89,97,191)+.38*noise(warp_u,warp_v,173,181,577)
+        rims = clamp(1-abs(meso-.50)*12)
+        sheet = clamp((meso-.43)*7)*clamp((clouds-.25)*4)
+        pores = clamp((fine-.22)*4.8)
+        torn = clamp((clouds-.24)*4.0)
+        foam = max(rims*.92, sheet)*pores*torn
+        return clamp(foam), clouds, fine
     raise ValueError(kind)
 
 

@@ -13,13 +13,15 @@ namespace Bwork.Authoring.Editor
     /// <summary>Builds ordinary shared LOD prefabs from the retained CC0 model library.</summary>
     public static class FoliagePresentation
     {
-        const string Revision = "foliage-presentation-3";
+        const string Revision = "foliage-presentation-4";
+        const string WoodlandRevision = "foliage-presentation-3";
         const string PreviousRevision = "foliage-presentation-2";
         const string LegacyRevision = "foliage-presentation-1";
         const string OriginalRoot = "Assets/BFjord/OriginalFoliage";
         static readonly string[] BotanicalNames = { "RoseThicket_A", "MeadowDaisy_A", "WoodSorrel_A", "CoastalGrass_A" };
         static readonly string[] WoodlandNames = { "MatureOak_A", "SilverBirch_A", "FallenHollowLog_A", "TallMeadowGrass_A" };
-        static readonly string[] OriginalNames = BotanicalNames.Concat(WoodlandNames).ToArray();
+        static readonly string[] DetailedTreeNames = { "MatureOak_B", "SilverBirch_B" };
+        static readonly string[] OriginalNames = BotanicalNames.Concat(WoodlandNames).Concat(DetailedTreeNames).ToArray();
         static string Root => ToolSandbox.Generated + "/FoliageLibrary";
         static string ReceiptPath => Root + "/catalog.json";
         [Serializable] public sealed class Catalog { public string revision, fingerprint, directory; public Entry[] entries; }
@@ -123,18 +125,18 @@ namespace Bwork.Authoring.Editor
         {
             if (!File.Exists(ReceiptPath)) return null;
             var catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(ReceiptPath));
-            if (catalog == null || (catalog.revision != Revision && catalog.revision != PreviousRevision && catalog.revision != LegacyRevision) || catalog.entries == null ||
-                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : catalog.revision == PreviousRevision ? Names.Length - WoodlandNames.Length : Names.Length - OriginalNames.Length) ||
+            if (catalog == null || (catalog.revision != Revision && catalog.revision != WoodlandRevision && catalog.revision != PreviousRevision && catalog.revision != LegacyRevision) || catalog.entries == null ||
+                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : catalog.revision == WoodlandRevision ? Names.Length - DetailedTreeNames.Length : catalog.revision == PreviousRevision ? Names.Length - WoodlandNames.Length - DetailedTreeNames.Length : Names.Length - OriginalNames.Length) ||
                 catalog.entries.Select(e => e?.id).Distinct(StringComparer.Ordinal).Count() != catalog.entries.Length ||
                 string.IsNullOrEmpty(catalog.directory) || !catalog.directory.StartsWith(Root + "/", StringComparison.Ordinal) ||
-                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || (catalog.revision == PreviousRevision && WoodlandNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
+                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || (catalog.revision == PreviousRevision && WoodlandNames.Contains(e.id)) || (catalog.revision != Revision && DetailedTreeNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
                     !e.prefabPath.StartsWith(catalog.directory + "/", StringComparison.Ordinal) || e.prefabPath.Contains("..")))
                 throw new InvalidDataException("Foliage catalog receipt is invalid; preserve the library for recovery.");
             return catalog;
         }
 
-        static bool IsCanopy(string id) => id == "MatureFir_A" || id == "MatureOak_A" || id == "SilverBirch_A";
-        static string AtlasStem(string id) => WoodlandNames.Contains(id) ? "Woodland" : "Foliage";
+        static bool IsCanopy(string id) => id == "MatureFir_A" || id == "MatureOak_A" || id == "SilverBirch_A" || DetailedTreeNames.Contains(id);
+        static string AtlasStem(string id) => DetailedTreeNames.Contains(id) ? "Woodland06" : WoodlandNames.Contains(id) ? "Woodland" : "Foliage";
 
         static string Source(string id) => (OriginalNames.Contains(id) ? OriginalRoot : id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
 
@@ -298,9 +300,9 @@ namespace Bwork.Authoring.Editor
                 value.SetFloat("_BumpScale", .55f);
                 value.SetColor("_BaseColor", Color.white);
                 value.SetFloat("_Smoothness", .21f);
-                if (WoodlandNames.Contains(id))
+                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id))
                 {
-                    var mask = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/WoodlandMask.png");
+                    var mask = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Mask.png");
                     if (mask == null) throw new FileNotFoundException("Restore the original woodland PBR mask before building foliage.");
                     value.SetTexture("_MetallicGlossMap", mask);
                     value.SetFloat("_Smoothness", 1);
@@ -334,7 +336,7 @@ namespace Bwork.Authoring.Editor
             {
                 yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Atlas.png";
                 yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Normal.png";
-                if (WoodlandNames.Contains(id)) yield return OriginalRoot + "/Textures/WoodlandMask.png";
+                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id)) yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Mask.png";
                 yield break;
             }
             string prefabPath = MaterialTemplate(id);

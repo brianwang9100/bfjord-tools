@@ -104,8 +104,8 @@ namespace Bwork.Authoring.Editor
                 var spatial = SpatialExclusions.Create(ToolSandbox.Root, recipe.exclusions);
                 if (action == "prepare")
                 {
-                    ResolvePrefabs(recipe);
-                    Describe(Plan(recipe, spatial.Intersects, batchId), receipt);
+                    var prefabs = ResolvePrefabs(recipe);
+                    Describe(Plan(recipe, spatial.Intersects, batchId, prefabs), receipt);
                     DescribeExisting(receipt, batchRoot);
                     DescribeIndex(spatial, receipt);
                     receipt.state = "prepared";
@@ -142,8 +142,8 @@ namespace Bwork.Authoring.Editor
             string ownedBatch = OwnedBatchName(batchId), pendingBatch = PendingBatchName(batchId);
             string recipeAsset = RecipeAssetName(batchId), resultAsset = ResultAssetName(batchId);
             string recipeJson = JsonUtility.ToJson(recipe, true);
-            var plan = Plan(recipe, excludes, batchId);
             var prefabs = ResolvePrefabs(recipe);
+            var plan = Plan(recipe, excludes, batchId, prefabs);
             var receipt = new Receipt { action = "apply", batchId = batchId, batchRoot = ownedBatch,
                 recipeId = recipe.id, state = "rejected", recipeAssetPath = ToolSandbox.Generated + "/" + recipeAsset,
                 resultAssetPath = ToolSandbox.Generated + "/" + resultAsset };
@@ -274,7 +274,7 @@ namespace Bwork.Authoring.Editor
             try { action(); } catch (Exception error) { failures.Add(error); }
         }
 
-        static FjordBulkScatter.Result Plan(Recipe recipe, Func<Vector3, float, bool> excludes, string batchId)
+        static FjordBulkScatter.Result Plan(Recipe recipe, Func<Vector3, float, bool> excludes, string batchId, Dictionary<string, GameObject> prefabs)
         {
             var terrain = ToolSandbox.RequireTerrain();
             var data = terrain.terrainData;
@@ -302,7 +302,12 @@ namespace Bwork.Authoring.Editor
                 return sample.Distance < radius || sample.Distance > recipe.maximumWaterDistance ||
                     point.y < sample.Height || point.y > sample.Height + recipe.maximumBankHeight;
             }
-            return FjordBulkScatter.Plan(recipe.PlannerRecipe(), Ground, Normal, Excluded, Neighbors(recipe, batchId));
+            var roots = prefabs.Where(pair => FoliageGrounding.IsCanopy(pair.Key))
+                .ToDictionary(pair => pair.Key, pair => FoliageGrounding.FromPrefab(pair.Value), StringComparer.Ordinal);
+            var support = roots.Count == 0 ? null : FoliageGrounding.TerrainSupport.Read(terrain);
+            Vector3? Fit(FjordBulkScatter.Species species, Vector3 position, float scale) =>
+                roots.TryGetValue(species.prefabKey, out var root) ? FoliageGrounding.Fit(root, position, scale, support.Minimum) : position;
+            return FjordBulkScatter.Plan(recipe.PlannerRecipe(), Ground, Normal, Excluded, Neighbors(recipe, batchId), support == null ? null : Fit);
         }
 
         static FjordBulkScatter.Placement[] Neighbors(Recipe recipe, string batchId)

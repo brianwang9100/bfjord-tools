@@ -8,7 +8,7 @@ Requirements:
 
 - Python 3 with no third-party Python packages for the wrapper.
 - Unity 6000.6.0f1. The sample manifest pins URP 17.6.0 and Unity Pipeline 0.7.0-exp.1.
-- Blender 5.2.x only if you intend to regenerate the bridge or rock FBXs.
+- Blender 5.2.x only if you intend to regenerate offline bridge, rock or foliage FBXs. Prepared assets are included.
 
 Inspect the CLI and public inventory:
 
@@ -82,7 +82,7 @@ python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recip
 
 `water.json` remains the lower-level `bwork_water_connected` surface example for projects that do not want river rocks. Remove the composed river scene before replacing its water directly so dependent bank or shallow batches cannot outlive their water field.
 
-`waterfall.json` applies a finite falling sheet and plunge foam with the bundled original-rock backdrop. Its source, recipe and motion-map provenance are included in 0.3.0, but this command is pending the assembled Unity verification recorded for the release. Run `rocks-library.json` first. See [`assets/BFjordTools/Water/MOTION.md`](../assets/BFjordTools/Water/MOTION.md) for controls, ownership and the verification still required.
+`waterfall.json` applies a finite falling sheet and plunge foam with the bundled original-rock backdrop. Its source and recipe originated in 0.3.0; the historical assembled lifecycle and motion checks are recorded in the [0.4 validation note](fidelity/VALIDATION.md). Run `rocks-library.json` first. See [`assets/BFjordTools/Water/MOTION.md`](../assets/BFjordTools/Water/MOTION.md) for controls and ownership. Historical checks do not establish current device performance.
 
 The bridge collection is a separate scene from the 512 m terrain/road/water sandbox. Do not interpret those commands as one composed-scene sequence.
 
@@ -120,6 +120,15 @@ python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recip
 "$UNITY_CLI" command bwork_foliage --action apply --batchId rocks --recipePath Packages/com.bfjord.tools/Samples/forest-rocks.json --project-path "$BFJORD_PROJECT" --timeout 120 --format json
 "$UNITY_CLI" command bwork_foliage --action apply --batchId bank --recipePath Packages/com.bfjord.tools/Samples/riverbank-ferns.json --project-path "$BFJORD_PROJECT" --timeout 120 --format json
 ```
+
+For the current 0.6 mixed woodland, replace the `canopy` batch with the additive B tree variants:
+
+```sh
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/foliage-assets.json
+python3 scripts/bfjord.py run --project Examples~/SandboxProject --request recipes/woodland-canopy-06.json
+```
+
+The request references the package's `woodland-canopy-06.json`: seed 51915, up to 44 candidates, 40% oak B / 38% birch B / 22% mature fir. Terrain and shared woody exclusions determine the actual count. Reusing `canopy` replaces that batch; edit the request's batch ID to retain it. The [catalog note](ASSET_CATALOG.md) records the current 260 admitted files, 26 library variants and source provenance.
 
 The `bank` batch requires the connected-water request above. The other batches retain their own receipts, so applying one does not replace another.
 

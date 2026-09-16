@@ -2,11 +2,15 @@
 
 Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, nine original rock families, connected river/lake/delta/ocean geometry, a bounded waterfall fixture, and an optional original masonry tunnel portal.
 
-![0.5 Unity woodland assembly with original oak and birch, retained mature fir and denser ground cover](docs/images/fidelity-05-woodland.png)
+![0.6 Unity woodland with additive oak B and birch B variants](docs/images/fidelity-06-woodland.png)
+
+The **0.6.0 sandbox iteration is complete**. It adds stochastic Terrain sampling with a native toggle, root-footprint grounding for upright trees, two additive tree variants, broken river streaks and torn ocean foam. Compare actual Unity stills and motion clips in the [0.6 nature-detail record](docs/fidelity/NATURE_06.md). The combined milestone passed **157/157 Editor checks**, followed by six focused terrain checks after the final refinements.
+
+Terrain sampling costs up to **36 material samples versus 12** for four layers. Native Terrain Lit remains selectable with `antiTiling=false`. This pass retains native XZ projection; it adds no triplanar mapping or device-performance claim. Water retains its existing texture-sample count and displacement bounds. B tree variants preserve existing A-model batches and prefab generations.
 
 This is an early public source release. Scene images are labeled by evidence version; images identified as Blender reviews show source assets rather than Unity integration. Neither kind establishes runtime portability, production integration, or iPad performance.
 
-The **0.5.0 implementation and visual review are complete; the source is published in bfjord-tools**. It adds original oak, birch, hollow fallen wood and tall grass; asphalt markings; river-flow presets and beach surf; seven Terrain surfaces in four palettes; and explicit seeds for built-in height stamps. The assembled scene records 19 mixed-canopy, 17 deadwood and 174 mixed-grass placements with all 66,049 sampled Terrain heights unchanged. The woodland, deadwood, grass wind and terrain-palette captures have been reviewed. Road markings, the same-camera river comparison and larger foamy beach waves are also reviewed.
+The previous **0.5.0 implementation and visual review are complete; the source is published in bfjord-tools**. It adds original oak, birch, hollow fallen wood and tall grass; asphalt markings; river-flow presets and beach surf; seven Terrain surfaces in four palettes; and explicit seeds for built-in height stamps. The assembled scene records 19 mixed-canopy, 17 deadwood and 174 mixed-grass placements with all 66,049 sampled Terrain heights unchanged. The woodland, deadwood, grass wind and terrain-palette captures have been reviewed. Road markings, the same-camera river comparison and larger foamy beach waves are also reviewed.
 
 The recorded integration snapshot passed **133/133** in **103.54 seconds**, with zero failures, skips or inconclusive results; the separate CLI suite passed **8/8** in **0.537 seconds**. Source integrity checks passed for all 248 catalog entries. River and beach motion clips and the labeled nine-rock comparison are complete. The final assembled-road and water-refresh lifecycle checks passed in 17.206 seconds. Version 0.5.0 is available in the public repository. See the [0.5.0 nature-detail record](docs/fidelity/NATURE_05.md).
 
@@ -14,9 +18,9 @@ After that snapshot, source compilation remained clean and scoped Editor regress
 
 The published **0.4.0** evidence remains versioned separately: 81/81 Editor tests passed with no skips, followed by the scoped road tests, and its bounded assembly, water, bridge and road/tunnel checks completed. See the [historical 0.4.0 validation record](docs/fidelity/VALIDATION.md) and [0.2.0 / 0.3.0 ledger](docs/VALIDATION.md).
 
-## 0.5.0 Unity review
+## Previous 0.5.0 Unity review
 
-These are actual Unity captures from the current assembled sample. The new tree silhouettes and ground-cover density are visible; procedural timber and the barren steep-hill palette fixture remain unfinished art context.
+These are actual Unity captures from the previous 0.5 assembled sample. The new tree silhouettes and ground-cover density are visible; procedural timber and the barren steep-hill palette fixture remain unfinished art context.
 
 | Fallen wood | Grass in the assembled scene |
 |---|---|
@@ -46,11 +50,11 @@ The nine-rock comparison reproduced its placement data exactly and retained all 
 
 | Family | Authored output | Command |
 |---|---|---|
-| Terrain | Seeded regional height stamps, smoothing, flattening, thermal relaxation, protected edits, seven surfaces / four palettes, and four-layer height blending | `bwork_terrain` |
+| Terrain | Seeded regional height stamps, smoothing, flattening, thermal relaxation, protected edits, seven surfaces / four palettes, four-layer height blending, and optional stochastic sampling | `bwork_terrain` |
 | Roads | Asphalt, gravel, and dirt ribbons, junctions, shoulders, grade fitting, owned Terrain conformance, asphalt center/edge markings, and optional verge walls/posts | `bwork_roads` |
 | Bridges | Coastal arch, stone viaduct, steel through truss, and timber trestle geometry generated at explicit dimensions | `bwork_bridge_asset`, `bwork_bridge_collection` |
 | Bridge surfaces | Material profiles applied without rebuilding bridge meshes, colliders, placement, or LODs | `bwork_bridge_surface` |
-| Foliage | Seeded species batches, eight original botanical/woodland assets, retained scanned variants, authored LODs, and slope/spacing/road/water/structure exclusions | `bwork_foliage` |
+| Foliage | Seeded species batches, ten original botanical/woodland variants, retained scanned variants, authored LODs, root-footprint grounding, and slope/spacing/road/water/structure exclusions | `bwork_foliage` |
 | Rocks | Nine original rock families, shared or baked PBR maps, three LODs, and an optional collider per family | `bwork_rocks` |
 | River scene | Connected water composed with deterministic bank boulders and shallow stream stones | `bwork_river_scene` |
 | Water | Lower-level connected tributary/lake/delta/ocean mesh, Terrain carving, downstream flow presets, bank fade, beach surf, and shader motion | `bwork_water_connected` |

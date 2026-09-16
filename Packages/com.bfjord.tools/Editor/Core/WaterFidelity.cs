@@ -62,7 +62,7 @@ namespace Bwork.Authoring.WaterSandbox
             var along=bounded.sqrMagnitude>1e-6f?bounded.normalized:Vector2.up;
             var across=new Vector2(along.y,-along.x);
             var advected=point-bounded*(time*speed);
-            return new Vector2(Vector2.Dot(advected,across)/8,Vector2.Dot(advected,along)/6)*scale;
+            return new Vector2(Vector2.Dot(advected,across)/8,Vector2.Dot(advected,along)/24)*scale;
         }
 
         /// <summary>Convex wave shaping stays within the mesh's existing +/- amplitude envelope.</summary>

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "seed": 731,
+  "palette": "woodland",
+  "antiTiling": true,
+  "appearanceSeed": 731,
+  "stochasticCellTiles": 1.0,
+  "macroScaleMeters": 37,
+  "macroVariation": 0.28
+}

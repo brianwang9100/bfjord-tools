@@ -29,6 +29,20 @@ namespace Bwork.Authoring.Editor.Tests
         }
 
         [Test]
+        public void CurrentMappingKeepsLongAxisDownstreamAtMetricScale()
+        {
+            foreach(var flow in new[]{Vector2.right,Vector2.up,new Vector2(-.6f,.8f)})
+            {
+                var across=new Vector2(flow.y,-flow.x);
+                var origin=WaterFidelity.CurrentCoordinates(Vector2.zero,flow,0,1);
+                var width=WaterFidelity.CurrentCoordinates(across*8,flow,0,1)-origin;
+                var length=WaterFidelity.CurrentCoordinates(flow*24,flow,0,1)-origin;
+                Assert.That(Vector2.Distance(width,Vector2.right),Is.LessThan(.000001f));
+                Assert.That(Vector2.Distance(length,Vector2.up),Is.LessThan(.000001f));
+            }
+        }
+
+        [Test]
         public void CrestSharpeningFitsExistingDisplacementEnvelope()
         {
             for(int shape=0;shape<=10;shape++)
