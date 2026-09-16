@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using Bwork.WorldAuthoring;
 using Object=UnityEngine.Object;
 namespace Bwork.Authoring.Editor
 {
@@ -74,7 +76,40 @@ namespace Bwork.Authoring.Editor
             }
             using var sha=SHA256.Create();return BitConverter.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(text.ToString()))).Replace("-","").ToLowerInvariant();
         }
-        public static void Validate(Transform root,string expectedHash,string[] assets)
+        /// <summary>Historic mesh files used generated stems while scene children retained recipe IDs.</summary>
+        public static Dictionary<string,string> LegacyNames(SandboxRoadRecipe recipe,string[] assets)
+        {
+            if(recipe?.Roads==null||recipe.Roads.Length==0||recipe.Roads.Length>32||assets==null||
+                recipe.Roads.Any(r=>r==null||string.IsNullOrEmpty(r.Id)||string.IsNullOrEmpty(r.StartNode)||string.IsNullOrEmpty(r.EndNode)))
+                throw new InvalidDataException("A bounded retained road recipe is required for legacy name admission.");
+            // The authoring adapter emits roads in recipe order, then shared nodes in first-seen order.
+            var nodes=recipe.Roads.SelectMany(r=>new[]{r.StartNode,r.EndNode}).GroupBy(n=>n).ToArray();
+            if(nodes.Any(n=>n.Count()!=1&&n.Count()!=3&&n.Count()!=4))
+                throw new InvalidDataException("Legacy road node ownership is invalid.");
+            var names=recipe.Roads.Select(r=>r.Id).Concat(nodes.Where(n=>n.Count()>1).Select(n=>"junction-"+n.Key)).ToArray();
+            if(names.Length!=assets.Length||names.Distinct(StringComparer.Ordinal).Count()!=names.Length)
+                throw new InvalidDataException("Legacy road receipt and retained topology disagree.");
+            var result=new Dictionary<string,string>(StringComparer.Ordinal);
+            string generation=null;
+            for(int i=0;i<assets.Length;i++)
+            {
+                string stem=Path.GetFileNameWithoutExtension(assets[i]);
+                string suffix="-"+i.ToString(CultureInfo.InvariantCulture);
+                if(stem==null||!stem.EndsWith(suffix,StringComparison.Ordinal))throw new InvalidDataException("Legacy road mesh order is invalid.");
+                string prefix=stem.Substring(0,stem.Length-suffix.Length);
+                if(!prefix.StartsWith("roads-",StringComparison.Ordinal)||!Guid.TryParseExact(prefix.Substring(6),"N",out _)||
+                    (generation!=null&&prefix!=generation)||!result.TryAdd(assets[i],names[i]))
+                    throw new InvalidDataException("Legacy road generation names are invalid.");
+                generation=prefix;
+            }
+            return result;
+        }
+        public static bool LegacyMeshNameMatches(string childName,string meshName,string meshPath,IReadOnlyDictionary<string,string> names)
+        {
+            return childName==meshName||(names!=null&&names.TryGetValue(meshPath,out string expected)&&childName==expected&&
+                meshName==Path.GetFileNameWithoutExtension(meshPath));
+        }
+        public static void Validate(Transform root,string expectedHash,string[] assets,IReadOnlyDictionary<string,string> legacyNames=null)
         {
             if(root==null || root.name!="Roads" || !root.gameObject.activeSelf)
                 throw new InvalidDataException("Road root was renamed, disabled or removed; preserve its checkpoint.");
@@ -95,7 +130,7 @@ namespace Bwork.Authoring.Editor
                 var filter=child.GetComponent<MeshFilter>();var renderer=child.GetComponent<MeshRenderer>();var collider=child.GetComponent<MeshCollider>();
                 string meshPath=filter==null?"":AssetDatabase.GetAssetPath(filter.sharedMesh);
                 if(child.childCount!=0 || child.GetComponents<Component>().Length!=4 || filter==null || filter.sharedMesh==null || renderer==null || collider==null ||
-                    child.name!=filter.sharedMesh.name || !child.gameObject.activeSelf || !renderer.enabled || !collider.enabled || collider.isTrigger || collider.convex ||
+                    !LegacyMeshNameMatches(child.name,filter.sharedMesh.name,meshPath,legacyNames) || !child.gameObject.activeSelf || !renderer.enabled || !collider.enabled || collider.isTrigger || collider.convex ||
                     child.localPosition.sqrMagnitude>1e-10f || child.localScale!=Vector3.one || Quaternion.Angle(child.localRotation,Quaternion.identity)>.001f ||
                     filter.sharedMesh!=collider.sharedMesh || !assets.Contains(meshPath) || !found.Add(meshPath) || renderer.sharedMaterials.Length!=3 ||
                     renderer.sharedMaterials.Any(m=>m==null||!allowed.Contains(AssetDatabase.GetAssetPath(m))))

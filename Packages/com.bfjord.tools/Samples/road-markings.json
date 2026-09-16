@@ -1,0 +1,84 @@
+{
+  "minX": 0,
+  "minZ": 0,
+  "size": 512,
+  "sampleSpacing": 2,
+  "maximumGrade": 0.24,
+  "roads": [
+    {
+      "id": "marking-asphalt",
+      "sourceId": "original-road-marking-example",
+      "startNode": "asphalt-start",
+      "endNode": "asphalt-end",
+      "surface": "asphalt",
+      "width": 8,
+      "controls": [
+        {
+          "x": 50,
+          "y": 0,
+          "z": 100
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": 112
+        },
+        {
+          "x": 230,
+          "y": 0,
+          "z": 100
+        }
+      ]
+    },
+    {
+      "id": "marking-gravel",
+      "sourceId": "original-road-marking-example",
+      "startNode": "gravel-start",
+      "endNode": "gravel-end",
+      "surface": "gravel",
+      "width": 8,
+      "controls": [
+        {
+          "x": 50,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": 182
+        },
+        {
+          "x": 230,
+          "y": 0,
+          "z": 170
+        }
+      ]
+    },
+    {
+      "id": "marking-dirt",
+      "sourceId": "original-road-marking-example",
+      "startNode": "dirt-start",
+      "endNode": "dirt-end",
+      "surface": "dirt",
+      "width": 8,
+      "controls": [
+        {
+          "x": 50,
+          "y": 0,
+          "z": 240
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": 252
+        },
+        {
+          "x": 230,
+          "y": 0,
+          "z": 240
+        }
+      ]
+    }
+  ]
+}

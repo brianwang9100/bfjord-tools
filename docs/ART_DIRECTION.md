@@ -1,8 +1,18 @@
-# Art direction and 0.4.0 review status
+# Art direction and 0.5.0 review status
 
 BFjord Tools targets a restrained temperate coast built from bounded, editable Unity assets. The 0.4.0 source fidelity pass is complete across terrain, roads, bridges, foliage, rocks, water, and the optional tunnel portal. Unity 6000.6.0f1 imported and compiled the candidate without errors; the Editor suite, world assembly, water lifecycle/motion review, four-design bridge gallery, and isolated road/tunnel lifecycles completed. See the [0.4.0 validation record](fidelity/VALIDATION.md) for measured scope.
 
-## Current visual character
+## Current 0.5.0 addition
+
+The 0.5.0 assembly adds broad oak and slender birch silhouettes alongside mature fir, rigid hollow deadwood and mixed tall-grass patches. These assets are original Blender work with their own leaf/bark PBR atlas. The recorded scene has 19 mixed-canopy placements (6 oak, 3 birch, 10 fir), 17 logs and 174 mixed-grass placements while retaining all 66,049 Terrain height samples. The actual woodland/deadwood/grass and three Terrain-palette captures have been reviewed; road markings, the river-flow still comparison and larger foamy beach waves are also reviewed. Actual [river motion](clips/fidelity-05-river.mp4) and [beach motion](clips/fidelity-05-beach.mp4) are complete. The recorded integration snapshot passed 133/133 in 103.54 seconds with no failures, skips or inconclusive results; the separate CLI suite passed 8/8 in 0.537 seconds. The [labeled nine-rock comparison](images/fidelity-05-boulders.png) passed exact repeat-placement and unchanged-Terrain checks in 8.511 seconds. The final assembled-road and water-refresh lifecycle checks passed; the source is published in bfjord-tools.
+
+After that snapshot, source compilation remained clean and scoped Editor regressions passed separately: **RoadMarkingTests 9/9 in 11.36 seconds** and **WaterSurfaceOwnershipTests 5/5 in 5.41 seconds**. Seven test cases were added after the snapshot. The road checks cover deferred URP normalization for yellow/white paint and exact legacy-receipt proof; water checks prevent retirement of shared surface assets. These scoped runs are not added to the 133-test total.
+
+Seven physical Terrain surfaces form four palettes: temperate, woodland, coast and cliff. Forest litter, coastal shingle and rock face join the four retained scans; each palette keeps four simultaneous layers. Built-in terrain stamps now expose a saved deterministic seed, while zero preserves the old forms. Asphalt center/edge markings follow the retained ribbon. Low/medium/high river appearances share a pattern seed and camera setup; stronger shoreline crests and foam are intended to make the sample beach read clearly in motion.
+
+The [0.5.0 detail record](fidelity/NATURE_05.md) lists exact assets, sources, recipes, observed counts and validation results. Reviewed actual Unity output includes [mixed woodland](images/fidelity-05-woodland.png), [fallen wood](images/fidelity-05-deadwood.png), and [grass wind](clips/fidelity-05-grass.mp4), plus the [woodland](images/fidelity-05-terrain-woodland.png), [coast](images/fidelity-05-terrain-coast.png) and [cliff](images/fidelity-05-terrain-cliff.png) palettes at the same camera. The [asphalt markings](images/fidelity-05-road.png), same-camera [low](images/fidelity-05-river-low.png)/[medium](images/fidelity-05-river-medium.png)/[high](images/fidelity-05-river-high.png) river appearances and [larger beach waves](images/fidelity-05-beach.png) are reviewed as bounded scene output. The water remains a surface without overturning lips or volumetric spray. Procedural timber is simpler than scanned wood, and the palette comparison is still a barren steep-hill fixture rather than finished landscape context. The 0.4.0 source sheets and Unity captures below remain historical evidence, rather than being relabeled as the new scene.
+
+## Historical 0.4.0 visual character
 
 The intended setting is a restrained temperate coast: readable landforms, cool connected water, dark road ribbons, grounded bridge materials and clustered vegetation that follows slopes, clearances and bank fields. Materials should remain legible under ordinary daylight without hiding geometry behind dramatic exposure or post-processing.
 
@@ -27,7 +37,7 @@ The isolated fixture adds [road dressing](images/fidelity-04-road-dressing.png),
 
 - The bounded Unity review establishes import, composition and fixed-camera evidence. It does not establish moving-camera LOD quality, sustained rendering cost, or iPad suitability.
 - The new terrain masks and stamps improve the available vocabulary, but native heightfields cannot create undercut cliffs. Rock ledges and outcrops must supply those silhouettes.
-- Road dressing is deliberately intermittent and can reject unsupported placements, so some steep verges will remain open. The pass does not add drainage, patches, lane markings, or a new road surface.
+- Road dressing is deliberately intermittent and can reject unsupported placements, so some steep verges will remain open. That 0.4.0 pass did not add lane markings; 0.5.0 adds them on the retained asphalt surface. Drainage, patches and new road surfacing remain outside this addition.
 - The new plants use modeled detail and a shared atlas rather than scan-level per-species variation. Meadow density, repetition, and canopy rhythm still require assembled scene review.
 - Water remains finite visual geometry. It does not simulate fluids, spray, collider response, refraction, or dynamic wetness.
 - The waterfall capture shows a freestanding authoring fixture. It still needs integration into an authored cliff and surrounding landscape before it reads as finished environment art.
@@ -37,7 +47,7 @@ The isolated fixture adds [road dressing](images/fidelity-04-road-dressing.png),
 - Road and tunnel lifecycle acceptance used a separate fresh 512 m fixture. River cuts in the composed world correctly prevent replacing the earlier road Terrain ownership, so the evidence does not show dressed roads integrated with that river scene.
 - The tunnel fixture exposes an oversized rear Terrain-hole seal beyond the masonry portal. Final island integration must bury or fit that return; this is not yet a finished mountain tunnel.
 
-## Assembled Unity acceptance
+## Historical 0.4.0 assembled Unity acceptance
 
 Completed evidence includes the 81-test Editor suite, deterministic world assembly with unchanged Terrain heights, water ownership/lifecycle checks, three fixed-camera motion clips, four bridge hero/riding pairs, and independent bridge-surface apply/reset. Source sheets remain labeled as Blender reviews.
 

@@ -66,3 +66,7 @@ Regenerate with:
 ```sh
 python3 art/BFjordTools/Water/generate_motion_maps.py --output Unity/WorldAuthoringTools/Textures/Water
 ```
+
+## Fidelity 0.5
+
+The v0.5 original generator shortens river patches and gives the ocean dense aerated film with round pores. The waterfall map is unchanged. Low/medium/high connected-water presets share these maps. A deterministic material seed translates their periodic pattern origin; it does not rewrite source maps or use Unity global randomness. See `docs/fidelity/WATER_05.md` for directional mapping, foam controls, capture commands and remaining validation.

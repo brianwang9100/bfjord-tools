@@ -2,24 +2,58 @@
 
 Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, nine original rock families, connected river/lake/delta/ocean geometry, a bounded waterfall fixture, and an optional original masonry tunnel portal.
 
-![Coastal arch bridge in the Unity demonstration scene](docs/images/bridge-arch.png)
+![0.5 Unity woodland assembly with original oak and birch, retained mature fir and denser ground cover](docs/images/fidelity-05-woodland.png)
 
 This is an early public source release. Scene images are labeled by evidence version; images identified as Blender reviews show source assets rather than Unity integration. Neither kind establishes runtime portability, production integration, or iPad performance.
 
-The **0.4.0 fidelity candidate and its bounded Unity review are complete**. Unity 6000.6.0f1 imported and compiled the candidate without errors; 81/81 Editor tests passed with no skips. Terrain/foliage/rock assembly, water lifecycle and motion, the four-design bridge gallery, and isolated road/tunnel lifecycle checks also completed. See the [0.4.0 validation record](docs/fidelity/VALIDATION.md); the earlier [validation ledger](docs/VALIDATION.md) remains explicitly versioned to 0.2.0 and 0.3.0. Publication of the candidate remains a separate repository step.
+The **0.5.0 implementation and visual review are complete; the source is published in bfjord-tools**. It adds original oak, birch, hollow fallen wood and tall grass; asphalt markings; river-flow presets and beach surf; seven Terrain surfaces in four palettes; and explicit seeds for built-in height stamps. The assembled scene records 19 mixed-canopy, 17 deadwood and 174 mixed-grass placements with all 66,049 sampled Terrain heights unchanged. The woodland, deadwood, grass wind and terrain-palette captures have been reviewed. Road markings, the same-camera river comparison and larger foamy beach waves are also reviewed.
+
+The recorded integration snapshot passed **133/133** in **103.54 seconds**, with zero failures, skips or inconclusive results; the separate CLI suite passed **8/8** in **0.537 seconds**. Source integrity checks passed for all 248 catalog entries. River and beach motion clips and the labeled nine-rock comparison are complete. The final assembled-road and water-refresh lifecycle checks passed in 17.206 seconds. Version 0.5.0 is available in the public repository. See the [0.5.0 nature-detail record](docs/fidelity/NATURE_05.md).
+
+After that snapshot, source compilation remained clean and scoped Editor regressions passed separately: **RoadMarkingTests 9/9 in 11.36 seconds** and **WaterSurfaceOwnershipTests 5/5 in 5.41 seconds**. Seven test cases were added after the snapshot. The road checks cover deferred URP normalization for yellow/white paint and exact legacy-receipt proof; water checks prevent retirement of shared surface assets. These scoped runs are not added to the 133-test total.
+
+The published **0.4.0** evidence remains versioned separately: 81/81 Editor tests passed with no skips, followed by the scoped road tests, and its bounded assembly, water, bridge and road/tunnel checks completed. See the [historical 0.4.0 validation record](docs/fidelity/VALIDATION.md) and [0.2.0 / 0.3.0 ledger](docs/VALIDATION.md).
+
+## 0.5.0 Unity review
+
+These are actual Unity captures from the current assembled sample. The new tree silhouettes and ground-cover density are visible; procedural timber and the barren steep-hill palette fixture remain unfinished art context.
+
+| Fallen wood | Grass in the assembled scene |
+|---|---|
+| ![0.5 Unity capture of original hollow fallen timber](docs/images/fidelity-05-deadwood.png) | ![0.5 Unity capture of tall grass mixed with coastal grass and daisies](docs/images/fidelity-05-grass.png) |
+
+[Watch the actual Unity grass-wind clip](docs/clips/fidelity-05-grass.mp4): 48 captured frames over four seconds, encoded at 12 fps. This is a capture rate, not a device-performance result.
+
+Terrain palette views use the same camera: [woodland](docs/images/fidelity-05-terrain-woodland.png), [coast](docs/images/fidelity-05-terrain-coast.png), and [cliff](docs/images/fidelity-05-terrain-cliff.png). The bank contains seven surfaces and selects four layers per palette. The original temperate palette remains available.
+
+| Surface-following asphalt markings | Larger foamy beach waves |
+|---|---|
+| ![0.5 Unity asphalt road with double yellow center and white edge lines](docs/images/fidelity-05-road.png) | ![0.5 Unity foamy beach waves within the simple shoreline fixture](docs/images/fidelity-05-beach.png) |
+
+The three river appearance presets use the same camera, shader time (2 seconds) and pattern seed:
+
+| Low flow | Medium flow | High flow |
+|---|---|---|
+| ![0.5 low-flow river appearance](docs/images/fidelity-05-river-low.png) | ![0.5 medium-flow river appearance](docs/images/fidelity-05-river-medium.png) | ![0.5 high-flow river appearance](docs/images/fidelity-05-river-high.png) |
+
+The larger beach waves remain a bounded surface with crest/contact foam; they do not create overturning lips or volumetric spray. [Watch the actual Unity river clip](docs/clips/fidelity-05-river.mp4) (48 unique frames, 4 seconds) and [beach clip](docs/clips/fidelity-05-beach.mp4) (72 unique frames, 6 seconds). Both are 1440×960 and encoded at 12 fps; these are offline capture settings rather than rendering-performance measurements.
+
+![0.5 Unity labeled comparison of the nine established original rock forms](docs/images/fidelity-05-boulders.png)
+
+The nine-rock comparison reproduced its placement data exactly and retained all 66,049 Terrain height samples in an 8.511-second review command. It displays the existing nine families; it does not add nine new rock families. `bwork_rock_showcase` saves the seed controlling scale, yaw and slight spacing variation.
 
 ## What is included
 
 | Family | Authored output | Command |
 |---|---|---|
-| Terrain | Regional height stamps, smoothing, flattening, thermal relaxation, protected edits, four-layer height blending, and material painting | `bwork_terrain` |
-| Roads | Asphalt, gravel, and dirt ribbons, junctions, shoulders, grade fitting, owned Terrain conformance, and optional verge walls/posts | `bwork_roads` |
+| Terrain | Seeded regional height stamps, smoothing, flattening, thermal relaxation, protected edits, seven surfaces / four palettes, and four-layer height blending | `bwork_terrain` |
+| Roads | Asphalt, gravel, and dirt ribbons, junctions, shoulders, grade fitting, owned Terrain conformance, asphalt center/edge markings, and optional verge walls/posts | `bwork_roads` |
 | Bridges | Coastal arch, stone viaduct, steel through truss, and timber trestle geometry generated at explicit dimensions | `bwork_bridge_asset`, `bwork_bridge_collection` |
 | Bridge surfaces | Material profiles applied without rebuilding bridge meshes, colliders, placement, or LODs | `bwork_bridge_surface` |
-| Foliage | Seeded species batches, four new original plants, authored LODs, and slope/spacing/road/water/structure exclusions | `bwork_foliage` |
+| Foliage | Seeded species batches, eight original botanical/woodland assets, retained scanned variants, authored LODs, and slope/spacing/road/water/structure exclusions | `bwork_foliage` |
 | Rocks | Nine original rock families, shared or baked PBR maps, three LODs, and an optional collider per family | `bwork_rocks` |
 | River scene | Connected water composed with deterministic bank boulders and shallow stream stones | `bwork_river_scene` |
-| Water | Lower-level connected tributary/lake/delta/ocean mesh, Terrain carving, bank fade, and shader motion | `bwork_water_connected` |
+| Water | Lower-level connected tributary/lake/delta/ocean mesh, Terrain carving, downstream flow presets, bank fade, beach surf, and shader motion | `bwork_water_connected` |
 | Waterfall | Finite falling sheet and plunge foam with an optional original-rock backdrop | `bwork_waterfall` |
 | Structures | Curved bridge/tunnel fixtures, Terrain-hole ownership, and an optional original masonry portal | `bwork_structures` |
 

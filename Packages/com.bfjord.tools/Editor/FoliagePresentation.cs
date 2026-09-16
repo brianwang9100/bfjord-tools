@@ -13,10 +13,13 @@ namespace Bwork.Authoring.Editor
     /// <summary>Builds ordinary shared LOD prefabs from the retained CC0 model library.</summary>
     public static class FoliagePresentation
     {
-        const string Revision = "foliage-presentation-2";
+        const string Revision = "foliage-presentation-3";
+        const string PreviousRevision = "foliage-presentation-2";
         const string LegacyRevision = "foliage-presentation-1";
         const string OriginalRoot = "Assets/BFjord/OriginalFoliage";
-        static readonly string[] OriginalNames = { "RoseThicket_A", "MeadowDaisy_A", "WoodSorrel_A", "CoastalGrass_A" };
+        static readonly string[] BotanicalNames = { "RoseThicket_A", "MeadowDaisy_A", "WoodSorrel_A", "CoastalGrass_A" };
+        static readonly string[] WoodlandNames = { "MatureOak_A", "SilverBirch_A", "FallenHollowLog_A", "TallMeadowGrass_A" };
+        static readonly string[] OriginalNames = BotanicalNames.Concat(WoodlandNames).ToArray();
         static string Root => ToolSandbox.Generated + "/FoliageLibrary";
         static string ReceiptPath => Root + "/catalog.json";
         [Serializable] public sealed class Catalog { public string revision, fingerprint, directory; public Entry[] entries; }
@@ -52,6 +55,32 @@ namespace Bwork.Authoring.Editor
             if (sun != null) sun.transform.rotation = Quaternion.Euler(48, -115, 0);
             var position = camera.transform.position;
             return new { camera = camera.name, position = new { x = position.x, y = position.y, z = position.z }, view = "forest-edge" };
+        }
+
+        [InitializeOnLoadMethod]
+        static void ResetWindPreview() => Shader.SetGlobalVector("_BFjordWindPreview", Vector4.zero);
+
+        /// <summary>Freezes the shader time for reproducible wind screenshots; -1 restores engine time.</summary>
+        public static object WindFrame(float seconds)
+        {
+            if (!float.IsFinite(seconds) || (seconds < 0 && seconds != -1) || seconds > 60)
+                throw new ArgumentOutOfRangeException(nameof(seconds), "Use -1 for live wind or 0–60 seconds for a fixed capture.");
+            Shader.SetGlobalVector("_BFjordWindPreview", seconds == -1 ? Vector4.zero : new Vector4(1, seconds, 0, 0));
+            SceneView.RepaintAll();
+            return new { live = seconds == -1, seconds, maximumGrassTipDisplacementMeters = .14225f };
+        }
+
+        public static object GrassView()
+        {
+            var plant = ToolSandbox.Root.GetComponentsInChildren<Transform>()
+                .FirstOrDefault(value => value.name == "TallMeadowGrass_A");
+            if (plant == null) throw new InvalidOperationException("Apply woodland-grass.json before framing the grass wind view.");
+            var camera = ToolSandbox.Root.GetComponentInChildren<Camera>();
+            if (camera == null) throw new InvalidOperationException("The sandbox camera is missing.");
+            camera.transform.position = plant.position + new Vector3(1.8f, 1.0f, -2.3f);
+            camera.transform.LookAt(plant.position + Vector3.up * .62f);
+            camera.orthographic = false; camera.fieldOfView = 48;
+            return new { camera = camera.name, plant = plant.name, view = "grass-wind" };
         }
 
         public static Catalog Build()
@@ -94,15 +123,18 @@ namespace Bwork.Authoring.Editor
         {
             if (!File.Exists(ReceiptPath)) return null;
             var catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(ReceiptPath));
-            if (catalog == null || (catalog.revision != Revision && catalog.revision != LegacyRevision) || catalog.entries == null ||
-                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : Names.Length - OriginalNames.Length) ||
+            if (catalog == null || (catalog.revision != Revision && catalog.revision != PreviousRevision && catalog.revision != LegacyRevision) || catalog.entries == null ||
+                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : catalog.revision == PreviousRevision ? Names.Length - WoodlandNames.Length : Names.Length - OriginalNames.Length) ||
                 catalog.entries.Select(e => e?.id).Distinct(StringComparer.Ordinal).Count() != catalog.entries.Length ||
                 string.IsNullOrEmpty(catalog.directory) || !catalog.directory.StartsWith(Root + "/", StringComparison.Ordinal) ||
-                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
+                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || (catalog.revision == PreviousRevision && WoodlandNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
                     !e.prefabPath.StartsWith(catalog.directory + "/", StringComparison.Ordinal) || e.prefabPath.Contains("..")))
                 throw new InvalidDataException("Foliage catalog receipt is invalid; preserve the library for recovery.");
             return catalog;
         }
+
+        static bool IsCanopy(string id) => id == "MatureFir_A" || id == "MatureOak_A" || id == "SilverBirch_A";
+        static string AtlasStem(string id) => WoodlandNames.Contains(id) ? "Woodland" : "Foliage";
 
         static string Source(string id) => (OriginalNames.Contains(id) ? OriginalRoot : id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
 
@@ -110,7 +142,7 @@ namespace Bwork.Authoring.Editor
         {
             var source = AssetDatabase.LoadAssetAtPath<GameObject>(Source(id));
             var root = new GameObject(id);
-            bool rigid = id.StartsWith("rock_", StringComparison.Ordinal);
+            bool rigid = id.StartsWith("rock_", StringComparison.Ordinal) || id == "FallenHollowLog_A";
             var filters = source.GetComponentsInChildren<MeshFilter>(true);
             if (filters.Length == 0) throw new InvalidDataException("Model has no mesh filters: " + id);
             Bounds bounds = default;
@@ -124,7 +156,7 @@ namespace Bwork.Authoring.Editor
                 if (!hasBounds) { bounds = partBounds; hasBounds = true; }
                 else bounds.Encapsulate(partBounds);
             }
-            float amplitude = rigid ? 0 : id == "WoodSorrel_A" ? .009f : id == "CoastalGrass_A" ? .045f : id == "MatureFir_A" ? .22f : id.StartsWith("pine_", StringComparison.Ordinal) ? .055f : .035f;
+            float amplitude = rigid ? 0 : id == "TallMeadowGrass_A" ? .14f : IsCanopy(id) ? .22f : id == "WoodSorrel_A" ? .009f : id == "CoastalGrass_A" ? .045f : id == "MatureFir_A" ? .22f : id.StartsWith("pine_", StringComparison.Ordinal) ? .055f : .035f;
             // Maximum horizontal shader displacement is amplitude*sqrt(1+.18^2). Scale may be as low as .5.
             float padding = amplitude * 2.04f;
             var materials = new Dictionary<string, Material>(StringComparer.Ordinal);
@@ -168,7 +200,7 @@ namespace Bwork.Authoring.Editor
                 }
                 if (renderers.Any(r => r.Count == 0)) throw new InvalidDataException("Three nonempty LODs are required for " + id);
                 var group = root.AddComponent<LODGroup>();
-                bool canopy = id == "MatureFir_A";
+                bool canopy = IsCanopy(id);
                 group.SetLODs(new[] { new LOD(canopy ? .28f : .16f, renderers[0].ToArray()),
                     new LOD(canopy ? .12f : .055f, renderers[1].ToArray()), new LOD(canopy ? .018f : .012f, renderers[2].ToArray()) });
                 group.fadeMode = LODFadeMode.None;
@@ -257,27 +289,35 @@ namespace Bwork.Authoring.Editor
             value.name = id + "-" + name; value.enableInstancing = true;
             if (original)
             {
-                var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/FoliageAtlas.png");
+                var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Atlas.png");
                 if (atlas == null) throw new FileNotFoundException("Restore the original foliage atlas before building foliage.");
-                var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/FoliageNormal.png");
+                var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Normal.png");
                 if (normal == null) throw new FileNotFoundException("Restore the original foliage normal map before building foliage.");
                 value.SetTexture("_BaseMap", atlas);
                 value.SetTexture("_BumpMap", normal);
                 value.SetFloat("_BumpScale", .55f);
                 value.SetColor("_BaseColor", Color.white);
                 value.SetFloat("_Smoothness", .21f);
+                if (WoodlandNames.Contains(id))
+                {
+                    var mask = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/WoodlandMask.png");
+                    if (mask == null) throw new FileNotFoundException("Restore the original woodland PBR mask before building foliage.");
+                    value.SetTexture("_MetallicGlossMap", mask);
+                    value.SetFloat("_Smoothness", 1);
+                    value.EnableKeyword("_METALLICSPECGLOSSMAP");
+                }
                 value.SetFloat("_Metallic", 0);
                 // The atlas is opaque; retaining the cutout path also enables the shared thin-leaf transmission.
                 value.SetFloat("_AlphaClip", 1);
             }
-            if (!rigid)
+            if (!rigid || original)
             {
                 value.shader = shader;
                 value.SetFloat("_WindRootY", bounds.min.y);
                 value.SetFloat("_WindHeight", Mathf.Max(.1f, bounds.size.y));
                 value.SetFloat("_WindAmplitude", amplitude);
-                value.SetFloat("_WindSpeed", 1);
-                value.SetFloat("_Transmission", .12f);
+                value.SetFloat("_WindSpeed", id == "TallMeadowGrass_A" ? 1.5f : 1);
+                value.SetFloat("_Transmission", rigid ? 0 : .12f);
                 value.SetFloat("_Cull", 0);
                 if (value.GetTexture("_BumpMap") != null) value.EnableKeyword("_NORMALMAP");
                 if (value.GetTexture("_MetallicGlossMap") != null) value.EnableKeyword("_METALLICSPECGLOSSMAP");
@@ -292,8 +332,9 @@ namespace Bwork.Authoring.Editor
         {
             if (OriginalNames.Contains(id))
             {
-                yield return OriginalRoot + "/Textures/FoliageAtlas.png";
-                yield return OriginalRoot + "/Textures/FoliageNormal.png";
+                yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Atlas.png";
+                yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Normal.png";
+                if (WoodlandNames.Contains(id)) yield return OriginalRoot + "/Textures/WoodlandMask.png";
                 yield break;
             }
             string prefabPath = MaterialTemplate(id);

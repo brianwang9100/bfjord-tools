@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "boulder-garden",
+  "seed": 20260916,
+  "area": {
+    "x": 25,
+    "z": 25,
+    "width": 200,
+    "depth": 135
+  },
+  "maximumCount": 64,
+  "densityPerHectare": 24,
+  "minimumSpacing": 0.85,
+  "minimumHeight": -100,
+  "maximumHeight": 1000,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 42,
+  "clusterCount": 7,
+  "clusterRadius": 17,
+  "alignment": 0.55,
+  "burialFraction": 0.16,
+  "maximumGroundRelief": 3,
+  "exclusionPadding": 1.1,
+  "orientation": "random",
+  "sizeDistribution": "small-biased",
+  "materialProfile": "granite",
+  "colliders": false,
+  "species": [
+    {
+      "id": "granite_boulder",
+      "weight": 3,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    },
+    {
+      "id": "river_stone",
+      "weight": 3,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    },
+    {
+      "id": "scree_cluster",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    },
+    {
+      "id": "stratified_outcrop",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    },
+    {
+      "id": "cliff_slab",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 0.9
+    },
+    {
+      "id": "upright_crag",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 0.9
+    },
+    {
+      "id": "coastal_outcrop",
+      "weight": 1,
+      "minimumScale": 0.4,
+      "maximumScale": 0.9
+    },
+    {
+      "id": "river_ledge",
+      "weight": 1,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    },
+    {
+      "id": "fractured_boulder_cluster",
+      "weight": 3,
+      "minimumScale": 0.5,
+      "maximumScale": 1.35
+    }
+  ]
+}

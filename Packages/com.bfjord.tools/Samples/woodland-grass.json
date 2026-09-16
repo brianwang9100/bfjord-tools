@@ -1,0 +1,60 @@
+{
+  "id": "woodland-grass-05",
+  "area": {
+    "x": 196,
+    "y": 174,
+    "width": 26,
+    "height": 23
+  },
+  "seed": 51917,
+  "maximumCount": 260,
+  "densityPerHectare": 9000,
+  "minimumSpacing": 0.45,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 30,
+  "clusterCount": 10,
+  "clusterRadius": 4.5,
+  "spacingGroup": "meadow-grass",
+  "species": [
+    {
+      "id": "TallMeadowGrass_A",
+      "prefabKey": "bfjord:TallMeadowGrass_A",
+      "weight": 0.62,
+      "radius": 1.0,
+      "minimumScale": 0.7,
+      "maximumScale": 1.06,
+      "groundOffsetMeters": -0.008
+    },
+    {
+      "id": "CoastalGrass_A",
+      "prefabKey": "bfjord:CoastalGrass_A",
+      "weight": 0.23,
+      "radius": 0.63,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.008
+    },
+    {
+      "id": "MeadowDaisy_A",
+      "prefabKey": "bfjord:MeadowDaisy_A",
+      "weight": 0.15,
+      "radius": 0.42,
+      "minimumScale": 0.8,
+      "maximumScale": 1.1,
+      "groundOffsetMeters": -0.008
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 1.2
+    }
+  ]
+}

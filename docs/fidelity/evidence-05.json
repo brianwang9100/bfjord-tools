@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "version": "0.5.0",
+  "status": "published-source-editor-verified",
+  "editor": "6000.6.0f1",
+  "deviceAcceptance": false,
+  "assembly": {
+    "recorded": true,
+    "heightSamplesUnchanged": 66049,
+    "placements": {
+      "mixedCanopy": 19,
+      "oak": 6,
+      "birch": 3,
+      "matureFir": 10,
+      "deadwood": 17,
+      "mixedGrass": 174
+    }
+  },
+  "catalog": {
+    "files": 248,
+    "retained": 214,
+    "additions": 34,
+    "sanitizedFbxInventory": 81,
+    "integrityPassed": true
+  },
+  "reviewedCaptureBatch": {
+    "seconds": 62.778,
+    "waterShaderErrors": 0,
+    "stills": [
+      "fidelity-05-woodland.png",
+      "fidelity-05-deadwood.png",
+      "fidelity-05-grass.png",
+      "fidelity-05-terrain-woodland.png",
+      "fidelity-05-terrain-coast.png",
+      "fidelity-05-terrain-cliff.png"
+    ],
+    "grassVideo": {
+      "file": "fidelity-05-grass.mp4",
+      "frames": 48,
+      "encodingFps": 12,
+      "durationSeconds": 4
+    }
+  },
+  "editorTestSuite": {
+    "total": 133,
+    "passed": 133,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0,
+    "durationSeconds": 103.54,
+    "sourceReport": "fidelity-05-editor-tests.json",
+    "scope": "integration snapshot before seven additional regression cases"
+  },
+  "pending": [],
+  "limitations": [
+    "Grass clip encoding rate is not measured rendering performance",
+    "Timber bark remains original procedural art, not scan quality",
+    "Terrain palettes use a barren steep-hill fixture context",
+    "No iPad, runtime island or commercial-reference parity acceptance"
+  ],
+  "reviewedFinalStills": {
+    "files": [
+      "fidelity-05-road.png",
+      "fidelity-05-river-low.png",
+      "fidelity-05-river-medium.png",
+      "fidelity-05-river-high.png",
+      "fidelity-05-beach.png"
+    ],
+    "riverCameraAndTimeMatched": true,
+    "riverTimeSeconds": 2,
+    "shaderSupported": true,
+    "shaderMessages": []
+  },
+  "finalSetup": {
+    "seconds": 13.832,
+    "rockVariantsStaged": 9,
+    "heightSamplesUnchanged": 66049,
+    "canonicalWaterVerticesAndIndicesUnchanged": true,
+    "primaryWaveBoundMeters": 0.95,
+    "waveLengthMeters": 19,
+    "ownedWaterBoundsRefreshed": true
+  },
+  "waterMotion": {
+    "seconds": 10.356,
+    "shaderErrors": [],
+    "width": 1440,
+    "height": 960,
+    "encodingFps": 12,
+    "clips": [
+      {
+        "file": "fidelity-05-river.mp4",
+        "uniqueFrames": 48,
+        "durationSeconds": 4
+      },
+      {
+        "file": "fidelity-05-beach.mp4",
+        "uniqueFrames": 72,
+        "durationSeconds": 6
+      }
+    ]
+  },
+  "published": true,
+  "cliTestSuite": {
+    "total": 8,
+    "passed": 8,
+    "durationSeconds": 0.537
+  },
+  "boulderComparison": {
+    "sourceReport": "fidelity-05-boulders-polished.json",
+    "file": "fidelity-05-boulders.png",
+    "variants": 9,
+    "labelsReviewed": true,
+    "repeatPlacementDataExact": true,
+    "heightSamplesUnchanged": 66049,
+    "executeMilliseconds": 8511
+  },
+  "assembledRoadLifecycle": {
+    "status": "passed",
+    "sourceReport": "fidelity-05-final-lifecycle.json",
+    "executeMilliseconds": 17206,
+    "innerStopwatchSeconds": 17.0837509,
+    "operations": [
+      "remove",
+      "refresh",
+      "repeat",
+      "remove",
+      "restore"
+    ],
+    "retainedBaseMeshesUnchanged": true,
+    "terrainHeightAndHoleDataUnchanged": true,
+    "receiptTerrainPatchUnchanged": true,
+    "foreignChildRejected": true,
+    "editedTransformRejected": true,
+    "legacyHashProofMigrated": true,
+    "includedInEditorTestTotal": false
+  },
+  "scopedEditorRegressionSuites": [
+    {
+      "name": "RoadMarkingTests",
+      "passed": 9,
+      "total": 9,
+      "durationSeconds": 11.36
+    },
+    {
+      "name": "WaterSurfaceOwnershipTests",
+      "passed": 5,
+      "total": 5,
+      "durationSeconds": 5.41
+    }
+  ],
+  "sourceCompileCleanAfterScopedChanges": true,
+  "finalWaterRefresh": {
+    "status": "passed",
+    "sourceReport": "fidelity-05-final-lifecycle.json",
+    "canonicalGeometryChanged": false,
+    "terrainChanged": false,
+    "heightSamplesUnchanged": 66049,
+    "primaryWaveBoundMeters": 0.95
+  }
+}

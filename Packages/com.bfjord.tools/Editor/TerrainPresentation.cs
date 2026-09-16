@@ -12,6 +12,7 @@ namespace Bwork.Authoring.Editor
     public sealed class TerrainPaintProfile
     {
         public int schemaVersion = 1, seed = 731;
+        public string palette = "temperate";
         public float rockSlopeStart = 28, rockSlopeEnd = 52;
         public float exposedHeightStart = 40, exposedHeightEnd = 90;
         public float patchScaleMeters = 32, soilStrength = .55f, gravelStrength = .65f;
@@ -79,6 +80,7 @@ namespace Bwork.Authoring.Editor
                 !Range(profile.bankWidthMeters, .5f, 30) || !Range(profile.bankHeightMeters, .1f, 10) ||
                 !Range(profile.heightTransition, .01f, 1) || !Range(profile.bankBreakup, 0, .8f) || !Range(profile.patchWarpMeters, 0, 32))
                 throw new ArgumentException("Terrain paint requires a version-1 profile with finite, ordered slope/height bounds and bounded patch/bank scales.");
+            TerrainMaterialBank.Validate(profile.palette);
         }
 
         public static object ApplyProfile(Terrain terrain, string recipePath)
@@ -123,6 +125,7 @@ namespace Bwork.Authoring.Editor
                 throw new InvalidOperationException("Terrain material is externally authored; restore the toolkit Terrain.mat before automatic painting.");
             var masks = LayerNames.Select(name => AssetDatabase.LoadAssetAtPath<Texture2D>(MaskRoot + name + "_TerrainMask.png") ??
                 throw new InvalidOperationException("Missing CC0 Terrain mask: " + name + ". Install the current sample asset catalog.")).ToArray();
+            var surfaces = TerrainMaterialBank.Resolve(profile.palette, materials, masks, TileMeters);
             int width = data.alphamapWidth, height = data.alphamapHeight;
             var map = new float[height, width, 4];
             float stepX = 4 / data.size.x, stepZ = 4 / data.size.z;
@@ -155,10 +158,10 @@ namespace Bwork.Authoring.Editor
             for (int i = 0; i < layers.Length; i++)
             {
                 layers[i] = ToolSandbox.Persist(new TerrainLayer { name = LayerNames[i],
-                    diffuseTexture = (Texture2D)materials[i].GetTexture("_BaseMap"), normalMapTexture = (Texture2D)materials[i].GetTexture("_BumpMap"),
-                    maskMapTexture = masks[i], maskMapRemapMin = Vector4.zero,
+                    diffuseTexture = surfaces[i].color, normalMapTexture = surfaces[i].normal,
+                    maskMapTexture = surfaces[i].mask, maskMapRemapMin = Vector4.zero,
                     maskMapRemapMax = new Vector4(0, 1, 1, .45f),
-                    tileSize = Vector2.one * TileMeters[i],
+                    tileSize = Vector2.one * surfaces[i].tileMeters,
                     normalScale = materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = i == 3 ? .08f : .04f,
                     // The default DiffuseAlphaChannel source treats opaque JPG alpha as
                     // mirror smoothness, ignoring the layer's smoothness value entirely.

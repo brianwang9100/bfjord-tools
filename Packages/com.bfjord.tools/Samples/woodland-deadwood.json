@@ -1,0 +1,42 @@
+{
+  "id": "woodland-deadwood-05",
+  "area": {
+    "x": 182,
+    "y": 158,
+    "width": 68,
+    "height": 70
+  },
+  "seed": 51916,
+  "maximumCount": 18,
+  "densityPerHectare": 38,
+  "minimumSpacing": 4,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 8,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "woody",
+  "species": [
+    {
+      "id": "FallenHollowLog_A",
+      "prefabKey": "bfjord:FallenHollowLog_A",
+      "weight": 1,
+      "radius": 2.9,
+      "minimumScale": 0.7,
+      "maximumScale": 1.1,
+      "groundOffsetMeters": -0.035
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 3
+    }
+  ]
+}

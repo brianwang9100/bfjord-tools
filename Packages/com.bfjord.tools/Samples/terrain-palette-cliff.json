@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "seed": 51915,
+  "rockSlopeStart": 18,
+  "rockSlopeEnd": 42,
+  "exposedHeightStart": 40,
+  "exposedHeightEnd": 90,
+  "patchScaleMeters": 24,
+  "soilStrength": 0.38,
+  "gravelStrength": 0.85,
+  "bankWidthMeters": 8,
+  "bankHeightMeters": 2.2,
+  "heightBlend": true,
+  "heightTransition": 0.16,
+  "bankBreakup": 0.55,
+  "patchWarpMeters": 12,
+  "palette": "cliff"
+}

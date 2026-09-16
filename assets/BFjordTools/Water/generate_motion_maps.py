@@ -48,16 +48,25 @@ def field(u, v, kind):
 
     if kind == 'river':
         warp = (noise(u,v,4,5,271)-.5)*.1
-        fine = noise(u+warp,v,47,9,931)
-        f = (.50*noise(u+warp,v,11,3,571) + .32*noise(u+warp,v,27,7,351) + .18*fine)
+        fine = noise(u+warp,v,47,23,931)
+        f = (.50*noise(u+warp,v,11,7,571) + .32*noise(u+warp,v,27,13,351) + .18*fine)
         coverage = noise(u,v,5,4,713)
         threads = clamp((f-.53)*4.3)*clamp((coverage-.34)*3)
         return threads, coverage, fine
     if kind == 'ocean':
         clouds = (.58*noise(u,v,5,6,419) + .28*noise(u,v,13,17,733) + .14*noise(u,v,37,41,953))
         breakup = noise(u,v,23,29,311)
-        # Sparse patches; the shader's actual broad wave supplies crest placement.
-        foam = clamp((clouds-.48)*5.2)*clamp((breakup-.27)*2.2)
+        # Dense aerated film with round holes, not continuous Voronoi wire outlines.
+        # The shader supplies crest/shore placement; this map supplies porous white coverage.
+        cells=43;px=u*cells;py=v*cells;ix=math.floor(px);iy=math.floor(py);nearest=2.
+        for oy in (-1,0,1):
+            for ox in (-1,0,1):
+                cx=ix+ox;cy=iy+oy
+                jx=noise((cx%cells)/cells,(cy%cells)/cells,cells,cells,211)
+                jy=noise((cx%cells)/cells,(cy%cells)/cells,cells,cells,787)
+                nearest=min(nearest,math.hypot(px-cx-.15-.7*jx,py-cy-.15-.7*jy))
+        bubbles=clamp((nearest-.10)*3.7)
+        foam=clamp(.16+bubbles*.76)*(.63+.37*clouds)
         return foam, clouds, breakup
     raise ValueError(kind)
 

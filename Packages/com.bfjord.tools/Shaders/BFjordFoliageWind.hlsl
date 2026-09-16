@@ -12,6 +12,7 @@ CBUFFER_END
 TEXTURE2D(_BaseMap);SAMPLER(sampler_BaseMap);
 TEXTURE2D(_BumpMap);SAMPLER(sampler_BumpMap);
 TEXTURE2D(_MetallicGlossMap);SAMPLER(sampler_MetallicGlossMap);
+float4 _BFjordWindPreview; // x enables a bounded Editor capture; y is seconds.
 // Editor/demo wind uses one common engine time in every rendering pass; no per-plant CPU update.
 struct FoliageAttributes
 {
@@ -31,7 +32,7 @@ void FoliageDeform(FoliageAttributes input,out float3 positionWS,out float3 norm
     float3 tangent=TransformObjectToWorldDir(input.tangentOS.xyz);
     float3 origin=TransformObjectToWorld(float3(0,0,0));
     float phase=dot(origin.xz,float2(.137,.193));
-    float time=_Time.y*.16*_WindSpeed;
+    float time=lerp(_Time.y,_BFjordWindPreview.y,saturate(_BFjordWindPreview.x))*.16*_WindSpeed;
     float main=.72*sin(time*6+phase)+.28*sin(time*11+phase*1.7);
     float across=.18*sin(time*9+phase*.73);
     float2 direction=normalize(float2(.8,.6));

@@ -889,6 +889,70 @@
       "changedStringProperties": [
         {
           "node": "FileName",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "95acbdff5b22268615490b593e146d2dd28617148673d77e60b205c29f1db7d5",
+      "outputSha256": "b0c7f2d154fa351ed2c530cb9741fd287dad0476d2754d1dd314dcf4c8062165",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/FallenHollowLog_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "825a7008574b1de2fefb9836ffb39e0394451c7ddd3c646640ff4dd1649cf3d6",
+      "outputSha256": "2de0a484d929240ef268c44c019c949d4f76ba5eda23c127bed10db8b8d19986",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/MatureOak_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
           "replacement": "textures/FoliageAtlas.png"
         },
         {
@@ -947,6 +1011,70 @@
       "numericPropertiesSha256": "890da7bd4394a46b4e345be60973152aa20728174cf848837f292084b54576d9",
       "outputSha256": "1214f3ca25910691604902b17e343023c2a9ae184fda7aabf4a95d78530ef188",
       "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/RoseThicket_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "cda7551fd74861d4a406f01f49225f833c7cf2ba9543f741ae24e3794a8aabfc",
+      "outputSha256": "7f9126c5096daaaccac0567b0e946bfc00a58c1717e8762716c7abfd1fe16a21",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/SilverBirch_A.fbx",
+      "version": 7400
+    },
+    {
+      "changedStringProperties": [
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "FileName",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandAtlas.png"
+        },
+        {
+          "node": "P",
+          "replacement": "textures/WoodlandNormal.png"
+        },
+        {
+          "node": "Filename",
+          "replacement": "textures/WoodlandNormal.png"
+        }
+      ],
+      "numericPropertiesSha256": "2e9cf177985232c7a1b3ddc556a19364a12e3ef4f16adad0bc0f21950977b2ec",
+      "outputSha256": "a72fffd4454fc49e5dd7d6b62bdfab0a11817670fd9d6c01984313f6e73e64fd",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Models/TallMeadowGrass_A.fbx",
       "version": 7400
     },
     {
@@ -2823,6 +2951,8 @@
     "timber-trestle-80/bridge-source.blend",
     "BFjordTools/FoliageDetail/FoliageDetail.blend",
     "BFjordTools/FoliageDetail/FoliageDetail.blend1",
+    "BFjordTools/FoliageDetail/Woodland05/Woodland05.blend",
+    "BFjordTools/FoliageDetail/Woodland05/Woodland05.blend1",
     "BFjordTools/RoadDetail/Sources/road-detail.blend",
     "BFjordTools/TunnelDetail/MasonryPortal.blend",
     "BFjordTools/Rocks/original.blend",
@@ -2844,6 +2974,30 @@
       "imageDataUnchanged": true,
       "outputSha256": "b8fd8725a45757eb9c14d5bdcb083f1f1386d9afc936e8acd70c7e82d76997b9",
       "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/FoliageNormal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "54dcece0e6b34f45601e5373769893515092a407f018dcd5f0d30450667be01c",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/WoodlandAtlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "54e896562dda8f16ba898ed9f0fb7d25f4b17b485011ee9dbb142d811da5fa9d",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/WoodlandMask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "327708c6fa3828fa464b83223700e4984ea22f8a1f055af804eab12e72b10bde",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/OriginalFoliage/Textures/WoodlandNormal.png",
       "removedMetadataChunks": [
         "eXIf"
       ]
@@ -2944,6 +3098,709 @@
       "imageDataUnchanged": true,
       "outputSha256": "9fc577957b2be4852560bad904514283464625369535c87151a356d25c2c874d",
       "path": "assets/BFjordTools/FoliageDetail/Review/exported-lods.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a16e913607a60ec2f87797ec9d262d37ff9e1e01dad24319604b41cdf98fd652",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/FallenHollowLog_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f3853cbb6db0950a0eaac78235caf88fa8b861fd92c15f3031d91df43f431325",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/MatureOak_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "768110eb040ef6f83d713858738d079aa732872120cc5bdc2bc1f9f72fe9527b",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/SilverBirch_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "1d7717c1a2d4e6c74c37387f6c88624f9e72ac5178ca5b841e6daa7006844868",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/TallMeadowGrass_A-detail.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "8e5f9013d0f17da3c9631a2b297c4add332b26ca0a651ad0d22998431b195e9c",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-000.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "26eca18172c3dc3e1b4f0c69eebbaf8059635d2abc50950ed34584789d74970b",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-001.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "3f29abbf673df2d2cf64928f2083af420ee6a5a068e7ba2ae011cc6fc7760057",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-002.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5622535a44b774b460517fbccabc642ec19262212c9bae3f50a90d24e337bc36",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-003.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f492bf2683452fb1dc6095845e146e0272d02091c54571e5132c2b1366acb1d6",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-004.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "20b3e82c62fc5f340d3407214b99fb49167f911da95365d0c793ebbd9b285218",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-005.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0cb0e737cf71e269135df2bad20c77243aad7fa48da11fd85ce8c4212944869a",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-006.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "8c98b3a0ee976ca114ae005f1450f83c2f25e4cfe24b13f96b35a6a5d1da8e22",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-007.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b6642039eaf9daf16b8fe8fdc308a4ea91fab16e71f6a224964277214e85e88f",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-008.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5277a41dffd00e5df4bda2f26d66f3f7816e97f982aae9486f2ab7edab20d822",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-009.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f2aef862bf75367830679ccf171c26cf5e71d77d5624845a85f31fd58e862cbb",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-010.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "8bca0e57a0824ef977313ae2dda24a0d58ff9d714e781a066a31afc5b7e59bd2",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-011.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0283f9b850e32afebad271949237140393972972179c10eff28fb848e5661e17",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-012.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "d34a0565d9cc90d2f5cca990b2cabe2557760615d7a3963f841bee06517b0444",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-013.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "bcf213a31f15d20a0ab421fe7805b5336bb2bbc59d8d4464de93c930bbe26e60",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-014.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "9a9781d9c3b313f683613079adeaff51ee94b7120885f4558f6bbfa5a75e23f5",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-015.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b7af4da923e591c3a7af5aec2d5136b44ff64e78bec13386e1dd38fc35d7cb58",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-016.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "dfe1330efe2b4f4b9ffc3b8bf52c8792381c22dbd9f840f265ede711366ff481",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-017.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0d53c37050b4669d96d819cee02e74640546af2df57c77446f7c7a7bd0db924c",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-018.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e989ee42fce19c49273e7332cafa8cb901a7bdf517b472b2c4758f5c306e1fcc",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-019.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "733ce666687abbe4a4dbce8e2989dc15fa4ad0f82619044e1ed1bb1164786f86",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-020.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7a3ca6233fd9ae854c6c27fadb30af2d77b20c01620fe9494823c17792d7f5c4",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-021.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "c9a481fe78cd84ce7466cced72f3df60ad1a362b6565d835e6e71a4d49f42642",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-022.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b228609e4755a75a15e2d6a67bd48f21791118c19ffdc6464da3ccee2c972577",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-023.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a9aba40696bccfce0816e0b3932907e71021f3db2e35ef78d6c1118482c52e58",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-024.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "4227267b2f70dbebb186d236e559012ff821e76e1170d91a0d22ec229433fe3a",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-025.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "770179b119067c4ae617df481f74621c9627a53f033ef4bc5cbdd769adefc96d",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-026.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "49b129aa0b32bc6e9240ac96b696bbc1b627d44ab5d4b8bda0b1f17371fb4d73",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-027.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "da3af9adca66a5bf0ecaffb3ad09c8f227d4fc107a9936309c5e4272aee88916",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-028.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "838bce9b698f3d2ae34466e85d98201b7f7d7f8264c53ab4252767a12d900873",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-029.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e81a5a64223c7903bd1ea15d52a67087c306d49b0f7dbb203c160d8e48d70638",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-030.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a110384bffbbcfb7137f46099f8f22a01dbf98ec9b693c669bb13ee65eee211b",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/WindFrames/frame-031.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f5789c8b2ec2f419995cb62cd64be50353c3d7e4111ece6636bdf2dac6573d6d",
+      "path": "assets/BFjordTools/FoliageDetail/Woodland05/Review/woodland-assets.png",
       "removedMetadataChunks": [
         "eXIf",
         "tEXt",

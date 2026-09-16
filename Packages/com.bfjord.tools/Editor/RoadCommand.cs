@@ -17,17 +17,29 @@ namespace Bwork.Authoring.Editor
         const string Group = "Roads", ReceiptFile = "road-edit.json";
         [CliCommand("bwork_roads", "Prepare, apply, remove or inspect bounded sandbox roads with owned terrain rollback.", MainThreadRequired = true)]
         public static object Run(
-            [CliArg("action", "prepare, apply, remove, status, view-dressing")] string action = "status",
+            [CliArg("action", "prepare, apply, remove, status, view-dressing, refresh-markings, remove-markings, retry-marking-cleanup")] string action = "status",
             [CliArg("recipePath", "Optional JSON recipe path; omitted uses the original hill junction example")] string recipePath = "",
             [CliArg("fourArms", "Use four arms in the built-in example")] bool fourArms = false,
-            [CliArg("dressing", "Add original stone verge fragments and posts; explicit opt-in on each apply")] bool dressing = false)
+            [CliArg("dressing", "Add original stone verge fragments and posts; explicit opt-in on each apply")] bool dressing = false,
+            [CliArg("markings", "Double yellow center and white edges on asphalt; default true. Refresh changes appearance only.")] bool markings = true)
         {
             var terrain=ToolSandbox.RequireTerrain();var prior=ReadReceipt();var old=ToolSandbox.Root.Find(Group);
             if(action=="view-dressing")return RoadDetailPresentation.View(terrain);
-            if(action=="status")return new{applied=prior!=null,objects=old==null?0:old.childCount,roads=prior?.roadCount??0,changedHeightCells=prior?.change.Count??0,gradePercent=prior?.gradePercent??0,dressing=prior?.dressing??false,dressingInstances=prior?.dressingInstances??0};
+            if(action=="status")return new{applied=prior!=null,objects=old==null?0:old.childCount,roads=prior?.roadCount??0,changedHeightCells=prior?.change.Count??0,gradePercent=prior?.gradePercent??0,dressing=prior?.dressing??false,dressingInstances=prior?.dressingInstances??0,markings=prior?.markings??false,markingRoads=prior?.markingObjects??0,markingCleanupPending=prior?.markingCleanupAssets.Length??0};
+            if(action=="retry-marking-cleanup")
+            {
+                if(prior==null||old==null)throw new InvalidOperationException("Marking cleanup requires the retained road root and receipt.");
+                ValidateOwned(old,prior);CleanupMarkings(prior);
+                return new{markingCleanupPending=prior.markingCleanupAssets.Length};
+            }
+            if(action=="refresh-markings"||action=="remove-markings")
+            {
+                if(!string.IsNullOrEmpty(recipePath))throw new ArgumentException("Marking refresh uses the retained road receipt; recipePath is only for road construction.");
+                return RefreshMarkings(prior,old,action=="refresh-markings"&&markings);
+            }
             if(prior!=null&&prior.ownsTerrainLOD&&(terrain.heightmapMinimumLODSimplification!=prior.fittedMinimumLOD||terrain.heightmapMaximumLOD!=0||!terrain.ignoreQualitySettings))
                 throw new InvalidOperationException("Road-owned Terrain LOD settings changed; restore the road checkpoint before replacement or removal.");
-            if(prior!=null&&old!=null&&(action=="apply"||action=="remove"))RoadHierarchyOwnership.Validate(old,prior.hierarchyHash,prior.meshAssets);
+            if(prior!=null&&old!=null&&(action=="apply"||action=="remove")){ValidateOwned(old,prior);CleanupMarkings(prior);}
             if(action=="remove")return Remove(terrain,prior,old);
             if(action!="prepare"&&action!="apply")throw new ArgumentException("Unknown road action.");
             if((prior==null)!=(old==null))throw new InvalidOperationException("Road root/receipt disagree; restore their saved checkpoint before replacement.");
@@ -63,7 +75,7 @@ namespace Bwork.Authoring.Editor
             }
             if(dressing)RoadDetailPresentation.RequireSources();
             var detailPlan=dressing?RoadDetailPresentation.Plan(result,FittedGround,RoadDetailPresentation.ExistingExclusions(ToolSandbox.Root)):Array.Empty<RoadDetailPresentation.Placement>();
-            if(action=="prepare")return Report(result,owned.Count,false,fit,fullDetail,detailPlan.Length);
+            if(action=="prepare")return Report(result,owned.Count,false,fit,fullDetail,detailPlan.Length,markings);
             // All geometry and cell work is complete before assets or live heights change.
             var materialSet=RoadPresentation.Materials();var normals=RoadPresentation.FittedNormals(result.Meshes);
             var paintSnapshot=new TerrainPresentation.Snapshot(terrain);var createdAssets=new List<string>();GameObject pending=null;
@@ -84,6 +96,10 @@ namespace Bwork.Authoring.Editor
                     go.AddComponent<MeshCollider>().sharedMesh=saved;
                 }
                 RoadDetailPresentation.Build(pending.transform,detailPlan,generation,createdAssets);
+                int markingStart=createdAssets.Count;
+                var paint=markings?RoadMarkings.Build(pending.transform,MarkingRoads(RecipeData.From(recipe)),generation,createdAssets):null;
+                var markingAssets=createdAssets.Skip(markingStart).ToArray();
+                if(paint!=null){paint.transform.SetParent(pending.transform,false);paint.SetActive(true);}
                 terrain.heightmapMaximumLOD=0;terrain.heightmapMinimumLODSimplification=fullDetail;terrain.ignoreQualitySettings=true;
                 if(terrain.heightmapMinimumLODSimplification!=fullDetail||terrain.heightmapMaximumLOD!=0)throw new InvalidOperationException("Full-detail sandbox Terrain setting was not retained.");
                 EditorUtility.SetDirty(terrain);
@@ -91,7 +107,7 @@ namespace Bwork.Authoring.Editor
                 fit.MinimumClearance=SandboxTerrainConformance.Validate(result.Earthwork,data.GetHeights(0,0,resolution,resolution),origin.x,origin.y,origin.z,size.x,size.y,size.z);
                 // Store actual post-write values, including Terrain's height quantization.
                 owned=TerrainPatchChange.Create(terrain,baseline,data.GetHeights(0,0,resolution,resolution));
-                var receipt=new Receipt{ownsTerrainLOD=true,dressing=dressing,dressingInstances=detailPlan.Length,hierarchyHash=RoadHierarchyOwnership.Fingerprint(pending.transform),
+                var receipt=new Receipt{markings=markings,markingVersion=markings?RoadMarkings.Version:0,markingObjects=paint==null?0:paint.transform.childCount,markingAssets=markingAssets,assetHash=RoadMarkings.AssetFingerprint(createdAssets.ToArray(),true),ownsTerrainLOD=true,dressing=dressing,dressingInstances=detailPlan.Length,hierarchyHash=RoadHierarchyOwnership.Fingerprint(pending.transform),
                     originalMinimumLOD=prior!=null&&prior.ownsTerrainLOD?prior.originalMinimumLOD:previousMinimum,
                     originalMaximumLOD=prior!=null&&prior.ownsTerrainLOD?prior.originalMaximumLOD:previousMaximum,
                     originalIgnoreQuality=prior!=null&&prior.ownsTerrainLOD?prior.originalIgnoreQuality:previousIgnoreQuality,
@@ -114,7 +130,88 @@ namespace Bwork.Authoring.Editor
             }
             if(old!=null)Object.DestroyImmediate(old.gameObject);
             if(prior!=null)foreach(string asset in prior.meshAssets)DeleteOwnedMesh(asset);
-            ToolSandbox.Save();return Report(result,owned.Count,true,fit,fullDetail,detailPlan.Length);
+            ToolSandbox.Save();return Report(result,owned.Count,true,fit,fullDetail,detailPlan.Length,markings);
+        }
+        static RoadMarkings.Road[] MarkingRoads(RecipeData recipe)
+        {
+            if(recipe?.roads==null)throw new InvalidDataException("Retained road recipe is missing.");
+            return recipe.roads.Select(r=>new RoadMarkings.Road{id=r.id,surface=r.surface,width=r.width}).ToArray();
+        }
+        static void ValidateOwned(Transform root,Receipt receipt)
+        {
+            var legacyNames=string.IsNullOrEmpty(receipt.hierarchyHash)?RoadHierarchyOwnership.LegacyNames(
+                JsonUtility.FromJson<RecipeData>(receipt.recipeJson)?.ToRecipe(),receipt.meshAssets):null;
+            RoadHierarchyOwnership.Validate(root,receipt.hierarchyHash,receipt.meshAssets,legacyNames);
+            string actual=RoadMarkings.AssetFingerprint(receipt.meshAssets);
+            if(!string.IsNullOrEmpty(receipt.assetHash)&&actual!=receipt.assetHash)
+            {
+                if(receipt.markingVersion!=1||!RoadMarkings.ProvesLegacyPaintInitialization(receipt.meshAssets,receipt.markingAssets,receipt.assetHash))
+                    throw new InvalidDataException("Owned road asset bytes changed; preserve the edited generation before replacement/removal.");
+                // All original asset bytes are proven by reversing only the documented URP
+                // initialization delta; accept its initialized form, never arbitrary edited assets.
+                receipt.assetHash=actual;WriteReceipt(receipt);
+            }
+        }
+        static object RefreshMarkings(Receipt prior,Transform roads,bool enabled)
+        {
+            if(prior==null||roads==null)throw new InvalidOperationException("Marking refresh requires an existing owned Roads root and receipt.");
+            ValidateOwned(roads,prior);CleanupMarkings(prior);
+            var previousAssets=prior.markingAssets??Array.Empty<string>();var previous=roads.Find(RoadMarkings.Group);
+            if(previousAssets.Any(p=>!prior.meshAssets.Contains(p)||!Path.GetFileName(p).Contains("-paint-"))||prior.markingObjects<0||(prior.markingObjects>0)!=(previous!=null)||(previousAssets.Length>0)!=(previous!=null)||previous!=null&&!prior.markings)throw new InvalidDataException("Road marking root/receipt disagree; preserve their checkpoint.");
+            if(RoadMarkings.Current(enabled,prior.markingVersion,prior.markings))return new{unchanged=true,markings=enabled,markingRoads=prior.markingObjects,terrainChanges=false,roadGeometryChanges=false};
+            var recipe=JsonUtility.FromJson<RecipeData>(prior.recipeJson);var definitions=MarkingRoads(recipe);
+            var next=JsonUtility.FromJson<Receipt>(JsonUtility.ToJson(prior));var created=new List<string>();GameObject pending=null;
+            var held=new WaterGeneration.HeldRoot(previous);int previousIndex=previous==null?0:previous.GetSiblingIndex();
+            var previousPosition=previous==null?Vector3.zero:previous.localPosition;var previousRotation=previous==null?Quaternion.identity:previous.localRotation;var previousScale=previous==null?Vector3.one:previous.localScale;
+            bool detached=false,published=false;
+            try
+            {
+                if(enabled)pending=RoadMarkings.Build(roads,definitions,"roads-"+Guid.NewGuid().ToString("N"),created);
+                if(previous!=null){held.Park();previous.SetParent(null,true);detached=true;}
+                if(pending!=null){pending.transform.SetParent(roads,false);pending.SetActive(true);}
+                next.markings=enabled;next.markingVersion=enabled?RoadMarkings.Version:0;next.markingObjects=pending==null?0:pending.transform.childCount;next.markingAssets=created.ToArray();
+                next.meshAssets=prior.meshAssets.Except(previousAssets).Concat(created).ToArray();
+                // Publish the retired generation before deletion; a failed cleanup remains retryable.
+                next.markingCleanupAssets=previousAssets;
+                next.assetHash=RoadMarkings.AssetFingerprint(next.meshAssets,true);next.hierarchyHash=RoadHierarchyOwnership.Fingerprint(roads);
+                published=true;WriteReceipt(next);ToolSandbox.Save();
+            }
+            catch
+            {
+                if(pending!=null)Object.DestroyImmediate(pending);
+                if(detached){previous.SetParent(roads,false);previous.SetLocalPositionAndRotation(previousPosition,previousRotation);previous.localScale=previousScale;previous.SetSiblingIndex(previousIndex);held.Restore();}
+                if(published)WriteReceipt(prior);
+                foreach(string path in created)DeleteOwnedMesh(path);
+                throw;
+            }
+            held.Release();CleanupMarkings(next);ToolSandbox.Save();
+            return new{unchanged=false,markings=enabled,markingRoads=next.markingObjects,terrainChanges=false,roadGeometryChanges=false};
+        }
+        static void CleanupMarkings(Receipt receipt)
+        {
+            if(receipt.markingCleanupAssets.Length==0)return;
+            ValidateMarkingCleanup(receipt);
+            foreach(string path in receipt.markingCleanupAssets)
+            {
+                if(!File.Exists(path)&&!File.Exists(path+".meta"))continue;
+                if(!AssetDatabase.DeleteAsset(path))
+                    throw new IOException("Road marking cleanup is incomplete; retained paths can be retried with action=retry-marking-cleanup: "+path);
+            }
+            // Keep the original list durable until every deletion succeeds. Already deleted paths
+            // are harmless on retry after a partial failure or receipt-publication failure.
+            var next=JsonUtility.FromJson<Receipt>(JsonUtility.ToJson(receipt));
+            next.markingCleanupAssets=Array.Empty<string>();WriteReceipt(next);
+            receipt.markingCleanupAssets=Array.Empty<string>();
+        }
+        static void ValidateMarkingCleanup(Receipt receipt)
+        {
+            receipt.markingCleanupAssets??=Array.Empty<string>();
+            if(receipt.markingCleanupAssets.Length>128||receipt.markingCleanupAssets.Any(path=>
+                string.IsNullOrEmpty(path)||path.Contains("..")||path.Contains('\\')||
+                Path.GetDirectoryName(path)?.Replace('\\','/')!=ToolSandbox.Generated||
+                !Path.GetFileName(path).StartsWith("roads-",StringComparison.Ordinal)||
+                !Path.GetFileName(path).Contains("-paint-")||Path.GetExtension(path)!=".asset"||receipt.meshAssets.Contains(path)))
+                throw new InvalidDataException("Invalid or still-active road marking cleanup path; preserve the receipt.");
         }
         static object Remove(Terrain terrain,Receipt receipt,Transform root)
         {
@@ -129,8 +226,8 @@ namespace Bwork.Authoring.Editor
             foreach(string asset in receipt.meshAssets)DeleteOwnedMesh(asset);
             AssetDatabase.DeleteAsset(ToolSandbox.Generated+"/"+ReceiptFile);ToolSandbox.Save();return new{removed=true,restoredHeightCells=receipt.change.Count};
         }
-        static object Report(SandboxRoadResult result,int changed,bool applied,SandboxTerrainFit fit,int fullDetail,int dressingInstances=0)=>new
-        {applied,dressingInstances,roads=result.Paths.Length,junctions=result.Meshes.Length-result.Paths.Length,vertices=result.Meshes.Sum(m=>m.Vertices.Length),
+        static object Report(SandboxRoadResult result,int changed,bool applied,SandboxTerrainFit fit,int fullDetail,int dressingInstances=0,bool markings=true)=>new
+        {applied,dressingInstances,markings,markingRoads=markings?result.Paths.Count(p=>p.Source.Surface=="asphalt"):0,roads=result.Paths.Length,junctions=result.Meshes.Length-result.Paths.Length,vertices=result.Meshes.Sum(m=>m.Vertices.Length),
             triangles=result.Meshes.Sum(m=>m.Triangles.Take(3).Sum(t=>t.Length/3)),gradePercent=result.MaximumGradePercent,surfaceGradePercent=result.MaximumSurfaceGradePercent,changedHeightCells=changed,
             minimumTerrainClearanceMeters=fit.MinimumClearance,priorMinimumTerrainClearanceMeters=fit.BeforeMinimumClearance,
             maximumAdditionalCutMeters=fit.MaximumAdditionalCut,terrainConstraintVertices=fit.ConstraintVertices,terrainFullDetailSimplification=fullDetail,
@@ -152,7 +249,7 @@ namespace Bwork.Authoring.Editor
         {
             var source=AssetDatabase.LoadAssetAtPath<TextAsset>(ToolSandbox.Generated+"/"+ReceiptFile);
             if(source==null)return null;var receipt=JsonUtility.FromJson<Receipt>(source.text);
-            if(receipt==null||receipt.change==null||receipt.meshAssets==null)throw new InvalidDataException("Invalid road edit receipt.");return receipt;
+            if(receipt==null||receipt.change==null||receipt.meshAssets==null)throw new InvalidDataException("Invalid road edit receipt.");ValidateMarkingCleanup(receipt);return receipt;
         }
         static void WriteReceipt(Receipt receipt)=>ToolSandbox.Persist(new TextAsset(JsonUtility.ToJson(receipt,true)),ReceiptFile);
         static void DeleteOwnedMesh(string path)
@@ -163,7 +260,7 @@ namespace Bwork.Authoring.Editor
             var data=JsonUtility.FromJson<RecipeData>(File.ReadAllText(path));if(data==null||data.roads==null)throw new ArgumentException("Road recipe requires roads.");return data.ToRecipe();
         }
         [Serializable] sealed class Receipt
-        {public TerrainPatchChange change;public string[] meshAssets,sources;public string recipeJson,hierarchyHash;public int roadCount;public double gradePercent;
+        {public TerrainPatchChange change;public string[] meshAssets,sources;public string recipeJson,hierarchyHash,assetHash;public string[] markingAssets=Array.Empty<string>(),markingCleanupAssets=Array.Empty<string>();public bool markings;public int markingVersion,markingObjects;public int roadCount;public double gradePercent;
             public bool dressing;public int dressingInstances;
             public bool ownsTerrainLOD,originalIgnoreQuality;public int originalMinimumLOD,originalMaximumLOD,fittedMinimumLOD;}
         [Serializable] sealed class RecipeData

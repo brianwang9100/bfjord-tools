@@ -5,3 +5,5 @@
 Use Blender 5.2.1 or compatible Python API. Supply `--output` for an `OriginalFoliage` asset folder and `--review` for a render folder. `prepare_catalog.py --catalog PATH` writes stable Unity metadata using the existing catalog's reviewed importer templates and updates only `Assets/BFjord/OriginalFoliage/` entries. `review_closeups.py` runs against the saved review blend and emits one close view for each actual reimported LOD0.
 
 Geometry is in metres with Blender Z-up; FBX export targets Unity Y-up. One UV atlas and one material slot per model. Live Unity is owned by the coordinating integration task.
+
+Woodland 0.5 is additive: `generate_woodland.py` creates mature oak, silver birch, hollow fallen wood and tall meadow grass with their own PBR atlas. `prepare_woodland_catalog.py` emits only this family’s stable metadata and catalog additions; integration owns the shared manifest. `review_woodland_wind.py` renders a labeled offline illustration of the Unity wind equation. See `docs/fidelity/VEGETATION_05.md` for exact commands, seeded recipes, counts, review evidence and limits.

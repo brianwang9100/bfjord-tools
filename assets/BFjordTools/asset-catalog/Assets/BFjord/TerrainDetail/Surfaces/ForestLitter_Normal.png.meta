@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: acab595b1f5c548994663a98a625b95f
+TextureImporter:
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 1
+    sRGBTexture: 0
+  isReadable: 0
+  textureType: 1
+  textureShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 8
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  userData: CC0 Poly Haven scan. Terrain mask is R metal G AO B height A smoothness.

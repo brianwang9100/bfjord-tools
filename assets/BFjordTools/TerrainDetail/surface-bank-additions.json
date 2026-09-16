@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Color.png",
+      "bytes": 2578682,
+      "sha256": "133cc1429ac09d48bfe6ba1f794a6bea6ef3a8eda928a314e9189cece47f6e04"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Color.png.meta",
+      "bytes": 465,
+      "sha256": "daa923373339d26291bed2ff761779113dd98dd97e697ef7fe33b05cc9e65459"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Normal.png",
+      "bytes": 2423437,
+      "sha256": "0cc187953248203c29c349865d9cbf3037b3a838ee676fc51b76c439acf7197c"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Normal.png.meta",
+      "bytes": 465,
+      "sha256": "4050ea382f3d1db4894d008fe145572d1d4a2117dde5d78d37efed4183a92a89"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Mask.png",
+      "bytes": 2157521,
+      "sha256": "d5df82e8d2a323d9baa56f959f7d417000158eb0738adf9b3523cb3062b23d41"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Mask.png.meta",
+      "bytes": 465,
+      "sha256": "3d74e70762097456f01bc80bc851ef4332e16c24081c54513a269c17d7f3bfa0"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Color.png",
+      "bytes": 1828562,
+      "sha256": "be3f1c6f89dae4068920ed38290324a5ceead90b3edae9b2cea76892b174bf88"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Color.png.meta",
+      "bytes": 465,
+      "sha256": "6b8b48fec526d05fdc3e255ed0c1e76638da3292870c56d91f94ea9622912b33"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Normal.png",
+      "bytes": 2218860,
+      "sha256": "81072373c23536cbbf8dce517f4140d0e46dd64d53a3e809796c836648930ef0"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Normal.png.meta",
+      "bytes": 465,
+      "sha256": "262f16392d67ca59267a9087c27c04894c2e0b539d8e48cd050a875fa2bcfafe"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Mask.png",
+      "bytes": 1875521,
+      "sha256": "005c1df496dddaca93097913d6a4f315f3e77953ee68eb1ef1d3d33467e5f996"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Mask.png.meta",
+      "bytes": 465,
+      "sha256": "2b4db004e67728937eda14e5491fba3aac8b52e777a7cdb3a1d8741103df2c55"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Color.png",
+      "bytes": 1893785,
+      "sha256": "6a77d98eaef3e0898f1447cdb7b30789590adcbf2feceaee82d254a7ee791e8e"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Color.png.meta",
+      "bytes": 465,
+      "sha256": "6588a32f3ff8a98c82717af2747a4a079aeef669fefcaa22a946800c5bb5db52"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Normal.png",
+      "bytes": 1596852,
+      "sha256": "38aecabdf4fc8eedac2eeb647d6c83c1f8ff926238759d31776495d4d2ef9213"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Normal.png.meta",
+      "bytes": 465,
+      "sha256": "ee8eb44a5092ac8a91f043887393f374b48316eda0a767f1b4abf0bf1af21b51"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Mask.png",
+      "bytes": 1646812,
+      "sha256": "18913e035ed27cee06d789e6882d4c5a7c60d6943167999cc563c8f48f422441"
+    },
+    {
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Mask.png.meta",
+      "bytes": 465,
+      "sha256": "895efde06f025c61e9cebf554044d06b365ac8110d656ea899eee911fb183eea"
+    }
+  ]
+}

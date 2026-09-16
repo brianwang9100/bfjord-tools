@@ -78,15 +78,18 @@ namespace Bwork.Authoring.Editor
 
         [CliCommand("bwork_foliage", "Plan, apply, remove, or inspect a selected tool-owned deterministic foliage batch.", MainThreadRequired = true)]
         public static Receipt Run(
-            [CliArg("action", "prepare, apply, remove, status, build-assets, catalog or view")] string action = "apply",
+            [CliArg("action", "prepare, apply, remove, status, build-assets, catalog, view, grass-view or wind-frame")] string action = "apply",
             [CliArg("recipePath", "Optional project- or package-relative JSON recipe path")] string recipePath = "",
-            [CliArg("batchId", "Optional lowercase batch ID; empty selects the legacy foliage batch")] string batchId = "")
+            [CliArg("batchId", "Optional lowercase batch ID; empty selects the legacy foliage batch")] string batchId = "",
+            [CliArg("windSeconds", "wind-frame: -1 restores live time; 0–60 fixes time for reproducible captures")] float windSeconds = -1)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
             ToolSandbox.RequireTerrain();
             batchId = ValidateBatchId(batchId);
             string batchRoot = OwnedBatchName(batchId);
             var receipt = new Receipt { action = action, batchId = batchId, batchRoot = batchRoot };
+            if (action == "wind-frame") { receipt.assetCatalog = FoliagePresentation.WindFrame(windSeconds); receipt.state = "wind-preview"; return receipt; }
+            if (action == "grass-view") { receipt.assetCatalog = FoliagePresentation.GrassView(); receipt.state = "view"; return receipt; }
             if (action == "view") { receipt.assetCatalog = FoliagePresentation.View(); receipt.state = "view"; return receipt; }
             if (action == "build-assets" || action == "catalog")
             {

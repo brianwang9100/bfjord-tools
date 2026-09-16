@@ -10,8 +10,8 @@
         512,
         512
       ],
-      "sha256": "e296393c85339baa9bc27ef4995d7022a948422cd57ffc26ca64388756361139",
-      "bytes": 627950,
+      "sha256": "2d173aeced634620379c38908f5725cd0017eaf74ecd1a5c9c4493d34f2cc5c2",
+      "bytes": 622003,
       "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
     },
     "ocean-motion.png": {
@@ -19,8 +19,8 @@
         512,
         512
       ],
-      "sha256": "2c73d43545815f5c87169388f7447cd262e5fb7cefd6a0aefa3e5667ec113309",
-      "bytes": 583610,
+      "sha256": "d7ab9295939c6d35d1c1216345722ac317639c5e3111f8f96542c0d804cc2a71",
+      "bytes": 691449,
       "encoding": "linear RGB: foam streaks / sheet or swell coverage / breakup"
     },
     "waterfall-motion.png": {

@@ -4,6 +4,7 @@ using System.Linq;
 using Bwork.FjordCoast.TerrainAuthoring;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using Unity.Pipeline.Commands;
 using UnityEditor;
 using UnityEngine;
@@ -18,8 +19,12 @@ namespace Bwork.Authoring.Editor
         public static object Run(
             [CliArg("action", "prepare, apply, remove, status, paint")] string action = "prepare",
             [CliArg("recipePath", "Height recipe JSON (or TerrainPaintProfile for paint); omitted uses built-in profile")] string recipePath = "",
-            [CliArg("stampShape", "Built-in stamp: ridge, basin, mesa, eroded-ridge or coastal-bluff; custom recipes carry their own stamp arrays")] string stampShape = "ridge")
+            [CliArg("stampShape", "Built-in stamp: ridge, basin, mesa, eroded-ridge or coastal-bluff; custom recipes carry their own stamp arrays")] string stampShape = "ridge",
+            [CliArg("seed", "Built-in height stamp seed; zero preserves the original profiles; custom recipes already contain their exact stamps")] int seed = 0)
         {
+            // Reject unused seeds before any scene access or terrain mutation.
+            if (seed != 0 && (!string.IsNullOrEmpty(recipePath) || (action != "prepare" && action != "apply")))
+                throw new ArgumentException("A nonzero seed applies only to built-in prepare/apply height stamps. Custom recipes already store exact stamp values.");
             var terrain = ToolSandbox.RequireTerrain();
             if (action == "paint") return TerrainPresentation.ApplyProfile(terrain, recipePath);
             var recordAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(RecordPath);
@@ -37,7 +42,7 @@ namespace Bwork.Authoring.Editor
                 return new { state = "restored", cells = previous.Count };
             }
             if (action != "prepare" && action != "apply") throw new ArgumentException("Unknown terrain action.");
-            var recipe = string.IsNullOrEmpty(recipePath) ? Example(stampShape) : JsonConvert.DeserializeObject<TerrainEditRecipe>(
+            var recipe = string.IsNullOrEmpty(recipePath) ? Example(stampShape, seed) : JsonConvert.DeserializeObject<TerrainEditRecipe>(
                 File.ReadAllText(recipePath), new StringEnumConverter());
             var data = terrain.terrainData;
             int n = data.heightmapResolution;
@@ -70,7 +75,7 @@ namespace Bwork.Authoring.Editor
                 {
                     ToolSandbox.PaintTerrain(terrain);
                     ToolSandbox.Persist(new TextAsset(JsonUtility.ToJson(change)), "terrain-edit.json");
-                    ToolSandbox.Persist(new TextAsset(JsonConvert.SerializeObject(recipe, Formatting.Indented, new StringEnumConverter())), "terrain-recipe.json");
+                    ToolSandbox.Persist(new TextAsset(SerializeRecipe(recipe, stampShape, seed, !string.IsNullOrEmpty(recipePath))), "terrain-recipe.json");
                     ToolSandbox.Save();
                 }
                 catch
@@ -84,19 +89,58 @@ namespace Bwork.Authoring.Editor
             }
             return new { state = action == "apply" ? "applied" : "prepared", cells = change.Count,
                 maximumHeightChangeMeters = maximum, milliseconds = watch.Elapsed.TotalMilliseconds,
-                operations = recipe.Operations.Select(operation => operation.Kind.ToString()).ToArray() };
+                operations = recipe.Operations.Select(operation => operation.Kind.ToString()).ToArray(),
+                generator = string.IsNullOrEmpty(recipePath) ? "builtin-height-stamp-v1" : "custom-stamp-values",
+                effectiveSeed = string.IsNullOrEmpty(recipePath) ? (int?)seed : null,
+                stampShape = string.IsNullOrEmpty(recipePath) ? stampShape : null };
         }
 
-        public static TerrainEditRecipe Example(string shape = "ridge")
+        static string SerializeRecipe(TerrainEditRecipe recipe, string shape, int seed, bool custom)
+        {
+            var document = JObject.FromObject(recipe, JsonSerializer.Create(new JsonSerializerSettings
+            { Converters = { new StringEnumConverter() } }));
+            // Additive metadata keeps the document readable by the existing typed recipe loader.
+            // Explicit stamp arrays remain the authoritative reproduction data for custom recipes.
+            document["BfjordGenerator"] = custom ? new JObject { ["kind"] = "custom-stamp-values" } :
+                new JObject { ["kind"] = "builtin-height-stamp-v1", ["seed"] = seed, ["stampShape"] = shape };
+            return document.ToString(Formatting.Indented);
+        }
+
+        static float SeedValue(int seed, uint salt)
+        {
+            // A specified integer mixer avoids shared Unity random state or framework RNG-version coupling.
+            uint value = unchecked((uint)seed) ^ salt;
+            unchecked
+            {
+                value ^= value >> 16; value *= 0x7feb352d;
+                value ^= value >> 15; value *= 0x846ca68b;
+                value ^= value >> 16;
+            }
+            return (value & 0xffffff) / 16777215f * 2 - 1;
+        }
+
+        public static TerrainEditRecipe Example(string shape = "ridge", int seed = 0)
         {
             if (shape != "ridge" && shape != "basin" && shape != "mesa" && shape != "eroded-ridge" && shape != "coastal-bluff")
                 throw new ArgumentException("Stamp shape must be ridge, basin, mesa, eroded-ridge or coastal-bluff.");
             bool detailed = shape == "eroded-ridge" || shape == "coastal-bluff";
             const int resolution = 65;
             var stamp = new float[resolution * resolution];
+            float bendX = SeedValue(seed, 0x1993a5u), bendZ = SeedValue(seed, 0x61c88647u);
+            float phaseX = SeedValue(seed, 0x9e3779b9u) * Mathf.PI, phaseZ = SeedValue(seed, 0x85ebca6bu) * Mathf.PI;
+            float frequency = 2.8f + SeedValue(seed, 0xc2b2ae35u) * .8f;
             for (int z = 0; z < resolution; z++) for (int x = 0; x < resolution; x++)
             {
                 float px = x / 64f * 2 - 1, pz = z / 64f * 2 - 1;
+                if (seed != 0)
+                {
+                    // Coherent coordinate warping moves ridge spines, gullies, basin rims and bluff edges
+                    // together. The zero boundary envelope preserves the exact finite stamp border.
+                    float envelope = (1 - px * px) * (1 - pz * pz);
+                    float warpedX = px + envelope * (.14f * bendX + .10f * Mathf.Sin(pz * frequency + phaseX));
+                    float warpedZ = pz + envelope * (.12f * bendZ + .08f * Mathf.Sin(px * frequency + phaseZ));
+                    px = warpedX; pz = warpedZ;
+                }
                 float spine = px + .18f * Mathf.Sin(pz * 3.8f) - .08f;
                 float ridge = Mathf.Exp(-spine * spine * (spine < 0 ? 6 : 19)) * Mathf.Max(0, 1-pz*pz);
                 float spurA = Mathf.Exp(-Mathf.Pow(px + .43f + pz*.45f, 2)*25 - Mathf.Pow(pz+.35f,2)*8);

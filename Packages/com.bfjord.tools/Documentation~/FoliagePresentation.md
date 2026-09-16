@@ -70,3 +70,11 @@ The mature fir remains expensive: the retained source preparation records about 
 - [Unity Shader Graph Production Ready samples](https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Shader-Graph-Sample-Production-Ready-Detail.html) were checked as a free existing alternative. They provide foliage wind/transmission and efficient details; this pass retains the already established original common-pass deformation implementation to avoid a larger sample dependency. No Unity sample shader source was copied.
 
 Focused planner tests cover deterministic clustered output, footprint spacing across batches, authoritative terrain/exclusions and invalid controls. Source compilation is separate from actual Unity shader import, scene composition, visual quality and runtime performance. The coordinator performs the assembled Unity review and records its actual images/results.
+
+## Woodland 0.5 additions
+
+The library now appends `MatureOak_A`, `SilverBirch_A`, `FallenHollowLog_A` and `TallMeadowGrass_A` to the four original botanical plants and sixteen retained variants. Build revision 3 preserves older library generations and reads revision 1/2 receipts. Original woodland sources use their own base, normal and packed PBR atlas, leaving the original botanical atlas unchanged.
+
+`Samples/woodland-canopy.json` mixes oak/birch/fir; `woodland-deadwood.json` places rigid hollow logs on slopes up to eight degrees; `woodland-grass.json` mixes tall grass, coastal grass and daisies. Use named batches and prepare/apply as above. Current placement receipts provide actual counts after exclusions.
+
+For a close wind demonstration, run `bwork_foliage action=grass-view` after applying woodland grass. `action=wind-frame windSeconds=0` and `windSeconds=1.5` give reproducible shader-time captures with `bwork_sandbox action=capture`; `windSeconds=-1` restores live engine time. All render passes share this clock and deformation. The temporary preview also resets on domain reload. New grass has a 0.14225 m maximum displacement bound, and its local mesh bounds account for the minimum allowed 0.5 instance scale. Fallen wood remains rigid.

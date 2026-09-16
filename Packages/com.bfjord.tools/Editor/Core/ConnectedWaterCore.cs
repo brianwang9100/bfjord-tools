@@ -33,6 +33,14 @@ namespace Bwork.Authoring.WaterSandbox
         public float smoothness = .82f, oceanSmoothness = .86f, depthColorDistance = 4;
         public float shallowOpacity = .18f, deepOpacity = 1, shoreFadeDepth = .3f;
         public float foamWidth = .65f, foamTileSize = 4, foamCutoff = .52f, crestFoamStrength = .08f;
+        // New fields retain the 0.4 appearance when absent from a saved recipe.
+        public float riverCurrentStrength = .22f, riverStreakScale = 1, riverTurbulence = .23f;
+        public float oceanSurfaceStrength = .32f, oceanWaveSharpness = 0;
+        public float oceanShoreFoam = 0, oceanBreakerStrength = 0, oceanBeachDepth = 3;
+        public float oceanSwashSpeed = .6f, oceanSwashDepthSpacing = 1.1f;
+        public int waterPatternSeed = 0;
+        public float oceanBlendDistance = 24;
+        public Vector2 oceanWaveDirection = new Vector2(.8f,.6f);
         public Color shallowColor = new Color(.16f,.30f,.25f,1), deepColor = new Color(.025f,.105f,.10f,1);
         public Color oceanShallowColor = new Color(.12f,.27f,.29f,1), oceanDeepColor = new Color(.025f,.085f,.125f,1);
         public WaterNode[] nodes;
@@ -83,7 +91,7 @@ namespace Bwork.Authoring.WaterSandbox
             this.recipe=recipe??throw new ArgumentNullException(nameof(recipe));
             if(recipe.schemaVersion!=1||string.IsNullOrWhiteSpace(recipe.id)||recipe.nodes==null||recipe.nodes.Length<2||recipe.nodes.Length>32||
                 recipe.reaches==null||recipe.reaches.Length==0||recipe.reaches.Length>32)throw new ArgumentException("Bounded water topology required.");
-            Range(recipe.cellSize,1,4,"cellSize");Range(recipe.bankFalloff,4,40,"bankFalloff");Range(recipe.waveBankFade,2,12,"waveBankFade");
+            Range(recipe.oceanBlendDistance,4,32,"oceanBlendDistance");Range(recipe.cellSize,1,4,"cellSize");Range(recipe.bankFalloff,4,40,"bankFalloff");Range(recipe.waveBankFade,2,12,"waveBankFade");
             Range(recipe.lakeWaveHeight,0,1,"lakeWaveHeight");Range(recipe.lakeWaveLength,4,80,"lakeWaveLength");Range(recipe.lakeWaveSpeed,0,3,"lakeWaveSpeed");
             Range(recipe.rippleTileSize,.5f,30,"rippleTileSize");Range(recipe.detailTileSize,.25f,15,"detailTileSize");Range(recipe.detailStrength,0,1,"detailStrength");
             Range(recipe.smoothness,0,.98f,"smoothness");Range(recipe.oceanSmoothness,0,.98f,"oceanSmoothness");Range(recipe.depthColorDistance,.2f,20,"depthColorDistance");
@@ -95,6 +103,7 @@ namespace Bwork.Authoring.WaterSandbox
             Range(recipe.riverWaveLength,4,80,"riverWaveLength");Range(recipe.oceanWaveLength,4,80,"oceanWaveLength");
             Range(recipe.riverWaveSpeed,0,3,"riverWaveSpeed");Range(recipe.oceanWaveSpeed,0,3,"oceanWaveSpeed");
             Range(recipe.flowSpeed,0,4,"flowSpeed");Range(recipe.normalStrength,0,.3f,"normalStrength");Range(recipe.foamStrength,0,1,"foamStrength");
+            WaterFidelity.ValidateAppearance(recipe);
             nodes=new Dictionary<string,WaterNode>();bool first=true;
             foreach(var node in recipe.nodes)
             {
@@ -256,7 +265,7 @@ namespace Bwork.Authoring.WaterSandbox
             {
                 float d=BodyDistance(node,point);
                 if(node.kind=="lake")lake=Mathf.Max(lake,Mathf.SmoothStep(0,1,Mathf.Clamp01(-d/12)));
-                if(node.kind=="ocean")ocean=Mathf.SmoothStep(0,1,Mathf.Clamp01(-d/24));
+                if(node.kind=="ocean")ocean=Mathf.SmoothStep(0,1,Mathf.Clamp01(-d/recipe.oceanBlendDistance));
                 Accumulate(d,node.position.y,node.bedDepth,node.kind=="ocean"?new Vector2(.3f,.2f):Vector2.zero,0,ref foam,ref weightedFoam,
                     ref distance,ref height,ref depth,ref flow,ref weightSum,ref weightedHeight,ref weightedDepth,ref weightedFlow,ref wetMin,ref wetMax);
             }

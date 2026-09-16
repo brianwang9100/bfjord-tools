@@ -15,6 +15,26 @@
       "sha256": "f71bb645bc4bcfcd6cd1f514d92325f7581e7e9f6a6ef6a70afe6ba42b50eb2a"
     },
     {
+      "bytes": 222198,
+      "path": "Assets/BFjord/OriginalFoliage/Models/FallenHollowLog_A.fbx",
+      "sha256": "b0c7f2d154fa351ed2c530cb9741fd287dad0476d2754d1dd314dcf4c8062165"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/FallenHollowLog_A.fbx.meta",
+      "sha256": "0e8cea7a2fec91a6f60ecdb866e253d817254ed321433a920cec02ba89518b9e"
+    },
+    {
+      "bytes": 10234902,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MatureOak_A.fbx",
+      "sha256": "2de0a484d929240ef268c44c019c949d4f76ba5eda23c127bed10db8b8d19986"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/MatureOak_A.fbx.meta",
+      "sha256": "f7c510a89c01caa8d9fc84080ac6fecaa41820ad3cc46864e304d887ef1473e6"
+    },
+    {
       "bytes": 522278,
       "path": "Assets/BFjord/OriginalFoliage/Models/MeadowDaisy_A.fbx",
       "sha256": "1b76883f1e75d8e7f43a9ea5c79effa79b1b788ad03fb588c017edd4fa05e2f1"
@@ -33,6 +53,26 @@
       "bytes": 3094,
       "path": "Assets/BFjord/OriginalFoliage/Models/RoseThicket_A.fbx.meta",
       "sha256": "93d0685967ce9ca65ebb8f2de96c1c67f006fe50ad05544036c774e826a4d18b"
+    },
+    {
+      "bytes": 10344230,
+      "path": "Assets/BFjord/OriginalFoliage/Models/SilverBirch_A.fbx",
+      "sha256": "7f9126c5096daaaccac0567b0e946bfc00a58c1717e8762716c7abfd1fe16a21"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/SilverBirch_A.fbx.meta",
+      "sha256": "83e2f5f77370159f16fd61a1de9ba17c144546c10c77adfd68bd67a74475bddf"
+    },
+    {
+      "bytes": 635222,
+      "path": "Assets/BFjord/OriginalFoliage/Models/TallMeadowGrass_A.fbx",
+      "sha256": "a72fffd4454fc49e5dd7d6b62bdfab0a11817670fd9d6c01984313f6e73e64fd"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/OriginalFoliage/Models/TallMeadowGrass_A.fbx.meta",
+      "sha256": "ec6146d3a2118929a4c6ba81f1d2a3c63095fd1b41c032fffa40522f3d6e491a"
     },
     {
       "bytes": 300742,
@@ -65,6 +105,36 @@
       "sha256": "7343c80e346f38763d1aa299c47d31e5e75d5b1f6c16685b4bce1f3b996a1552"
     },
     {
+      "bytes": 1264076,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandAtlas.png",
+      "sha256": "54dcece0e6b34f45601e5373769893515092a407f018dcd5f0d30450667be01c"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandAtlas.png.meta",
+      "sha256": "c9df934b8661e60545e6302f72cfd71b904a20086a723f5124699c52cfc2e61a"
+    },
+    {
+      "bytes": 21019,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandMask.png",
+      "sha256": "54e896562dda8f16ba898ed9f0fb7d25f4b17b485011ee9dbb142d811da5fa9d"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandMask.png.meta",
+      "sha256": "f2e2fb44a88da73f0dae5a70e3dc39006e66de387d210abbd2a65011283f13f9"
+    },
+    {
+      "bytes": 2543621,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandNormal.png",
+      "sha256": "327708c6fa3828fa464b83223700e4984ea22f8a1f055af804eab12e72b10bde"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/OriginalFoliage/Textures/WoodlandNormal.png.meta",
+      "sha256": "eb1c59292cb620ff263f3de899cb6a3aa4977a15e40dd1bc70bddefd80ebbee5"
+    },
+    {
       "bytes": 4843,
       "path": "Assets/BFjord/OriginalFoliage/manifest.json",
       "sha256": "e95e0d0aba6b395575c5de9eb9d8785e76f95ca72be917981d8371850510a2e7"
@@ -73,6 +143,16 @@
       "bytes": 158,
       "path": "Assets/BFjord/OriginalFoliage/manifest.json.meta",
       "sha256": "d355a1c99e59e877a9eae33bede21c0807c3e5e0f0c478e48a77f36f8327da5b"
+    },
+    {
+      "bytes": 4515,
+      "path": "Assets/BFjord/OriginalFoliage/woodland-manifest.json",
+      "sha256": "58bd943efb6b6f0b7ec698f459066b64c9292c4ed8ee1c3b16d8e7720b6844d7"
+    },
+    {
+      "bytes": 158,
+      "path": "Assets/BFjord/OriginalFoliage/woodland-manifest.json.meta",
+      "sha256": "169f1b1416a65ca1d340d984e1c27e498c6b9c3ea17d56a997edd43bfad0ae5d"
     },
     {
       "bytes": 531,
@@ -203,6 +283,96 @@
       "bytes": 685,
       "path": "Assets/BFjord/TerrainDetail/Soil_TerrainMask.png.meta",
       "sha256": "1e068e933de8fee5c1e901bfce13b59a4b4534bb2bbd44d744fc3a0dc50e1e3c"
+    },
+    {
+      "bytes": 1828562,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Color.png",
+      "sha256": "be3f1c6f89dae4068920ed38290324a5ceead90b3edae9b2cea76892b174bf88"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Color.png.meta",
+      "sha256": "6b8b48fec526d05fdc3e255ed0c1e76638da3292870c56d91f94ea9622912b33"
+    },
+    {
+      "bytes": 1875521,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Mask.png",
+      "sha256": "005c1df496dddaca93097913d6a4f315f3e77953ee68eb1ef1d3d33467e5f996"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Mask.png.meta",
+      "sha256": "2b4db004e67728937eda14e5491fba3aac8b52e777a7cdb3a1d8741103df2c55"
+    },
+    {
+      "bytes": 2218860,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Normal.png",
+      "sha256": "81072373c23536cbbf8dce517f4140d0e46dd64d53a3e809796c836648930ef0"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/CoastalShingle_Normal.png.meta",
+      "sha256": "262f16392d67ca59267a9087c27c04894c2e0b539d8e48cd050a875fa2bcfafe"
+    },
+    {
+      "bytes": 2578682,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Color.png",
+      "sha256": "133cc1429ac09d48bfe6ba1f794a6bea6ef3a8eda928a314e9189cece47f6e04"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Color.png.meta",
+      "sha256": "daa923373339d26291bed2ff761779113dd98dd97e697ef7fe33b05cc9e65459"
+    },
+    {
+      "bytes": 2157521,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Mask.png",
+      "sha256": "d5df82e8d2a323d9baa56f959f7d417000158eb0738adf9b3523cb3062b23d41"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Mask.png.meta",
+      "sha256": "3d74e70762097456f01bc80bc851ef4332e16c24081c54513a269c17d7f3bfa0"
+    },
+    {
+      "bytes": 2423437,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Normal.png",
+      "sha256": "0cc187953248203c29c349865d9cbf3037b3a838ee676fc51b76c439acf7197c"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/ForestLitter_Normal.png.meta",
+      "sha256": "4050ea382f3d1db4894d008fe145572d1d4a2117dde5d78d37efed4183a92a89"
+    },
+    {
+      "bytes": 1893785,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Color.png",
+      "sha256": "6a77d98eaef3e0898f1447cdb7b30789590adcbf2feceaee82d254a7ee791e8e"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Color.png.meta",
+      "sha256": "6588a32f3ff8a98c82717af2747a4a079aeef669fefcaa22a946800c5bb5db52"
+    },
+    {
+      "bytes": 1646812,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Mask.png",
+      "sha256": "18913e035ed27cee06d789e6882d4c5a7c60d6943167999cc563c8f48f422441"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Mask.png.meta",
+      "sha256": "895efde06f025c61e9cebf554044d06b365ac8110d656ea899eee911fb183eea"
+    },
+    {
+      "bytes": 1596852,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Normal.png",
+      "sha256": "38aecabdf4fc8eedac2eeb647d6c83c1f8ff926238759d31776495d4d2ef9213"
+    },
+    {
+      "bytes": 465,
+      "path": "Assets/BFjord/TerrainDetail/Surfaces/RockFace_Normal.png.meta",
+      "sha256": "ee8eb44a5092ac8a91f043887393f374b48316eda0a767f1b4abf0bf1af21b51"
     },
     {
       "bytes": 664883,

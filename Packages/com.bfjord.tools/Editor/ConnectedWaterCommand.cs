@@ -22,7 +22,7 @@ namespace Bwork.Authoring.Editor
 
         [CliCommand("bwork_water_connected","Author one connected tributary/lake/delta/ocean sandbox surface.",MainThreadRequired=true)]
         public static object Run(
-            [CliArg("action","prepare, apply, refresh-appearance, status, remove")]string action="status",
+            [CliArg("action","prepare, apply, refresh-appearance, refresh-surface, status, remove")]string action="status",
             [CliArg("recipePath","JSON path; empty uses the connected-water package sample")]string recipePath="")
         {
             var terrain=ToolSandbox.RequireTerrain();var prior=ReadReceipt();
@@ -33,6 +33,7 @@ namespace Bwork.Authoring.Editor
                 throw new InvalidOperationException("River rocks depend on this water. Use bwork_river_scene for the bundled river batches; remove custom water-aware bwork_rocks batches before changing their water.");
             if(action=="remove")return Remove(terrain,prior);
             if(action=="refresh-appearance")return RefreshAppearance(prior,recipePath);
+            if(action=="refresh-surface")return RefreshSurface(prior,recipePath);
             if(action!="prepare"&&action!="apply")throw new ArgumentException("Unknown connected-water action.");
             if(prior?.removed==true)throw new InvalidOperationException("Complete pending connected-water removal with action=remove first.");
             if(ToolSandbox.Root.Find("Water Sample")!=null||File.Exists(ToolSandbox.Generated+"/water-edit.json"))
@@ -82,13 +83,7 @@ namespace Bwork.Authoring.Editor
             var installed=ParseRecipe(receipt.recipeJson);
             string path=string.IsNullOrWhiteSpace(recipePath)?ToolSandbox.SamplePath("connected-water.json"):Path.GetFullPath(recipePath);
             var requested=ParseRecipe(File.ReadAllText(path));
-            // Only shading properties may change without rebuilding mesh bounds and bank gradients.
-            foreach(string name in new[]{"flowSpeed","normalStrength","foamStrength","rippleTileSize","detailTileSize","detailStrength",
-                "smoothness","oceanSmoothness","depthColorDistance","shallowOpacity","deepOpacity","shoreFadeDepth",
-                "foamWidth","foamTileSize","foamCutoff","crestFoamStrength","shallowColor","deepColor","oceanShallowColor","oceanDeepColor"})
-            {
-                var field=typeof(ConnectedWaterRecipe).GetField(name);field.SetValue(installed,field.GetValue(requested));
-            }
+            WaterFidelity.CopyAppearance(installed,requested);
             _=new ConnectedWaterField(installed); // Validate values; no mesh generation, carving or painting.
             var shader=RequireShader();var maps=RequireMaps(shader);
             var renderer=group.GetComponentInChildren<MeshRenderer>();
@@ -115,6 +110,72 @@ namespace Bwork.Authoring.Editor
             }
             finally{Object.DestroyImmediate(snapshot);Object.DestroyImmediate(updated);}
             return new{refreshed=true,recipeHash=hash,meshRebuilt=false,terrainChanged=false};
+        }
+        static object RefreshSurface(Receipt prior,string recipePath)
+        {
+            var group=ToolSandbox.Root.Find(GroupName);
+            if(prior==null||prior.removed||group==null||string.IsNullOrEmpty(prior.recipeJson))
+                throw new InvalidOperationException("Apply connected water before refreshing its surface.");
+            var filter=group.GetComponentInChildren<MeshFilter>();var renderer=group.GetComponentInChildren<MeshRenderer>();
+            if(filter==null||renderer==null||AssetDatabase.GetAssetPath(filter.sharedMesh)!=prior.assets[0]||
+                AssetDatabase.GetAssetPath(renderer.sharedMaterial)!=prior.assets[1])
+                throw new InvalidDataException("Connected-water surface differs from its owned receipt.");
+            ValidateSurfaceReferences(group,filter,renderer);
+            var installed=ParseRecipe(prior.recipeJson);
+            string path=string.IsNullOrWhiteSpace(recipePath)?ToolSandbox.SamplePath("connected-water.json"):Path.GetFullPath(recipePath);
+            var requested=ParseRecipe(File.ReadAllText(path));WaterFidelity.CopyAppearance(installed,requested);
+            installed.oceanWaveHeight=requested.oceanWaveHeight;installed.oceanWaveLength=requested.oceanWaveLength;
+            installed.oceanWaveSpeed=requested.oceanWaveSpeed;installed.oceanBlendDistance=requested.oceanBlendDistance;
+            var field=new ConnectedWaterField(installed);var shader=RequireShader();var maps=RequireMaps(shader);
+            var next=JsonUtility.FromJson<Receipt>(JsonUtility.ToJson(prior));
+            next.recipeJson=JsonUtility.ToJson(installed,true);next.recipeHash=AppearanceHash(next.recipeJson,shader,maps);
+            next.assets=WaterGeneration.Paths(Guid.NewGuid().ToString("N"),true);
+            next.cleanupAssets=WaterGeneration.Obsolete(prior.assets,prior.cleanupAssets,true);
+            var originalMesh=filter.sharedMesh;var originalMaterial=renderer.sharedMaterial;
+            var before=WaterGeneration.Snapshot(ReceiptPath);var created=new List<string>();bool publicationAttempted=false,saveAttempted=false;
+            Mesh mesh=field.BuildMesh();Material material=null;
+            try
+            {
+                // Only shading weights/derivatives and culling bounds may change in this path.
+                if(!mesh.vertices.SequenceEqual(originalMesh.vertices)||!mesh.triangles.SequenceEqual(originalMesh.triangles))
+                    throw new InvalidDataException("Surface refresh would alter canonical water geometry; preserve the installed surface.");
+                var savedMesh=WaterGeneration.Create(mesh,next.assets[0],created);mesh=null;
+                material=Material(shader,installed);var savedMaterial=WaterGeneration.Create(material,next.assets[1],created);material=null;
+                filter.sharedMesh=savedMesh;renderer.sharedMaterial=savedMaterial;
+                publicationAttempted=true;WaterGeneration.Publish(ReceiptPath,JsonUtility.ToJson(next,true));
+                saveAttempted=true;ToolSandbox.Save();
+            }
+            catch(Exception error)
+            {
+                var errors=new List<Exception>{error};
+                WaterGeneration.Attempt(()=>{filter.sharedMesh=originalMesh;renderer.sharedMaterial=originalMaterial;},errors);
+                if(publicationAttempted)WaterGeneration.Attempt(()=>WaterGeneration.RestoreReceipt(ReceiptPath,before),errors);
+                if(saveAttempted)WaterGeneration.Attempt(ToolSandbox.Save,errors);
+                if(errors.Count==1)WaterGeneration.Attempt(()=>WaterGeneration.Cleanup(created.ToArray(),true),errors);
+                else errors.Add(new IOException("Surface rollback incomplete; retain its new generation for recovery."));
+                throw new AggregateException("Water surface refresh failed; rollback results are included.",errors);
+            }
+            finally{if(mesh!=null)Object.DestroyImmediate(mesh);if(material!=null)Object.DestroyImmediate(material);}
+            WaterGeneration.Cleanup(next.cleanupAssets,true);
+            return new{refreshed=true,terrainChanged=false,canonicalGeometryChanged=false,meshBoundsRefreshed=true,
+                oceanWaveHeight=installed.oceanWaveHeight,recipeHash=next.recipeHash};
+        }
+        /// <summary>Refreshing a generation must not invalidate retained or foreign scene references.</summary>
+        public static void ValidateSurfaceReferences(Transform group,MeshFilter filter,MeshRenderer renderer)
+        {
+            if(group==null||filter==null||renderer==null||group.childCount!=1||group.GetComponents<Component>().Length!=1||
+                filter.transform.parent!=group||renderer.transform!=filter.transform||filter.transform.childCount!=0||
+                filter.GetComponents<Component>().Length!=3||filter.sharedMesh==null||renderer.sharedMaterials.Length!=1||renderer.sharedMaterial==null)
+                throw new InvalidDataException("Connected-water surface has extra or edited hierarchy content; preserve it before refreshing.");
+            var mesh=filter.sharedMesh;var material=renderer.sharedMaterial;
+            // Include inactive objects and loaded prefab references: retiring these assets would
+            // otherwise leave those objects with missing meshes or materials after the save.
+            if(Resources.FindObjectsOfTypeAll<MeshFilter>().Any(value=>value!=filter&&value.sharedMesh==mesh)||
+                Resources.FindObjectsOfTypeAll<MeshCollider>().Any(value=>value.sharedMesh==mesh)||
+                Resources.FindObjectsOfTypeAll<SkinnedMeshRenderer>().Any(value=>value.sharedMesh==mesh)||
+                Resources.FindObjectsOfTypeAll<Renderer>().Any(value=>value!=renderer&&value.sharedMaterials.Contains(material))||
+                Resources.FindObjectsOfTypeAll<Terrain>().Any(value=>value.materialTemplate==material))
+                throw new InvalidDataException("Connected-water assets are shared by another object; preserve those references before refreshing.");
         }
         static Shader RequireShader()
         {
@@ -207,8 +268,17 @@ namespace Bwork.Authoring.Editor
             material.SetFloat("_WaveHeight",r.riverWaveHeight);material.SetFloat("_WaveLength",r.riverWaveLength);material.SetFloat("_WaveSpeed",r.riverWaveSpeed);
             material.SetFloat("_OceanWaveHeight",r.oceanWaveHeight);material.SetFloat("_OceanWaveLength",r.oceanWaveLength);material.SetFloat("_OceanWaveSpeed",r.oceanWaveSpeed);
             material.SetFloat("_FlowSpeed",r.flowSpeed);material.SetFloat("_NormalStrength",r.normalStrength);material.SetFloat("_FoamStrength",r.foamStrength);material.SetFloat("_UseDepth",1);
+            material.SetFloat("_RiverCurrentStrength",r.riverCurrentStrength);material.SetFloat("_RiverStreakScale",r.riverStreakScale);
+            material.SetFloat("_RiverTurbulence",r.riverTurbulence);material.SetFloat("_OceanSurfaceStrength",r.oceanSurfaceStrength);
+            material.SetFloat("_OceanWaveSharpness",r.oceanWaveSharpness);material.SetFloat("_OceanShoreFoam",r.oceanShoreFoam);
+            material.SetFloat("_OceanBreakerStrength",r.oceanBreakerStrength);material.SetFloat("_OceanBeachDepth",r.oceanBeachDepth);
+            material.SetFloat("_OceanSwashSpeed",r.oceanSwashSpeed);material.SetFloat("_OceanSwashDepthSpacing",r.oceanSwashDepthSpacing);
+            material.SetVector("_OceanWaveDirection",new Vector4(r.oceanWaveDirection.x,r.oceanWaveDirection.y,0,0));
+            var ocean=installedOcean(r);material.SetVector("_OceanBounds",new Vector4(ocean.position.x,ocean.position.z,ocean.radius.x,ocean.radius.y));
+            var offset=WaterFidelity.PatternOffset(r.waterPatternSeed);material.SetVector("_PatternOffset",new Vector4(offset.x,offset.y,0,0));
             return material;
         }
+        static WaterNode installedOcean(ConnectedWaterRecipe recipe)=>recipe.nodes.Single(n=>n.kind=="ocean");
         static object Remove(Terrain terrain,Receipt receipt)
         {
             var group=ToolSandbox.Root.Find(GroupName);

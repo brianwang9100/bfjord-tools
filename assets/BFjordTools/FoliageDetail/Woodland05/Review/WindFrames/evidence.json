@@ -1,0 +1,11 @@
+{
+  "kind": "offline Blender shader-equation illustration",
+  "frames": 32,
+  "framesPerSecond": 8,
+  "amplitudeMeters": 0.14,
+  "speed": 1.5,
+  "maximumObservedDisplacementMeters": 0.12611633316879745,
+  "maximumAnalyticDisplacementMeters": 0.14224992091386202,
+  "rootWeight": 0,
+  "UnityPlaybackAcceptance": false
+}
