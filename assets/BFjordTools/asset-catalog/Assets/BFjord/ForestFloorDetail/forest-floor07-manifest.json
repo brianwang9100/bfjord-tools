@@ -1,0 +1,539 @@
+{
+  "assets": [
+    {
+      "boundsBlenderZUp": [
+        [
+          -1.3441557884216309,
+          -1.9040098190307617,
+          -0.14004644751548767
+        ],
+        [
+          1.6380614042282104,
+          1.5516200065612793,
+          0.6436612010002136
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -1.3441557884216309,
+          -0.14004644751548767,
+          -1.5516200065612793
+        ],
+        [
+          1.6380614042282104,
+          0.6436612010002136,
+          1.9040098190307617
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "ExposedRootFan_A",
+      "model": "Models/ExposedRootFan_A.fbx",
+      "placement": "Terrain-fit rigid local tangent; root tips are buryable below local Y=0.",
+      "rootFootprintRadius": 2.0055328335917832,
+      "sha256": "59d4099af50b6f2a32c2be12ea3a73cb4f58c4b70302162a4952b7488f73c5fb",
+      "sourceSha256": "59d4099af50b6f2a32c2be12ea3a73cb4f58c4b70302162a4952b7488f73c5fb",
+      "triangles": [
+        19300,
+        7608,
+        2608
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.7401942610740662,
+          -0.5192753076553345,
+          0.0018393544014543295
+        ],
+        [
+          0.6201949715614319,
+          0.5684052109718323,
+          0.07376385480165482
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.7401942610740662,
+          0.0018393544014543295,
+          -0.5684052109718323
+        ],
+        [
+          0.6201949715614319,
+          0.07376385480165482,
+          0.5192753076553345
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "OakBirchLeafLitter_A",
+      "model": "Models/OakBirchLeafLitter_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.752314754904564,
+      "sha256": "01e8873d6308e6c1daf3da17ec7b68d99b9a889fed4fbaf8254f22427f4b5a63",
+      "sourceSha256": "01e8873d6308e6c1daf3da17ec7b68d99b9a889fed4fbaf8254f22427f4b5a63",
+      "triangles": [
+        15980,
+        9520,
+        1978
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.5936242938041687,
+          -0.43394824862480164,
+          0.002912388648837805
+        ],
+        [
+          0.5220584273338318,
+          0.4284155070781708,
+          0.08500934392213821
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.5936242938041687,
+          0.002912388648837805,
+          -0.4284155070781708
+        ],
+        [
+          0.5220584273338318,
+          0.08500934392213821,
+          0.43394824862480164
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "PineLitterCones_A",
+      "model": "Models/PineLitterCones_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.6446799009395227,
+      "sha256": "ac91b4f71b0ad0b11aa6b6cefc6fd11f3bfed50665c3aa4a8a32df29cee25c88",
+      "sourceSha256": "ac91b4f71b0ad0b11aa6b6cefc6fd11f3bfed50665c3aa4a8a32df29cee25c88",
+      "triangles": [
+        6626,
+        3470,
+        2236
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.2962976396083832,
+          -0.1670779436826706,
+          -0.01983463019132614
+        ],
+        [
+          0.2548840045928955,
+          0.14225314557552338,
+          0.23159989714622498
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.2962976396083832,
+          -0.01983463019132614,
+          -0.14225314557552338
+        ],
+        [
+          0.2548840045928955,
+          0.23159989714622498,
+          0.1670779436826706
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "BrownBoleteCluster_A",
+      "model": "Models/BrownBoleteCluster_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.29691699258893467,
+      "sha256": "5a0a86f4dbfdb7ac925d1d69cdc973edfe622bef00305799fddfb0f607668a29",
+      "sourceSha256": "5a0a86f4dbfdb7ac925d1d69cdc973edfe622bef00305799fddfb0f607668a29",
+      "triangles": [
+        11376,
+        5104,
+        1872
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.2575184106826782,
+          -0.22051984071731567,
+          -0.01996047981083393
+        ],
+        [
+          0.23198162019252777,
+          0.2199767380952835,
+          0.28078731894493103
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.2575184106826782,
+          -0.01996047981083393,
+          -0.2199767380952835
+        ],
+        [
+          0.23198162019252777,
+          0.28078731894493103,
+          0.22051984071731567
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "GoldenChanterelleCluster_A",
+      "model": "Models/GoldenChanterelleCluster_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.2745220805471065,
+      "sha256": "72d44e935f30cc2d2c59a22df650746736def37e47effd714e71f3139e819c54",
+      "sourceSha256": "72d44e935f30cc2d2c59a22df650746736def37e47effd714e71f3139e819c54",
+      "triangles": [
+        36944,
+        15824,
+        2624
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.6304138898849487,
+          -0.2894766330718994,
+          -0.02550121396780014
+        ],
+        [
+          0.5560775399208069,
+          0.297023206949234,
+          0.22034761309623718
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.6304138898849487,
+          -0.02550121396780014,
+          -0.297023206949234
+        ],
+        [
+          0.5560775399208069,
+          0.22034761309623718,
+          0.2894766330718994
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "ShelfFungiDeadwood_A",
+      "model": "Models/ShelfFungiDeadwood_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.63773530796208,
+      "sha256": "7b59f75d433142cc533eadadd8765460324f95c5978f48de325201ced7e12efe",
+      "sourceSha256": "7b59f75d433142cc533eadadd8765460324f95c5978f48de325201ced7e12efe",
+      "triangles": [
+        7300,
+        3500,
+        1272
+      ]
+    },
+    {
+      "boundsBlenderZUp": [
+        [
+          -0.6304138898849487,
+          -0.2894766330718994,
+          -0.02550121396780014
+        ],
+        [
+          0.5560775399208069,
+          0.297023206949234,
+          0.22034761309623718
+        ]
+      ],
+      "boundsUnityYUp": [
+        [
+          -0.6304138898849487,
+          -0.02550121396780014,
+          -0.297023206949234
+        ],
+        [
+          0.5560775399208069,
+          0.22034761309623718,
+          0.2894766330718994
+        ]
+      ],
+      "groundAnchor": [
+        0,
+        0,
+        0
+      ],
+      "id": "MossyFallenBranch_A",
+      "model": "Models/MossyFallenBranch_A.fbx",
+      "placement": "Local Y=0 rests on terrain; fit local tangent. Keep mushrooms vertical on mild slopes.",
+      "rootFootprintRadius": 0.63773530796208,
+      "sha256": "72e15535adb4fc5f9d3c8f3ff05d4e7a72b0a320eafd9b9081dd591924d0c78e",
+      "sourceSha256": "72e15535adb4fc5f9d3c8f3ff05d4e7a72b0a320eafd9b9081dd591924d0c78e",
+      "triangles": [
+        1536,
+        856,
+        424
+      ]
+    }
+  ],
+  "blender": "5.2.1 LTS",
+  "coordinateSystem": "Unity Y up, metres; Blender source Z up",
+  "exportReimportChecks": [
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ExposedRootFan_A",
+      "lod": 0,
+      "triangles": 19206,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ExposedRootFan_A",
+      "lod": 1,
+      "triangles": 7523,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ExposedRootFan_A",
+      "lod": 2,
+      "triangles": 2552,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "OakBirchLeafLitter_A",
+      "lod": 0,
+      "triangles": 15980,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "OakBirchLeafLitter_A",
+      "lod": 1,
+      "triangles": 9520,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "OakBirchLeafLitter_A",
+      "lod": 2,
+      "triangles": 1978,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "PineLitterCones_A",
+      "lod": 0,
+      "triangles": 6626,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "PineLitterCones_A",
+      "lod": 1,
+      "triangles": 3470,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "PineLitterCones_A",
+      "lod": 2,
+      "triangles": 2236,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "BrownBoleteCluster_A",
+      "lod": 0,
+      "triangles": 11376,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "BrownBoleteCluster_A",
+      "lod": 1,
+      "triangles": 5104,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "BrownBoleteCluster_A",
+      "lod": 2,
+      "triangles": 1872,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "GoldenChanterelleCluster_A",
+      "lod": 0,
+      "triangles": 36944,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "GoldenChanterelleCluster_A",
+      "lod": 1,
+      "triangles": 15824,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "GoldenChanterelleCluster_A",
+      "lod": 2,
+      "triangles": 2624,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ShelfFungiDeadwood_A",
+      "lod": 0,
+      "triangles": 7300,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ShelfFungiDeadwood_A",
+      "lod": 1,
+      "triangles": 3500,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "ShelfFungiDeadwood_A",
+      "lod": 2,
+      "triangles": 1272,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "MossyFallenBranch_A",
+      "lod": 0,
+      "triangles": 1536,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "MossyFallenBranch_A",
+      "lod": 1,
+      "triangles": 856,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    },
+    {
+      "finiteTangents": true,
+      "finiteVertices": true,
+      "id": "MossyFallenBranch_A",
+      "lod": 2,
+      "triangles": 424,
+      "uv": true,
+      "zeroAreaTriangles": 0
+    }
+  ],
+  "generator": "Scripts/world_assets/forest_floor_detail/build_forest_floor.py",
+  "generatorSha256": "5d433b187c39dde82f414abb639a5a1cded7374848ae8c22fa023456cb49d3da",
+  "license": "CC0-1.0",
+  "revision": "forest-floor-07",
+  "sourceTextures": {
+    "asset": "bark_brown_02",
+    "credit": "Powered by Poly Haven; original bark scan by Rob Tuytel",
+    "files": [
+      {
+        "bytes": 2334535,
+        "file": "bark_brown_02_diff_1k.png",
+        "sha256": "22144dbe0e9f1cfd44de3f3c8311c898fe672f087c1e81a18baab77476dc046f",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_diff_1k.png"
+      },
+      {
+        "bytes": 2436328,
+        "file": "bark_brown_02_nor_gl_1k.png",
+        "sha256": "45c632c61b642759ee935a4300b71aa1e6097d2b2d8aae42376c4661ecc518eb",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_nor_gl_1k.png"
+      },
+      {
+        "bytes": 727782,
+        "file": "bark_brown_02_rough_1k.png",
+        "sha256": "346e756131c7409fef357f6aa391f1d8b2db815fd965f0f5529fe76a2baf26ae",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_rough_1k.png"
+      }
+    ],
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license"
+  },
+  "textureSize": 2048,
+  "textures": [
+    {
+      "bytes": 6544265,
+      "file": "Textures/ForestFloor07Atlas.png",
+      "sha256": "5aba1b5fe04a21fa58eddcc8158d3889132c3cc16b2e447ec851269cb6cd9ee5"
+    },
+    {
+      "bytes": 6172463,
+      "file": "Textures/ForestFloor07Normal.png",
+      "sha256": "80c1f593597bd68671b6ba47635b7066426b2f4daf5b6b32377e569c23165ec6"
+    },
+    {
+      "bytes": 364976,
+      "file": "Textures/ForestFloor07Mask.png",
+      "sha256": "5abeca4eff1353ea0dcf29ca24e185fee07895af10168538e80542650d365027"
+    }
+  ]
+}

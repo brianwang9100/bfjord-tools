@@ -1,0 +1,26 @@
+{
+  "asset": "bark_brown_02",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://polyhaven.com/license",
+  "credit": "Powered by Poly Haven; original bark scan by Rob Tuytel",
+  "files": [
+    {
+      "file": "bark_brown_02_diff_1k.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_diff_1k.png",
+      "sha256": "22144dbe0e9f1cfd44de3f3c8311c898fe672f087c1e81a18baab77476dc046f",
+      "bytes": 2334535
+    },
+    {
+      "file": "bark_brown_02_nor_gl_1k.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_nor_gl_1k.png",
+      "sha256": "45c632c61b642759ee935a4300b71aa1e6097d2b2d8aae42376c4661ecc518eb",
+      "bytes": 2436328
+    },
+    {
+      "file": "bark_brown_02_rough_1k.png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_rough_1k.png",
+      "sha256": "346e756131c7409fef357f6aa391f1d8b2db815fd965f0f5529fe76a2baf26ae",
+      "bytes": 727782
+    }
+  ]
+}

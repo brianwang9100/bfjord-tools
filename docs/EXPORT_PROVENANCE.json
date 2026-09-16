@@ -2956,6 +2956,10 @@
     "BFjordTools/FoliageDetail/Woodland06/Woodland06.blend",
     "BFjordTools/RoadDetail/Sources/road-detail.blend",
     "BFjordTools/TunnelDetail/MasonryPortal.blend",
+    "BFjordTools/ShoreDetail/Sources/ShoreDetail.blend",
+    "BFjordTools/ForestFloorDetail/Sources/ForestFloor07.blend",
+    "BFjordTools/ForestFloorDetail/Sources/ForestFloor07.blend1",
+    "BFjordTools/TreeDetail07/TreeDetail07.blend",
     "BFjordTools/Rocks/original.blend",
     "BFjordTools/Rocks/original.blend1",
     "BFjordTools/Rocks/Sources/coastal_outcrop.blend",
@@ -2963,6 +2967,30 @@
     "BFjordTools/Rocks/Sources/river_ledge.blend"
   ],
   "pngMetadataTransformations": [
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "cc522c67d196742bd3d2938c4e0755f794a1eb4da0be8d3247ba07e4c973987c",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Atlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "6ad452e3cacaa195575987370de0d18708355ad491f8212fc0c2086b173b7105",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Mask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5e0b6a98c35745f83b39a9d284ea1c40366377ed4553f2a6f377f8c94b73ee1f",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Normal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
     {
       "imageDataUnchanged": true,
       "outputSha256": "7223e8f77ab34bf9900681939068326e4bc194823a8b03c2f327b1c7570dfc62",
@@ -3039,6 +3067,78 @@
       "imageDataUnchanged": true,
       "outputSha256": "a6762b0c04959a8e743d8b4c319bb3cb7d5773c4242f52c830ae4a2e6bffe73b",
       "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/RoadDetail/Textures/VergeStone_Normal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "3f25251fde6a7f6e37043a25c802cd491bae00676df4a16314ba96748e41f353",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/CoastalPine_CAtlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0276d5c6a9c29c28d6810c6c93e45045e358a10326630d32cbe005c427bf0dd2",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/CoastalPine_CMask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "6fd51eecf2c1f7efa2d8830ba4e8d3a9e12ccdc2a712cae3b8b2ddf8e1f79293",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/CoastalPine_CNormal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "1c2d649cb37616eb07de2d2919c71c0a95a61416f4a4cd5d792e84992ea4adc9",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/GiantRedwood_CAtlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "0276d5c6a9c29c28d6810c6c93e45045e358a10326630d32cbe005c427bf0dd2",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/GiantRedwood_CMask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "6fd51eecf2c1f7efa2d8830ba4e8d3a9e12ccdc2a712cae3b8b2ddf8e1f79293",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/GiantRedwood_CNormal.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a7e3096df836ff86150a189c7da4900ab6a30ab2570848ca2436a9ebfd2b2f9b",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/MatureBeech_CAtlas.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "c933854bcae0cda1227d942c508db5f038495c07028b56cab91558a35ad1d546",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/MatureBeech_CMask.png",
+      "removedMetadataChunks": [
+        "eXIf"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "41fb17cf020d685c69a5532e0abb4824187c879096aee5bb0711c0b649939d29",
+      "path": "assets/BFjordTools/asset-catalog/Assets/BFjord/TreeDetail07/Textures/MatureBeech_CNormal.png",
       "removedMetadataChunks": [
         "eXIf"
       ]
@@ -4032,6 +4132,555 @@
         "tEXt",
         "tEXt",
         "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "1f4cff3396ddf11fa823821a598aea6abe1c1b155411d62c8592b43041b303a4",
+      "path": "assets/BFjordTools/ShoreDetail/Review/BladderWrack_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "c345174c5101dcb602b2e7a9b90ed3dfb253099adbda25493a686a12c70b2857",
+      "path": "assets/BFjordTools/ShoreDetail/Review/BleachedDriftwood_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "fa76fa9a217eb9950f40d4ee46cb5a0d5620de984061156865bacac02d05e23c",
+      "path": "assets/BFjordTools/ShoreDetail/Review/CockleShells_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "7c0681d0f84a38eaed01b33ae450a8b483b80526952b66cde55c31e5062603c5",
+      "path": "assets/BFjordTools/ShoreDetail/Review/KelpWrack_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "4715ce7609f3e0660109d6a4ff58f9ae6e1c6a8b10ed3b3ae857e06fbd3771b0",
+      "path": "assets/BFjordTools/ShoreDetail/Review/MusselShells_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "223671df2b2558ffcf367fc6553cbc18bc1587ea3c0458448a94540bda373815",
+      "path": "assets/BFjordTools/ShoreDetail/Review/ShellFragments_A_reimport.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "28efc01c3760223911df59c374b4a8f53cb204d269ad23eaa706b1c58813fcb5",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/sand_02_arm_2k.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "eb2785d601ab946f73d17ccdea0d14c6b2b78f5cb4b2d84cbc174c80bbcec3da",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/sand_02_diff_2k.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "18adcfab1221bcd7543649a6eec354ceb97ea5ccdba84c49697f213ef4573671",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/sand_02_disp_2k.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b2f95dd50ffeff403c41198a8497c01ebcbc8a741e200c7433429558e47c7eae",
+      "path": "assets/BFjordTools/ShoreDetail/Sources/sand_02_nor_gl_2k.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "603961e89e14e334798c51b1c752ce1817483eff5d057497f4b6be28a4f97b2b",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/BrownBoleteCluster_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "c2e89869054822f7fb9253f8eec47a4e447fe8b15631ba0ca5a97fb35a9cd725",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/ExposedRootFan_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "2802be163640eefbeed424f30c954aa0bad6154373cbdbae922620819bf35227",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/GoldenChanterelleCluster_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "95502c269f99650654bc3fb9ae803510366341090634fc0ed1a1808511b273e2",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/MossyFallenBranch_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "465e95f54fc47455b982bd3e8063dea871f65a9e20c957a99a561e1aa4d9c2e3",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/OakBirchLeafLitter_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "ad3576a6171e661d5e4183f902d14a146c3ef5748fa1ed64ee33d98b42547beb",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/PineLitterCones_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "3ab06ec8581aaa5b94ae330c73530f848c3be66134770a5101217aab937a3f1d",
+      "path": "assets/BFjordTools/ForestFloorDetail/Review/ShelfFungiDeadwood_A.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5b918d8cfa766fd34e6af50576795208fb3d9a091b454984afce29aa5f6cf115",
+      "path": "assets/BFjordTools/ForestFloorDetail/Sources/bark_brown_02_diff_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "efca53d879fe7816338f34f455eae312bd710d027d1b958732652c1ae3a991ce",
+      "path": "assets/BFjordTools/ForestFloorDetail/Sources/bark_brown_02_nor_gl_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e25c3d72e1595e149ac1da709ff349261546b873eaafcda0e759958e821ab116",
+      "path": "assets/BFjordTools/ForestFloorDetail/Sources/bark_brown_02_rough_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "65848a22aff45cc4d8626b6d580e4de746e90d35dad1e575b09c44f3a2c14d0c",
+      "path": "assets/BFjordTools/TreeDetail07/Review/CoastalPine_C-crown.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "f0a1bfc8837ecbabba009c9bee11f5ac18ef22d8d66bbaec7e82e6d9463ccf29",
+      "path": "assets/BFjordTools/TreeDetail07/Review/CoastalPine_C-full.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "a90369fd807d0783a6d0ed33af8ce9912bc492d70b6893e66bb53fbb11121483",
+      "path": "assets/BFjordTools/TreeDetail07/Review/CoastalPine_C-roots.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "696a44112f9fed0120ebd715c8fc098b36feaf02b780562e2bf50ccbd3b42a27",
+      "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-crown.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "41e3bbea4b7bc10f82f8f9775f004172037b557bc96015a4f297f908e67d10a8",
+      "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-full.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "45788fd6a8ab321dc0789d1e924e8a1053ff0d6a4fe4d89493c3acc1e940711d",
+      "path": "assets/BFjordTools/TreeDetail07/Review/GiantRedwood_C-roots.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "b54d48099b64cff5850066df7e025db2af04b8739bf57168a36350fae1a8552e",
+      "path": "assets/BFjordTools/TreeDetail07/Review/MatureBeech_C-crown.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "02fda6d9f68a1a64e498bdeab7296e3cc46fea28776f0f1bef577e90701c193c",
+      "path": "assets/BFjordTools/TreeDetail07/Review/MatureBeech_C-full.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "3dfe05ed46b1d73df02d589e14846f06cc6e40c3b0d20deb5a86e728c4160350",
+      "path": "assets/BFjordTools/TreeDetail07/Review/MatureBeech_C-roots.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "aa2d40f05173a23453c86ea5ce94b607b300f09de97d8bc9356784e53c99f9b6",
+      "path": "assets/BFjordTools/TreeDetail07/Review/tree07-family.png",
+      "removedMetadataChunks": [
+        "eXIf",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "5b918d8cfa766fd34e6af50576795208fb3d9a091b454984afce29aa5f6cf115",
+      "path": "assets/BFjordTools/TreeDetail07/Sources/bark_brown_02_diff_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "efca53d879fe7816338f34f455eae312bd710d027d1b958732652c1ae3a991ce",
+      "path": "assets/BFjordTools/TreeDetail07/Sources/bark_brown_02_nor_gl_1k.png",
+      "removedMetadataChunks": [
+        "tEXt",
+        "tEXt"
+      ]
+    },
+    {
+      "imageDataUnchanged": true,
+      "outputSha256": "e25c3d72e1595e149ac1da709ff349261546b873eaafcda0e759958e821ab116",
+      "path": "assets/BFjordTools/TreeDetail07/Sources/bark_brown_02_rough_1k.png",
+      "removedMetadataChunks": [
         "tEXt",
         "tEXt"
       ]

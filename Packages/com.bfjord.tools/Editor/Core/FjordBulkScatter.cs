@@ -13,6 +13,7 @@ namespace Bwork.FjordCoast.Editor
             public string id, prefabKey;
             public float weight, radius, minimumScale, maximumScale;
             public float groundOffsetMeters;
+            public bool alignToSurface;
         }
 
         public sealed class Recipe
@@ -32,13 +33,20 @@ namespace Bwork.FjordCoast.Editor
             public readonly string speciesId, prefabKey;
             public readonly Vector3 position;
             public readonly float rotationDegrees, scale, supportRadius;
+            public readonly Quaternion rotation;
+            public readonly bool alignedToSurface;
 
-            public Placement(Species species, Vector3 position, float rotation, float scale)
+            public Placement(Species species, Vector3 position, float rotation, float scale, Vector3? surfaceNormal = null)
             {
                 speciesId = species.id;
                 prefabKey = species.prefabKey;
                 this.position = position;
                 rotationDegrees = rotation;
+                alignedToSurface = species.alignToSurface;
+                var yaw = Quaternion.Euler(0, rotation, 0);
+                // Apply the existing yaw in local tangent space without drawing another random sample.
+                this.rotation = alignedToSurface
+                    ? Quaternion.FromToRotation(Vector3.up, surfaceNormal ?? Vector3.up) * yaw : yaw;
                 this.scale = scale;
                 supportRadius = species.radius * scale;
             }
@@ -140,7 +148,7 @@ namespace Bwork.FjordCoast.Editor
                         throw new InvalidOperationException("Support fitting must preserve the accepted horizontal footprint.");
                     planted = fit.Value;
                 }
-                var placement = new Placement(species, planted, random.NextFloat() * 360f, scale);
+                var placement = new Placement(species, planted, random.NextFloat() * 360f, scale, surfaceNormal);
                 int index = blockers.Count;
                 placements.Add(placement);
                 blockers.Add(placement);

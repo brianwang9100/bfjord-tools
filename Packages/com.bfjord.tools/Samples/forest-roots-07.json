@@ -1,0 +1,32 @@
+{
+  "id": "forest-roots-07",
+  "area": {
+    "x": 191,
+    "y": 170,
+    "width": 44,
+    "height": 38
+  },
+  "seed": 7351,
+  "maximumCount": 16,
+  "densityPerHectare": 100,
+  "minimumSpacing": 2.5,
+  "minimumHeight": 0,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 16,
+  "clusterCount": 3,
+  "clusterRadius": 8,
+  "exclusions": [],
+  "species": [
+    {
+      "id": "ExposedRootFan_A",
+      "prefabKey": "bfjord:ExposedRootFan_A",
+      "weight": 1,
+      "radius": 2.62,
+      "minimumScale": 0.65,
+      "maximumScale": 0.95,
+      "groundOffsetMeters": -0.07,
+      "alignToSurface": true
+    }
+  ]
+}

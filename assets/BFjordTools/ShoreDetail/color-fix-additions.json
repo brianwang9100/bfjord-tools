@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png",
+      "oldSHA256": "bb3e65e31b0fd4e707ca34f6465c79d3bca919dc855ba4f6df6745d4d43ecc03",
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+      "bytes": 9313434
+    },
+    {
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png",
+      "oldSHA256": "bb3e65e31b0fd4e707ca34f6465c79d3bca919dc855ba4f6df6745d4d43ecc03",
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+      "bytes": 9313434
+    },
+    {
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_Color.png",
+      "oldSHA256": "d43a607ae964084bd98d26e6d1b50e79ad2a75d8b86b6441f98d8a8418455cc4",
+      "sha256": "b8fe67046d38006069cdbaa7ecf9c88fb72ef21e2f073a2a1bba76898e782a33",
+      "bytes": 5890236
+    }
+  ]
+}

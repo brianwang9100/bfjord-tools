@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 114a0246eb115507bb2422b8bb12e94f
+TextureImporter:
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 1
+    sRGBTexture: 1
+  isReadable: 0
+  textureType: 0
+  textureShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 8
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  userData: Shore detail CC0. OpenGL normal +Y; R metal G AO B height A smoothness.

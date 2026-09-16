@@ -1,0 +1,84 @@
+{
+  "id": "shore-wrack-07",
+  "area": {
+    "x": 275,
+    "y": 350,
+    "width": 126,
+    "height": 42
+  },
+  "seed": 72813,
+  "maximumCount": 220,
+  "densityPerHectare": 800,
+  "minimumSpacing": 0.35,
+  "minimumHeight": 0,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 26,
+  "clusterCount": 18,
+  "clusterRadius": 7,
+  "exclusions": [],
+  "maximumWaterDistance": 15,
+  "maximumBankHeight": 2.8,
+  "species": [
+    {
+      "id": "CockleShells_A",
+      "prefabKey": "bfjord:CockleShells_A",
+      "weight": 2,
+      "radius": 0.2,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.0015,
+      "alignToSurface": true
+    },
+    {
+      "id": "MusselShells_A",
+      "prefabKey": "bfjord:MusselShells_A",
+      "weight": 2,
+      "radius": 0.2,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.0015,
+      "alignToSurface": true
+    },
+    {
+      "id": "ShellFragments_A",
+      "prefabKey": "bfjord:ShellFragments_A",
+      "weight": 3,
+      "radius": 0.25,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.0015,
+      "alignToSurface": true
+    },
+    {
+      "id": "KelpWrack_A",
+      "prefabKey": "bfjord:KelpWrack_A",
+      "weight": 1,
+      "radius": 1.16,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.004,
+      "alignToSurface": true
+    },
+    {
+      "id": "BladderWrack_A",
+      "prefabKey": "bfjord:BladderWrack_A",
+      "weight": 1,
+      "radius": 0.62,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.004,
+      "alignToSurface": true
+    },
+    {
+      "id": "BleachedDriftwood_A",
+      "prefabKey": "bfjord:BleachedDriftwood_A",
+      "weight": 0.35,
+      "radius": 0.95,
+      "minimumScale": 0.65,
+      "maximumScale": 1.1,
+      "groundOffsetMeters": -0.025,
+      "alignToSurface": true
+    }
+  ]
+}

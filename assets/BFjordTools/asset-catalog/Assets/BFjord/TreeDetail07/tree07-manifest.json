@@ -1,0 +1,271 @@
+{
+  "blender": "5.2.1 LTS",
+  "families": [
+    {
+      "allLodCrownRadius": 5.175258075335188,
+      "boundsBlenderZUp": [
+        [
+          -4.030514717102051,
+          -4.02525520324707,
+          -0.6681783199310303
+        ],
+        [
+          4.4803876876831055,
+          4.235307693481445,
+          19.99618148803711
+        ]
+      ],
+      "buriedCollar": true,
+      "checks": [
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 0,
+          "nondegenerate": true,
+          "triangles": 147647
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 1,
+          "nondegenerate": true,
+          "triangles": 80822
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 2,
+          "nondegenerate": true,
+          "triangles": 15419
+        }
+      ],
+      "crownRadius": 5.175258075335188,
+      "id": "GiantRedwood_C",
+      "materialSlotCount": 1,
+      "model": "Models/GiantRedwood_C.fbx",
+      "recommendedSpacingRadius": 5.675258075335188,
+      "rootFootprintRadius": 2.3200362361350217,
+      "textures": {
+        "Atlas": "Textures/GiantRedwood_CAtlas.png",
+        "Mask": "Textures/GiantRedwood_CMask.png",
+        "Normal": "Textures/GiantRedwood_CNormal.png"
+      }
+    },
+    {
+      "allLodCrownRadius": 6.401445340557344,
+      "boundsBlenderZUp": [
+        [
+          -2.4905364513397217,
+          -3.571970224380493,
+          -0.5602377653121948
+        ],
+        [
+          6.2153120040893555,
+          3.670206308364868,
+          12.383975982666016
+        ]
+      ],
+      "buriedCollar": true,
+      "checks": [
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 0,
+          "nondegenerate": true,
+          "triangles": 175983
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 1,
+          "nondegenerate": true,
+          "triangles": 72107
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 2,
+          "nondegenerate": true,
+          "triangles": 19458
+        }
+      ],
+      "crownRadius": 6.215551742059254,
+      "id": "CoastalPine_C",
+      "materialSlotCount": 1,
+      "model": "Models/CoastalPine_C.fbx",
+      "recommendedSpacingRadius": 6.901445340557344,
+      "rootFootprintRadius": 1.4423735763842198,
+      "textures": {
+        "Atlas": "Textures/CoastalPine_CAtlas.png",
+        "Mask": "Textures/CoastalPine_CMask.png",
+        "Normal": "Textures/CoastalPine_CNormal.png"
+      }
+    },
+    {
+      "allLodCrownRadius": 5.153201017455267,
+      "boundsBlenderZUp": [
+        [
+          -4.551556587219238,
+          -4.619071006774902,
+          -0.6236660480499268
+        ],
+        [
+          4.539671897888184,
+          4.95382833480835,
+          9.650269508361816
+        ]
+      ],
+      "buriedCollar": true,
+      "checks": [
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 0,
+          "nondegenerate": true,
+          "triangles": 169486
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 1,
+          "nondegenerate": true,
+          "triangles": 95185
+        },
+        {
+          "finiteVerticesNormalsTangentsUV": true,
+          "lod": 2,
+          "nondegenerate": true,
+          "triangles": 23548
+        }
+      ],
+      "crownRadius": 5.088138333255834,
+      "id": "MatureBeech_C",
+      "materialSlotCount": 1,
+      "model": "Models/MatureBeech_C.fbx",
+      "recommendedSpacingRadius": 5.653201017455267,
+      "rootFootprintRadius": 1.2977894254613125,
+      "textures": {
+        "Atlas": "Textures/MatureBeech_CAtlas.png",
+        "Mask": "Textures/MatureBeech_CMask.png",
+        "Normal": "Textures/MatureBeech_CNormal.png"
+      }
+    }
+  ],
+  "files": [
+    {
+      "bytes": 28286492,
+      "path": "Models/CoastalPine_C.fbx",
+      "sha256": "889e3903c042a042d0b166588543951900ad7309d1ac647f9fe4656a62ed74bf",
+      "sourceSha256": "889e3903c042a042d0b166588543951900ad7309d1ac647f9fe4656a62ed74bf"
+    },
+    {
+      "bytes": 26669964,
+      "path": "Models/GiantRedwood_C.fbx",
+      "sha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531",
+      "sourceSha256": "df0ea2d172b3bf6f177045b5305e8fecbcee4c5b79ac68917da8ed3a483ea531"
+    },
+    {
+      "bytes": 25496252,
+      "path": "Models/MatureBeech_C.fbx",
+      "sha256": "2086fe4b43470681274a01e1f57f4d1605dee25f9eff958e99285fb37cdeed75",
+      "sourceSha256": "2086fe4b43470681274a01e1f57f4d1605dee25f9eff958e99285fb37cdeed75"
+    },
+    {
+      "bytes": 3918492,
+      "path": "Textures/CoastalPine_CAtlas.png",
+      "sha256": "3f25251fde6a7f6e37043a25c802cd491bae00676df4a16314ba96748e41f353",
+      "sourceSha256": "3ae5b1ac729e5db40c094674d237c29bcb42b6dd4100d09638f9920079870ab3"
+    },
+    {
+      "bytes": 1095366,
+      "path": "Textures/CoastalPine_CMask.png",
+      "sha256": "0276d5c6a9c29c28d6810c6c93e45045e358a10326630d32cbe005c427bf0dd2",
+      "sourceSha256": "8df78d750c0771b0cb0496f0d57d46c4cc6626573b74c3f1a02f3d304d4b1ce0"
+    },
+    {
+      "bytes": 3065405,
+      "path": "Textures/CoastalPine_CNormal.png",
+      "sha256": "6fd51eecf2c1f7efa2d8830ba4e8d3a9e12ccdc2a712cae3b8b2ddf8e1f79293",
+      "sourceSha256": "9c4c773fe6d30e789087cbdd8b19b4dbc3fe7552a48ad7c45af149efa2cec046"
+    },
+    {
+      "bytes": 3842494,
+      "path": "Textures/GiantRedwood_CAtlas.png",
+      "sha256": "1c2d649cb37616eb07de2d2919c71c0a95a61416f4a4cd5d792e84992ea4adc9",
+      "sourceSha256": "0386934cc66f716100a5cc270ef91a2fe7686d9ea8d64725b4b092354fbdb8b6"
+    },
+    {
+      "bytes": 1095366,
+      "path": "Textures/GiantRedwood_CMask.png",
+      "sha256": "0276d5c6a9c29c28d6810c6c93e45045e358a10326630d32cbe005c427bf0dd2",
+      "sourceSha256": "8df78d750c0771b0cb0496f0d57d46c4cc6626573b74c3f1a02f3d304d4b1ce0"
+    },
+    {
+      "bytes": 3065405,
+      "path": "Textures/GiantRedwood_CNormal.png",
+      "sha256": "6fd51eecf2c1f7efa2d8830ba4e8d3a9e12ccdc2a712cae3b8b2ddf8e1f79293",
+      "sourceSha256": "9c4c773fe6d30e789087cbdd8b19b4dbc3fe7552a48ad7c45af149efa2cec046"
+    },
+    {
+      "bytes": 2720060,
+      "path": "Textures/MatureBeech_CAtlas.png",
+      "sha256": "a7e3096df836ff86150a189c7da4900ab6a30ab2570848ca2436a9ebfd2b2f9b",
+      "sourceSha256": "f89750a17b3eb90503db3239c692fa988a25effbf0b96b03a8432b6c5f9c0e9a"
+    },
+    {
+      "bytes": 39233,
+      "path": "Textures/MatureBeech_CMask.png",
+      "sha256": "c933854bcae0cda1227d942c508db5f038495c07028b56cab91558a35ad1d546",
+      "sourceSha256": "8870aeac13b22a5a4e2cebc422785124c277eb91f95fd2ce993fa420acef3105"
+    },
+    {
+      "bytes": 2461571,
+      "path": "Textures/MatureBeech_CNormal.png",
+      "sha256": "41fb17cf020d685c69a5532e0abb4824187c879096aee5bb0711c0b649939d29",
+      "sourceSha256": "980676ace1a5b61da7e9e023fbb0393600c42a85dce2f53c5b26594ae28409b7"
+    }
+  ],
+  "generator": "Scripts/world_assets/tree_detail_07/generate_trees07.py",
+  "generatorSha256": "c1b4b3681bc5eb45daec9305e8e969916060c671edcd7b8d301909080ad014b7",
+  "geometrySha256": "2c921af55a1f356aa46c419dfc4f2968919575f4b7a6b556e80c7c72a1755552",
+  "license": "CC0-1.0",
+  "revision": "tree-detail-07",
+  "sourceProvenance": {
+    "geometry": "Original deterministic authored branching, closed wood voxel unions, explicit geometric leaves and needle fascicles.",
+    "privateReference": "Visually reviewed privately for branch variation and root transitions. No image bytes, names, textures or derived meshes are included.",
+    "reuseResearch": [
+      {
+        "decision": "Free offline tree authoring alternative considered; existing original procedural workflow retained for species architecture and stable LOD anchors.",
+        "url": "https://extensions.blender.org/add-ons/sapling-tree-gen/"
+      },
+      {
+        "decision": "Built-in voxel remesh fuses buttresses and scaffold junctions. Unity receives ordinary FBX meshes; no runtime package.",
+        "url": "https://docs.blender.org/manual/en/4.5/modeling/modifiers/generate/remesh.html"
+      }
+    ],
+    "sourceTextures": {
+      "asset": "bark_brown_02",
+      "credit": "Powered by Poly Haven; original bark scan by Rob Tuytel",
+      "files": [
+        {
+          "bytes": 2334535,
+          "file": "bark_brown_02_diff_1k.png",
+          "sha256": "22144dbe0e9f1cfd44de3f3c8311c898fe672f087c1e81a18baab77476dc046f",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_diff_1k.png"
+        },
+        {
+          "bytes": 2436328,
+          "file": "bark_brown_02_nor_gl_1k.png",
+          "sha256": "45c632c61b642759ee935a4300b71aa1e6097d2b2d8aae42376c4661ecc518eb",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_nor_gl_1k.png"
+        },
+        {
+          "bytes": 727782,
+          "file": "bark_brown_02_rough_1k.png",
+          "sha256": "346e756131c7409fef357f6aa391f1d8b2db815fd965f0f5529fe76a2baf26ae",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/bark_brown_02/bark_brown_02_rough_1k.png"
+        }
+      ],
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license"
+    },
+    "textures": "Conifer bark uses the verified Poly Haven Bark Brown 02 CC0 scan with authored species tint; beech bark and all foliage islands are original."
+  },
+  "textureSize": [
+    2048,
+    1024
+  ],
+  "units": "metres; FBX Y up; authoring Blender Z up"
+}

@@ -7,7 +7,7 @@ namespace Bwork.Authoring.Editor
     /// <summary>Four layers at a time preserve Terrain Lit's height-blend path.</summary>
     public static class TerrainMaterialBank
     {
-        public static readonly string[] Palettes = { "temperate", "woodland", "coast", "cliff" };
+        public static readonly string[] Palettes = { "temperate", "woodland", "coast", "cliff", "shoreline" };
         const string Root = "Assets/BFjord/TerrainDetail/Surfaces/";
 
         public readonly struct Surface
@@ -21,7 +21,7 @@ namespace Bwork.Authoring.Editor
         public static void Validate(string palette)
         {
             if (Array.IndexOf(Palettes, palette) < 0)
-                throw new ArgumentException("Terrain palette must be temperate, woodland, coast or cliff.");
+                throw new ArgumentException("Terrain palette must be temperate, woodland, coast, cliff or shoreline.");
         }
 
         public static Surface[] Resolve(string palette, Material[] original, Texture2D[] masks, float[] scales)
@@ -32,6 +32,15 @@ namespace Bwork.Authoring.Editor
                 (Texture2D)original[i].GetTexture("_BaseMap"), (Texture2D)original[i].GetTexture("_BumpMap"), masks[i], scales[i]);
             if (palette == "temperate") return result;
             result[3] = Load("RockFace", 1.8f);
+            if (palette == "shoreline")
+            {
+                result[0] = Load("ForestLitter", 2.14f);
+                const string shoreRoot = "Assets/BFjord/ShoreDetail/Textures/BeachSand_";
+                Texture2D Read(string suffix) => AssetDatabase.LoadAssetAtPath<Texture2D>(shoreRoot + suffix + ".png") ??
+                    throw new InvalidOperationException("Install the shore detail sand maps: " + suffix);
+                result[1] = new Surface(Read("Color"), Read("NormalGL"), Read("Mask"), 2.1f);
+                result[2] = result[1];
+            }
             if (palette == "woodland") result[1] = Load("ForestLitter", 2.14f);
             if (palette == "coast") result[1] = Load("CoastalShingle", 15);
             if (palette == "cliff") result[2] = Load("CoastalShingle", 15);

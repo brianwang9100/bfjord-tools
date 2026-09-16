@@ -78,3 +78,11 @@ The library now appends `MatureOak_A`, `SilverBirch_A`, `FallenHollowLog_A` and 
 `Samples/woodland-canopy.json` mixes oak/birch/fir; `woodland-deadwood.json` places rigid hollow logs on slopes up to eight degrees; `woodland-grass.json` mixes tall grass, coastal grass and daisies. Use named batches and prepare/apply as above. Current placement receipts provide actual counts after exclusions.
 
 For a close wind demonstration, run `bwork_foliage action=grass-view` after applying woodland grass. `action=wind-frame windSeconds=0` and `windSeconds=1.5` give reproducible shader-time captures with `bwork_sandbox action=capture`; `windSeconds=-1` restores live engine time. All render passes share this clock and deformation. The temporary preview also resets on domain reload. New grass has a 0.14225 m maximum displacement bound, and its local mesh bounds account for the minimum allowed 0.5 instance scale. Fallen wood remains rigid.
+
+## Beach and forest floor (0.7)
+
+Six shore props, seven forest-floor variants and three tree families extend the library to 42 IDs. New recipes are `shore-wrack-07.json`, `forest-floor-07.json`, `forest-roots-07.json`, `woodland-canopy-07.json`, and `redwood-grove-07.json`. Use the shoreline Terrain palette with the shore sample. Explicit seeds, habitat bounds and geometric exclusions remain authoritative.
+
+Species can opt into `alignToSurface` for low ground props; existing recipes default to upright placement. Canopies cannot opt in. Surface alignment retains yaw and random sampling. Terrain holes reject all placements. Tiny shells and needles need millimetre planting offsets, and footprint radii must cover tilted geometry.
+
+Coordinate-baked prefabs regenerate MikkTSpace tangents from the final vertices, normals and UVs. This avoids retaining an invalid importer tangent at a collapsed root cap; mirrored winding and regenerated tangent handedness are checked. Ground props remain rigid while the new canopies use the shared wind shader.

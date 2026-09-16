@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "source": "Fresh Blender FBX import, not original source mesh",
+  "variants": [
+    {
+      "id": "CockleShells_A",
+      "sha256": "988eacf5336f0355c96f677c1821560bf6b697994ceef15a59ff02ec22ddf39d",
+      "meshes": [
+        {
+          "name": "CockleShells_A_LOD0",
+          "triangles": 9600,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.09335418790578842,
+            -0.0414409339427948,
+            -3.1269080658091752e-09
+          ],
+          "max": [
+            0.08184631168842316,
+            0.04801122099161148,
+            0.02320300042629242
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "CockleShells_A_LOD1",
+          "triangles": 2496,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.09335418790578842,
+            -0.0414409339427948,
+            -3.1144891110557182e-09
+          ],
+          "max": [
+            0.08184631168842316,
+            0.04801122099161148,
+            0.02320300042629242
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "CockleShells_A_LOD2",
+          "triangles": 672,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.09335418790578842,
+            -0.040537722408771515,
+            -3.0398772388195994e-09
+          ],
+          "max": [
+            0.08111494034528732,
+            0.04801122099161148,
+            0.02320300042629242
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    },
+    {
+      "id": "MusselShells_A",
+      "sha256": "db9ec3aa7ad5007a7b9a6b10d9867ee057099671367e72f754c6c191971d5183",
+      "meshes": [
+        {
+          "name": "MusselShells_A_LOD0",
+          "triangles": 12800,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.0974183976650238,
+            -0.0728784054517746,
+            -5.015094117766239e-09
+          ],
+          "max": [
+            0.09338528662919998,
+            0.06642693281173706,
+            0.01737378165125847
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "MusselShells_A_LOD1",
+          "triangles": 3328,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.0974183976650238,
+            -0.0727965235710144,
+            -5.015094117766239e-09
+          ],
+          "max": [
+            0.09295935928821564,
+            0.06642693281173706,
+            0.017094159498810768
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "MusselShells_A_LOD2",
+          "triangles": 672,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.09722380340099335,
+            -0.0727965235710144,
+            -4.871791414728932e-09
+          ],
+          "max": [
+            0.09235329926013947,
+            0.06452883034944534,
+            0.01679258607327938
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    },
+    {
+      "id": "ShellFragments_A",
+      "sha256": "1a1fbded37191a65c701f1564b03d574eca7ef8256270677d1cd0b6e96b1cc4b",
+      "meshes": [
+        {
+          "name": "ShellFragments_A_LOD0",
+          "triangles": 11424,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.08016163855791092,
+            -0.058021076023578644,
+            -4.659804098139375e-09
+          ],
+          "max": [
+            0.1099025160074234,
+            0.07453687489032745,
+            0.01155260019004345
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "ShellFragments_A_LOD1",
+          "triangles": 3696,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.08008076995611191,
+            -0.05790014937520027,
+            -4.641239836900013e-09
+          ],
+          "max": [
+            0.10971786081790924,
+            0.07453687489032745,
+            0.01148521713912487
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "ShellFragments_A_LOD2",
+          "triangles": 1176,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.08008076995611191,
+            -0.057706862688064575,
+            -4.638310624471842e-09
+          ],
+          "max": [
+            0.10950703918933868,
+            0.07453687489032745,
+            0.0114292586222291
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    },
+    {
+      "id": "KelpWrack_A",
+      "sha256": "0de3a626a9fc24f41da207ede072f131f9f9ce51034949d957b7850e90f3a617",
+      "meshes": [
+        {
+          "name": "KelpWrack_A_LOD0",
+          "triangles": 31900,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.840033233165741,
+            -0.4214155375957489,
+            -1.2700978935242802e-08
+          ],
+          "max": [
+            0.6113048195838928,
+            0.7558321952819824,
+            0.09703199565410614
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "KelpWrack_A_LOD1",
+          "triangles": 10004,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.840033233165741,
+            -0.4214155375957489,
+            -1.2700978935242802e-08
+          ],
+          "max": [
+            0.6113048195838928,
+            0.7558321952819824,
+            0.09703199565410614
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "KelpWrack_A_LOD2",
+          "triangles": 3316,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.840033233165741,
+            -0.4214155375957489,
+            -1.2700978935242802e-08
+          ],
+          "max": [
+            0.6113048195838928,
+            0.7558321952819824,
+            0.09445805847644806
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    },
+    {
+      "id": "BladderWrack_A",
+      "sha256": "071d14e0bc82df6669a552bdb6f7e9bf04b8f525ce061bde6b75d991d19e875f",
+      "meshes": [
+        {
+          "name": "BladderWrack_A_LOD0",
+          "triangles": 41472,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.29180827736854553,
+            -0.15001903474330902,
+            -1.4490153965596164e-08
+          ],
+          "max": [
+            0.4119678735733032,
+            0.42384451627731323,
+            0.08991926163434982
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "BladderWrack_A_LOD1",
+          "triangles": 13824,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.29180827736854553,
+            -0.15001903474330902,
+            -1.4490153965596164e-08
+          ],
+          "max": [
+            0.4119678735733032,
+            0.42384451627731323,
+            0.08991926163434982
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "BladderWrack_A_LOD2",
+          "triangles": 5232,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.29180827736854553,
+            -0.15001903474330902,
+            -1.0643937287113658e-08
+          ],
+          "max": [
+            0.4119678735733032,
+            0.42384451627731323,
+            0.08526616543531418
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    },
+    {
+      "id": "BleachedDriftwood_A",
+      "sha256": "2246bb04a0e0d15148cc4494e14f30987743584804d7893641af28332263a578",
+      "meshes": [
+        {
+          "name": "BleachedDriftwood_A_LOD0",
+          "triangles": 14700,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.6263087391853333,
+            -0.22827954590320587,
+            9.319812699359886e-10
+          ],
+          "max": [
+            0.6155696511268616,
+            0.1737527996301651,
+            0.15359753370285034
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "BleachedDriftwood_A_LOD1",
+          "triangles": 3676,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.6166749000549316,
+            -0.226007342338562,
+            4.93490748265657e-10
+          ],
+          "max": [
+            0.6069615483283997,
+            0.17434774339199066,
+            0.15186838805675507
+          ],
+          "finiteUVNormalsTangents": true
+        },
+        {
+          "name": "BleachedDriftwood_A_LOD2",
+          "triangles": 868,
+          "zeroAreaTriangles": 0,
+          "min": [
+            -0.6248608827590942,
+            -0.2259831577539444,
+            1.0757462698407494e-09
+          ],
+          "max": [
+            0.609525740146637,
+            0.1746230572462082,
+            0.13578802347183228
+          ],
+          "finiteUVNormalsTangents": true
+        }
+      ]
+    }
+  ]
+}

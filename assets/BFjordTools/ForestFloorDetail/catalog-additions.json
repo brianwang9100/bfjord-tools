@@ -1,0 +1,137 @@
+{
+  "files": [
+    {
+      "bytes": 1229020,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/BrownBoleteCluster_A.fbx",
+      "sha256": "5a0a86f4dbfdb7ac925d1d69cdc973edfe622bef00305799fddfb0f607668a29",
+      "sourceSha256": "5a0a86f4dbfdb7ac925d1d69cdc973edfe622bef00305799fddfb0f607668a29"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/BrownBoleteCluster_A.fbx.meta",
+      "sha256": "6ea604ea0c3411ec3415ca934aeb73f26c0c83c8525c714380e0c5cb14e2c538",
+      "sourceSha256": "6ea604ea0c3411ec3415ca934aeb73f26c0c83c8525c714380e0c5cb14e2c538"
+    },
+    {
+      "bytes": 2420092,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/ExposedRootFan_A.fbx",
+      "sha256": "59d4099af50b6f2a32c2be12ea3a73cb4f58c4b70302162a4952b7488f73c5fb",
+      "sourceSha256": "59d4099af50b6f2a32c2be12ea3a73cb4f58c4b70302162a4952b7488f73c5fb"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/ExposedRootFan_A.fbx.meta",
+      "sha256": "b57408b49240c46272ae3cc956760cc24054e6c4dd997fe8dac57289faa3c4e1",
+      "sourceSha256": "b57408b49240c46272ae3cc956760cc24054e6c4dd997fe8dac57289faa3c4e1"
+    },
+    {
+      "bytes": 3914924,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/GoldenChanterelleCluster_A.fbx",
+      "sha256": "72d44e935f30cc2d2c59a22df650746736def37e47effd714e71f3139e819c54",
+      "sourceSha256": "72d44e935f30cc2d2c59a22df650746736def37e47effd714e71f3139e819c54"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/GoldenChanterelleCluster_A.fbx.meta",
+      "sha256": "c9ecccf5fb2572b86ff6bec0299b14f438d48130ad2be5059d7f2f58efe797a9",
+      "sourceSha256": "c9ecccf5fb2572b86ff6bec0299b14f438d48130ad2be5059d7f2f58efe797a9"
+    },
+    {
+      "bytes": 266332,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/MossyFallenBranch_A.fbx",
+      "sha256": "72e15535adb4fc5f9d3c8f3ff05d4e7a72b0a320eafd9b9081dd591924d0c78e",
+      "sourceSha256": "72e15535adb4fc5f9d3c8f3ff05d4e7a72b0a320eafd9b9081dd591924d0c78e"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/MossyFallenBranch_A.fbx.meta",
+      "sha256": "1bfb6507aed3796ffee493dd5b863dfa1c76bd41bab1994429abbe636601c41d",
+      "sourceSha256": "1bfb6507aed3796ffee493dd5b863dfa1c76bd41bab1994429abbe636601c41d"
+    },
+    {
+      "bytes": 2011564,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/OakBirchLeafLitter_A.fbx",
+      "sha256": "01e8873d6308e6c1daf3da17ec7b68d99b9a889fed4fbaf8254f22427f4b5a63",
+      "sourceSha256": "01e8873d6308e6c1daf3da17ec7b68d99b9a889fed4fbaf8254f22427f4b5a63"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/OakBirchLeafLitter_A.fbx.meta",
+      "sha256": "8132ee8cf470c081e64a796c36f897713e48aef90d852b532289dd5fb1dbbc89",
+      "sourceSha256": "8132ee8cf470c081e64a796c36f897713e48aef90d852b532289dd5fb1dbbc89"
+    },
+    {
+      "bytes": 1134492,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/PineLitterCones_A.fbx",
+      "sha256": "ac91b4f71b0ad0b11aa6b6cefc6fd11f3bfed50665c3aa4a8a32df29cee25c88",
+      "sourceSha256": "ac91b4f71b0ad0b11aa6b6cefc6fd11f3bfed50665c3aa4a8a32df29cee25c88"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/PineLitterCones_A.fbx.meta",
+      "sha256": "f8a514e4a5b7257809814e3695964ca41c8d401575c0465cfaac06e1c935159b",
+      "sourceSha256": "f8a514e4a5b7257809814e3695964ca41c8d401575c0465cfaac06e1c935159b"
+    },
+    {
+      "bytes": 824652,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/ShelfFungiDeadwood_A.fbx",
+      "sha256": "7b59f75d433142cc533eadadd8765460324f95c5978f48de325201ced7e12efe",
+      "sourceSha256": "7b59f75d433142cc533eadadd8765460324f95c5978f48de325201ced7e12efe"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ForestFloorDetail/Models/ShelfFungiDeadwood_A.fbx.meta",
+      "sha256": "ca3fc70e0259cb1fd85209103b3c4fb1ff124c6613c15c34f70357d32e531a4f",
+      "sourceSha256": "ca3fc70e0259cb1fd85209103b3c4fb1ff124c6613c15c34f70357d32e531a4f"
+    },
+    {
+      "bytes": 6544199,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Atlas.png",
+      "sha256": "cc522c67d196742bd3d2938c4e0755f794a1eb4da0be8d3247ba07e4c973987c",
+      "sourceSha256": "5aba1b5fe04a21fa58eddcc8158d3889132c3cc16b2e447ec851269cb6cd9ee5"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Atlas.png.meta",
+      "sha256": "efffa11428af8a0859f09e7ec0c026148f3278b261b1ff415c51a5ace0ceba38",
+      "sourceSha256": "efffa11428af8a0859f09e7ec0c026148f3278b261b1ff415c51a5ace0ceba38"
+    },
+    {
+      "bytes": 364910,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Mask.png",
+      "sha256": "6ad452e3cacaa195575987370de0d18708355ad491f8212fc0c2086b173b7105",
+      "sourceSha256": "5abeca4eff1353ea0dcf29ca24e185fee07895af10168538e80542650d365027"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Mask.png.meta",
+      "sha256": "050131b5994013990267dfe022116f5ae580e6fd8126f2d019c1b1f15be847b1",
+      "sourceSha256": "050131b5994013990267dfe022116f5ae580e6fd8126f2d019c1b1f15be847b1"
+    },
+    {
+      "bytes": 6172397,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Normal.png",
+      "sha256": "5e0b6a98c35745f83b39a9d284ea1c40366377ed4553f2a6f377f8c94b73ee1f",
+      "sourceSha256": "80c1f593597bd68671b6ba47635b7066426b2f4daf5b6b32377e569c23165ec6"
+    },
+    {
+      "bytes": 3424,
+      "path": "Assets/BFjord/ForestFloorDetail/Textures/ForestFloor07Normal.png.meta",
+      "sha256": "43009f13ef5d6f207f48e530623d665a6a365668304d383789f914e89c25c550",
+      "sourceSha256": "43009f13ef5d6f207f48e530623d665a6a365668304d383789f914e89c25c550"
+    },
+    {
+      "bytes": 13734,
+      "path": "Assets/BFjord/ForestFloorDetail/forest-floor07-manifest.json",
+      "sha256": "5b722809390f80eaee41cb2474a1ee817cd5c3eacc15dafa89ca916131b50e44",
+      "sourceSha256": "904b00aacf6a2fab31e6eac17f444520160053757bc45333eb8ea6aa0c368260"
+    },
+    {
+      "bytes": 158,
+      "path": "Assets/BFjord/ForestFloorDetail/forest-floor07-manifest.json.meta",
+      "sha256": "02c919ad09bbb4f384e18909a74625f5f22bf0170672ab6669ceb1e9f89c5392",
+      "sourceSha256": "02c919ad09bbb4f384e18909a74625f5f22bf0170672ab6669ceb1e9f89c5392"
+    }
+  ],
+  "revision": "forest-floor-07"
+}

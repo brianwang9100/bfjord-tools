@@ -1,0 +1,82 @@
+{
+  "id": "forest-floor-07",
+  "area": {
+    "x": 185,
+    "y": 161,
+    "width": 61,
+    "height": 66
+  },
+  "seed": 71915,
+  "maximumCount": 280,
+  "densityPerHectare": 1400,
+  "minimumSpacing": 0.35,
+  "minimumHeight": 0,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 24,
+  "clusterCount": 12,
+  "clusterRadius": 5,
+  "exclusions": [],
+  "species": [
+    {
+      "id": "OakBirchLeafLitter_A",
+      "prefabKey": "bfjord:OakBirchLeafLitter_A",
+      "weight": 4,
+      "radius": 0.96,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.001,
+      "alignToSurface": true
+    },
+    {
+      "id": "PineLitterCones_A",
+      "prefabKey": "bfjord:PineLitterCones_A",
+      "weight": 2,
+      "radius": 0.77,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.001,
+      "alignToSurface": true
+    },
+    {
+      "id": "BrownBoleteCluster_A",
+      "prefabKey": "bfjord:BrownBoleteCluster_A",
+      "weight": 1,
+      "radius": 0.44,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.02,
+      "alignToSurface": true
+    },
+    {
+      "id": "GoldenChanterelleCluster_A",
+      "prefabKey": "bfjord:GoldenChanterelleCluster_A",
+      "weight": 1,
+      "radius": 0.47000000000000003,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.02,
+      "alignToSurface": true
+    },
+    {
+      "id": "ShelfFungiDeadwood_A",
+      "prefabKey": "bfjord:ShelfFungiDeadwood_A",
+      "weight": 1,
+      "radius": 0.76,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.02,
+      "alignToSurface": true
+    },
+    {
+      "id": "MossyFallenBranch_A",
+      "prefabKey": "bfjord:MossyFallenBranch_A",
+      "weight": 1,
+      "radius": 0.76,
+      "minimumScale": 0.8,
+      "maximumScale": 1.15,
+      "groundOffsetMeters": -0.02,
+      "alignToSurface": true
+    }
+  ]
+}

@@ -2,9 +2,13 @@
 
 Experimental, recipe-driven Unity 6 Editor tools for authoring bounded outdoor scenes. The repository ships terrain and road tools, four distinct bridge systems, independent bridge surfaces, deterministic foliage, nine original rock families, connected river/lake/delta/ocean geometry, a bounded waterfall fixture, and an optional original masonry tunnel portal.
 
+![0.7 Unity seaweed and shell details on scanned sand](docs/images/fidelity-07-beach-detail.png)
+
+**0.7.0 is ready:** scanned beach sand, softer water contact, shells/seaweed/driftwood, exposed roots, leaf litter, mushrooms and three more tree families. The library now has 42 variants. **172/172 Editor checks passed**; actual Unity stills and a shoreline clip are in the [0.7 review](docs/fidelity/NATURE_07.md). The sample's straight coast, broad wet band and stylized vegetation remain visible limitations.
+
 ![0.6 Unity woodland with additive oak B and birch B variants](docs/images/fidelity-06-woodland.png)
 
-The **0.6.0 sandbox iteration is complete**. It adds stochastic Terrain sampling with a native toggle, root-footprint grounding for upright trees, two additive tree variants, broken river streaks and torn ocean foam. Compare actual Unity stills and motion clips in the [0.6 nature-detail record](docs/fidelity/NATURE_06.md). The combined milestone passed **157/157 Editor checks**, followed by six focused terrain checks after the final refinements.
+The previous **0.6.0 sandbox iteration is complete**. It adds stochastic Terrain sampling with a native toggle, root-footprint grounding for upright trees, two additive tree variants, broken river streaks and torn ocean foam. Compare actual Unity stills and motion clips in the [0.6 nature-detail record](docs/fidelity/NATURE_06.md). The combined milestone passed **157/157 Editor checks**, followed by six focused terrain checks after the final refinements.
 
 Terrain sampling costs up to **36 material samples versus 12** for four layers. Native Terrain Lit remains selectable with `antiTiling=false`. This pass retains native XZ projection; it adds no triplanar mapping or device-performance claim. Water retains its existing texture-sample count and displacement bounds. B tree variants preserve existing A-model batches and prefab generations.
 

@@ -22,7 +22,7 @@ namespace Bwork.Authoring.Editor
         {
             string id=Path.GetFileNameWithoutExtension(key).Split(':').Last();
             return id.StartsWith("MatureFir_",StringComparison.Ordinal)||id.StartsWith("MatureOak_",StringComparison.Ordinal)||
-                id.StartsWith("SilverBirch_",StringComparison.Ordinal)||id.StartsWith("pine_",StringComparison.Ordinal);
+                NatureAssets07.IsCanopy(id)||id.StartsWith("SilverBirch_",StringComparison.Ordinal)||id.StartsWith("pine_",StringComparison.Ordinal);
         }
 
         public static Profile FromPrefab(GameObject prefab)

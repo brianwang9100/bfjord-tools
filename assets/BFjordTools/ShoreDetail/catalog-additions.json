@@ -1,0 +1,209 @@
+{
+  "files": [
+    {
+      "bytes": 3913372,
+      "path": "Assets/BFjord/ShoreDetail/Models/BladderWrack_A.fbx",
+      "sha256": "071d14e0bc82df6669a552bdb6f7e9bf04b8f525ce061bde6b75d991d19e875f",
+      "sourceSha256": "071d14e0bc82df6669a552bdb6f7e9bf04b8f525ce061bde6b75d991d19e875f"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/BladderWrack_A.fbx.meta",
+      "sha256": "3505bdec20403f9730bcb8de630cba881e27f95a917f2a37f2aa09c4aecc022c",
+      "sourceSha256": "3505bdec20403f9730bcb8de630cba881e27f95a917f2a37f2aa09c4aecc022c"
+    },
+    {
+      "bytes": 1264876,
+      "path": "Assets/BFjord/ShoreDetail/Models/BleachedDriftwood_A.fbx",
+      "sha256": "2246bb04a0e0d15148cc4494e14f30987743584804d7893641af28332263a578",
+      "sourceSha256": "2246bb04a0e0d15148cc4494e14f30987743584804d7893641af28332263a578"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/BleachedDriftwood_A.fbx.meta",
+      "sha256": "a72ab5c3c72237012db5c1c0f4991c160acf8708e975010c2b330ccd34571f7b",
+      "sourceSha256": "a72ab5c3c72237012db5c1c0f4991c160acf8708e975010c2b330ccd34571f7b"
+    },
+    {
+      "bytes": 844908,
+      "path": "Assets/BFjord/ShoreDetail/Models/CockleShells_A.fbx",
+      "sha256": "988eacf5336f0355c96f677c1821560bf6b697994ceef15a59ff02ec22ddf39d",
+      "sourceSha256": "988eacf5336f0355c96f677c1821560bf6b697994ceef15a59ff02ec22ddf39d"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/CockleShells_A.fbx.meta",
+      "sha256": "07311f54f6d5945226115b5c9e6ff82b88920128f56a604e1d6200b9c9cbab88",
+      "sourceSha256": "07311f54f6d5945226115b5c9e6ff82b88920128f56a604e1d6200b9c9cbab88"
+    },
+    {
+      "bytes": 2867468,
+      "path": "Assets/BFjord/ShoreDetail/Models/KelpWrack_A.fbx",
+      "sha256": "0de3a626a9fc24f41da207ede072f131f9f9ce51034949d957b7850e90f3a617",
+      "sourceSha256": "0de3a626a9fc24f41da207ede072f131f9f9ce51034949d957b7850e90f3a617"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/KelpWrack_A.fbx.meta",
+      "sha256": "69c16253df1f45959894bbfd1845cdd318ae07cab97410c2fb6032e0da1f52ac",
+      "sourceSha256": "69c16253df1f45959894bbfd1845cdd318ae07cab97410c2fb6032e0da1f52ac"
+    },
+    {
+      "bytes": 1107884,
+      "path": "Assets/BFjord/ShoreDetail/Models/MusselShells_A.fbx",
+      "sha256": "db9ec3aa7ad5007a7b9a6b10d9867ee057099671367e72f754c6c191971d5183",
+      "sourceSha256": "db9ec3aa7ad5007a7b9a6b10d9867ee057099671367e72f754c6c191971d5183"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/MusselShells_A.fbx.meta",
+      "sha256": "4ebbb2f7c52232528f289f257e4162c48c1cc7d2bfc43509ee128b718bcf709a",
+      "sourceSha256": "4ebbb2f7c52232528f289f257e4162c48c1cc7d2bfc43509ee128b718bcf709a"
+    },
+    {
+      "bytes": 1094140,
+      "path": "Assets/BFjord/ShoreDetail/Models/ShellFragments_A.fbx",
+      "sha256": "1a1fbded37191a65c701f1564b03d574eca7ef8256270677d1cd0b6e96b1cc4b",
+      "sourceSha256": "1a1fbded37191a65c701f1564b03d574eca7ef8256270677d1cd0b6e96b1cc4b"
+    },
+    {
+      "bytes": 3094,
+      "path": "Assets/BFjord/ShoreDetail/Models/ShellFragments_A.fbx.meta",
+      "sha256": "4ce8d43c2794e15083bb3cc7710562a3cf22e03b11665aaf0cf4cf7d19ba5f48",
+      "sourceSha256": "4ce8d43c2794e15083bb3cc7710562a3cf22e03b11665aaf0cf4cf7d19ba5f48"
+    },
+    {
+      "bytes": 9313434,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png",
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+      "sourceSha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Color.png.meta",
+      "sha256": "35212a454d51270a2bac20878e7f716d9e90f6e9ffc9b6eb8227ea857cd5b767",
+      "sourceSha256": "35212a454d51270a2bac20878e7f716d9e90f6e9ffc9b6eb8227ea857cd5b767"
+    },
+    {
+      "bytes": 7288717,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Mask.png",
+      "sha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1",
+      "sourceSha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_Mask.png.meta",
+      "sha256": "9931c2f3ab20d95c5fa7a49d76987bdb62b01c14637e97588f8ee9981a73af49",
+      "sourceSha256": "9931c2f3ab20d95c5fa7a49d76987bdb62b01c14637e97588f8ee9981a73af49"
+    },
+    {
+      "bytes": 10412994,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_NormalGL.png",
+      "sha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589",
+      "sourceSha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/BeachSand_NormalGL.png.meta",
+      "sha256": "f3071549f45a59608ce73addbbce17b18df52a0d882ac24cdff3145d46a5da01",
+      "sourceSha256": "f3071549f45a59608ce73addbbce17b18df52a0d882ac24cdff3145d46a5da01"
+    },
+    {
+      "bytes": 9313434,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png",
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0",
+      "sourceSha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Color.png.meta",
+      "sha256": "e4630347a840e4b6b46f926ada4074bf7eea8cc83253d0abe33393b56c534f5c",
+      "sourceSha256": "e4630347a840e4b6b46f926ada4074bf7eea8cc83253d0abe33393b56c534f5c"
+    },
+    {
+      "bytes": 6982546,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Mask.png",
+      "sha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9",
+      "sourceSha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_Mask.png.meta",
+      "sha256": "c2df6a3c044afd924107b738966b983a9d574a3a3c71acaa1ae282d3f1a2e173",
+      "sourceSha256": "c2df6a3c044afd924107b738966b983a9d574a3a3c71acaa1ae282d3f1a2e173"
+    },
+    {
+      "bytes": 10484898,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_NormalGL.png",
+      "sha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e",
+      "sourceSha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/RippleSand_NormalGL.png.meta",
+      "sha256": "82a4f2f79111123f685c70686c32215727e3c072f095b5a86799935f5746d04e",
+      "sourceSha256": "82a4f2f79111123f685c70686c32215727e3c072f095b5a86799935f5746d04e"
+    },
+    {
+      "bytes": 5890236,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_Color.png",
+      "sha256": "b8fe67046d38006069cdbaa7ecf9c88fb72ef21e2f073a2a1bba76898e782a33",
+      "sourceSha256": "b8fe67046d38006069cdbaa7ecf9c88fb72ef21e2f073a2a1bba76898e782a33"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_Color.png.meta",
+      "sha256": "6115a3ffcc102627b4fce33e455dd0b6c6c7c906f10ca0a918e275aea0d31f8e",
+      "sourceSha256": "6115a3ffcc102627b4fce33e455dd0b6c6c7c906f10ca0a918e275aea0d31f8e"
+    },
+    {
+      "bytes": 7381216,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_Mask.png",
+      "sha256": "49497e26613a8163c6d4dd600358883de15df94816fd8d398b1a1d63216d95f7",
+      "sourceSha256": "49497e26613a8163c6d4dd600358883de15df94816fd8d398b1a1d63216d95f7"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_Mask.png.meta",
+      "sha256": "bfcce566c2ea2e2a2c30cbf89bd5e71136f7e8c4d4feba96a67f89e262abc9a4",
+      "sourceSha256": "bfcce566c2ea2e2a2c30cbf89bd5e71136f7e8c4d4feba96a67f89e262abc9a4"
+    },
+    {
+      "bytes": 11795940,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_NormalGL.png",
+      "sha256": "12f9ccae72e8ca1d73b2a15e6c6199c101d543ac37d6a58a4f6e00fa514b918a",
+      "sourceSha256": "12f9ccae72e8ca1d73b2a15e6c6199c101d543ac37d6a58a4f6e00fa514b918a"
+    },
+    {
+      "bytes": 464,
+      "path": "Assets/BFjord/ShoreDetail/Textures/ShoreAtlas_NormalGL.png.meta",
+      "sha256": "738b672dd8ee32e0bdc1a9c4325d310acac6bca111f6412a34f189dee617c963",
+      "sourceSha256": "738b672dd8ee32e0bdc1a9c4325d310acac6bca111f6412a34f189dee617c963"
+    },
+    {
+      "bytes": 12829,
+      "path": "Assets/BFjord/ShoreDetail/manifest.json",
+      "sha256": "34b76769f4c12d219e71b71ca275bef18b2329026b612b26bff5da547786520f",
+      "sourceSha256": "34b76769f4c12d219e71b71ca275bef18b2329026b612b26bff5da547786520f"
+    },
+    {
+      "bytes": 119,
+      "path": "Assets/BFjord/ShoreDetail/manifest.json.meta",
+      "sha256": "8cee84bd4ed5fcdbb18a2eefd3523d692ef4469a0eda0edc8af8de7e76dd0231",
+      "sourceSha256": "8cee84bd4ed5fcdbb18a2eefd3523d692ef4469a0eda0edc8af8de7e76dd0231"
+    },
+    {
+      "bytes": 1243,
+      "path": "Assets/BFjord/ShoreDetail/sand-source.json",
+      "sha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb",
+      "sourceSha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb"
+    },
+    {
+      "bytes": 119,
+      "path": "Assets/BFjord/ShoreDetail/sand-source.json.meta",
+      "sha256": "156528786415bc37b1c5ee7c88a35a6028aa1f56e486f7c2d0093e1421576cbb",
+      "sourceSha256": "156528786415bc37b1c5ee7c88a35a6028aa1f56e486f7c2d0093e1421576cbb"
+    }
+  ],
+  "schemaVersion": 1
+}

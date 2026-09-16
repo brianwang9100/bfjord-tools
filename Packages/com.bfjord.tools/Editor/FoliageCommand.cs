@@ -25,6 +25,7 @@ namespace Bwork.Authoring.Editor
             public string id, prefabKey;
             public float weight, radius, minimumScale, maximumScale;
             public float groundOffsetMeters;
+            public bool alignToSurface;
         }
 
         [Serializable]
@@ -61,15 +62,23 @@ namespace Bwork.Authoring.Editor
                     id = value.id, prefabKey = value.prefabKey, weight = value.weight, radius = value.radius,
                     minimumScale = value.minimumScale, maximumScale = value.maximumScale,
                     groundOffsetMeters = value.groundOffsetMeters,
+                    alignToSurface = SurfaceAlignment(value),
                 }).ToArray(),
             };
+
+            static bool SurfaceAlignment(Species species)
+            {
+                if (species.alignToSurface && FoliageGrounding.IsCanopy(species.prefabKey))
+                    throw new ArgumentException("Canopy species must remain upright: " + species.prefabKey);
+                return species.alignToSurface;
+            }
         }
 
         [Serializable]
         public sealed class Receipt
         {
             public string action, batchId, batchRoot, recipeId, state, error, recipeAssetPath, resultAssetPath;
-            public int target, considered, placed, existing, lodGroups, renderers, collidersRemoved;
+            public int target, considered, placed, existing, lodGroups, renderers, collidersRemoved, surfaceAligned;
             public int rejectedGround, rejectedHeight, rejectedSlope, rejectedExclusion, rejectedSpacing;
             public int exclusionGroups, exclusionTriangles, exclusionPrimitives;
             public double elapsedSeconds;
@@ -168,7 +177,7 @@ namespace Bwork.Authoring.Editor
                     var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefabs[placement.prefabKey], pending.transform);
                     if (instance == null) throw new InvalidOperationException("Could not instantiate " + placement.prefabKey);
                     instance.name = placement.speciesId;
-                    instance.transform.SetPositionAndRotation(placement.position, Quaternion.Euler(0, placement.rotationDegrees, 0));
+                    instance.transform.SetPositionAndRotation(placement.position, placement.rotation);
                     instance.transform.localScale = Vector3.one * placement.scale;
                     foreach (var collider in instance.GetComponentsInChildren<Collider>(true))
                     { Object.DestroyImmediate(collider); receipt.collidersRemoved++; }
@@ -274,16 +283,26 @@ namespace Bwork.Authoring.Editor
             try { action(); } catch (Exception error) { failures.Add(error); }
         }
 
+        /// <summary>Returns terrain height only at a finite supported coordinate, including terrain-hole rejection.</summary>
+        public static float? SampleGround(TerrainData data, Vector3 origin, Vector2 xz)
+        {
+            if (data == null) throw new ArgumentNullException(nameof(data));
+            float u = (xz.x - origin.x) / data.size.x, v = (xz.y - origin.z) / data.size.z;
+            if (!float.IsFinite(u) || !float.IsFinite(v) || !float.IsFinite(origin.y) ||
+                u < 0 || u > 1 || v < 0 || v > 1) return null;
+            int resolution = data.holesResolution;
+            int x = Mathf.Min(resolution - 1, Mathf.FloorToInt(u * resolution));
+            int z = Mathf.Min(resolution - 1, Mathf.FloorToInt(v * resolution));
+            if (resolution <= 0 || data.IsHole(x, z)) return null;
+            return origin.y + data.GetInterpolatedHeight(u, v);
+        }
+
         static FjordBulkScatter.Result Plan(Recipe recipe, Func<Vector3, float, bool> excludes, string batchId, Dictionary<string, GameObject> prefabs)
         {
             var terrain = ToolSandbox.RequireTerrain();
             var data = terrain.terrainData;
             var origin = terrain.transform.position;
-            float? Ground(Vector2 xz)
-            {
-                float u = (xz.x - origin.x) / data.size.x, v = (xz.y - origin.z) / data.size.z;
-                return u < 0 || u > 1 || v < 0 || v > 1 ? (float?)null : origin.y + data.GetInterpolatedHeight(u, v);
-            }
+            float? Ground(Vector2 xz) => SampleGround(data, origin, xz);
             Vector3 Normal(Vector3 point)
             {
                 float u = (point.x - origin.x) / data.size.x, v = (point.z - origin.z) / data.size.z;
@@ -340,6 +359,8 @@ namespace Bwork.Authoring.Editor
         static Dictionary<string, GameObject> ResolvePrefabs(Recipe recipe)
         {
             if (recipe.species == null) throw new ArgumentException("Recipe species are required.");
+            // Validate alignment before resolving or preparing assets, including dry-run requests.
+            recipe.PlannerRecipe();
             var result = new Dictionary<string, GameObject>(StringComparer.Ordinal);
             foreach (var species in recipe.species)
             {
@@ -438,6 +459,7 @@ namespace Bwork.Authoring.Editor
             receipt.rejectedGround = plan.rejectedGround; receipt.rejectedHeight = plan.rejectedHeight;
             receipt.rejectedSlope = plan.rejectedSlope; receipt.rejectedExclusion = plan.rejectedExclusion;
             receipt.rejectedSpacing = plan.rejectedSpacing;
+            receipt.surfaceAligned = plan.placements.Count(p => p.alignedToSurface);
         }
 
         static void DescribeExisting(Receipt receipt, string batchRoot)

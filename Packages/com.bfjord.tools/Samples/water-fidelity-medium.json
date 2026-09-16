@@ -15,7 +15,7 @@
   "depthColorDistance": 4,
   "shallowOpacity": 0.18,
   "deepOpacity": 1,
-  "shoreFadeDepth": 0.12,
+  "shoreFadeDepth": 0.4,
   "foamWidth": 2.4,
   "foamTileSize": 3.2,
   "foamCutoff": 0.3,

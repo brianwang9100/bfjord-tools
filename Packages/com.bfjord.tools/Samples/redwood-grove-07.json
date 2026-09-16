@@ -1,0 +1,32 @@
+{
+  "id": "redwood-grove-07",
+  "area": {
+    "x": 40,
+    "y": 40,
+    "width": 430,
+    "height": 330
+  },
+  "seed": 73723,
+  "maximumCount": 6,
+  "densityPerHectare": 1,
+  "minimumSpacing": 8.5,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 22,
+  "clusterCount": 0,
+  "clusterRadius": 0,
+  "spacingGroup": "woody",
+  "species": [
+    {
+      "id": "GiantRedwood_C",
+      "prefabKey": "bfjord:GiantRedwood_C",
+      "weight": 0.24,
+      "radius": 5.68,
+      "minimumScale": 0.72,
+      "maximumScale": 0.94,
+      "groundOffsetMeters": -0.02
+    }
+  ],
+  "exclusions": []
+}

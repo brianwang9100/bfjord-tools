@@ -1,6 +1,6 @@
 {
   "name": "com.bfjord.tools",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "displayName": "BFjord Tools",
   "description": "Asset-backed Unity terrain, road, bridge, foliage, rock and water authoring tools with reproducible demonstrations.",
   "unity": "6000.6",

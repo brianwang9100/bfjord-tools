@@ -13,7 +13,8 @@ namespace Bwork.Authoring.Editor
     /// <summary>Builds ordinary shared LOD prefabs from the retained CC0 model library.</summary>
     public static class FoliagePresentation
     {
-        const string Revision = "foliage-presentation-4";
+        const string Revision = "foliage-presentation-5";
+        const string DetailedRevision = "foliage-presentation-4";
         const string WoodlandRevision = "foliage-presentation-3";
         const string PreviousRevision = "foliage-presentation-2";
         const string LegacyRevision = "foliage-presentation-1";
@@ -21,7 +22,7 @@ namespace Bwork.Authoring.Editor
         static readonly string[] BotanicalNames = { "RoseThicket_A", "MeadowDaisy_A", "WoodSorrel_A", "CoastalGrass_A" };
         static readonly string[] WoodlandNames = { "MatureOak_A", "SilverBirch_A", "FallenHollowLog_A", "TallMeadowGrass_A" };
         static readonly string[] DetailedTreeNames = { "MatureOak_B", "SilverBirch_B" };
-        static readonly string[] OriginalNames = BotanicalNames.Concat(WoodlandNames).Concat(DetailedTreeNames).ToArray();
+        static readonly string[] OriginalNames = BotanicalNames.Concat(WoodlandNames).Concat(DetailedTreeNames).Concat(NatureAssets07.Names).ToArray();
         static string Root => ToolSandbox.Generated + "/FoliageLibrary";
         static string ReceiptPath => Root + "/catalog.json";
         [Serializable] public sealed class Catalog { public string revision, fingerprint, directory; public Entry[] entries; }
@@ -95,7 +96,7 @@ namespace Bwork.Authoring.Editor
                 Names.SelectMany(MaterialDependencyPaths))
                 .Distinct(StringComparer.Ordinal).OrderBy(p => p, StringComparer.Ordinal).ToArray();
             // Dependency hashes include the importer and the prepared materials' texture dependencies.
-            string fingerprint = Hash128.Compute(Revision + string.Join("|", inputs.Select(p => p + ":" + AssetDatabase.GetAssetDependencyHash(p)))).ToString();
+            string fingerprint = Hash128.Compute(Revision + ":root-mikktspace-1:" + string.Join("|", inputs.Select(p => p + ":" + AssetDatabase.GetAssetDependencyHash(p)))).ToString();
             var prior = Read();
             if (prior != null && prior.fingerprint == fingerprint && prior.entries.All(e => AssetDatabase.LoadAssetAtPath<GameObject>(e.prefabPath) != null)) return prior;
             string directory = Root + "/" + fingerprint + "-" + Guid.NewGuid().ToString("N");
@@ -125,26 +126,33 @@ namespace Bwork.Authoring.Editor
         {
             if (!File.Exists(ReceiptPath)) return null;
             var catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(ReceiptPath));
-            if (catalog == null || (catalog.revision != Revision && catalog.revision != WoodlandRevision && catalog.revision != PreviousRevision && catalog.revision != LegacyRevision) || catalog.entries == null ||
-                catalog.entries.Length != (catalog.revision == Revision ? Names.Length : catalog.revision == WoodlandRevision ? Names.Length - DetailedTreeNames.Length : catalog.revision == PreviousRevision ? Names.Length - WoodlandNames.Length - DetailedTreeNames.Length : Names.Length - OriginalNames.Length) ||
-                catalog.entries.Select(e => e?.id).Distinct(StringComparer.Ordinal).Count() != catalog.entries.Length ||
+            string[] expected = catalog == null ? null : catalog.revision switch {
+                Revision => Names,
+                DetailedRevision => Names.Except(NatureAssets07.Names).ToArray(),
+                WoodlandRevision => Names.Except(NatureAssets07.Names).Except(DetailedTreeNames).ToArray(),
+                PreviousRevision => Names.Except(NatureAssets07.Names).Except(DetailedTreeNames).Except(WoodlandNames).ToArray(),
+                LegacyRevision => Names.Except(OriginalNames).ToArray(),
+                _ => null
+            };
+            if (expected == null || catalog.entries == null || catalog.entries.Length != expected.Length ||
+                catalog.entries.Select(e => e?.id).Distinct(StringComparer.Ordinal).Count() != expected.Length ||
                 string.IsNullOrEmpty(catalog.directory) || !catalog.directory.StartsWith(Root + "/", StringComparison.Ordinal) ||
-                catalog.entries.Any(e => e == null || !Names.Contains(e.id) || (catalog.revision == LegacyRevision && OriginalNames.Contains(e.id)) || (catalog.revision == PreviousRevision && WoodlandNames.Contains(e.id)) || (catalog.revision != Revision && DetailedTreeNames.Contains(e.id)) || string.IsNullOrEmpty(e.prefabPath) ||
+                catalog.entries.Any(e => e == null || !expected.Contains(e.id) || string.IsNullOrEmpty(e.prefabPath) ||
                     !e.prefabPath.StartsWith(catalog.directory + "/", StringComparison.Ordinal) || e.prefabPath.Contains("..")))
                 throw new InvalidDataException("Foliage catalog receipt is invalid; preserve the library for recovery.");
             return catalog;
         }
 
-        static bool IsCanopy(string id) => id == "MatureFir_A" || id == "MatureOak_A" || id == "SilverBirch_A" || DetailedTreeNames.Contains(id);
+        static bool IsCanopy(string id) => id == "MatureFir_A" || id == "MatureOak_A" || id == "SilverBirch_A" || DetailedTreeNames.Contains(id) || NatureAssets07.IsCanopy(id);
         static string AtlasStem(string id) => DetailedTreeNames.Contains(id) ? "Woodland06" : WoodlandNames.Contains(id) ? "Woodland" : "Foliage";
 
-        static string Source(string id) => (OriginalNames.Contains(id) ? OriginalRoot : id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
+        static string Source(string id) => (NatureAssets07.Contains(id) ? NatureAssets07.Root(id) : OriginalNames.Contains(id) ? OriginalRoot : id == "MatureFir_A" ? ProjectContext.Current.matureFirRoot : ProjectContext.Current.natureRoot) + "/Models/" + id + ".fbx";
 
         static Entry BuildPrefab(string id, string directory, Shader shader)
         {
             var source = AssetDatabase.LoadAssetAtPath<GameObject>(Source(id));
             var root = new GameObject(id);
-            bool rigid = id.StartsWith("rock_", StringComparison.Ordinal) || id == "FallenHollowLog_A";
+            bool rigid = id.StartsWith("rock_", StringComparison.Ordinal) || id == "FallenHollowLog_A" || NatureAssets07.IsRigid(id);
             var filters = source.GetComponentsInChildren<MeshFilter>(true);
             if (filters.Length == 0) throw new InvalidDataException("Model has no mesh filters: " + id);
             Bounds bounds = default;
@@ -219,9 +227,9 @@ namespace Bwork.Authoring.Editor
             ValidateMatrix(matrix, label);
             var vertices = mesh.vertices;
             var normals = mesh.normals;
-            var tangents = mesh.tangents;
-            if (vertices.Length == 0 || normals.Length != vertices.Length || tangents.Length != vertices.Length)
-                throw new InvalidDataException("Root-space foliage baking requires positions, normals, and tangents: " + label);
+            var uv = mesh.uv;
+            if (vertices.Length == 0 || normals.Length != vertices.Length || uv.Length != vertices.Length || uv.Any(v => !float.IsFinite(v.x) || !float.IsFinite(v.y)))
+                throw new InvalidDataException("Root-space foliage baking requires positions, normals, and finite UVs: " + label);
             var normalMatrix = matrix.inverse.transpose;
             float handedness = matrix.determinant < 0 ? -1 : 1;
             for (int i = 0; i < vertices.Length; i++)
@@ -230,15 +238,9 @@ namespace Bwork.Authoring.Editor
                 var normal = normalMatrix.MultiplyVector(normals[i]);
                 if (!Finite(normal) || normal.sqrMagnitude < 1e-12f) throw new InvalidDataException("Invalid transformed foliage normal: " + label);
                 normal.Normalize(); normals[i] = normal;
-                var tangent = matrix.MultiplyVector(new Vector3(tangents[i].x, tangents[i].y, tangents[i].z));
-                tangent -= normal * Vector3.Dot(normal, tangent);
-                if (!Finite(tangent) || tangent.sqrMagnitude < 1e-12f || !float.IsFinite(tangents[i].w))
-                    throw new InvalidDataException("Invalid transformed foliage tangent: " + label);
-                tangent.Normalize(); tangents[i] = new Vector4(tangent.x, tangent.y, tangent.z, tangents[i].w * handedness);
             }
             mesh.vertices = vertices;
             mesh.normals = normals;
-            mesh.tangents = tangents;
             if (handedness < 0)
                 for (int submesh = 0; submesh < mesh.subMeshCount; submesh++)
                 {
@@ -248,6 +250,20 @@ namespace Bwork.Authoring.Editor
                     for (int i = 0; i < indices.Length; i += 3) (indices[i + 1], indices[i + 2]) = (indices[i + 2], indices[i + 1]);
                     mesh.SetTriangles(indices, submesh, false);
                 }
+            // Rebuild MikkTSpace from final positions/normals/UVs. Importer-generated
+            // cap tangents can be parallel to their normals; preserving that basis
+            // through a coordinate bake gives invalid normal-map lighting.
+            mesh.RecalculateTangents();
+            var bakedTangents = mesh.tangents;
+            if (bakedTangents.Length != vertices.Length) throw new InvalidDataException("Baked tangent data is missing: " + label);
+            for (int i = 0; i < bakedTangents.Length; i++)
+            {
+                var t = bakedTangents[i];
+                var xyz = new Vector3(t.x, t.y, t.z);
+                if (!Finite(xyz) || !float.IsFinite(t.w) || Mathf.Abs(Mathf.Abs(t.w)-1) > .001f ||
+                    xyz.sqrMagnitude < 1e-12f || Mathf.Abs(Vector3.Dot(normals[i], xyz.normalized)) > .001f)
+                    throw new InvalidDataException("Invalid regenerated foliage tangent: " + label);
+            }
             mesh.RecalculateBounds();
         }
 
@@ -291,18 +307,18 @@ namespace Bwork.Authoring.Editor
             value.name = id + "-" + name; value.enableInstancing = true;
             if (original)
             {
-                var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Atlas.png");
+                var atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(TexturePath(id, "Atlas"));
                 if (atlas == null) throw new FileNotFoundException("Restore the original foliage atlas before building foliage.");
-                var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Normal.png");
+                var normal = AssetDatabase.LoadAssetAtPath<Texture2D>(TexturePath(id, "Normal"));
                 if (normal == null) throw new FileNotFoundException("Restore the original foliage normal map before building foliage.");
                 value.SetTexture("_BaseMap", atlas);
                 value.SetTexture("_BumpMap", normal);
                 value.SetFloat("_BumpScale", .55f);
                 value.SetColor("_BaseColor", Color.white);
                 value.SetFloat("_Smoothness", .21f);
-                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id))
+                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id) || NatureAssets07.Contains(id))
                 {
-                    var mask = AssetDatabase.LoadAssetAtPath<Texture2D>(OriginalRoot + "/Textures/" + AtlasStem(id) + "Mask.png");
+                    var mask = AssetDatabase.LoadAssetAtPath<Texture2D>(TexturePath(id, "Mask"));
                     if (mask == null) throw new FileNotFoundException("Restore the original woodland PBR mask before building foliage.");
                     value.SetTexture("_MetallicGlossMap", mask);
                     value.SetFloat("_Smoothness", 1);
@@ -330,13 +346,16 @@ namespace Bwork.Authoring.Editor
             return value;
         }
 
+        static string TexturePath(string id, string channel) => NatureAssets07.Contains(id) ? NatureAssets07.Texture(id, channel) :
+            OriginalRoot + "/Textures/" + AtlasStem(id) + channel + ".png";
+
         static IEnumerable<string> MaterialDependencyPaths(string id)
         {
             if (OriginalNames.Contains(id))
             {
-                yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Atlas.png";
-                yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Normal.png";
-                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id)) yield return OriginalRoot + "/Textures/" + AtlasStem(id) + "Mask.png";
+                yield return TexturePath(id, "Atlas");
+                yield return TexturePath(id, "Normal");
+                if (WoodlandNames.Contains(id) || DetailedTreeNames.Contains(id) || NatureAssets07.Contains(id)) yield return TexturePath(id, "Mask");
                 yield break;
             }
             string prefabPath = MaterialTemplate(id);

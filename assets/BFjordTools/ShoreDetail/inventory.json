@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "Scripts/world_assets/shore_detail/build_shore.py",
+      "bytes": 20287,
+      "sha256": "82922c8926034333b95ab55e3077b5801975228e7f5d7c73774f0692f87321b6"
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/fetch_sand.py",
+      "bytes": 872,
+      "sha256": "ad5f89f2138c701f470a7b5781e1148a1269188bb6304d24a6c0aab58cba6dc4"
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/review_shore.py",
+      "bytes": 3900,
+      "sha256": "9c695b3516f00daae21f8a3a0485a94ad88e21abcc7ccf3bc9c7ef34a0090a79"
+    },
+    {
+      "path": "Scripts/world_assets/shore_detail/verify_color_encoding.py",
+      "bytes": 949,
+      "sha256": "7869f5a1bc6dc5a620972f8628b42d5cf029d2291623df2651d95222253e6346"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/BladderWrack_A.fbx",
+      "bytes": 3913372,
+      "sha256": "071d14e0bc82df6669a552bdb6f7e9bf04b8f525ce061bde6b75d991d19e875f"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/BleachedDriftwood_A.fbx",
+      "bytes": 1264876,
+      "sha256": "2246bb04a0e0d15148cc4494e14f30987743584804d7893641af28332263a578"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/CockleShells_A.fbx",
+      "bytes": 844908,
+      "sha256": "988eacf5336f0355c96f677c1821560bf6b697994ceef15a59ff02ec22ddf39d"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/KelpWrack_A.fbx",
+      "bytes": 2867468,
+      "sha256": "0de3a626a9fc24f41da207ede072f131f9f9ce51034949d957b7850e90f3a617"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/MusselShells_A.fbx",
+      "bytes": 1107884,
+      "sha256": "db9ec3aa7ad5007a7b9a6b10d9867ee057099671367e72f754c6c191971d5183"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Models/ShellFragments_A.fbx",
+      "bytes": 1094140,
+      "sha256": "1a1fbded37191a65c701f1564b03d574eca7ef8256270677d1cd0b6e96b1cc4b"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/README.md",
+      "bytes": 5299,
+      "sha256": "0512b5cfb568f628fe9418da9ac709f57e1cadb9cc9a7d44e7ddabd1033777b4"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/BladderWrack_A_reimport.png",
+      "bytes": 747869,
+      "sha256": "4f80422c0992631062fa33b438843cffd92ff60b66c42e5c15eff1e2588093db"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/BleachedDriftwood_A_reimport.png",
+      "bytes": 610356,
+      "sha256": "e33ef2302cd3016f9a50e493f668749adb3f77263a6ab41aedf75cddbd06685f"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/CockleShells_A_reimport.png",
+      "bytes": 664536,
+      "sha256": "27a3de0e1525f6c3874e0546bfcc0ec54876f3f7cbd34639fa3dbe20bf4e7174"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/KelpWrack_A_reimport.png",
+      "bytes": 666763,
+      "sha256": "c25686261bed5c84f551a1940d71a5395777e2f0f0b384aab2a38def9e1704b6"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/MusselShells_A_reimport.png",
+      "bytes": 678206,
+      "sha256": "20d13df0b728767c5a6c8614277b3e0c586880323ba39b01a889dea6b82e8d29"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/ShellFragments_A_reimport.png",
+      "bytes": 584011,
+      "sha256": "abb29884d6850636a8184fb62d10f79419eb24bd236a6feb1245fb3aef7112fb"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Review/reimport-verification.json",
+      "bytes": 8790,
+      "sha256": "fa73a7b3a5bfa99f62dfb15175bb7c11fe695ea5f9d606272ada16901e76ede3"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/ShoreDetail.blend",
+      "bytes": 4007411,
+      "sha256": "902a2174f2034e9a6d66cc71845522e797e6d6a9f702ba8e13a67f447b67ecd3"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand-source.json",
+      "bytes": 1243,
+      "sha256": "be0d5a1487ee33581d32fa58be7ab4edd98ea3de7d083043f151f51c66edb3bb"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand_02_arm_2k.png",
+      "bytes": 17096157,
+      "sha256": "92e730e74506685c2b48cfb38a88f5d442ffe3eb1669ee1693913f512b4459ee"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand_02_diff_2k.png",
+      "bytes": 23651527,
+      "sha256": "c19977e1c27fe46b08a32db6fbb0251a2157c8e785839b8a4736000486c2bf30"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand_02_disp_2k.png",
+      "bytes": 6697934,
+      "sha256": "098cc7c7e5e35e25c9aef25f3a4bd4d221bf31b662502bec0e9a2d76b202d020"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Sources/sand_02_nor_gl_2k.png",
+      "bytes": 24253850,
+      "sha256": "1fbbcc074ca6814fab6e0c4a874fa32ffb288fbc5c0778a920409dec399adfca"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_Color.png",
+      "bytes": 9313434,
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_Mask.png",
+      "bytes": 7288717,
+      "sha256": "683642934b5891481fd12537c7d1020af342d91cef5a6731e197811696558ac1"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/BeachSand_NormalGL.png",
+      "bytes": 10412994,
+      "sha256": "40e6dfef6142f7fdd0f6e4cf20aa828789b341caf10a08c74eb29e30d40c0589"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_Color.png",
+      "bytes": 9313434,
+      "sha256": "85cc70ddbfb40d6eeb2af24ea87d9d19c09267a87121d9ca7a4acec1c0b229f0"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_Mask.png",
+      "bytes": 6982546,
+      "sha256": "be94f853ddca21c90e06a827a24e6539738cdf3429db6484fd5f49f9063384c9"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/RippleSand_NormalGL.png",
+      "bytes": 10484898,
+      "sha256": "11834ef72e725e2870c8cc46144297ca43833cdc6dece614449e3f8c2e13102e"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/ShoreAtlas_Color.png",
+      "bytes": 5890236,
+      "sha256": "b8fe67046d38006069cdbaa7ecf9c88fb72ef21e2f073a2a1bba76898e782a33"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/ShoreAtlas_Mask.png",
+      "bytes": 7381216,
+      "sha256": "49497e26613a8163c6d4dd600358883de15df94816fd8d398b1a1d63216d95f7"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/Textures/ShoreAtlas_NormalGL.png",
+      "bytes": 11795940,
+      "sha256": "12f9ccae72e8ca1d73b2a15e6c6199c101d543ac37d6a58a4f6e00fa514b918a"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/catalog-additions.json",
+      "bytes": 6532,
+      "sha256": "6c8fc9cc4e2008929e670b0a05e0345f643c67aa83faa73c21059b667d184c73"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/color-fix-additions.json",
+      "bytes": 881,
+      "sha256": "de3b6bb3e4f7c4d1cac9d50ca07becd52ff016d0d181519ba3d5a8eb61ef338a"
+    },
+    {
+      "path": "art/BFjordTools/ShoreDetail/manifest.json",
+      "bytes": 12829,
+      "sha256": "34b76769f4c12d219e71b71ca275bef18b2329026b612b26bff5da547786520f"
+    }
+  ]
+}

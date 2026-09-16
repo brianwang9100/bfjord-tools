@@ -1,0 +1,60 @@
+{
+  "id": "woodland-mixed-canopy-07",
+  "area": {
+    "x": 182,
+    "y": 158,
+    "width": 68,
+    "height": 70
+  },
+  "seed": 51915,
+  "maximumCount": 32,
+  "densityPerHectare": 72,
+  "minimumSpacing": 8.5,
+  "minimumHeight": 1,
+  "maximumHeight": 90,
+  "minimumSlopeDegrees": 0,
+  "maximumSlopeDegrees": 25,
+  "clusterCount": 5,
+  "clusterRadius": 22,
+  "spacingGroup": "woody",
+  "species": [
+    {
+      "id": "GiantRedwood_C",
+      "prefabKey": "bfjord:GiantRedwood_C",
+      "weight": 0.24,
+      "radius": 5.68,
+      "minimumScale": 0.72,
+      "maximumScale": 0.94,
+      "groundOffsetMeters": -0.02
+    },
+    {
+      "id": "CoastalPine_C",
+      "prefabKey": "bfjord:CoastalPine_C",
+      "weight": 0.36,
+      "radius": 6.91,
+      "minimumScale": 0.75,
+      "maximumScale": 0.98,
+      "groundOffsetMeters": -0.02
+    },
+    {
+      "id": "MatureBeech_C",
+      "prefabKey": "bfjord:MatureBeech_C",
+      "weight": 0.4,
+      "radius": 5.66,
+      "minimumScale": 0.8,
+      "maximumScale": 1.1,
+      "groundOffsetMeters": -0.02
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "clear-lookout",
+      "kind": "circle",
+      "a": {
+        "x": 222,
+        "y": 195
+      },
+      "radius": 3
+    }
+  ]
+}

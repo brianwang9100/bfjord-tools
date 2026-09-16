@@ -17,6 +17,8 @@ namespace Bwork.Authoring.Editor
         public float exposedHeightStart = 40, exposedHeightEnd = 90;
         public float patchScaleMeters = 32, soilStrength = .55f, gravelStrength = .65f;
         public float bankWidthMeters = 7, bankHeightMeters = 2.2f;
+        public float shorelineWidthMeters = 26, shorelineHeightMeters = 6;
+        public float shorelineWetWidthMeters = 6, shorelineWetHeightMeters = 1;
         public bool heightBlend = true;
         public float heightTransition = .16f, bankBreakup = .45f, patchWarpMeters = 8;
         // Appearance seed is independent of classification/stamps and does not move
@@ -32,6 +34,7 @@ namespace Bwork.Authoring.Editor
         const string MaskRoot = "Assets/BFjord/TerrainDetail/";
         static readonly string[] MaterialNames = { "Ground", "Dirt", "Gravel", "Rock" };
         static readonly string[] LayerNames = { "Meadow", "Soil", "Talus", "Outcrop" };
+        static readonly string[] ShorelineLayerNames = { "ForestLitter", "DrySand", "WetSand", "RockFace" };
         // Keep each scan at its documented physical footprint. In particular,
         // Rocky Terrain is a 90 m aerial outcrop scan; shrinking it to a small
         // material repeat makes its natural slabs read as repeating masonry.
@@ -83,6 +86,9 @@ namespace Bwork.Authoring.Editor
                 !Range(profile.exposedHeightStart, -1000, 5000) || !Range(profile.exposedHeightEnd, profile.exposedHeightStart + 1, 6000) ||
                 !Range(profile.patchScaleMeters, 4, 256) || !Range(profile.soilStrength, 0, 1) || !Range(profile.gravelStrength, 0, 1) ||
                 !Range(profile.bankWidthMeters, .5f, 30) || !Range(profile.bankHeightMeters, .1f, 10) ||
+                !Range(profile.shorelineWidthMeters, 1, 80) || !Range(profile.shorelineHeightMeters, .2f, 12) ||
+                !Range(profile.shorelineWetWidthMeters, .2f, profile.shorelineWidthMeters) ||
+                !Range(profile.shorelineWetHeightMeters, .1f, profile.shorelineHeightMeters) ||
                 !Range(profile.heightTransition, .01f, 1) || !Range(profile.bankBreakup, 0, .8f) || !Range(profile.patchWarpMeters, 0, 32) ||
                 !Range(profile.stochasticCellTiles, 1, 8) || !Range(profile.macroScaleMeters, 8, 256) || !Range(profile.macroVariation, 0, .5f))
                 throw new ArgumentException("Terrain paint requires a version-1 profile with finite, ordered slope/height bounds and bounded patch/bank scales.");
@@ -103,7 +109,7 @@ namespace Bwork.Authoring.Editor
                 ToolSandbox.Save();
             }
             catch { snapshot.Restore(terrain); ToolSandbox.RestoreText(ProfileFile, previous); throw; }
-            return new { painted = true, layers = LayerNames, profile };
+            return new { painted = true, layers = profile.palette == "shoreline" ? ShorelineLayerNames : LayerNames, profile };
         }
 
         public static void Paint(Terrain terrain, ConnectedWaterField water = null, TerrainPaintProfile profile = null)
@@ -115,6 +121,9 @@ namespace Bwork.Authoring.Editor
                 profile = File.Exists(path) ? JsonUtility.FromJson<TerrainPaintProfile>(File.ReadAllText(path)) : new TerrainPaintProfile();
             }
             Validate(profile);
+            bool shoreline = profile.palette == "shoreline";
+            var layerNames = shoreline ? ShorelineLayerNames : LayerNames;
+            var ocean = shoreline ? water?.Recipe.nodes.FirstOrDefault(node => node.kind == "ocean") : null;
             var data = terrain.terrainData;
             var materials = MaterialNames.Select(name => AssetDatabase.LoadAssetAtPath<Material>(ProjectContext.Material(name)) ??
                 throw new InvalidOperationException("Missing CC0 terrain surface: " + name)).ToArray();
@@ -122,7 +131,8 @@ namespace Bwork.Authoring.Editor
                 throw new InvalidOperationException("Every terrain surface needs scanned base color and normal textures.");
             var oldLayers = data.terrainLayers;
             bool owned = oldLayers.Length == 0 || oldLayers.Length == 2 && oldLayers[0].name == "Loam" && oldLayers[1].name == "Stone" ||
-                oldLayers.Length == 4 && oldLayers.Select(l => l == null ? "" : l.name).SequenceEqual(LayerNames);
+                oldLayers.Length == 4 && (oldLayers.Select(l => l == null ? "" : l.name).SequenceEqual(LayerNames) ||
+                    oldLayers.Select(l => l == null ? "" : l.name).SequenceEqual(ShorelineLayerNames));
             if (!owned) throw new InvalidOperationException("Terrain palette is externally authored; restore the toolkit palette before automatic painting.");
             var material = terrain.materialTemplate;
             string materialPath = material == null ? "" : AssetDatabase.GetAssetPath(material);
@@ -151,7 +161,7 @@ namespace Bwork.Authoring.Editor
                 float noise = Mathf.PerlinNoise((wx+warpX)/profile.patchScaleMeters + profile.seed*.0131f, (wz+warpZ)/profile.patchScaleMeters + profile.seed*.0073f);
                 float detail = Mathf.PerlinNoise(wx/3.7f + 37, wz/3.7f + 61);
                 float bank = 0;
-                if (water != null)
+                if (water != null && !shoreline)
                 {
                     var sample = water.SampleForBank(new Vector2(wx, wz), profile.bankWidthMeters);
                     // Both gates matter: a road or hillside above the water must not become a wet bank.
@@ -159,7 +169,9 @@ namespace Bwork.Authoring.Editor
                     bank = (1 - Smooth(0, bankWidth, Mathf.Max(0, sample.Distance))) *
                         (1 - Smooth(.2f, profile.bankHeightMeters, Mathf.Max(0, y - sample.Height)));
                 }
-                Vector4 weights = Weights(data.GetSteepness(u, v), y, near-y, noise, detail, bank, profile);
+                Vector4 weights = shoreline
+                    ? ShorelineWeights(data.GetSteepness(u, v), y-(ocean?.position.y ?? 0), OceanSignedDistance(new Vector2(wx,wz), ocean), noise, detail, profile)
+                    : Weights(data.GetSteepness(u, v), y, near-y, noise, detail, bank, profile);
                 for (int layer = 0; layer < 4; layer++) map[z, x, layer] = weights[layer];
             }
             // Terrain masks carry the scan's AO/height/roughness at exactly the same UVs as
@@ -167,16 +179,18 @@ namespace Bwork.Authoring.Editor
             var layers = new TerrainLayer[4];
             for (int i = 0; i < layers.Length; i++)
             {
-                layers[i] = ToolSandbox.Persist(new TerrainLayer { name = LayerNames[i],
+                bool wet = shoreline && i == 2;
+                layers[i] = ToolSandbox.Persist(new TerrainLayer { name = layerNames[i],
                     diffuseTexture = surfaces[i].color, normalMapTexture = surfaces[i].normal,
-                    maskMapTexture = surfaces[i].mask, maskMapRemapMin = Vector4.zero,
-                    maskMapRemapMax = new Vector4(0, 1, 1, .45f),
+                    diffuseRemapMin = Vector4.zero, diffuseRemapMax = wet ? new Vector4(.62f,.64f,.65f,1) : Vector4.one,
+                    maskMapTexture = surfaces[i].mask, maskMapRemapMin = new Vector4(0,0,0,wet ? .42f : 0),
+                    maskMapRemapMax = new Vector4(0, 1, 1, wet ? .72f : .45f),
                     tileSize = Vector2.one * surfaces[i].tileMeters,
-                    normalScale = materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = i == 3 ? .08f : .04f,
+                    normalScale = wet ? .5f : materials[i].GetFloat("_BumpScale"), metallic = 0, smoothness = wet ? .58f : i == 3 ? .08f : .04f,
                     // The default DiffuseAlphaChannel source treats opaque JPG alpha as
                     // mirror smoothness, ignoring the layer's smoothness value entirely.
                     smoothnessSource = TerrainLayerSmoothnessSource.ConstantOnly,
-                    tileOffset = new Vector2(-terrain.transform.position.x, -terrain.transform.position.z) }, LayerNames[i] + ".terrainlayer");
+                    tileOffset = new Vector2(-terrain.transform.position.x, -terrain.transform.position.z) }, layerNames[i] + ".terrainlayer");
             }
             data.terrainLayers = layers;
             data.SetAlphamaps(0, 0, map);
@@ -204,6 +218,28 @@ namespace Bwork.Authoring.Editor
             float grass = Mathf.Max(.015f, 1-rock-talus-soil);
             var weights = new Vector4(grass, soil, talus, rock);
             return weights / (weights.x+weights.y+weights.z+weights.w);
+        }
+
+        public static float OceanSignedDistance(Vector2 point, WaterNode ocean)
+        {
+            if (ocean == null || ocean.kind != "ocean") return float.PositiveInfinity;
+            var q = new Vector2(Mathf.Abs(point.x-ocean.position.x)-ocean.radius.x, Mathf.Abs(point.y-ocean.position.z)-ocean.radius.y);
+            return new Vector2(Mathf.Max(q.x,0),Mathf.Max(q.y,0)).magnitude + Mathf.Min(Mathf.Max(q.x,q.y),0);
+        }
+
+        public static Vector4 ShorelineWeights(float slope, float heightAboveOcean, float oceanDistance, float noise, float detail, TerrainPaintProfile profile)
+        {
+            float rock = Smooth(profile.rockSlopeStart, profile.rockSlopeEnd, slope+(noise-.5f)*12);
+            float breakup = Mathf.Lerp(1-profile.bankBreakup*.55f, 1, Mathf.Clamp01(noise*.6f+detail*.4f));
+            float distance = Mathf.Abs(oceanDistance), elevation = Mathf.Abs(heightAboveOcean);
+            float width = profile.shorelineWidthMeters*breakup, wetWidth = profile.shorelineWetWidthMeters*breakup;
+            // Keep a real sand interior. Fading both gates from zero prematurely
+            // exposes leaf litter, which native height blending then amplifies.
+            float sand = (1-Smooth(width*.58f,width,distance)) *
+                (1-Smooth(profile.shorelineHeightMeters*.58f,profile.shorelineHeightMeters,elevation)) * (1-rock);
+            float wet = sand * (1-Smooth(wetWidth*.3f,wetWidth,distance)) *
+                (1-Smooth(profile.shorelineWetHeightMeters*.3f,profile.shorelineWetHeightMeters,elevation));
+            return new Vector4(Mathf.Max(0,1-rock-sand), sand-wet, wet, rock);
         }
         static float Smooth(float a, float b, float x) => Mathf.SmoothStep(0, 1, Mathf.InverseLerp(a,b,x));
         static bool Range(float value, float min, float max) => float.IsFinite(value) && value >= min && value <= max;

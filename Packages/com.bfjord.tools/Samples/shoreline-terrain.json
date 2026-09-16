@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "seed": 51915,
+  "palette": "shoreline",
+  "rockSlopeStart": 25,
+  "rockSlopeEnd": 49,
+  "patchScaleMeters": 24,
+  "bankBreakup": 0.55,
+  "patchWarpMeters": 12,
+  "shorelineWidthMeters": 26,
+  "shorelineHeightMeters": 6,
+  "shorelineWetWidthMeters": 6,
+  "shorelineWetHeightMeters": 1,
+  "heightBlend": true,
+  "heightTransition": 0.16,
+  "antiTiling": true,
+  "appearanceSeed": 51915,
+  "stochasticCellTiles": 1,
+  "macroScaleMeters": 37,
+  "macroVariation": 0.2
+}

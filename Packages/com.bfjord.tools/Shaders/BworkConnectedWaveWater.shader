@@ -294,7 +294,10 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 oceanFoam=max(oceanFoam,seaCrest*porous*_CrestFoamStrength*ocean);
                 float lakeFoam=shore*breakup*_FoamStrength*(1-ocean)*saturate(i.color.a);
                 float foam=saturate(max(inlandFoam,max(oceanFoam,lakeFoam)));
-                float absorption=1-exp2(-depth/max(_DepthColorDistance,.2)*1.8);
+                // Near contact, bound the optical path by vertical depth before returning
+                // to view-ray absorption offshore; grazing banks keep the bed visible.
+                float opticalDepth=lerp(min(depth,shoreDepth*2.5),depth,smoothstep(.15,1.4,shoreDepth));
+                float absorption=1-exp2(-opticalDepth/max(_DepthColorDistance,.2)*1.8);
                 SurfaceData surface=(SurfaceData)0;
                 half3 shallow=lerp(_ShallowColor.rgb,_OceanShallowColor.rgb,ocean);
                 half3 deep=lerp(_BaseColor.rgb,_OceanBaseColor.rgb,ocean);
@@ -310,7 +313,12 @@ Shader "Bwork/Sandbox/Connected Wave Water"
                 // Ordinary deep water becomes opaque; an explicit lower DeepOpacity
                 // remains available for artistic transparency profiles.
                 float alpha=saturate(lerp(_ShallowOpacity,_DeepOpacity,absorption)+fresnel*.14+foam*.3);
-                surface.alpha=_UseDepth>.5?alpha*smoothstep(0,_ShoreFadeDepth,shoreDepth):_DeepOpacity;
+                // The canonical footprint fades its wave envelope to zero at clipped mesh
+                // edges. Reuse that bounded field to feather coverage horizontally as
+                // well as vertically, including river banks and shallow lake margins.
+                float edgeCoverage=smoothstep(0,lerp(.045,.10,grain.g),saturate(i.color.r));
+                float depthCoverage=_UseDepth>.5?smoothstep(0,max(.05,_ShoreFadeDepth),shoreDepth):1;
+                surface.alpha=(_UseDepth>.5?alpha:_DeepOpacity)*edgeCoverage*depthCoverage;
                 InputData lighting=(InputData)0;lighting.positionWS=i.positionWS;lighting.normalWS=n;
                 lighting.viewDirectionWS=view;lighting.shadowCoord=TransformWorldToShadowCoord(i.positionWS);lighting.fogCoord=i.fog;
                 lighting.bakedGI=SampleSH(n);lighting.normalizedScreenSpaceUV=GetNormalizedScreenSpaceUV(i.positionCS);

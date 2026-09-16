@@ -1,0 +1,32 @@
+{
+  "id": "sand_02",
+  "author": "Charlotte Baglioni",
+  "supplier": "Poly Haven",
+  "source": "https://polyhaven.com/a/sand_02",
+  "license": "CC0-1.0",
+  "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "redistributionPermission": "https://polyhaven.com/license",
+  "tileMeters": 2.1,
+  "files": {
+    "diff": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_diff_2k.png",
+      "bytes": 23651527,
+      "sha256": "c19977e1c27fe46b08a32db6fbb0251a2157c8e785839b8a4736000486c2bf30"
+    },
+    "nor_gl": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_nor_gl_2k.png",
+      "bytes": 24253850,
+      "sha256": "1fbbcc074ca6814fab6e0c4a874fa32ffb288fbc5c0778a920409dec399adfca"
+    },
+    "arm": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_arm_2k.png",
+      "bytes": 17096157,
+      "sha256": "92e730e74506685c2b48cfb38a88f5d442ffe3eb1669ee1693913f512b4459ee"
+    },
+    "disp": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sand_02/sand_02_disp_2k.png",
+      "bytes": 6697934,
+      "sha256": "098cc7c7e5e35e25c9aef25f3a4bd4d221bf31b662502bec0e9a2d76b202d020"
+    }
+  }
+}
